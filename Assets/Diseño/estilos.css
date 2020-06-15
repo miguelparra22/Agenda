@@ -1,0 +1,421 @@
+
+.navbar-light .navbar-nav .nav-link {
+    transition: 0.5s;
+  }
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #007cae;
+    font-size: 20px;
+  }
+
+  .navbar-dark .navbar-nav .nav-link{
+    transition: 0.5s;
+  }
+
+
+  .navbar-dark .navbar-nav .nav-link:hover{
+    color: #fff;
+    font-size: 20px;
+  }
+  .contenedorImg{
+    position: relative;
+    background-image: url(../Imagenes/Salon.jpg);
+    background-size:cover;
+    min-height: 800px;
+   
+
+}
+
+.contenedorImg .content {
+    position: absolute;
+    bottom: 0;
+    top:0;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+   
+  }
+
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+  }
+
+  .btn .btn-outline-primary{
+      transition: 0.5s;
+  }
+
+
+
+  .box{
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+    background-color: #FFF;
+    /*color: #fff;*/
+    padding: 40px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, .1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+
+.box h3{
+    margin: 0 0 40px;
+    padding: 0;
+    color: #007cae;
+    text-transform: uppercase;
+}
+
+.box input,
+select{
+    padding: 10px 0;
+    margin-bottom: 30px;
+}
+
+.box textarea{
+    height: 80px;
+    padding: 10px 0;
+    margin-bottom: 40px;
+}
+
+.box input,
+.box input[type = "password"],
+.box textarea,
+.box select{
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline:none;
+    border:none;
+    border-bottom: 2px solid #999;
+}
+
+.box textarea{
+    margin-bottom: 20px;
+
+}
+
+.box input[type = "submit"]{
+    border-bottom: none;
+    cursor: pointer;
+    background: #007cae;
+    color:#fff;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+.box form div{
+ position: relative;
+
+}
+
+.box form div label{
+    position: absolute;
+    top:10px;
+    left: 0;
+    color: #999;
+    transition: .5s;
+    pointer-events: none;
+}
+
+.box input:focus ~ label,
+.box textarea:focus ~ label,
+.box input:valid ~ label,
+.box textarea:valid ~ label
+{
+
+top:-10px;
+left: 0;
+color: #007cae;
+font-size: 12px;
+font-weight: bold;
+}
+
+
+
+.box input:focus ,
+.box textarea:focus,
+.box input:valid,
+.box textarea:valid {
+    border-bottom:2px solid  #007cae;
+}
+
+
+.main-header{
+  position: relative;
+  background-image: url(../Imagenes/Salon.jpg);
+  background-size:cover;
+  min-height: 500px;
+  background-color: rgba(8, 8, 8, 0.1);
+
+}
+
+ /* .container {
+      position: relative;
+    max-width: 100%;
+    background-image: url(../img/Salon.jpg);
+  }
+  
+  
+
+ /* .container .content {
+    position: absolute;
+    bottom: 0;
+    top:0;
+    background: rgb(0, 0, 0); /* Fallback color */
+   /* background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+   /* color: #f1f1f1;
+    width: 100%;
+    padding: 20px;*/
+    
+  /*}*/
+  
+
+  .formulario{
+    width: 80%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    color: black;
+    padding: 30px 10px 30px 10px;
+    height: 491px;
+}
+
+.formulario .sbForm{
+    width: 85%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 5px;
+   border: 1px solid #ddd;
+   padding: 30px;
+   height: 423px;
+   color: #007cae;
+}
+
+.formulario .sbForm .btn{
+   width: 90%;
+   margin: auto;
+    
+}
+
+.formulario .sbForm .btn button{
+      
+    margin-top: 8px;
+    padding: 9px 100px;
+    border: 2px solid #007cae;
+    border-radius: 5px;
+    transition: .5s;
+    background-color: #FFf;
+    color: #007cae;
+
+     
+ }
+
+ .formulario .sbForm .btn button:hover{
+    background-color: #007cae;
+    color: #fff;
+  
+}
+
+.text-info {
+  
+  color: #007cae;
+  border: none;
+  text-align: center;
+  font-size: 18px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.text-info span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.text-info span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.text-info:hover span {
+  padding-right: 25px;
+}
+
+.text-info:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.contenedortexto {
+  display: flex;
+  width: 25%;
+  height: 40px;
+  margin: auto;
+  color: white;
+  font-size: 30px;
+  line-height: 40px;
+  overflow: hidden;
+
+}
+
+.ul {
+  list-style: none;
+  padding-left: 10px;
+  animation: cambiar 6s infinite;
+}
+
+.ul,
+.p {
+  margin: 0px;
+}
+
+@keyframes cambiar {
+  0% {
+      margin-top: 0px;
+  }
+
+  20% {
+      margin-top: 0;
+  }
+
+  25% {
+      margin-top: -40px;
+  }
+
+  50% {
+      margin-top: -40px;
+  }
+
+  55% {
+      margin-top: -80px;
+  }
+
+  80% {
+      margin-top: -80px
+  }
+
+  ;
+
+  85% {
+      margin-top: -40px
+  }
+
+  ;
+
+  95% {
+      margin-top: -40px
+  }
+
+  ;
+
+  100% {
+      margin-top: -40px
+  }
+
+  ;
+}
+
+
+.btnredes {
+  padding: 10px;
+  margin: 18px;
+  width: 28%;
+  border: none;
+  color: white;
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.btnredes:hover {
+  
+  background-color: white;
+  color: #007cae;
+  
+}
+
+
+/*Redes sociales*/
+
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #c5c3c3;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #007cae; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+
+
