@@ -44,7 +44,7 @@
 <section>
 <div class="box">
         <h3>Ingresa tus datos</h3>
-        <form action="./?c=cliente&a=agregar" method="POST">
+        <form action="?c=cliente&a=agregar" method="POST">
             <div>
             <input type="text" name="usuario_nombre" required>
                 <label>Nombre completo</label>
