@@ -294,16 +294,7 @@
     </section>
 
 
-    <style>
-        .footer1{
-            
-            width:100%;
-            background-color: black;
-            max-height: 400px;
-        }
-      
-
-    </style>
+    
     <footer class="footer1 p-3 text-center text-white">
         <div class="text-center">
             <img src="/Agendamiento/Assets/Imagenes/djlogodorado.png" alt="D'JANE" width="100" height="40">

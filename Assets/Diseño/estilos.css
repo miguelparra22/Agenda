@@ -417,4 +417,36 @@ font-weight: bold;
 }
 
 
+.logincontainer {
+  width: 100%;
+  height: 100vh;
+  background-image: url("/Agendamiento/Assets/Imagenes/Barber.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 
+}
+
+.form-container {
+
+  padding: 50px 60px;
+  margin-top: 20vh;
+  -webkit-box-shadow: 10px 10px 26px 12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 26px 12px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 26px 12px rgba(0, 0, 0, 0.75);
+}
+
+.footer1{
+            
+  width:100%;
+  background-color: black;
+  max-height: 400px;
+}
+
+.footer2{
+            
+  width:100%;
+  background-color: black;
+  max-height: 100px;
+}

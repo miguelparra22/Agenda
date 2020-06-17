@@ -9,7 +9,7 @@ class HomeController{
     }
 
     public function index(){
-        require_once "Vistas/Especialidad/Agregar.php";
+        require_once "Vistas/Home/home.php";
     }
 }
 
