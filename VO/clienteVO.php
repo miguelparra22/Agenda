@@ -7,6 +7,7 @@ class ClienteVO {
     private $cliente_nombre;
     private $cliente_pwd;
     private $cliente_correo;
+    private $cliente_telefono;
 
     function getCliente_id() {
         return $this->cliente_id;
@@ -20,8 +21,15 @@ class ClienteVO {
         return $this->cliente_pwd;
     }
 
+    function getCliente_telefono() {
+        return $this->cliente_telefono;
+    }
     function getCliente_correo() {
         return $this->cliente_correo;
+    }
+
+    function setCliente_telefono($cliente_telefono) {
+        $this->cliente_telefono = $cliente_telefono;
     }
 
     function setCliente_id($cliente_id) {

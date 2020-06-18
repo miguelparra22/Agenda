@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/estilos.css">
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Login</title>
+    <title>Iniciar Sesion</title>
 </head>
 <body>
     <section>
@@ -18,21 +18,21 @@
                     <div class="col-md-4 col-sm-4 col-xs-12"></div>
 
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <form class="form-container">
+                        <form method="POST" action="/Agendamiento/?c=valida&a=iniciar" class="form-container">
                             <div class="text-center p-2">
                             <img src="/Agendamiento/Assets/Imagenes/djlogodorado.png" alt="D'JANE" width="100" height="40">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <label for="exampleInputEmail1">Correo Electronico</label>
+                                <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
+                                <label for="exampleInputPassword1">Contraseña</label>
+                                <input name="pws" type="password" class="form-control" id="exampleInputPassword1">
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
                         </form>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12"></div>
