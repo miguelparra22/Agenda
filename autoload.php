@@ -24,6 +24,7 @@ require_once 'Controladores/especialidad.controller.php';
 require_once 'Controladores/Cliente.controller.php';
 require_once 'Controladores/Servicio.controller.php';
 require_Once 'Controladores/Home.controller.php';
+require_Once 'Controladores/valida.controller.php';
 
 
 ?>

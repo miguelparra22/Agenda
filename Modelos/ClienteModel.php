@@ -15,7 +15,7 @@ class Cliente extends Conexion implements Idatabase {
 
     public function actualizar($vo) {
         $this->ClienteVO = $vo;
-        $sentencia = "UPDATE $this->tabla SET ClienteNombre=:nombre, CorreoCliente=:correo, Password=:pwd WHERE IdCliente=:id";
+        $sentencia = "UPDATE $this->tabla SET ClienteNombre=:nombre, CorreoCliente=:correo, PasswordCliente=:pwd WHERE IdCliente=:id";
         $claveIncriptada = $this->hash($this->ClienteVO->getCliente_pwd());
         $resultado = $this->PDO->prepare($sentencia);
         return $resultado->execute(array(
@@ -86,19 +86,24 @@ class Cliente extends Conexion implements Idatabase {
     }
 
     public function iniciarSesion($vo) {
+      
         $this->ClienteVO = $vo;
         $claveIncriptada = $this->hash($this->ClienteVO->getCliente_pwd());
-        $sentencia = "SELECT * FROM $this->tabla WHERE CorreoCliente=:correo AND Password=:pwd";
+
+        $correo =$this->ClienteVO->getCliente_correo();
+        $pws=$claveIncriptada;
+        $sentencia = "SELECT FK_ROL as rol FROM empleado 
+        WHERE CorreoEmpleado='$correo' AND PasswordEmpleado='$pws' 
+        UNION
+        SELECT '0' as rol FROM $this->tabla  WHERE CorreoCliente='$correo' AND PasswordCliente='$pws'";
+      
         $resultado = $this->PDO->prepare($sentencia);
-        $resultado->execute(
-                array(
-                    ':correo' => $this->ClienteVO->getCliente_correo(),
-                    ':pwd' => $claveIncriptada,
-        ));
+        $resultado->execute();
+
         if ($resultado->rowCount() > 0) {
-            return $resultado;
+            return $resultado = $resultado->fetchAll(PDO::FETCH_OBJ);
         } else {
-            return 0;
+            return -1;
         }
     }
 

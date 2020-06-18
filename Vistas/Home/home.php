@@ -34,7 +34,7 @@
                     <a class="nav-link navl" href="Vistas/Cliente/Agregarcliente.php">Registrarse</a>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn btn-outline-primary">Iniciar sesión</button>
+                    <a href="/Agendamiento/Vistas/Home/Login.php" class="btn btn-outline-primary">Iniciar sesión</a>
                 </li>
             </ul>
         </div>
