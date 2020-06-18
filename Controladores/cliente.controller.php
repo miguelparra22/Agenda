@@ -21,12 +21,13 @@ class Clientecontroller {
         $this->vo->setCliente_nombre($_POST["usuario_nombre"]);
         $this->vo->setCliente_pwd($_POST["usuario_pwd"]);
         $this->vo->setCliente_correo($_POST["usuario_correo"]);
+        $this->vo->setCliente_telefono($_POST["usuario_telefono"]);
         if ($this->model->agregar($this->vo)) {
             echo "<script>
             alert('Se ha ingresado correctamente');
             </script>";
             
-            include_once 'Agendamiento/Vistas/Cliente/AgregarCliente.php';
+            include_once 'Vistas/Cliente/AgregarCliente.php';
             
         } else {
             echo "falló";

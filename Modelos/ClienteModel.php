@@ -29,13 +29,14 @@ class Cliente extends Conexion implements Idatabase {
     public function agregar($vo) {
 
         $this->ClienteVO = $vo;
-        $sentencia = "INSERT INTO $this->tabla VALUES (null,:nombre,:correo,:pwd)";
+        $sentencia = "INSERT INTO $this->tabla VALUES (null,:nombre,:correo,:telefono,:pwd)";
         $claveIncriptada = $this->hash($this->ClienteVO->getCliente_pwd());
         $resultado = $this->PDO->prepare($sentencia);
         return $resultado->execute(array(
                     ':nombre' => $this->ClienteVO->getCliente_nombre(),
                     ':pwd' => $claveIncriptada,
                     ':correo' => $this->ClienteVO->getCliente_correo(),
+                    ':telefono' => $this->ClienteVO->getCliente_telefono(),
         ));
     }
 

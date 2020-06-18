@@ -44,12 +44,15 @@
 <section>
 <div class="box">
         <h3>Ingresa tus datos</h3>
-        <form action="?c=cliente&a=agregar" method="POST">
+        <form action="/Agendamiento/?c=cliente&a=agregar" method="POST">
             <div>
             <input type="text" name="usuario_nombre" required>
                 <label>Nombre completo</label>
             </div>
-           
+            <div>
+            <input type="number" name="usuario_telefono" required>
+                <label>Telefono</label>
+            </div>
             
             <div>
                 <input type="password" name="usuario_pwd" required>
