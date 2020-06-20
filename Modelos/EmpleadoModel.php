@@ -57,6 +57,7 @@ class EmpleadoModel extends Conexion{
             return $arreglo;
         }
     }
+    
 
      public function hash($password) {
         return hash('sha512', self::SALT . $password);

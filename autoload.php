@@ -30,7 +30,6 @@ require_once 'Controladores/Servicio.controller.php';
 require_Once 'Controladores/Home.controller.php';
 require_Once 'Controladores/valida.controller.php';
 require_once "Controladores/Horario.controller.php";
-
 require_once 'Controladores/empleado.controller.php';
 
 
