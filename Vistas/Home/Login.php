@@ -23,26 +23,23 @@
                             <div class="text-center p-2">
                             <img src="/Agendamiento/Assets/Imagenes/djlogodorado.png" alt="D'JANE" width="100" height="40">
                             </div>
-                           
-                               <div>
-                               <input name="email" type="email"  id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div class="form-group">
                                 <label for="exampleInputEmail1">Correo Electronico</label>
-                               </div>
-                               
+                                <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                 <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
-                           
-                                <div>
-                                <input name="pws" type="password" id="exampleInputPassword1">
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleInputPassword1">Contraseña</label>
-                                </div>
-                               
-                           
+                                <input name="pws" type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
 
                             <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
                         </form>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12"></div>
                     
+
+
                 </div>
             </div>
          
