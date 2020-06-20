@@ -92,6 +92,7 @@ class Cliente extends Conexion implements Idatabase {
 
         $correo =$this->ClienteVO->getCliente_correo();
         $pws=$claveIncriptada;
+        echo($claveIncriptada);
         $sentencia = "SELECT FK_ROL as rol FROM empleado 
         WHERE CorreoEmpleado='$correo' AND PasswordEmpleado='$pws' 
         UNION

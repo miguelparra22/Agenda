@@ -13,8 +13,10 @@ class ServicioVO{
     private $DescripcionServicio;
     private $CantidadServicio;
     private $Id_Empleado;
+    private $Empleado;
+
     
-    function getId_Servicio(){
+        function getId_Servicio(){
         return $this->Id_Servicio;
     }
 
@@ -34,8 +36,12 @@ class ServicioVO{
         return $this->Id_Empleado;
     }
 
+    function getEmpleado(){
+        return $this->Empleado;
+    }
+
     function setId_Servicio($Id_Servicio){
-        $this->Id_servicio = $Id_Servicio;
+    $this->Id_Servicio = $Id_Servicio;
     }
 
     function setNombreServicio($NombreServicio){
@@ -52,5 +58,9 @@ class ServicioVO{
 
     function setId_Empleado($Id_Empleado){
         $this->Id_Empleado = $Id_Empleado;
+    }
+
+    function setEmpleado($Empleado){
+        $this->Empleado = $Empleado;
     }
 }

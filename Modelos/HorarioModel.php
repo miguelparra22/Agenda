@@ -8,6 +8,7 @@ class Horario extends Conexion implements Idatabase {
     private $PDO;
     private $HorarioVO;
     private $tabla;
+    private $EmpleadoModel;
 
     public function __CONSTRUCT() {
         $this->PDO = parent::__construct();
@@ -22,19 +23,19 @@ class Horario extends Conexion implements Idatabase {
     }
 
     public function agregar($vo) {
-       /* $this->UsuarioVO = $vo;
-        $sentencia = "INSERT INTO $this->tabla VALUES (null,:NombreHorario,:DescripcionHorario,:FK_IDEMPLEADO,:,null)";
+       $this->HorarioVO = $vo;
+        $sentencia = "INSERT INTO $this->tabla VALUES (null,:Hora_inicio,:Hora_Fin,:FK_EMPLEADO,:Disponibilidad)";
 
         //preparar sentencia
         $resultado = $this->PDO->prepare($sentencia);
         //obtener datos del VO para agregarlo a la sentencia decaurdo al alias
         //ejecutar sentencia
         return $resultado->execute(array(
-                    ':nombre' => $this->UsuarioVO->getUsuario_nombre(),
-                    ':pwd' => $this->UsuarioVO->getUsuario_pwd(),
-                    ':estado' => $this->UsuarioVO->getUsuario_estado(),
-                    ':rol' => $this->UsuarioVO->getUsuario_rol(),
-        ));*/
+                    ':Hora_inicio' => $this->HorarioVO->getHoraInicio(),
+                    ':Hora_Fin' => $this->HorarioVO->getHoraFinal(),
+                    ':FK_EMPLEADO' => $this->HorarioVO->getId_Empleado(),
+                    ':Disponibilidad' => $this->HorarioVO->getDisponibilidad(),
+        ));
     }
 
     public function consultaUnica($id) {
@@ -50,15 +51,30 @@ class Horario extends Conexion implements Idatabase {
         } else {
             $arreglo = $resultado->fetchAll(PDO::FETCH_OBJ);
             $arreglo = $arreglo[0];
-
+            $resultado2 = $this->ListaEmpleados();
             $this->HorarioVO = new HorarioVO();
+            $this->HorarioVO->setId_Horario($arreglo->ID_HORARIO);
             $this->HorarioVO->setHoraInicio($arreglo->Hora_inicio);
             $this->HorarioVO->setHoraFinal($arreglo->Hora_Fin);
             $this->HorarioVO->setId_Empleado($arreglo->FK_EMPLEADO);
             $this->HorarioVO->setDisponibilidad($arreglo->Disponibilidad);
-
+            $this->HorarioVO->setEmpleado($resultado2);
+            $arreglo = $this->HorarioVO;
             return $arreglo;
         }
+    }
+
+        public function ListaEmpleados() {
+        $this->EmpleadoModel = new EmpleadoModel();
+        $resultado2 = $this->EmpleadoModel->listar();
+        return $resultado2;
+        }
+
+        public function CambiarIdEmpleadoxNom($id){
+        $this->EmpleadoModel = new EmpleadoModel();
+        $resultado2 = $this->EmpleadoModel->consultaUnica($id);
+        $arreglo2 = $resultado2->NombreEmpleado;
+        return $arreglo2;
     }
 
     public function eliminar($id) {

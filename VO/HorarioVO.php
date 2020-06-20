@@ -13,6 +13,7 @@ class HorarioVO{
     private $HoraFinal;
     private $Id_Empleado;
     private $Disponibilidad;
+    private $Empleado;
     
     function getId_Horario(){
         return $this->Id_Horario;
@@ -34,6 +35,9 @@ class HorarioVO{
         return $this->Disponibilidad;
     }
 
+    function getEmpleado(){
+    return $this->Empleado;
+    }
     function setId_Horario($Id_Horario){
         $this->Id_Horario= $Id_Horario;
     }
@@ -52,6 +56,10 @@ class HorarioVO{
 
     function setDisponibilidad($Disponibilidad){
         $this->Disponibilidad = $Disponibilidad;
+    }
+
+    function setEmpleado($Empleado){
+        $this->Empleado = $Empleado;
     }
 }
 

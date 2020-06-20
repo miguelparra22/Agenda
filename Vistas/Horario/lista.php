@@ -1,5 +1,7 @@
+<?php     $Horario;
+          $this->Horario = new HorarioController(); ?>
 <div>
-    <form action="index.php/?c=Horario&a=llamar" method="POST">
+    <form action="?c=Horario&a=llamar" method="POST">
         <input type="submit" class="btn-info" name="Agregar" value="AGREGAR">
     </form>
 </div>
@@ -20,21 +22,21 @@
                 <tr>
                     <td><?php print_r($value->Hora_inicio) ?></td>
                     <td><?php print_r($value->Hora_Fin) ?></td>
-                    <td><?php print_r($value->FK_EMPLEADO) ?></td>
+                    <td><?php print_r($this->Horario->idxnombre($value->FK_EMPLEADO)) ?></td>
                     <td><?php print_r($value->Disponibilidad) ?></td>
                     <input type="hidden" name="ID_HORARIO" value="<?php print_r($value->ID_HORARIO) ?>">
-                    <td><input type="submit" id="Editar" name="Editar" value="Editar"></td>
-                    <td><input type="submit" id="Eliminar" name="eliminar" value="Eliminar"></td>
+                    <td><input type="submit" class="Editar" name="Editar" value="Editar"></td>
+                    <td><input type="submit" class="Eliminar" name="eliminar" value="Eliminar"></td>
                 </tr>
             <?php } ?>
         </tbody>
     </table>
 </form>
 <script>
-$('#Editar').click(function(){
-   $('#Form1').attr('action', 'index.php/?c=Horario&a=consultaUnica');
+$('.Editar').click(function(){
+   $('#Form1').attr('action', '?c=Horario&a=consultaUnica');
 });
-$('#Eliminar').click(function(){
-   $('#Form1').attr('action', 'index.php/?c=Horario&a=eliminar');
+$('.Eliminar').click(function(){
+   $('#Form1').attr('action', '?c=Horario&a=eliminar');
 });
 </script>

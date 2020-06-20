@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Assets",
+    "\\Assets\\bootstrap-3.4.1-dist\\css",
+    "\\Controladores",
+    "\\Modelos",
+    "\\Vistas",
+    "\\Vistas\\Horario",
+    "\\Vistas\\Servicio",
+    "\\VO"
+  ],
+  "SelectedNode": "\\Controladores\\Horario.controller.php",
+  "PreviewInSolutionExplorer": false
+}

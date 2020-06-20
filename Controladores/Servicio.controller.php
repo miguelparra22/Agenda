@@ -26,24 +26,21 @@ class ServicioController {
     }
 
     public function agregar() {
-
-        /*$this->vo->setUsuario_nombre($_POST["usuario_nombre"]);
-        $this->vo->setUsuario_pwd($_POST["usuario_pwd"]);
-        $this->vo->setUsuario_estado($_POST["usuario_estado"]);
-        $this->vo->setUsuario_rol($_POST["usuario_rol"]);
-
-
+        $this->vo->setNombreServicio($_POST["NOMSERVi"]);
+        $this->vo->setDescripcionServicio($_POST["DESCSERVI"]);
+        $this->vo->setCantidadServicio($_POST["CANTSERVI"]);
+        $this->vo->setId_Empleado($_POST["EMPLEADO"]);
         if ($this->model->agregar($this->vo)) {
             echo "ingresó correctamente";
             include_once 'Vistas/header.php';
-            include_once 'Vistas/usuario/consulta.php';
+            include_once 'Vistas/servicio/listartodo.php';
             include_once 'Vistas/footer.php';
         } else {
             echo "falló";
             include_once 'Vistas/header.php';
             include_once 'Vistas/exeption/noExiste.php';
             include_once 'Vistas/footer.php';
-        }*/
+        }
     }
 
     public function consultaUnica() {
@@ -77,14 +74,22 @@ class ServicioController {
 
     public function eliminar() {
         $id = $_POST["servicio_ID"];
+        try{
         $resultado = $this->model->eliminar($id);
         if ($resultado) {
+        echo 'Registro eliminado';
             include_once 'Vistas/header.php';
-            include_once 'Vistas/usuario/listartodo.php';
+            include_once 'Vistas/servicio/listartodo.php';
             include_once 'Vistas/footer.php';
         } else {
-            echo 'Usuario eliminado';
+            echo 'Falló';
         }
+        }catch(Exception $e){
+            if(strpos($e, "Integrity constraint violation")){
+                echo 'Falló, El Registro se encuentra relacionado';
+            }
+        }
+
     }
 
     public function lista() {
@@ -98,6 +103,18 @@ class ServicioController {
             include_once 'Vistas/servicio/lista.php';
             include_once 'Vistas/footer.php';
         }
+    }
+
+    public function llamar() {
+        $resultado = $this->model->ListaEmpleados();
+        include_once 'Vistas/header.php';
+        include_once 'Vistas/servicio/agregar.php';
+        include_once 'Vistas/footer.php';
+    }
+
+    public function idxnombre($id){
+        $resultado = $this->model->CambiarIdEmpleadoxNom($id);
+        return $resultado;
     }
 
 }

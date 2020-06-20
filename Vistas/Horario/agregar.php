@@ -1,10 +1,8 @@
-<h1>EDITAR HORARIO</h1>
-
-<form action="?c=Horario&a=editar" method="POST">
+<form action="?c=Horario&a=agregar" method="POST">
     <div class="form-group">
         HORA INICIO
                 <div class='input-group date' id="HoraInicio">
-                    <input type="text" class="form-control"  name="HORAINICIO" value="<?= $resultado->getHoraInicio() ?>"/>
+                    <input type="text" class="form-control"  name="HORAINICIO" value=""/>
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-time"></span>
                     </span>
@@ -13,7 +11,7 @@
     <div class="form-group">
         HORA FIN
                         <div class='input-group date'  id="HoraFin">
-        <input class="form-control" name="HORAFIN"  value="<?= $resultado->getHoraFinal() ?>"/>
+        <input class="form-control" name="HORAFIN"  value=""/>
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-time"></span>
                     </span>
@@ -22,26 +20,20 @@
     </div>
     <div class="form-group">
         EMPLEADO
-        <select name="EMPLEADO">
+        <select class="form-control" name="EMPLEADO">
             <?php
-            foreach ($resultado->getEmpleado() as $busqueda => $value) {
-                if($value->ID_EMPLEADO == $resultado->getId_Empleado()){ ?>
-                    <option selected value="<?php print_r($value->ID_EMPLEADO) ?>" ><?php print_r($value->NombreEmpleado) ?></option>
-                <?php } else { ?>
+            foreach ($resultado as $busqueda => $value) { ?>
                     <option  value="<?php print_r($value->ID_EMPLEADO) ?>" ><?php print_r($value->NombreEmpleado) ?></option>
-                <?php } ?>
             <?php } ?>
         </select>
     </div>
     <div class="form-group">
         DISPONIBILIDAD
-        <input class="form-control" name="DISPONI" value="<?= $resultado->getDisponibilidad() ?>" />
+        <input class="form-control" name="DISPONI" value="" />
     </div>
     <div>
-        <input type="hidden" class="form-control" name="ID_HORARIO" value="<?= $resultado->getId_Horario() ?>" />
-        <input type="submit" class="btn btn-success" name="guardar" value="EDITAR" />
+        <input type="submit" name="guardar" value="GUARDAR" />
     </div>
-    
 </form>
         <script type="text/javascript">
             $(function () {

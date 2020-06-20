@@ -8,17 +8,13 @@
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/estilos.css">
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
     <title>Iniciar Sesion</title>
 </head>
-
-<style>
-    
-</style>
-
 <body>
     <section>
-        
-            <div class="container-fluid logincontainer text-white">
+         
+         <div class="container-fluid logincontainer text-white">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-xs-12"></div>
 
@@ -41,8 +37,13 @@
                         </form>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12"></div>
+                    
+
+
                 </div>
             </div>
+         
+            
         
 
     </section>
