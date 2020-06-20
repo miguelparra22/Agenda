@@ -10,12 +10,14 @@
      <link rel="stylesheet" href="/Agendamiento/Assets/Bootstrap/css/bootstrap.css">
      <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/estilos.css">
      <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
+     
+     <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
     <title>Registro</title>
 </head>
 <body>
 <nav class="nav navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
-        <img src="/Agendamiento/Assets/Imagenes/djlogodorado.png" alt="D'JANE" width="100" height="40">
+        <img src="/Agendamiento/Assets/Imagenes/DjBlanco.png" alt="D'JANE" width="100" height="40">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,7 +25,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link navl" href="../Home/home.php">Inicio
+                <a class="nav-link navl" href="/Agendamiento">Inicio
                     <!--span class="sr-only">(current)</span--></a>
             </li>
             <li class="nav-item">
@@ -33,7 +35,7 @@
                 <a class="nav-link navl"  href="Vistas/Cliente/Agregar_Cliente.php">Servicio</a>
             </li>
             <li class="nav-item">
-            <button type="button" class="btn btn-outline-white">Iniciar sesión</button>
+            <button type="button" class="btn btn-outline-light">Iniciar sesión</button>
             </li>
         </ul>
     </div>

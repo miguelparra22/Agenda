@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="Assets/Bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="Assets/Diseño/estilos.css">
     <link rel="stylesheet" href="Assets/Diseño/normalize.css">
+    <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
     <title>D'JANE</title>
 </head>
 
