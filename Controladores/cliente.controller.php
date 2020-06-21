@@ -37,6 +37,9 @@ class Clientecontroller {
         }
     }
 
+    
+
+
    /* public function iniciarSesion() {
         $this->vo->setCliente_pwd($_POST["usuario_pwd"]);
         $this->vo->setCliente_correo($_POST["usuario_correo"]);
