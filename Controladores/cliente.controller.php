@@ -23,18 +23,46 @@ class Clientecontroller {
         $this->vo->setCliente_correo($_POST["usuario_correo"]);
         $this->vo->setCliente_telefono($_POST["usuario_telefono"]);
         if ($this->model->agregar($this->vo)) {
-            echo "<div class='alert'>
-            <span class='closebtn' onclick='this.parentElement.style.display='none';'>&times;</span>
-            This is an alert box.
-          </div>";
+            include_once 'Vistas/Cliente/AgregarCliente.php';
+            echo "<div class='alert success'>
+            <span class='closebtn'>&times;</span>  
+            <strong>Exito!</strong> Se registro correctamente.
+          </div>
+          
+          <script>
+          var close = document.getElementsByClassName('closebtn');
+           var i;
+
+              for (i = 0; i < close.length; i++) {
+              close[i].onclick = function(){
+              var div = this.parentElement;
+              div.style.opacity = '0';
+              setTimeout(function(){ div.style.display = 'none'; }, 600);
+            }
+          }
+          </script>";
             
-           
+         
             
         } else {
-            echo "<script>
-            alert('Falla');
-            </script>";
-           
+            include_once 'Vistas/Cliente/AgregarCliente.php';
+            echo "<div class='alert'>
+            <span class='closebtn'>&times;</span>  
+            <strong>Error</strong> No se pudo registrar.
+          </div>
+          
+          <script>
+          var close = document.getElementsByClassName('closebtn');
+           var i;
+
+              for (i = 0; i < close.length; i++) {
+              close[i].onclick = function(){
+              var div = this.parentElement;
+              div.style.opacity = '0';
+              setTimeout(function(){ div.style.display = 'none'; }, 600);
+            }
+          }
+          </script>";
           
         }
     }
@@ -58,4 +86,3 @@ class Clientecontroller {
     }
 */
 }
-?>

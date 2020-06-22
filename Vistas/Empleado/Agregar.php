@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/Agendamiento/Assets/Bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/estilos.css">
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
+    <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
     <title>Agregar D'Jane</title>
 </head>
 

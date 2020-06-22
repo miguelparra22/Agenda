@@ -22,12 +22,47 @@ class EmpleadoController{
         $this->vo->setRol_Empleado($_POST["rol"]);
 
         if($this->model->agregar($this->vo)){
-            echo "<script>alert('Ingreso correctamente')</script>";
-            include_once 'Vistas/Header.php';
+           
             include_once 'Vistas/Empleado/Agregar.php';
-            include_once 'Vistas/Footer.php';
+           
+            echo "<div class='alert success'>
+            <span class='closebtn'>&times;</span>  
+            <strong>Exito!</strong> Se registro correctamente.
+          </div>
+          
+          <script>
+          var close = document.getElementsByClassName('closebtn');
+           var i;
+
+              for (i = 0; i < close.length; i++) {
+              close[i].onclick = function(){
+              var div = this.parentElement;
+              div.style.opacity = '0';
+              setTimeout(function(){ div.style.display = 'none'; }, 600);
+            }
+          }
+          </script>";
+            
         }else{
-            echo "fallo";
+            include_once 'Vistas/Empleado/Agregar.php';
+           
+            echo "<div class='alert'>
+            <span class='closebtn'>&times;</span>  
+            <strong>Error</strong> No se registro.
+          </div>
+          
+          <script>
+          var close = document.getElementsByClassName('closebtn');
+           var i;
+
+              for (i = 0; i < close.length; i++) {
+              close[i].onclick = function(){
+              var div = this.parentElement;
+              div.style.opacity = '0';
+              setTimeout(function(){ div.style.display = 'none'; }, 600);
+            }
+          }
+          </script>";
         }
     }
 }
