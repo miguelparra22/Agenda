@@ -32,6 +32,7 @@ class Validacontroller {
          
             $arreglo = $resultado[0];
             $rol = $arreglo->rol;
+            $_SESSION['ROL']=$rol;
             switch ($rol) {
                 case 0://Cliente
                     include_once 'Vistas/Cliente/index.php';
