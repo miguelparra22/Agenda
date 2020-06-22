@@ -11,15 +11,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Inicio</title>
 </head>
-<style>
-    
-</style>
+
 
 <body>
-    <nav>
+    <nav class="menu">
         <a href="#first"><i class="fa fa-home" title="Inicio"></i></a>
         <a href="#second"><i class="fa fa-calendar" title="Agendar cita"></i></a>
-        <a href="#third"><i class="fa fa fa-list-ol" title="Servicios y productos"></i></a>
+        <a href="#third"><i class="fa fa-list-ul" title="Servicios y productos"></i></a>
         <a href="#fourth"><i class="fa fa-address-card" title="Actualizar datos"></i></a>
         <a href="#"><i class="fa fa-window-close" title="Cerrar sesión"></i></a>
     </nav>
@@ -28,7 +26,7 @@
 
     <div class='contenedor'>
 
-        <section id='first'>
+        <section id='first' class="section">
             <div class="container">
                 <div class="text-center p-3">
                     <h2>Bienvenido</h2>
@@ -54,15 +52,15 @@
 
         </section>
 
-        <section id='second'>
+        <section id='second' class="section">
         
         </section>
 
-        <section id='third'>
+        <section id='third' class="section">
         
         </section>
 
-        <section id='fourth'>
+        <section id='fourth' class="section">
         <div class="container">
                 <div class="text-center p-3">
                     <h2>Actualizar mis datos personales</h2>

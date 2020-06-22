@@ -497,7 +497,7 @@ font-weight: bold;
   font-family: Montserrat, sans-serif;
 }
 
-nav a {
+.menu a {
   font-size: 40px;
   color: #fff;
   text-decoration: none;
@@ -507,12 +507,12 @@ nav a {
   cursor: pointer;
 }
 
-nav a:hover {
+.menu a:hover {
   font-size: 45px;
   color: #fff;
 }
 
-nav {
+.menu {
   position: fixed;
   left: 0;
   z-index: 50;
@@ -523,7 +523,8 @@ nav {
   background: var(--secondary-color);
 }
 
-section {
+
+.section {
   position: absolute;
   top: 0;
   height: 100vh;
@@ -534,7 +535,7 @@ section {
 
 }
 
-section h1 {
+.section h1 {
   color: #fff;
   font-size: 50px;
   text-transform: uppercase;
@@ -542,7 +543,7 @@ section h1 {
 }
 
 /* Styles applied on trigger */
-section:target {
+.section:target {
   opacity: 1;
   position: absolute;
   left: 0;
@@ -551,7 +552,7 @@ section:target {
   z-index: 10;
 }
 
-section:target h1 {
+.section:target h1 {
   opacity: 0;
   animation: 2s fadeIn forwards .5s;
 }

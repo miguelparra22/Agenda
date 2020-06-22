@@ -89,7 +89,7 @@
 
     </header>
 
-    <section>
+   
 
 
         <div class="container">
@@ -246,10 +246,7 @@
 
         <hr>
 
-    </section>
 
-
-    <section>
         <div class="container-fluid bg-primary">
             <div class="col-md-12 p-5 text-center">
 
@@ -287,7 +284,7 @@
                 <a href="#"><i class="fa fa-whatsapp"></i> Whatsapp</a>
             </div>
         </div>
-    </section>
+  
 
 
     <section class="p-5">
