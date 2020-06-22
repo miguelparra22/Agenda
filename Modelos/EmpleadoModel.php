@@ -27,7 +27,7 @@ class EmpleadoModel extends Conexion{
              ':pass' => $claveEncriptada,
              ':especialidad' => $this->EmpleadoVo->getEspecialidad_Empleado(),
              ':estado' => $this->EmpleadoVo->getEstado_Empleado(),
-             ':rol' => $this->EmpleadoVo->getRol_Empleado()
+             ':rol' => $this->EmpleadoVo->getRol_Empleado(),
           
          ));
      }
@@ -38,6 +38,7 @@ class EmpleadoModel extends Conexion{
         $resultado->execute();
     return $resultado->fetchAll(PDO::FETCH_OBJ);
     }
+
 
     public function consultaUnica($id) {
         $sentencia = "SELECT * FROM $this->tabla WHERE ID_Empleado = $id";

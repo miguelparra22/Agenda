@@ -23,16 +23,18 @@ class Clientecontroller {
         $this->vo->setCliente_correo($_POST["usuario_correo"]);
         $this->vo->setCliente_telefono($_POST["usuario_telefono"]);
         if ($this->model->agregar($this->vo)) {
-            echo "<script>
-            alert('Se ha ingresado correctamente');
-            </script>";
+            echo "<div class='alert'>
+            <span class='closebtn' onclick='this.parentElement.style.display='none';'>&times;</span>
+            This is an alert box.
+          </div>";
             
-            include_once 'Vistas/Cliente/AgregarCliente.php';
+           
             
         } else {
-            echo "falló";
+            echo "<script>
+            alert('Falla');
+            </script>";
            
-            include_once 'views/exeption/noExiste.php';
           
         }
     }

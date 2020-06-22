@@ -41,7 +41,7 @@
     <section>
         <div class="box">
 
-            <form action="?c=empleado&a=agregar" method="POST">
+            <form action="../../?c=empleado&a=agregar" method="POST">
 
                 <div>
                     <input type="text" name="nombre" required>
