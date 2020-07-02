@@ -1,5 +1,5 @@
 <?php
-class Cliente extends Conexion implements Idatabase {
+class Cita extends Conexion implements Idatabase {
 
 private $PDO;
 private $CitaVO;

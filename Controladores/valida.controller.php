@@ -16,6 +16,10 @@ class Validacontroller {
        
         
     }
+    public function recuperarclave(){
+        $this->vo = new CorreoVO();
+        
+    }
 
     public function iniciar() {
       
@@ -27,7 +31,6 @@ class Validacontroller {
         if ($resultado==-1) {
             echo "contraseña y/o usuario Incorrecto";
             include_once 'vistas/home/login.php';
-            
         } else {
          
             $arreglo = $resultado[0];
