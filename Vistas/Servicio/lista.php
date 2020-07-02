@@ -1,7 +1,7 @@
 <?php     $Servicio;
           $this->Servicio = new ServicioController(); ?>
 <div>
-    <form action="?c=Servicio&a=llamar" method="POST">
+    <form action="../../?c=Servicio&a=llamar" method="POST">
         <input type="submit" class="btn-info" name="Agregar" value="AGREGAR">
     </form>
 </div>

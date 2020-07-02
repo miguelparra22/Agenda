@@ -77,7 +77,7 @@
 
 
                 <input type="hidden" name="estado" value="1">
-                <input type="hidden" name="rol" value="2">
+                <input type="hidden" name="rol" value="1">
 
 
                 <input type="submit" value="guardar" name="guardar">

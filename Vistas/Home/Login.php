@@ -14,39 +14,42 @@
 <body>
     <section>
          
-         <div class="container-fluid logincontainer text-white">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4 col-xs-12"></div>
 
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <form method="POST" action="/Agendamiento/?c=valida&a=iniciar" class="form-container">
-                            <div class="text-center p-2">
-                            <img src="/Agendamiento/Assets/Imagenes/djlogodorado.png" alt="D'JANE" width="100" height="40">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Correo Electronico</label>
-                                <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Contraseña</label>
-                                <input name="pws" type="password" class="form-control" id="exampleInputPassword1">
-                            </div>
+    <section class="container-fluid contendorlogin" style="border: 1px solid black;">
 
-                            <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
-                        </form>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12"></div>
-                    
+<div class="col-md-4 col-sm-4 col-xs-12 m-auto ">
 
-
-                </div>
+    <div class="caja-m">
+        <div class="text-center p-2">
+            <img src="/Agendamiento/Assets/Imagenes/DjBlanco.png" alt="D'JANE" width="100" height="40">
+        </div>
+        <form method="POST" action="/Agendamiento/?c=valida&a=iniciar"> 
+            <div>
+                <input type="text" name="email" required>
+                <label>Correo Electronico</label>
             </div>
-         
-            
-        
 
-    </section>
+
+            <div>
+
+                <input name="pws" type="password" id="exampleInputPassword1" required>
+                <label>Contraseña</label>
+
+            </div>
+
+            <div class="text-center p-3">
+                <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+        </form>
+    </div>
+
+</div>
+
+
+</section>
+        
 
     <footer class="footer2 p-3 text-center text-white">
        

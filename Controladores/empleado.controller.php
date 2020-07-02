@@ -23,7 +23,8 @@ class EmpleadoController{
 
         if($this->model->agregar($this->vo)){
            
-            include_once 'Vistas/Empleado/Agregar.php';
+           include_once "Agendamiento/Vistas/Empleado/index.php";
+           
            
             echo "<div class='alert success'>
             <span class='closebtn'>&times;</span>  
@@ -64,6 +65,20 @@ class EmpleadoController{
           }
           </script>";
         }
+    }
+
+    function listar(){
+      $resultado = $this->model->listar();
+      if (!is_array($resultado)) {
+        include_once 'Vistas/header.php';
+        include_once 'Vistas/exception/noExiste.php';
+        include_once 'Vistas/footer.php';
+    } else {
+        include_once 'Vistas/header.php';
+        include_once 'Vistas/empleado/lista.php';
+        include_once 'Vistas/footer.php';
+    }
+
     }
 }
 
