@@ -2,7 +2,7 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-require '../composer/vendor/autoload.php';
+
 
 class Correo extends Conexion implements Idatabase {
 
@@ -17,9 +17,10 @@ class Correo extends Conexion implements Idatabase {
 
     public function envioDeCorreo($vo) {
         $this->CorreoVO = $vo;
+      
         $mail = new PHPMailer(true);
         try {
-            $mail->SMTPDebug = $this->CorreoVO->getSMTPDebug();
+       
             $mail->isSMTP();
             $mail->Host = $this->CorreoVO->getHost();
             $mail->SMTPAuth = $this->CorreoVO->getSMTPAuth();
@@ -31,15 +32,20 @@ class Correo extends Conexion implements Idatabase {
             $mail->addAddress($this->CorreoVO->getDestinatario(), 'Querido Usuario');
             $mail->Subject = $this->CorreoVO->getAsunto();
             $mail->msgHTML($this->CorreoVO->getContenidoHTML(), __DIR__);
+            $mail->IsHTML (true);
             $mail->SMTPOptions = array('ssl' => ['verify_peer' => false, 'verify_depth' => 3, 'allow_self_signed' => false],);
             if ($mail->send()) {
                 return true;
             } else {
                 echo "Mailer Error: " . $mail->ErrorInfo;
                 return false;
+            
+              
             }
         } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
+            echo 'holis '.$exc;
+           
+         
         }
     }
 

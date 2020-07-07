@@ -38,7 +38,7 @@
             </div>
 
             <div class="text-center p-3">
-                <a href="#">¿Olvidaste tu contraseña?</a>
+                <a href="/Agendamiento/?c=valida&a=correo">¿Olvidaste tu contraseña?</a>
             </div>
 
             <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
