@@ -12,7 +12,7 @@ class Clientecontroller {
 
     public function llamar() {
         
-        require_once 'Vistas/Cliente/AgregarCliente.php';
+        require_once 'Vistas/Cliente/Agregar.php';
         
     }
 
@@ -23,7 +23,7 @@ class Clientecontroller {
         $this->vo->setCliente_correo($_POST["usuario_correo"]);
         $this->vo->setCliente_telefono($_POST["usuario_telefono"]);
         if ($this->model->agregar($this->vo)) {
-            include_once 'Vistas/Cliente/AgregarCliente.php';
+            include_once 'Vistas/Cliente/Agregar.php';
             echo "<div class='alert success'>
             <span class='closebtn'>&times;</span>  
             <strong>Exito!</strong> Se registro correctamente.
@@ -45,7 +45,7 @@ class Clientecontroller {
          
             
         } else {
-            include_once 'Vistas/Cliente/AgregarCliente.php';
+            include_once 'Vistas/Cliente/Agregar.php';
             echo "<div class='alert'>
             <span class='closebtn'>&times;</span>  
             <strong>Error</strong> No se pudo registrar.

@@ -24,11 +24,9 @@ class Cliente extends Conexion implements Idatabase {
                     ':correo' => $this->ClienteVO->getCliente_correo(),
                     ':telefono' => $this->ClienteVO->getCliente_telefono(),
                     ':id' => $this->ClienteVO->getCliente_id()
-                    
         ));
     }
 
-    
     public function agregar($vo) {
 
         $this->ClienteVO = $vo;
@@ -89,18 +87,18 @@ class Cliente extends Conexion implements Idatabase {
     }
 
     public function iniciarSesion($vo) {
-      
+
         $this->ClienteVO = $vo;
         $claveIncriptada = $this->hash($this->ClienteVO->getCliente_pwd());
 
-        $correo =$this->ClienteVO->getCliente_correo();
-        $pws=$claveIncriptada;
-      
+        $correo = $this->ClienteVO->getCliente_correo();
+        $pws = $claveIncriptada;
+
         $sentencia = "SELECT FK_ROL as rol FROM empleado 
         WHERE CorreoEmpleado='$correo' AND PasswordEmpleado='$pws' 
         UNION
         SELECT '0' as rol FROM $this->tabla  WHERE CorreoCliente='$correo' AND PasswordCliente='$pws'";
-      
+
         $resultado = $this->PDO->prepare($sentencia);
         $resultado->execute();
 
@@ -111,10 +109,22 @@ class Cliente extends Conexion implements Idatabase {
         }
     }
 
+    public function validaCorreo($correo) {
+      
+        $sentencia = "SELECT FK_ROL as rol FROM empleado 
+        WHERE CorreoEmpleado='$correo'
+        UNION
+        SELECT '0' as rol FROM $this->tabla  WHERE CorreoCliente='$correo' ";
+        $resultado = $this->PDO->prepare($sentencia);
+        $resultado->execute();
+        if ($resultado->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+       
+    }
+
 }
-
-
-
-
 
 ?>

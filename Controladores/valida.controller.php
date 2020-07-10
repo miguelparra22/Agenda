@@ -10,12 +10,31 @@ class Validacontroller {
         $this->vo = new ClienteVO();
     }
 
+    public function existeCorreo() {
+        $correo = $_POST["correo"];
+        $this->model = new Cliente();
+        $boolean = $this->model->validaCorreo($correo);
+        if ($boolean) {
+            echo 'true';
+        } else {
+            echo 'false';
+        }
+    }
+
     public function correo() {
         include_once 'vistas/Recuperar/ingresaCorreo.php';
     }
+    public function link(){
+        echo 'escribe clave';
+    }
 
     public function recuperaclave() {
+       
+        if(!(empty($_POST["correo"]))){
         $correo = $_POST["correo"];
+        $this->model = new Cliente();
+        $boolean = $this->model->validaCorreo($correo);
+        if($boolean){
         $this->vo = new CorreoVO();
         $this->model = new Configuracion();
         $resultado = $this->model->buscarconfiguracion("CORREO");
@@ -39,18 +58,36 @@ class Validacontroller {
                     }
             }
         }
+        $url = 'http://' . $_SERVER["SERVER_NAME"] . '/Agendamiento/?c=valida&a=link';
         $this->model = new Correo();
         $this->vo->setDestinatario($correo);
         $this->vo->setSMTPAuth(true);
         $this->vo->setSMTPSecure('tls');
         $this->vo->setAsunto('Codigo de Seguridad');
-        $this->vo->setContenidoHTML('<h1>hola</h1>');
+        $bean =   $this->model->insertarBitacora($correo);
+        $html = $this->model->construccionHTML($bean->codigo, $bean->id ,$correo ,$url, $bean->token);
+        $this->vo->setContenidoHTML($html);
         $resultado = $this->model->envioDeCorreo($this->vo);
         if ($resultado) {
-            include_once 'vistas/Recuperar/ingresaClave.php';
+            $_SESSION['idContra']=$bean->id;
+            include_once 'vistas/Recuperar/ingresaCodigo.php';
         } else {
             include_once 'vistas/home/login.php';
         }
+    }else{
+        echo 'El correo no existe';
+        include_once 'vistas/home/login.php';
+    }
+}else{
+    if(!(empty( $_SESSION['idContra']))){
+        include_once 'vistas/Recuperar/ingresaCodigo.php';
+    }else{
+        include_once 'vistas/home/login.php';
+    }
+   
+    
+
+}
     }
 
     public function iniciar() {
@@ -67,7 +104,6 @@ class Validacontroller {
 
             $arreglo = $resultado[0];
             $rol = $arreglo->rol;
-            session_start();
             $_SESSION['ROL'] = $rol;
             switch ($rol) {
                 case 0://Cliente

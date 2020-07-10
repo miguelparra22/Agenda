@@ -1,5 +1,8 @@
 <?php 
-
+ if(!isset($_SESSION)) 
+ { 
+     session_start(); 
+ } 
 /*Composer*/
 require_once 'Composer/vendor/autoload.php';
 
@@ -37,6 +40,6 @@ require_Once 'Controladores/Home.controller.php';
 require_Once 'Controladores/valida.controller.php';
 require_once "Controladores/Horario.controller.php";
 require_once 'Controladores/empleado.controller.php';
-/*require_once 'Controladores/cita.controller.php';*/
+require_once 'Controladores/cita.controller.php';
 
 ?>
