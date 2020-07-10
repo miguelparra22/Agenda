@@ -12,12 +12,13 @@ class ServicioVO{
     private $NombreServicio;
     private $DescripcionServicio;
     private $CantidadServicio;
+    private $PrecioServicio;
     private $Id_Empleado;
     private $Empleado;
 
     
-        function getId_Servicio(){
-        return $this->Id_Servicio;
+    function getId_Servicio(){
+    return $this->Id_Servicio;
     }
 
     function getNombreServicio(){
@@ -30,6 +31,10 @@ class ServicioVO{
 
     function getCantidadServicio(){
         return $this->CantidadServicio;
+    }
+
+    function getPrecioServicio(){
+        return $this->PrecioServicio;
     }
 
     function getId_Empleado(){
@@ -54,6 +59,10 @@ class ServicioVO{
 
     function setCantidadServicio($CantidadServicio){
         $this->CantidadServicio = $CantidadServicio;
+    }
+
+    function setPrecioServicio($PrecioServicio){
+        $this->PrecioServicio = $PrecioServicio;
     }
 
     function setId_Empleado($Id_Empleado){

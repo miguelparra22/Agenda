@@ -1,3 +1,6 @@
+<?php
+session_start();     
+?>
 <h1>EDITAR USUARIO</h1>
 
 <form action="?c=Servicio&a=editar" method="POST">
@@ -9,10 +12,28 @@
         DESCRIPCION SERVICIO
         <input class="form-control" name="DESCSERVI"  value="<?= $resultado->getDescripcionServicio() ?>"/>
     </div>
+    <?php if($_SESSION['ROL'] == 2){?>
     <div class="form-group">
         CANTIDAD SERVICIO
         <input class="form-control"  name="CANTSERVI" value="<?= $resultado->getCantidadServicio() ?>" />
     </div>
+    <?php }else{ ?>
+        <div style="display:none" class="form-group">
+        CANTIDAD SERVICIO
+        <input  class="form-control"  name="CANTSERVI" value="" />
+        </div>
+    <?php }?>
+    <?php if($_SESSION['ROL'] == 1){?>
+        <div class="form-group">
+            PRECIO SERVICIO
+            <input class="form-control"  name="PRECIOSERVICIO" value="" />
+        </div>
+    <?php } else {?>
+        <div style="display:none" class="form-group">
+        PRECIO SERVICIO
+        <input  class="form-control"  name="PRECIOSERVICIO" value="" />
+        </div>
+    <?php }?>
     <div class="form-group">
         EMPLEADO
         <select name="EMPLEADO">
