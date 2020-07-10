@@ -1,3 +1,6 @@
+<?php           
+echo($_SESSION['ROL'])
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -67,6 +67,7 @@ class Validacontroller {
 
             $arreglo = $resultado[0];
             $rol = $arreglo->rol;
+            session_start();
             $_SESSION['ROL'] = $rol;
             switch ($rol) {
                 case 0://Cliente

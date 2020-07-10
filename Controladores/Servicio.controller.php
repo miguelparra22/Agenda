@@ -29,6 +29,7 @@ class ServicioController {
         $this->vo->setNombreServicio($_POST["NOMSERVi"]);
         $this->vo->setDescripcionServicio($_POST["DESCSERVI"]);
         $this->vo->setCantidadServicio($_POST["CANTSERVI"]);
+        $this->vo->setPrecioServicio($_POST["PRECIOSERVICIO"]);
         $this->vo->setId_Empleado($_POST["EMPLEADO"]);
         if ($this->model->agregar($this->vo)) {
             echo "ingresó correctamente";
@@ -59,7 +60,7 @@ class ServicioController {
     }
 
     public function editar() {
-        $vo = array($_POST["ID_SERVICIO"],$_POST["NOMSERVi"], $_POST["DESCSERVI"], $_POST["CANTSERVI"], $_POST["EMPLEADO"]);
+        $vo = array($_POST["ID_SERVICIO"],$_POST["NOMSERVi"], $_POST["DESCSERVI"], $_POST["CANTSERVI"], $_POST["PRECIOSERVICIO"], $_POST["EMPLEADO"]);
         if ($this->model->actualizar($vo)) {
             echo 'El Servicio se actualizo correctamente.';
             include_once 'Vistas/header.php';

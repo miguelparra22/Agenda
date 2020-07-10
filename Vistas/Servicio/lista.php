@@ -1,7 +1,10 @@
-<?php     $Servicio;
-          $this->Servicio = new ServicioController(); ?>
+<?php
+session_start();     
+$Servicio;
+          $this->Servicio = new ServicioController();
+          ?>
 <div>
-    <form action="../../?c=Servicio&a=llamar" method="POST">
+    <form action="?c=Servicio&a=llamar" method="POST">
         <input type="submit" class="btn-info" name="Agregar" value="AGREGAR">
     </form>
 </div>
@@ -11,7 +14,12 @@
             <tr>
                 <th>Nombre Servicio</th>
                 <th>Descripcion Servicio</th>
+                <?php if($_SESSION['ROL'] == 2){ ?>
                 <th>Cantidad Servicio</th>
+                <?php } ?>
+                <?php if($_SESSION['ROL'] == 1){ ?>
+                <th>Precio Servicio</th>
+                <?php } ?>
                 <th>Empleado</th>
             </tr>
         </thead>
@@ -22,7 +30,12 @@
                 <tr>
                     <td><?php print_r($value->NombreServicio) ?></td>
                     <td><?php print_r($value->DescripcionServicio) ?></td>
+                    <?php if($_SESSION['ROL'] == 2){ ?>
                     <td><?php print_r($value->CantidadServicio) ?></td>
+                    <?php } ?>
+                    <?php if($_SESSION['ROL'] == 1){ ?>
+                    <td><?php print_r($value->Precio_Servicio) ?></td>
+                    <?php } ?>
                     <td><?php print_r($this->Servicio->idxnombre($value->FK_IDEMPLEADO)) ?></td>
                     <input type="hidden" name="servicio_ID" value="<?php print_r($value->ID_SERVICIO) ?>">
                     <td><input type="submit" class="Editar" name="Editar" value="Editar"></td>
