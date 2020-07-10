@@ -9,8 +9,6 @@ require_once "autoload.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Assets/Bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="Assets/Diseño/estilos.css">
     <link rel="stylesheet" href="Assets/Diseño/normalize.css">
@@ -20,57 +18,147 @@ require_once "autoload.php";
 </head>
 
 <body>
+<div id="waitDiv" class="loadercont">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 m-auto">
+                    <div class="imageloader">
+                        <img src="/Agendamiento/Assets/Imagenes/djlogo.png" alt="D'JANE" width="200" height="100">
+
+
+                    </div>
+                    <div class="contenedorload">
+                        <div class="lds-grid">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function load() {
+            var elemento = document.getElementById("waitDiv");
+
+
+            setTimeout(function() {
+                elemento.style.display = "none";
+            }, 1000);
+        }
+        window.onload = load;
+    </script>
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#">
+            <img src="/Agendamiento/Assets/Imagenes/Icono.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            D'JANE
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">
-            <img src="/Agendamiento/Assets/Imagenes/Icono.png" alt="D'JANE" width="40" height="40">
-        </a>
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">  Incio </a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Citas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Empleados</a>
                 </li>
+                <!--li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown link
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li-->
+            </ul>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+               
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Productos</a>
-                </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mis datos</a>
-                </li>
-                <li class="nav-item">
-                    <form action="?c=Servicio&a=lista" method="POST">
-                    <input class="nav-link" type="submit" name="listar" value="LISTAR">
-                    </form>
-                   
+                    <a href="/Agendamiento/Vistas/Home/home.php" class="btn btn-outline-danger"><i class="fa fa-close"></i></a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                
-                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" title="Cerrar sesión"><i class="fa fa-close"></i></button>
-            </form>
         </div>
     </nav>
+     <style>
 
-    <h1>Bienvenido Administrador</h1>
-     
+    .card{
+        width:18rem;
+        transition: 0.5s;
+        cursor: pointer;
+    }
 
-     <div>
-     <form action="?c=Servicio&a=lista" method="POST">
-    <input class="btn-info" type="submit" name="listar" value="LISTAR">
-</form>
-     </div>
+    .card:hover{
+        width: 20rem;
+    }
+     </style>
+    
+   
+    
+    <section class="container">
+        <h1 class="text-center">Bienvenido $Nombredeladministrador</h1>
+        <div class="row">
+            <div class="col-md-12  background-overlay">
 
+                <div class="row">
+                <div class="col-md-4">
+                        <div class="card m-5">
+                        <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card m-5">
+                        <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card m-5" >
+                        <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
+                            
+                        </div>
+                    </div>
+                   
+                </div>
 
-
+            </div>
+        </div>
     </section>
-    </div>
+
+
+
+     <footer class="footer p-3 bg-dark color-white">
+            <i class="fa fa-facebook m-2"></i>
+            <i class="fa fa-youtube m-2"></i>
+             <i class="fa fa-instagram m-2"></i>
+     </footer>
+
+
+
+    <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
+    <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
 </body>
 
 </html>

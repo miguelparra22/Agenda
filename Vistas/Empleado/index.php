@@ -8,73 +8,111 @@
     <link rel="stylesheet" href="Assets/Diseño/normalize.css">
     <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Incio</title>
+    <title>Inicio</title>
 </head>
 <body>
-<nav class="menu">
+<!--nav class="menu">
         <a href="#first"><i class="fa fa-home" title="Inicio"></i></a>
         <a href="#second"><i class="fa fa-calendar" title="Agendar cita"></i></a>
         <a href="#third"><i class="fa fa-list-ul" title="Servicios y productos"></i></a>
         <a href="#fourth"><i class="fa fa-address-card" title="Actualizar datos"></i></a>
         <a href="#"><i class="fa fa-window-close" title="Cerrar sesión"></i></a>
+    </nav-->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/Agendamiento/Assets/Imagenes/Icono.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            D'JANE
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Citas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Empleados</a>
+                </li>
+                <!--li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown link
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li-->
+            </ul>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+               
+                <li class="nav-item">
+                    <a href="/Agendamiento/Vistas/Home/home.php" class="btn btn-outline-danger"><i class="fa fa-close"></i></a>
+                </li>
+            </ul>
+        </div>
     </nav>
+    <style>
+
+.card{
+    width:18rem;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.card:hover{
+    width: 20rem;
+}
+ </style>
 
 
 
-    <div class='contenedor'>
+<section class="container">
+    <h1 class="text-center">Bienvenido $empleado</h1>
+    <div class="row">
+        <div class="col-md-12  background-overlay">
 
-        <section id='first' class="section">
-            <div class="container">
-                <div class="text-center p-3">
-                    <h2>Bienvenido</h2>
+            <div class="row">
+            <div class="col-md-4">
+                    <div class="card m-5">
+                    <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
+                        
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-8 m-auto p-3  bg-light" style="border: 1px solid black;">
-                       <p>Citas Pendientes</p>
+                <div class="col-md-4">
+                    <div class="card m-5">
+                    <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
+                        
                     </div>
-                    <div class="col-md-8 m-auto p-3  bg-light" style="border: 1px solid black;">
-                       <p>Historial de Citas</p>
-                    </div>
-                    <div class="col-md-8 m-auto p-3  bg-light" style="border: 1px solid black;">
-                    <button>Agendar Cita</button>
-                    </div>
-                   
                 </div>
-
+                <div class="col-md-4">
+                    <div class="card m-5" >
+                    <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
+                        
+                    </div>
+                </div>
+               
             </div>
 
+        </div>
+    </div>
+</section>
 
 
 
-
-        </section>
-
-        <section id='second' class="section">
-        
-        </section>
-
-        <section id='third' class="section">
-        
-        </section>
-
-        <section id='fourth' class="section">
-        <div class="container">
-                <div class="text-center p-3">
-                    <h2>Actualizar mis datos personales</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 m-auto p-3  bg-light" style="border: 1px solid black;">
-                        <form action="" method="POST">
-
-                        </form>
-                    </div>
-                   
-                    </div>
-                   
-                </div>
-
-            </div>
-        </section>
+ <footer class="footer p-3 bg-dark color-white">
+        <i class="fa fa-facebook m-2"></i>
+        <i class="fa fa-youtube m-2"></i>
+         <i class="fa fa-instagram m-2"></i>
+ </footer>
     </div>
     <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
     <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>

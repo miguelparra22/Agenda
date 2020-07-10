@@ -4,6 +4,7 @@
   --complimentary-color: #88BFB5;
   --contrast-color: #F2E527;
   --light-color: #ddd;
+  --white-color: #Fff;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -11,7 +12,7 @@
   }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #007cae;
+    color:var(--secondary-color);
     font-size: 20px;
   }
 
@@ -40,7 +41,7 @@
     top:0;
     background: rgb(0, 0, 0); /* Fallback color */
     background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-    color: #f1f1f1;
+    color:var(--white-color);
     width: 100%;
     padding: 20px;
    
@@ -52,7 +53,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    color: white;
+    color: var(--white-color);
     text-align: center;
   }
 
@@ -65,7 +66,7 @@
 .contendorlogin {
   width: 100%;
   height: 100vh;
-  background-image: url("/Agendamiento/Assets/Imagenes/Barber.jpg");
+  background-image: url("/Agendamiento/Assets/Imagenes/Salon.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -91,7 +92,7 @@
 .box h3{
     margin: 0 0 40px;
     padding: 0;
-    color: #007cae;
+    color: var(--secondary-color);
     text-transform: uppercase;
 }
 
@@ -104,7 +105,7 @@
   box-shadow: 10px 10px 26px 12px rgba(0, 0, 0, 0.75);
   /*  background-color: rgba(0, 0, 0, 0.5);*/
   /* transform: translate(-50%,-50%);*/
-  color: #fff;
+  color:var(--white-color);
 
 }
 
@@ -218,17 +219,18 @@ font-weight: bold;
   -webkit-box-shadow: 10px 10px 26px 12px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 26px 12px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 26px 12px rgba(0, 0, 0, 0.75);
-    background-color: rgba(0, 0, 0, 0.5);
+    /*background-color: rgba(231,240 , 245, .1);*/
+    background-color: #fff;
   /* transform: translate(-50%,-50%);*/
-  color: #fff;
+  color: var(--secondary-color);
 
 }
 
 .caja-m input {
   padding: 10px 0;
   margin-bottom: 30px;
-  background-color: transparent;
-  color: #fff;
+
+ 
 }
 
 .caja-m select {
@@ -251,7 +253,7 @@ font-weight: bold;
   box-shadow: none;
   outline: none;
   border: none;
-  border-bottom: 2px solid #999;
+  border-bottom: 2px solid var(--secondary-color);
 }
 
 
@@ -261,7 +263,7 @@ font-weight: bold;
   box-shadow: none;
   outline: none;
   border: none;
-  border-bottom: 2px solid #999;
+  border-bottom: 2px solid var(--secondary-color);
 }
 
 .caja-m textarea {
@@ -276,7 +278,7 @@ font-weight: bold;
 }
 
 .caja-m a {
-   color: white;
+   color:var(--secondary-color);
    cursor: pointer;
 }
 
@@ -297,7 +299,7 @@ font-weight: bold;
 
   top: -10px;
   left: 0;
-  color: #fff;
+  color: var(--secondary-color) ;
   font-size: 12px;
   font-weight: bold;
 }
@@ -308,7 +310,7 @@ font-weight: bold;
 .caja-m textarea:focus,
 .caja-m input:valid,
 .caja-m textarea:valid {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid var(--secondary-color);
 }
 
 
@@ -321,26 +323,6 @@ font-weight: bold;
 
 }
 
- /* .container {
-      position: relative;
-    max-width: 100%;
-    background-image: url(../img/Salon.jpg);
-  }
-  
-  
-
- /* .container .content {
-    position: absolute;
-    bottom: 0;
-    top:0;
-    background: rgb(0, 0, 0); /* Fallback color */
-   /* background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-   /* color: #f1f1f1;
-    width: 100%;
-    padding: 20px;*/
-    
-  /*}*/
-  
 
   .formulario{
     width: 80%;
@@ -360,7 +342,7 @@ font-weight: bold;
    border: 1px solid #ddd;
    padding: 30px;
    height: 423px;
-   color: #007cae;
+   color:var(--secondary-color);
 }
 
 .formulario .sbForm .btn{
@@ -642,4 +624,114 @@ font-weight: bold;
 
 .closebtn:hover {
   color: black;
+}
+
+.loadercont {
+ 
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(231, 240, 245, 0.5);
+  z-index: 30;
+
+}
+
+.imageloader {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  right: 0;
+  bottom: 56px;
+  transition: 0.5s;
+}
+
+.contenedorload {
+  position: absolute;
+  top: 310px;
+  left: 260px;
+  right: 0;
+  bottom: 56px;
+  transition: 0.5s;
+}
+
+.lds-grid {
+  display: inline-block;
+  /* position: relative;*/
+  width: 80px;
+  height: 80px;
+}
+
+.lds-grid div {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #111;
+  animation: lds-grid 1.2s linear infinite;
+}
+
+.lds-grid div:nth-child(1) {
+  top: 8px;
+  left: 8px;
+  animation-delay: 0s;
+}
+
+.lds-grid div:nth-child(2) {
+  top: 8px;
+  left: 32px;
+  animation-delay: -0.4s;
+}
+
+.lds-grid div:nth-child(3) {
+  top: 8px;
+  left: 56px;
+  animation-delay: -0.8s;
+}
+
+.lds-grid div:nth-child(4) {
+  top: 32px;
+  left: 8px;
+  animation-delay: -0.4s;
+}
+
+.lds-grid div:nth-child(5) {
+  top: 32px;
+  left: 32px;
+  animation-delay: -0.8s;
+}
+
+.lds-grid div:nth-child(6) {
+  top: 32px;
+  left: 56px;
+  animation-delay: -1.2s;
+}
+
+.lds-grid div:nth-child(7) {
+  top: 56px;
+  left: 8px;
+  animation-delay: -0.8s;
+}
+
+.lds-grid div:nth-child(8) {
+  top: 56px;
+  left: 32px;
+  animation-delay: -1.2s;
+}
+
+.lds-grid div:nth-child(9) {
+  top: 56px;
+  left: 56px;
+  animation-delay: -1.6s;
+}
+
+@keyframes lds-grid {
+
+  0%,
+  100% {
+      opacity: 1;
+  }
+
+  50% {
+      opacity: 0.5;
+  }
 }
