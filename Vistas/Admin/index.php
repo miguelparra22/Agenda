@@ -18,7 +18,7 @@ require_once "autoload.php";
 </head>
 
 <body>
-<div id="waitDiv" class="loadercont">
+    <div id="waitDiv" class="loadercont">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 m-auto">
@@ -71,13 +71,16 @@ require_once "autoload.php";
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Inicio</a>
+                    <a class="nav-link" href="#"><i class="fa fa-home"></i>Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Citas</a>
+                    <a class="nav-link" href="#"><i class="fa fa-calendar"></i> Mis citas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Empleados</a>
+                    <a class="nav-link" href="#"><i class="fa fa-users"></i> Equipo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-wrench"></i> Configuración</a>
                 </li>
                 <!--li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -94,66 +97,88 @@ require_once "autoload.php";
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-               
+
                 <li class="nav-item">
                     <a href="/Agendamiento/Vistas/Home/home.php" class="btn btn-outline-danger"><i class="fa fa-close"></i></a>
                 </li>
             </ul>
         </div>
     </nav>
-     <style>
-
-    .card{
-        width:18rem;
-        transition: 0.5s;
-        cursor: pointer;
-    }
-
-    .card:hover{
-        width: 20rem;
-    }
-     </style>
     
-   
-    
+
+
+
     <section class="container">
         <h1 class="text-center">Bienvenido $Nombredeladministrador</h1>
-        <div class="row">
+
+
+        <div class="ttable">
+            <h4>Estas son las citas del día de hoy</h4>
+            <table class="table  table-bordered table-striped">
+                <thead class="table-primary">
+                    <th>Nombre del cliente</th>
+                    <th>Hora</th>
+                    <th>Servicio</th>
+                    <th>Nombre del encargado</th>
+                </thead>
+                <tbody>
+                    <tr>
+                       <td>sasas</td>
+                       <td>sasas</td>
+                       <td>sasas</td>
+                       <td>sasas</td>
+                    </tr>
+                    <tr>
+                       <td>sasas</td>
+                       <td>sasas</td>
+                       <td>sasas</td>
+                       <td>sasas</td>
+                    </tr>
+                    <tr>
+                       <td>sasas</td>
+                       <td>sasas</td>
+                       <td>sasas</td>
+                       <td>sasas</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--div class="row">
             <div class="col-md-12  background-overlay">
 
                 <div class="row">
-                <div class="col-md-4">
+                    <div class="col-md-4">
                         <div class="card m-5">
-                        <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
-                            
+                            <img src="/Agendamiento/Assets/Imagenes/team.png" class="card-img-top" alt="...">
+
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card m-5">
-                        <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
-                            
+                            <img src="/Agendamiento/Assets/Imagenes/book.png" class="card-img-top" alt="...">
+
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card m-5" >
-                        <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
-                            
+                        <div class="card m-5">
+                            <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
+
                         </div>
                     </div>
-                   
+
                 </div>
 
             </div>
-        </div>
+        </div-->
     </section>
 
 
 
-     <footer class="footer p-3 bg-dark color-white">
-            <i class="fa fa-facebook m-2"></i>
-            <i class="fa fa-youtube m-2"></i>
-             <i class="fa fa-instagram m-2"></i>
-     </footer>
+    <footer class="footer p-3 bg-dark color-white">
+        <i class="fa fa-facebook m-2"></i>
+        <i class="fa fa-youtube m-2"></i>
+        <i class="fa fa-instagram m-2"></i>
+    </footer>
 
 
 

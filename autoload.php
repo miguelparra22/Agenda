@@ -16,12 +16,8 @@ require_once 'VO/ServicioVO.php';
 require_once 'VO/EspecialidadVO.php';
 require_once "Vo/HorarioVO.php";
 require_once 'VO/EmpleadoVo.php';
-<<<<<<< HEAD
-/*require_once 'VO/CitaVO.php';*/
-=======
 require_once 'VO/CitaVO.php';
 require_once 'VO/CorreoVO.php';
->>>>>>> 94ede9677c8c47cb62cf42b9f070da824fdf2e9f
 /**Carga Modelos */
 
 
@@ -30,14 +26,9 @@ require_once 'Modelos/ServicioModel.php';
 require_once 'Modelos/EspecialidadModel.php';
 require_once 'Modelos/EmpleadoModel.php';
 require_once "Modelos/HorarioModel.php";
-<<<<<<< HEAD
-/*require_once "Modelos/CitaModel.php";*/
-
-=======
 require_once "Modelos/CitaModel.php";
 require_once "Modelos/CorreoModel.php";
 require_once "Modelos/ConfiguracionModel.php";
->>>>>>> 94ede9677c8c47cb62cf42b9f070da824fdf2e9f
 /**Carga de Controladores */
 require_once 'Controladores/especialidad.controller.php';
 require_once 'Controladores/Cliente.controller.php';

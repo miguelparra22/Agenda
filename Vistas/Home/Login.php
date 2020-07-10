@@ -54,9 +54,9 @@
     </script>
 
 
-    <section class="container-fluid contendorlogin" style="border: 1px solid black;">
+    <section class="container-fluid contendorlogin">
 
-        <div class="col-md-4 col-sm-4 col-xs-12 m-auto ">
+        <div class="col-md-4 col-sm-10 col-xs-12 m-auto ">
 
             <div class="caja-m">
                 <div class="text-center p-2">
@@ -77,14 +77,14 @@
                     </div>
 
                     <div class="text-center p-3">
-                        <div>
+                        <!--div>
                         <a href="">Registrarse</a>
-                        </div>
+                        </div-->
                         
                         <a href="/Agendamiento/?c=valida&a=correo">¿Olvidaste tu contraseña?</a>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                    <button type="submit" class="btn btn-primary btn-block"> Ingresar</button>
                 </form>
             </div>
 
