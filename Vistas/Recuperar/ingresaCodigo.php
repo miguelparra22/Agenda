@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +9,13 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
-    <input type="text">
-    <?php
-        print ($_SESSION['idContra']);
-
-       
-    ?>
+    <form action="/Agendamiento/?c=valida&a=codigo" method="post">
+    <p>Escribe el codigo que enviamos a tu correo</p>
+    <input autocomplete="off" name="codigo" type="text">
+    
+   <input type="hidden" name="numero" value="<?php print ($_SESSION['idContra']);?>">
+   <input type="hidden" name="correo" value="<?php print ($_SESSION['correo']);?>">
+   <input type="submit" value="Validar" >
     </form>
 </body>
 </html>

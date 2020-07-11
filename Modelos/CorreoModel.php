@@ -4,7 +4,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 
 
-class Correo extends Conexion implements Idatabase {
+class Correo extends Conexion  {
 
     private $PDO;
     private $CorreoVO;
@@ -95,26 +95,36 @@ class Correo extends Conexion implements Idatabase {
 
     }
 
-    public function actualizar($vo) {
-        
-    }
+    public function validaCodigo($vo){
+      $id = $vo->id;
+      $codigo = $vo->codigo;
+      $correo = $vo->correo;
 
-    public function agregar($vo) {
+        $sentencia = "SELECT * FROM recuperacion_clave 
+        WHERE id='$id' AND codigo='$codigo' AND correo='$correo' AND verificado=0";
 
- 
-    }
+        $resultado = $this->PDO->prepare($sentencia);
+        $resultado->execute();
 
-    public function consultaUnica($id) {
-        
-    }
+        if ($resultado->rowCount() > 0) {
+            $this->verificado($id);
+            return $resultado = $resultado->fetchAll(PDO::FETCH_OBJ);
+            
+        } else {
+            return -1;
+        }
 
-    public function eliminar($id) {
-        
     }
-
-    public function listar() {
-        
+    public function verificado($id){
+         
+        $sentencia = "UPDATE recuperacion_clave SET verificado=1 WHERE id=:id";
+        $resultado = $this->PDO->prepare($sentencia);
+        return $resultado->execute(array(
+                    ':id' => $id,
+                    
+        ));
     }
+    
 
 }
 
