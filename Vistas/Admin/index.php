@@ -109,7 +109,7 @@ require_once "autoload.php";
 
 
     <section class="container">
-        <h1 class="text-center">Bienvenido $Nombredeladministrador</h1>
+        <h1 class="text-center">Bienvenido $nombre</h1>
 
 
         <div class="ttable">
