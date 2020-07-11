@@ -69,7 +69,7 @@
 
                 
             
-            <input type="submit" name="guardar" value="GUARDAR">
+            <input type="submit" name="guardar" value="GUARDAR" class="btn btn-outline-pimary">
 
 
         </form>

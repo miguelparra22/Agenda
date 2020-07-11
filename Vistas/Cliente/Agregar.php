@@ -58,9 +58,11 @@
                         <input type="email" id="correo" name="usuario_correo" required>
                         <label>Correo</label>
                     </div>
-                    <input type="button"id="botonGuardar" name="guardar" value="GUARDAR">
+                   
+                    <input type="submit"id="botonGuardar" name="guardar" value="GUARDAR" class="btn btn-block btn-primary">
+                    </div>
                 </form>
-            </div>
+           
         </section>
     </body>
     <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
