@@ -119,7 +119,23 @@ class Validacontroller {
         $resultado = $this->model->iniciarSesion($this->vo);
 
         if ($resultado == -1) {
-            echo "contraseña y/o usuario Incorrecto";
+            echo "<div class='alert' >
+            <span class='closebtn'>&times;</span> 
+            Usuario y/o contraseña incorrectos.
+            </div>
+            
+            <script>
+            var close = document.getElementsByClassName('closebtn');
+            var i;
+ 
+               for (i = 0; i < close.length; i++) {
+               close[i].onclick = function(){
+               var div = this.parentElement;
+               div.style.opacity = '0';
+               setTimeout(function(){ div.style.display = 'none'; }, 600);
+             }
+           }
+            </script>";
             include_once 'vistas/home/login.php';
         } else {
 
@@ -141,5 +157,3 @@ class Validacontroller {
     }
 
 }
-
-?>
