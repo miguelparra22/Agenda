@@ -90,24 +90,60 @@ class Validacontroller {
     }
 
     public function codigo() {
-        $id = $_POST['numero'];
-        $codigo = $_POST['codigo'];
-        $correo = $_POST['correo'];
-        if (!(empty($id)) && !(empty($id)) && !(empty($correo))) {
-            $this->model = new Correo();
-            $object = (object) [
-                        'id' => $id,
-                        'codigo' => $codigo,
-                        'correo' => $correo
-            ];
-            $resultado = $this->model->validaCodigo($object);
-            if ($resultado != -1) {
-                $arreglo = $resultado[0];
-                $correo = $arreglo->correo;
-                echo $correo;
-            }else{
-                 include_once 'vistas/home/login.php';
+        if (!(empty($_POST['correo']))) {
+            $id = $_POST['numero'];
+            $codigo = $_POST['codigo'];
+            $correo = $_POST['correo'];
+            if (!(empty($id)) && !(empty($id)) && !(empty($correo))) {
+                $this->model = new Correo();
+                $object = (object) [
+                            'id' => $id,
+                            'codigo' => $codigo,
+                            'correo' => $correo
+                ];
+                $resultado = $this->model->validaCodigo($object);
+                if ($resultado != -1) {
+                    $arreglo = $resultado[0];
+                    echo '<script> var correo = "' . $arreglo->correo . '";</script>';
+                    include_once 'vistas/Recuperar/ingresaClave.php';
+                } else {
+                    echo 'Error';
+                    include_once 'vistas/home/login.php';
+                }
             }
+        } else {
+            // echo $exc->getTraceAsString();
+            include_once 'vistas/Recuperar/ingresaCorreo.php';
+        }
+    }
+
+    public function cambio() {
+        if (!(empty($_POST['correo']))) {
+            $correo = $_POST['correo'];
+            $clave1 = $_POST['psw1'];
+            $clave2 = $_POST['psw2'];
+            if ($clave1 == $clave2) {
+                $this->model = new Correo();
+                $object = (object) [
+                            'clave' => $clave1,
+                            'correo' => $correo
+                ];
+                $resultado = $this->model->cambioClave($object);
+                if ($resultado == 1) {
+                    include_once 'vistas/home/login.php';
+                    session_destroy();
+                } else if ($resultado == -1) {
+                    echo 'Fallo';
+                    echo '<script> var correo = "' . $correo . '";</script>';
+                    include_once 'vistas/Recuperar/ingresaClave.php';
+                }
+            } else {
+                echo 'las claves no coinciden';
+                echo '<script> var correo = "' . $correo . '";</script>';
+                include_once 'vistas/Recuperar/ingresaClave.php';
+            }
+        } else {
+            include_once 'vistas/Recuperar/ingresaCorreo.php';
         }
     }
 
@@ -119,29 +155,15 @@ class Validacontroller {
         $resultado = $this->model->iniciarSesion($this->vo);
 
         if ($resultado == -1) {
-            echo "<div class='alert' >
-            <span class='closebtn'>&times;</span> 
-            Usuario y/o contraseña incorrectos.
-            </div>
-            
-            <script>
-            var close = document.getElementsByClassName('closebtn');
-            var i;
- 
-               for (i = 0; i < close.length; i++) {
-               close[i].onclick = function(){
-               var div = this.parentElement;
-               div.style.opacity = '0';
-               setTimeout(function(){ div.style.display = 'none'; }, 600);
-             }
-           }
-            </script>";
+            echo "contraseña y/o usuario Incorrecto";
             include_once 'vistas/home/login.php';
         } else {
 
             $arreglo = $resultado[0];
             $rol = $arreglo->rol;
+            $nombre = $arreglo->nombre;
             $_SESSION['ROL'] = $rol;
+            $_SESSION['NOMBRE'] = $nombre;
             switch ($rol) {
                 case 0://Cliente
                     include_once 'Vistas/Cliente/index.php';
@@ -157,3 +179,5 @@ class Validacontroller {
     }
 
 }
+
+?>
