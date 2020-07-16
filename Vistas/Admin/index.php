@@ -71,16 +71,16 @@ require_once "autoload.php";
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link" href="#"><i class="fa fa-home"></i>Inicio</a>
+                    <a  class="nav-link" href="#"><i class="fa fa-home"></i>Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa fa-calendar"></i> Mis citas</a>
+                    <a id="citas" class="nav-link" onclick="openNav(this.id)"><i class="fa fa-calendar"></i> Mis citas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa fa-users"></i> Equipo</a>
+                    <a id="equipo" class="nav-link" onclick="openNav(this.id)"><i class="fa fa-users"></i> Equipo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa fa-wrench"></i> Configuración</a>
+                    <a id="conf" class="nav-link" onclick="openNav(this.id)" href="#"><i class="fa fa-wrench"></i> Configuración</a>
                 </li>
                 <!--li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -104,7 +104,6 @@ require_once "autoload.php";
             </ul>
         </div>
     </nav>
-    
 
 
 
@@ -123,22 +122,22 @@ require_once "autoload.php";
                 </thead>
                 <tbody>
                     <tr>
-                       <td>sasas</td>
-                       <td>sasas</td>
-                       <td>sasas</td>
-                       <td>sasas</td>
+                        <td>sasas</td>
+                        <td>sasas</td>
+                        <td>sasas</td>
+                        <td>sasas</td>
                     </tr>
                     <tr>
-                       <td>sasas</td>
-                       <td>sasas</td>
-                       <td>sasas</td>
-                       <td>sasas</td>
+                        <td>sasas</td>
+                        <td>sasas</td>
+                        <td>sasas</td>
+                        <td>sasas</td>
                     </tr>
                     <tr>
-                       <td>sasas</td>
-                       <td>sasas</td>
-                       <td>sasas</td>
-                       <td>sasas</td>
+                        <td>sasas</td>
+                        <td>sasas</td>
+                        <td>sasas</td>
+                        <td>sasas</td>
                     </tr>
                 </tbody>
             </table>
