@@ -76,7 +76,7 @@
 
 
 <section class="container">
-    <h1 class="text-center">Bienvenido $empleado</h1>
+    <h1 class="text-center">Bienvenido <?php print ($_SESSION['NOMBRE']);?></h1>
     <div class="row">
         <div class="col-md-12  background-overlay">
 
