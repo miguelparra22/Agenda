@@ -59,30 +59,37 @@ require_once "autoload.php";
         window.onload = load;
     </script>
 
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  
+</div>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="/Agendamiento/Assets/Imagenes/Icono.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-            D'JANE
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item ">
-                    <a  class="nav-link" href="#"><i class="fa fa-home"></i>Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a id="citas" class="nav-link" onclick="openNav(this.id)"><i class="fa fa-calendar"></i> Mis citas</a>
-                </li>
-                <li class="nav-item">
-                    <a id="equipo" class="nav-link" onclick="openNav(this.id)"><i class="fa fa-users"></i> Equipo</a>
-                </li>
-                <li class="nav-item">
-                    <a id="conf" class="nav-link" onclick="openNav(this.id)" href="#"><i class="fa fa-wrench"></i> Configuración</a>
-                </li>
-                <!--li class="nav-item dropdown">
+
+    <section id="main">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="/Agendamiento/Assets/Imagenes/Icono.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                D'JANE
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/" onclick="closeNav()"><i class="fa fa-home"></i>Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="citas" class="nav-link" href="#" onclick="abrirM(this.id)" ><i class="fa fa-calendar"></i> Mis citas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="equipo" class="nav-link" href="#" onclick="abrirM(this.id)"><i class="fa fa-users"></i> Equipo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="conf" class="nav-link" href="#" onclick="abrirM(this.id)" href="#"><i class="fa fa-wrench"></i> Configuración</a>
+                    </li>
+                    <!--li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Dropdown link
                     </a>
@@ -92,97 +99,75 @@ require_once "autoload.php";
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </li-->
-            </ul>
-        </div>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-
-                <li class="nav-item">
-                    <a href="/Agendamiento/Vistas/Home/home.php" class="btn btn-outline-danger"><i class="fa fa-close"></i></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-
-
-    <section class="container">
-        <h1 class="text-center">Bienvenido <?php print ($_SESSION['NOMBRE']);?></h1>
-
-
-        <div class="ttable">
-            <h4>Estas son las citas del día de hoy</h4>
-            <table class="table  table-bordered table-striped">
-                <thead class="table-primary">
-                    <th>Nombre del cliente</th>
-                    <th>Hora</th>
-                    <th>Servicio</th>
-                    <th>Nombre del encargado</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>sasas</td>
-                        <td>sasas</td>
-                        <td>sasas</td>
-                        <td>sasas</td>
-                    </tr>
-                    <tr>
-                        <td>sasas</td>
-                        <td>sasas</td>
-                        <td>sasas</td>
-                        <td>sasas</td>
-                    </tr>
-                    <tr>
-                        <td>sasas</td>
-                        <td>sasas</td>
-                        <td>sasas</td>
-                        <td>sasas</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <!--div class="row">
-            <div class="col-md-12  background-overlay">
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card m-5">
-                            <img src="/Agendamiento/Assets/Imagenes/team.png" class="card-img-top" alt="...">
-
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card m-5">
-                            <img src="/Agendamiento/Assets/Imagenes/book.png" class="card-img-top" alt="...">
-
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card m-5">
-                            <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
-
-                        </div>
-                    </div>
-
-                </div>
-
+                </ul>
             </div>
-        </div-->
-    </section>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a href="/Agendamiento/Vistas/Home/home.php" class="btn btn-outline-danger"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
 
 
-    <footer class="footer p-3 bg-dark color-white">
-        <i class="fa fa-facebook m-2"></i>
-        <i class="fa fa-youtube m-2"></i>
-        <i class="fa fa-instagram m-2"></i>
-    </footer>
+        <section class="container">
+            <h1 class="text-center">Bienvenido <?php print($_SESSION['NOMBRE']); ?></h1>
 
 
+            <div class="ttable">
+                <h4>Estas son las citas del día de hoy</h4>
+                <table class="table  table-bordered table-striped">
+                    <thead class="table-primary">
+                        <th>Nombre del cliente</th>
+                        <th>Hora</th>
+                        <th>Servicio</th>
+                        <th>Nombre del encargado</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>sasas</td>
+                            <td>sasas</td>
+                            <td>sasas</td>
+                            <td>sasas</td>
+                        </tr>
+                        <tr>
+                            <td>sasas</td>
+                            <td>sasas</td>
+                            <td>sasas</td>
+                            <td>sasas</td>
+                        </tr>
+                        <tr>
+                            <td>sasas</td>
+                            <td>sasas</td>
+                            <td>sasas</td>
+                            <td>sasas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-    <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
-    <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
+
+        </section>
+
+
+        <footer class="footer p-3 bg-dark color-white">
+            <i class="fa fa-facebook m-2"></i>
+            <i class="fa fa-youtube m-2"></i>
+            <i class="fa fa-instagram m-2"></i>
+        </footer>
+       
+
+
+       
+       <script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
+
+         
+        <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
+        <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
 </body>
 
 </html>
