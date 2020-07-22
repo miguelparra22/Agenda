@@ -78,13 +78,13 @@ require_once "autoload.php";
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item ">
-                        <a class="nav-link" href="/" onclick="closeNav()"><i class="fa fa-home"></i>Inicio</a>
+                        <a class="nav-link" href="#" onclick="closeNav()"><i class="fa fa-home"></i>Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a id="citas" class="nav-link" href="#" onclick="abrirM(this.id)" ><i class="fa fa-calendar"></i> Mis citas</a>
                     </li>
                     <li class="nav-item">
-                        <a id="equipo" class="nav-link" href="#" onclick="abrirM(this.id)"><i class="fa fa-users"></i> Equipo</a>
+                        <a id="team" class="nav-link" href="#" onclick="abrirM(this.id)"><i class="fa fa-users"></i> Equipo</a>
                     </li>
                     <li class="nav-item">
                         <a id="conf" class="nav-link" href="#" onclick="abrirM(this.id)" href="#"><i class="fa fa-wrench"></i> Configuración</a>
@@ -101,7 +101,7 @@ require_once "autoload.php";
                 </li-->
                 </ul>
             </div>
-
+   
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
 
@@ -164,8 +164,6 @@ require_once "autoload.php";
 
        
        <script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
-
-         
         <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
         <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
 </body>
