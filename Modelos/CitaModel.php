@@ -8,7 +8,7 @@ private $tabla;
 
 public function __CONSTRUCT() {
     $this->PDO = parent::__construct();
-    $this->tabla = "cita";
+    $this->tabla = "citas";
 }
 
 public function actualizar($vo) {
@@ -30,8 +30,19 @@ public function agregar($vo) {
     ));
 }
 
-public function consultaUnica($id) {
+public function CambiarIdxNom($tabla,$CampoObtener,$campofiltro,$valorfiltro){
+    if(strpos($valorfiltro,"'") !==  false){
+    $sentencia = "SELECT $CampoObtener FROM $tabla WHERE $campofiltro = '$valorfiltro'";
+    }else{
+    $sentencia = "SELECT $CampoObtener FROM $tabla WHERE $campofiltro = $valorfiltro ";
+    }
+    $resultado = $this->PDO->prepare($sentencia);
+    $resultado->execute();
+    $resultado = $resultado->fetchAll(PDO::FETCH_OBJ);
+    return $resultado;
+}
 
+public function consultaUnica($id) {
    
 }
 
@@ -39,8 +50,14 @@ public function eliminar($id) {
     
 }
 
-public function listar() {
-   
+public function listar(){
+}
+
+public function listarAdmin() {
+        $sentencia = "SELECT * FROM $this->tabla WHERE DATE(HORAPACTADA) = DATE(NOW())";
+        $resultado = $this->PDO->prepare($sentencia);
+        $resultado->execute();
+        return $resultado->fetchAll(PDO::FETCH_OBJ);
 }
 
 }

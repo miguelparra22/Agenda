@@ -4,10 +4,12 @@ class Validacontroller {
 
     private $model;
     private $vo;
+    private $Cita;
 
     public function __CONSTRUCT() {
         $this->model = new Cliente();
         $this->vo = new ClienteVO();
+        $this->Cita = new Cita();
     }
 
     public function existeCorreo() {
@@ -169,6 +171,7 @@ class Validacontroller {
                     include_once 'Vistas/Cliente/index.php';
                     break;
                 case 1://Administrador
+                    $ResultadoLista = $this->Cita->listarAdmin();
                     include_once 'Vistas/Admin/index.php';
                     break;
                 case 2://Empleado
