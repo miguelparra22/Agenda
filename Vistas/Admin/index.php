@@ -1,6 +1,8 @@
 <?php
 
 require_once "autoload.php";
+$Citas;
+$this->Citas = new Cita();
 ?>
 
 <!DOCTYPE html>
@@ -128,25 +130,17 @@ require_once "autoload.php";
                         <th>Nombre del encargado</th>
                     </thead>
                     <tbody>
+                    <?php  foreach ($ResultadoLista as $busqueda => $value) {  ?>
                         <tr>
-                            <td>sasas</td>
-                            <td>sasas</td>
-                            <td>sasas</td>
-                            <td>sasas</td>
+                            <td><?php print_r($this->Cita->CambiarIdxNom("cliente","ClienteNombre","IDCLIENTE","$value->FKIDLCIENTE")[0]->ClienteNombre) ?></td>
+                            <td><?php print_r(date("h:i:s A", strtotime($value->HORAPACTADA))) ?> </td>
+                            <td><?php print_r($this->Cita->CambiarIdxNom("servicio","NombreServicio","ID_SERVICIO","$value->FKSERVICIO")[0]->NombreServicio) ?></td>
+                            <?php $IdEmpleado = $this->Cita->CambiarIdxNom("agenda","FK_IDEMPLEADO","FK_IDCITA","$value->IDCITA")[0]->FK_IDEMPLEADO?>
+                            <td><?php print_r($this->Cita->CambiarIdxNom("empleado","NombreEmpleado","ID_EMPLEADO","$IdEmpleado")[0]->NombreEmpleado)?></td>
                         </tr>
-                        <tr>
-                            <td>sasas</td>
-                            <td>sasas</td>
-                            <td>sasas</td>
-                            <td>sasas</td>
-                        </tr>
-                        <tr>
-                            <td>sasas</td>
-                            <td>sasas</td>
-                            <td>sasas</td>
-                            <td>sasas</td>
-                        </tr>
+                        <?php } ?>
                     </tbody>
+
                 </table>
             </div>
 

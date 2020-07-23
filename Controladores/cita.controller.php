@@ -10,4 +10,5 @@ class Citacontroller {
         $this->vo = new CitaVO();
     }
 */
+
 }?>
