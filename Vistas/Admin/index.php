@@ -49,18 +49,6 @@ $this->Citas = new Cita();
 
     </div>
 
-    <script>
-        function load() {
-            var elemento = document.getElementById("waitDiv");
-
-
-            setTimeout(function() {
-                elemento.style.display = "none";
-            }, 1000);
-        }
-        window.onload = load;
-    </script>
-
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   
@@ -80,7 +68,7 @@ $this->Citas = new Cita();
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item ">
-                        <a class="nav-link" href="#" onclick="closeNav()"><i class="fa fa-home"></i>Inicio</a>
+                        <a class="nav-link" href="#" onclick=""><i class="fa fa-home"></i>Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a id="citas" class="nav-link" href="#" onclick="abrirM(this.id)" ><i class="fa fa-calendar"></i> Mis citas</a>
@@ -89,7 +77,7 @@ $this->Citas = new Cita();
                         <a id="team" class="nav-link" href="#" onclick="abrirM(this.id)"><i class="fa fa-users"></i> Equipo</a>
                     </li>
                     <li class="nav-item">
-                        <a id="conf" class="nav-link" href="#" onclick="abrirM(this.id)" href="#"><i class="fa fa-wrench"></i> Configuración</a>
+                        <a id="con" class="nav-link" href="#" onclick="abrirM(this.id)" href="#"><i class="fa fa-wrench"></i> Configuración</a>
                     </li>
                     <!--li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -120,7 +108,7 @@ $this->Citas = new Cita();
             <h1 class="text-center">Bienvenido <?php print($_SESSION['NOMBRE']); ?></h1>
 
 
-            <div class="ttable">
+            <div class="table-responsive">
                 <h4>Estas son las citas del día de hoy</h4>
                 <table class="table  table-bordered table-striped">
                     <thead class="table-primary">

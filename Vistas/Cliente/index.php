@@ -7,9 +7,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Assets/Bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="Assets/Diseño/estilos.css">
-    <link rel="stylesheet" href="Assets/Diseño/normalize.css">
+    <link rel="stylesheet" href="/Agendamiento/Assets/Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/estilos.css">
+    <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
     <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Inicio</title>
@@ -53,19 +53,7 @@
         </div>
 
     </div>
-    <script>
-        function load() {
-            var elemento = document.getElementById("waitDiv");
-
-
-            setTimeout(function() {
-                elemento.style.display = "none";
-            }, 1000);
-        }
-        window.onload = load;
-    </script>
-
-
+    <section id="main">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
             <img src="/Agendamiento/Assets/Imagenes/Icono.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
@@ -77,13 +65,16 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Inicio</a>
+                    <a class="nav-link" href="#"><i class="fa fa-home"></i> Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Citas</a>
+                    <a id="citas_cliente" class="nav-link" onclick="abrirM(this.id)" href="#"><i class="fa fa-calendar"></i> Citas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Empleados</a>
+                    <a  id="team_cliente" class="nav-link" onclick="abrirM(this.id)" href="#"><i class="fa fa-users"></i> Equipo D'Jane</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="abrirM(this.id)" href="#"><i class="fa fa-wrench"></i> Configuración</a>
                 </li>
                 <!--li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -107,52 +98,32 @@
             </ul>
         </div>
     </nav>
-    <style>
-
-.card{
-    width:18rem;
-    transition: 0.5s;
-    cursor: pointer;
-}
-
-.card:hover{
-    width: 20rem;
-}
- </style>
-
-
 
 <section class="container">
     <h1 class="text-center">Bienvenid@ <?php print ($_SESSION['NOMBRE']);?></h1>
-    <div class="row">
-        <div class="col-md-12  background-overlay">
+    <div class="ttable">
+                <h4>Estas son las citas del día de hoy</h4>
+                <table class="table  table-bordered table-striped">
+                    <thead class="table-primary">
+                        <th>Nombre del cliente</th>
+                        <th>Hora</th>
+                        <th>Servicio</th>
+                        <th>Nombre del encargado</th>
+                    </thead>
+                    <tbody>
+                
+                        
+                    </tbody>
 
-            <div class="row">
-            <div class="col-md-4">
-                    <div class="card m-5">
-                    <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
-                        
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card m-5">
-                    <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
-                        
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card m-5" >
-                    <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
-                        
-                    </div>
-                </div>
-               
+                </table>
             </div>
-
-        </div>
-    </div>
 </section>
 
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  
+</div>
+    </section>
 
 
  <footer class="footer p-3 bg-dark color-white">
@@ -161,6 +132,7 @@
          <i class="fa fa-instagram m-2"></i>
  </footer>
 </body>
+<script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
 <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
 <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
 

@@ -9,6 +9,18 @@ for (i = 0; i < close.length; i++) {
   }
 }*/
 
+function load() {
+  var elemento = document.getElementById("waitDiv");
+
+
+  setTimeout(function() {
+      elemento.style.display = "none";
+  }, 1000);
+}
+window.onload = load;
+
+
+
 
 function abrirM(elemento) {
   tomaropcion(elemento);
@@ -30,10 +42,11 @@ function tomaropcion(elemento) {
   case "citas":
       var citas = "";
 
-      citas += "<a>Historial citas</a>";
+     
       citas += " <a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>";
-      citas += "<a>Cancelar citas</a>";
-      citas += "<a>Ver citas</a>";
+      citas += "<a> <i class='fa fa-history'></i> Historial citas</a>";
+      citas += "<a><i class='fa fa-calendar-times-o' ></i> Cancelar citas</a>";
+      citas += "<a><i class='fa fa-eye' ></i> Ver citas</a>";
 
       document.getElementById("mySidenav").innerHTML = citas;
       
@@ -43,24 +56,55 @@ function tomaropcion(elemento) {
     case "team":
       var e = "";
        e += "<a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>";
-       e += "<a>Ver Equipo</a>";
-       e += "<a>Agregar miembro</a>";
-       e += "<a>Desabihilitar miembro</a>";
+       e += "<a><i class='fa fa-users'></i> Ver Equipo</a>";
+       e += "<a><i class='fa fa-user-plus'></i> Agregar miembro</a>";
+       e += "<a><i class='fa fa-user-times'></i> Desabihilitar miembro</a>";
 
        document.getElementById("mySidenav").innerHTML = e;
       break;
 
-    case "conf":
+    case "con":
 
-    var con = "";
-    con += "<a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>";
-    con += "<a>Actualizar datos</a>";
+    var conf = "";
+    conf += "<a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>";
+    conf += "<a><i class='fa fa-cogs'></i> Actualizar</a>";
 
 
+    document.getElementById("mySidenav").innerHTML = conf;
+    break;
+
+    case "citas_cliente":
+
+    var ct = "";
+
+    ct += "<a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>";
+    ct += "<a><i class='fa fa-calendar-plus-o'></i> Solicitar cita</a>";
+    ct += "<a><i class='fa fa-eye'></i> Ver mis citas</a>";
+    ct += "<a><i class='fa fa-calendar-times-o' ></i> Cancelar cita</a>";
+
+    document.getElementById("mySidenav").innerHTML = ct;
 
     break;
+    
+
+    case  "team_cliente":
+    
+    var tcm = "";
+
+    tcm += "<a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>";
+    tcm += "<a title='Ver equipo DJane'><i class='fa fa-users'></i> Ver equipo</a>";
+    tcm += "<a title='Buscar miembro' ><i class='fa fa-search'></i> Buscar miembro</a>";
+    tcm += "<a title='Ver nuestro canal de Youtube'><i class='fa fa-youtube'></i> Youtube</a>";
+    tcm += "<a title='Ver nuestro Facebook'><i class='fa fa-facebook'></i> Facebook</a>";
+    tcm += "<a title='Ver nuestro Instagram'><i class='fa fa-instagram'></i> Instagram</a>";
+
+    document.getElementById("mySidenav").innerHTML = tcm;
+    break;
+    
+
+
+    
       
   }
 }
    
-
