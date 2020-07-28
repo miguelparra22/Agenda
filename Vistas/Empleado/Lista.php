@@ -1,28 +1,29 @@
-<?php
 
+<?php
 require_once "autoload.php";
-$Citas;
-$this->Citas = new Cita();
+$Empleado;
+$this->Empleado = new EmpleadoModel();
+
 
 
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Assets/Bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="Assets/Diseño/estilos.css">
     <link rel="stylesheet" href="Assets/Diseño/normalize.css">
     <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Inicio</title>
+    <title>Equipo</title>
 </head>
 
 <body>
-    <div id="waitDiv" class="loadercont">
+
+<div id="waitDiv" class="loadercont">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 m-auto">
@@ -50,16 +51,11 @@ $this->Citas = new Cita();
         </div>
 
     </div>
-
-<div id="mySidenav" class="sidenav">
+  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  
-</div>
-
-
+  </div>
     <section id="main">
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
                 <img src="/Agendamiento/Assets/Imagenes/Icono.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                 D'JANE
@@ -70,7 +66,7 @@ $this->Citas = new Cita();
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item ">
-                        <a class="nav-link" href="#" onclick=""><i class="fa fa-home"></i>Inicio</a>
+                        <a class="nav-link" href="#" onclick=""><i class="fa fa-home"></i> Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a id="citas" class="nav-link" href="#" onclick="abrirM(this.id)" ><i class="fa fa-calendar"></i> Mis citas</a>
@@ -105,53 +101,43 @@ $this->Citas = new Cita();
         </nav>
 
         
+       <div class="container">
+       <h2 class="text-center">EQUIPO D'JANE</h2>
+       <div class="table-responsive">
+        <table class="table  table-bordered table-striped">
+            <thead class="table-primary">
+                <th>ID</th>
+                <th>Nombre Empleado</th>
+                <th>Correo Empleado</th>
+            </thead>
+            <tbody>
+                <?php  foreach($resultado as $busqueda => $value){ ?>
+                <tr>
+                    <td><a><?php print_r($value->ID_EMPLEADO) ?></a></td>
+                    <td><?php print_r($value->NombreEmpleado) ?></td>
+                    <td><?php print_r($value->CorreoEmpleado) ?></td>
+                </tr>
 
+                <?php }?>
+            </tbody>
 
+        </table>
+        </div>
+       </div>
+        
+    </section>
+    
 
-        <section class="container">
-            <h1 class="text-center">Bienvenido <?php print($_SESSION['NOMBRE']); ?></h1>
-
-
-            <div class="table-responsive">
-                <h4>Estas son las citas del día de hoy</h4>
-                <table class="table  table-bordered table-striped">
-                    <thead class="table-primary">
-                        <th>Nombre del cliente</th>
-                        <th>Hora</th>
-                        <th>Servicio</th>
-                        <th>Nombre del encargado</th>
-                    </thead>
-                    <tbody>
-                    <?php  foreach ($ResultadoLista as $busqueda => $value) {  ?>
-                        <tr>
-                            <td><?php print_r($this->Cita->CambiarIdxNom("cliente","ClienteNombre","IDCLIENTE","$value->FKIDLCIENTE")[0]->ClienteNombre) ?></td>
-                            <td><?php print_r(date("h:i:s A", strtotime($value->HORAPACTADA))) ?> </td>
-                            <td><?php print_r($this->Cita->CambiarIdxNom("servicio","NombreServicio","ID_SERVICIO","$value->FKSERVICIO")[0]->NombreServicio) ?></td>
-                            <?php $IdEmpleado = $this->Cita->CambiarIdxNom("agenda","FK_IDEMPLEADO","FK_IDCITA","$value->IDCITA")[0]->FK_IDEMPLEADO?>
-                            <td><?php print_r($this->Cita->CambiarIdxNom("empleado","NombreEmpleado","ID_EMPLEADO","$IdEmpleado")[0]->NombreEmpleado)?></td>
-                        </tr>
-                        <?php } ?>
-                    </tbody>
-
-                </table>
-            </div>
-
-
-        </section>
-
-
-        <footer class="footer p-3 bg-dark color-white">
+    <footer class="footer p-3 bg-dark color-white">
             <i class="fa fa-facebook m-2"></i>
             <i class="fa fa-youtube m-2"></i>
             <i class="fa fa-instagram m-2"></i>
         </footer>
-       
+        
+   
 
-
-       
-       <script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
-        <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
-        <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
 </body>
+
+<script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
 
 </html>
