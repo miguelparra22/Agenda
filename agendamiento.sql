@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-07-2020 a las 16:01:21
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.2.31
+-- Tiempo de generación: 28-07-2020 a las 20:39:00
+-- Versión del servidor: 10.3.16-MariaDB
+-- Versión de PHP: 7.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -49,6 +50,7 @@ INSERT INTO `agenda` (`IDAGENDA`, `FK_IDEMPLEADO`, `FK_IDCITA`) VALUES
 CREATE TABLE `citas` (
   `IDCITA` int(11) NOT NULL,
   `HORAPACTADA` datetime NOT NULL,
+  `HORATERMINA` datetime NOT NULL,
   `FKIDLCIENTE` int(11) NOT NULL,
   `DESCRIPCION` varchar(100) NOT NULL,
   `FKIDESTADO` int(11) NOT NULL,
@@ -59,9 +61,9 @@ CREATE TABLE `citas` (
 -- Volcado de datos para la tabla `citas`
 --
 
-INSERT INTO `citas` (`IDCITA`, `HORAPACTADA`, `FKIDLCIENTE`, `DESCRIPCION`, `FKIDESTADO`, `FKHORARIO`) VALUES
-(1, '2020-06-03 08:33:44', 1, 'El cliente realizo la cita a través de la pagina web', 1, 2),
-(3, '2020-07-22 17:45:14', 6, 'prueba', 1, 2);
+INSERT INTO `citas` (`IDCITA`, `HORAPACTADA`, `HORATERMINA`, `FKIDLCIENTE`, `DESCRIPCION`, `FKIDESTADO`, `FKHORARIO`) VALUES
+(1, '2020-06-03 08:33:44', '2020-06-03 08:45:00', 1, 'El cliente realizo la cita a través de la pagina web', 1, 2),
+(3, '2020-07-22 17:45:14', '2020-07-22 17:40:00', 6, 'prueba', 1, 2);
 
 -- --------------------------------------------------------
 
