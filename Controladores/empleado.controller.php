@@ -11,6 +11,25 @@ class EmpleadoController{
       $this->vo =  new EmpleadoVo();
   }
 
+
+   function LlamarAgregar(){
+     require_once 'Vistas/Empleado/Agregar.php';
+   }
+   
+
+  function LlamarInicioAdmin(){
+
+    require_once 'Vistas/Admin/index.php';
+  }
+
+  function LlamarInicioEmpleado(){
+     require_once 'Vistas/Empleado/index.php';
+  }
+
+  
+
+  
+
   function agregar(){
 
     $this->vo->setNombre_Empleado($_POST["nombre"]);
@@ -68,6 +87,9 @@ class EmpleadoController{
   }
 
 
+
+
+
   function ListaEmpleados(){
     $resultado = $this->model->listaEmpleado();
     if (!is_array($resultado)) {
@@ -97,6 +119,8 @@ class EmpleadoController{
 
 
 }
+
+
 
 
 }

@@ -15,6 +15,9 @@
     <script src="Assets/moment.min.js"></script>
     <script src="Assets/jquery.min.js"></script>
     <script src="Assets/bootstrap-datetimepicker.min.js"></script>
+    <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 
     <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />

@@ -55,10 +55,10 @@ $this->Empleado = new EmpleadoModel();
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   </div>
     <section id="main">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">
-                <img src="/Agendamiento/Assets/Imagenes/Icono.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-                D'JANE
+                <img src="/Agendamiento/Assets/Imagenes/djlogodorado.png" width="120" height="40" class="d-inline-block align-top" alt="" loading="lazy">
+                
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -100,6 +100,7 @@ $this->Empleado = new EmpleadoModel();
             </div>
         </nav>
 
+
         
        <div class="container">
        <h2 class="text-center">EQUIPO D'JANE</h2>
@@ -109,13 +110,15 @@ $this->Empleado = new EmpleadoModel();
                 <th>ID</th>
                 <th>Nombre Empleado</th>
                 <th>Correo Empleado</th>
+                <th>Especialidad</th>
             </thead>
             <tbody>
                 <?php  foreach($resultado as $busqueda => $value){ ?>
                 <tr>
-                    <td><a><?php print_r($value->ID_EMPLEADO) ?></a></td>
+                    <td><a href="#"><?php print_r($value->ID_EMPLEADO) ?></a></td>
                     <td><?php print_r($value->NombreEmpleado) ?></td>
                     <td><?php print_r($value->CorreoEmpleado) ?></td>
+                    <td><?php print_r($value->ESPECIALIDAD) ?></td>
                 </tr>
 
                 <?php }?>
@@ -124,6 +127,8 @@ $this->Empleado = new EmpleadoModel();
         </table>
         </div>
        </div>
+
+       
         
     </section>
     

@@ -1,16 +1,21 @@
 <?php
-session_start();     
+//session_start();     
 $Servicio;
           $this->Servicio = new ServicioController();
           ?>
-<div>
-    <form action="?c=Servicio&a=llamar" method="POST">
-        <input type="submit" class="btn-info" name="Agregar" value="AGREGAR">
-    </form>
-</div>
+
+<section id="main">
+
+
 <form id="Form1" action="" method="POST">
-    <table class="table table-light">
-        <thead class="thead-dark">
+<div class="container p-2">
+    <div class="text-center">
+    <h2>Lista de servicios en D'JANE</h2>
+    </div>
+<div class="table responsive">
+
+<table class="table table-bordered  table-striped">
+        <thead class="table-primary">
             <tr>
                 <th>Nombre Servicio</th>
                 <th>Descripcion Servicio</th>
@@ -21,9 +26,12 @@ $Servicio;
                 <th>Precio Servicio</th>
                 <?php } ?>
                 <th>Empleado</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+                
             </tr>
         </thead>
-        <tbody class="thead-light">
+        <tbody>
             <?php
             foreach ($resultado as $busqueda => $value) {
                 ?>
@@ -44,7 +52,45 @@ $Servicio;
             <?php } ?>
         </tbody>
     </table>
+
+
+    <div>
+    <form action="./?c=Servicio&a=llamar" method="POST">
+        <input type="submit" class="btn btn-info btn-block" name="Agregar" value="AGREGAR">
+    </form>
+</div>
+</div>
+    
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 </form>
+</div>
+
+
 <script>
 $('.Editar').click(function(){
    $('#Form1').attr('action', '?c=Servicio&a=consultaUnica');
@@ -53,3 +99,5 @@ $('.Eliminar').click(function(){
    $('#Form1').attr('action', '?c=Servicio&a=eliminar');
 });
 </script>
+
+</section>

@@ -55,14 +55,12 @@ $this->Citas = new Cita();
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   
 </div>
-
-
     <section id="main">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">
-                <img src="/Agendamiento/Assets/Imagenes/Icono.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-                D'JANE
+                <img src="/Agendamiento/Assets/Imagenes/djlogodorado.png" width="120" height="40" class="d-inline-block align-top" alt="" loading="lazy">
+                
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -70,7 +68,7 @@ $this->Citas = new Cita();
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item ">
-                        <a class="nav-link" href="#" onclick=""><i class="fa fa-home"></i>Inicio</a>
+                        <a class="nav-link" href="#" onclick=""><i class="fa fa-home"></i> Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a id="citas" class="nav-link" href="#" onclick="abrirM(this.id)" ><i class="fa fa-calendar"></i> Mis citas</a>
@@ -105,7 +103,6 @@ $this->Citas = new Cita();
         </nav>
 
         
-
 
 
         <section class="container">

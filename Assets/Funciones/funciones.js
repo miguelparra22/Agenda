@@ -57,8 +57,10 @@ function tomaropcion(elemento) {
       var e = "";
        e += "<a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>";
        e += "<a href='?c=Empleado&a=ListaEmpleados'><i class='fa fa-users'></i> Ver Equipo</a>";
-       e += "<a><i class='fa fa-user-plus'></i> Agregar miembro</a>";
-       e += "<a><i class='fa fa-user-times'></i> Desabihilitar miembro</a>";
+       e += "<a href='?c=Empleado&a=LlamarAgregar'><i class='fa fa-user-plus'></i> Agregar miembro</a>";
+      // e += "<a><i class='fa fa-user-times'></i> Desabihilitar miembro</a>";
+      e += "<a href='?c=Servicio&a=lista'><i class='fa fa-shower'></i> Servicios</a>";
+      
 
        document.getElementById("mySidenav").innerHTML = e;
       break;
@@ -106,5 +108,9 @@ function tomaropcion(elemento) {
     
       
   }
+
+
+  
+
 }
    

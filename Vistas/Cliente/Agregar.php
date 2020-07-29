@@ -13,7 +13,7 @@
     <body>
         <nav class="nav navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">
-                <img src="/Agendamiento/Assets/Imagenes/DjBlanco.png" alt="D'JANE" width="100" height="40">
+               <!-- <img src="/Agendamiento/Assets/Imagenes/djlogodorado.svg" alt="D'JANE" width="50px" height="80px">-->
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

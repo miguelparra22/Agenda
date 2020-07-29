@@ -13,13 +13,7 @@
 </head>
 
 <body>
-    <!--nav class="menu">
-        <a href="#first"><i class="fa fa-home" title="Inicio"></i></a>
-        <a href="#second"><i class="fa fa-calendar" title="Agendar cita"></i></a>
-        <a href="#third"><i class="fa fa-list-ul" title="Servicios y productos"></i></a>
-        <a href="#fourth"><i class="fa fa-address-card" title="Actualizar datos"></i></a>
-        <a href="#"><i class="fa fa-window-close" title="Cerrar sesión"></i></a>
-    </nav-->
+
 
     <section id="main">
 
