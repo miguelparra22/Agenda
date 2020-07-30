@@ -21,10 +21,16 @@
 <script>
 $(document).ready(function () {
     $('#calendario').fullCalendar({
+      defaultView: 'agendaWeek',
+      selectable: true,
+      minTime: "08:00:00",
+      maxTime: "18:00:00",
+      allDaySlot: false,
         header:{
-            left:'today,prev,next, mibutton',
+            left:'today',
             center:'title',
-            right:'month,basicWeek, basicDay, agendaWeek, agendaDay'
+            
+            right:'agendaWeek, agendaDay'
 
         },customButtons:{
             mibutton:{
@@ -34,7 +40,7 @@ $(document).ready(function () {
                 }
             }
         },
-        dayClick:function(){
+        Click:function(){
             $('#agendaModal').modal();
         },
        eventSources:[{
@@ -43,7 +49,7 @@ $(document).ready(function () {
                 id:'1',
                 title:'evento 1',
                 descripcion:'esto es un evento',
-                start:'2020-06-22T12:30:00',
+                start:'2020-07-23T12:30:00',
                 allDay:false,
                 color:'RED',
                 textColor:'black'
@@ -54,8 +60,17 @@ $(document).ready(function () {
            $('#tituloEvent').text(calEvent.title); 
            $('#descripcionEvent').text(calEvent.descripcion); 
            $('#agendaModal').modal();
-       }
+       },select: function(start, end, jsEvent) {  
+                endtime = $.fullCalendar.moment(end).format('h:mm');
+                starttime = $.fullCalendar.moment(start).format('dddd, MMMM Do YYYY, h:mm');
+                var mywhen = starttime + ' - ' + endtime;
+                start = moment(start).format();
+                end = moment(end).format();
+                console.log(start,end)
+                $('#agendaModal').modal();
+           },
     });
+   
 });
 </script>
 <!-- Modal -->
