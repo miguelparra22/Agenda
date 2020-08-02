@@ -13,7 +13,10 @@ class EmpleadoController{
 
 
    function LlamarAgregar(){
+     require_once 'Vistas/Header.php';
+     require_once 'Vistas/Home/MenuAdmin.php';
      require_once 'Vistas/Empleado/Agregar.php';
+     require_once 'Vistas/Footer.php';
    }
    
 
@@ -41,47 +44,37 @@ class EmpleadoController{
 
     if($this->model->agregar($this->vo)){
        
-       include_once "Agendamiento/Vistas/Empleado/index.php";
        
        
-        echo "<div class='alert success'>
-        <span class='closebtn'>&times;</span>  
-        <strong>Exito!</strong> Se registro correctamente.
-      </div>
-      
-      <script>
-      var close = document.getElementsByClassName('closebtn');
-       var i;
-
-          for (i = 0; i < close.length; i++) {
-          close[i].onclick = function(){
-          var div = this.parentElement;
-          div.style.opacity = '0';
-          setTimeout(function(){ div.style.display = 'none'; }, 600);
-        }
-      }
-      </script>";
+       
+       
+       include_once 'Vistas/Header.php';
+       include_once 'Vistas/Home/MenuAdmin.php';
+       echo "
+       <div class='alert alert-success alert-dismissible fade show' role='alert'>
+           <strong>Perfecto!</strong> Registro exitoso.
+           <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+           <span aria-hidden='true'>&times;</span>
+           </button>
+      </div>";
+       include_once 'Vistas/Empleado/Agregar.php';
+       include_once 'Vistas/Footer.php';
         
     }else{
-        include_once 'Vistas/Empleado/Agregar.php';
-       
-        echo "<div class='alert'>
-        <span class='closebtn'>&times;</span>  
-        <strong>Error</strong> No se registro.
-      </div>
-      
-      <script>
-      var close = document.getElementsByClassName('closebtn');
-       var i;
 
-          for (i = 0; i < close.length; i++) {
-          close[i].onclick = function(){
-          var div = this.parentElement;
-          div.style.opacity = '0';
-          setTimeout(function(){ div.style.display = 'none'; }, 600);
-        }
-      }
-      </script>";
+      include_once 'Vistas/Header.php';
+       include_once 'Vistas/Home/MenuAdmin.php';
+       echo "
+       <div class='alert alert-danger alert-dismissible fade show' role='alert'>
+           <strong>Error</strong> No se pudo registrar.
+           <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+           <span aria-hidden='true'>&times;</span>
+           </button>
+      </div>";
+       include_once 'Vistas/Empleado/Agregar.php';
+       include_once 'Vistas/Footer.php';
+      include_once 'Vistas/Empleado/Agregar.php';
+      
     }
 
   }

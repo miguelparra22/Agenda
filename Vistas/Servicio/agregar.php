@@ -1,47 +1,66 @@
-<?php
-session_start();     
-?>
-<form action="?c=Servicio&a=agregar" method="POST">
-   <div class="form-group">
-        NOMBRE SERVICIO
-        <input type="text" class="form-control" name="NOMSERVi" value=""/>
-    </div>
-    <div class="form-group">
-        DESCRIPCION SERVICIO
-        <input class="form-control" name="DESCSERVI"  value=""/>
-    </div>
-    <?php if($_SESSION['ROL'] == 2){?>
-    <div class="form-group">
-        CANTIDAD SERVICIO
-        <input class="form-control"  name="CANTSERVI" value="" />
-    </div>
-    <?php }else{?>
-    <div style="display:none" class="form-group">
-    CANTIDAD SERVICIO
-    <input  class="form-control"  name="CANTSERVI" value="" />
-    </div>
-    <?php }?>
-    <?php if($_SESSION['ROL'] == 1){?>
-    <div class="form-group">
-        PRECIO SERVICIO
-        <input class="form-control"  name="PRECIOSERVICIO" value="" />
-    </div>
-    <?php }else{?>
-        <div style="display:none" class="form-group">
-        PRECIO SERVICIO
-        <input  class="form-control"  name="PRECIOSERVICIO" value="" />
+<section id="main">
+
+    <div class="container">
+        <div class="box">
+            <h3>Registre un nuevo servicio en D'JANE</h3>
+            <form action="?c=Servicio&a=agregar" method="POST">
+                <div>
+                    <input type="text" name="NOMSERVI" value="" required />
+                    <label>Nombre del servicio</label>
+                </div>
+
+               
+
+                <?php if ($_SESSION['ROL'] == 2) { ?>
+
+                    <div>
+                        <input type="text" required name="CANTSERVI" />
+                        <label>Cantidad de servicio</label>
+                    </div>
+
+                    <div>
+                        <textarea name="DESCSERVI" required></textarea>
+                  
+                    <label>Descripción servicio</label>
+                </div>
+
+                <?php } else { ?>
+                    <div style="display:none">
+
+                        <input class="form-control" name="CANTSERVI" value="0" />
+                        <label>Cantidad de Servicio</label>
+                    </div>
+                <?php } ?>
+                <?php if ($_SESSION['ROL'] == 1) { ?>
+
+                    <div>
+                        <input name="PRECIOSERVICIO" value="" required />
+                        <label>Precio del servicio</label>
+                    </div>
+
+                <?php } else { ?>
+                    <div style="display:none">
+
+                        <input name="PRECIOSERVICIO" value="" required />
+                        <label>Precio del servicio</label>
+                    </div>
+                <?php } ?>
+                <div>
+                    
+                    <select name="EMPLEADO" required>
+                        <option  disablled>Seleccione un empleado</option>
+                        <?php
+                        foreach ($resultado as $busqueda => $value) { ?>
+                            <option value="<?php print_r($value->ID_EMPLEADO) ?>"><?php print_r($value->NombreEmpleado) ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+
+                <div>
+                <input type="submit" name="guardar" value="GUARDAR" />
+                </div>
+            </form>
         </div>
-    <?php } ?>
-    <div class="form-group">
-        EMPLEADO
-        <select name="EMPLEADO">
-            <?php
-            foreach ($resultado as $busqueda => $value) { ?>
-                    <option  value="<?php print_r($value->ID_EMPLEADO) ?>" ><?php print_r($value->NombreEmpleado) ?></option>
-            <?php } ?>
-        </select>
     </div>
-    <div>
-        <input type="submit" name="guardar" value="GUARDAR" />
-    </div>
-</form>
+    
+</section>

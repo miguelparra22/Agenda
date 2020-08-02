@@ -51,16 +51,16 @@ $this->Citas = new Cita();
 
     </div>
 
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  
-</div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    </div>
     <section id="main">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">
                 <img src="/Agendamiento/Assets/Imagenes/djlogodorado.png" width="120" height="40" class="d-inline-block align-top" alt="" loading="lazy">
-                
+
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -71,7 +71,7 @@ $this->Citas = new Cita();
                         <a class="nav-link" href="#" onclick=""><i class="fa fa-home"></i> Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a id="citas" class="nav-link" href="#" onclick="abrirM(this.id)" ><i class="fa fa-calendar"></i> Mis citas</a>
+                        <a id="citas" class="nav-link" href="#" onclick="abrirM(this.id)"><i class="fa fa-calendar"></i> Mis citas</a>
                     </li>
                     <li class="nav-item">
                         <a id="team" class="nav-link" href="#" onclick="abrirM(this.id)"><i class="fa fa-users"></i> Equipo</a>
@@ -91,18 +91,37 @@ $this->Citas = new Cita();
                 </li-->
                 </ul>
             </div>
-   
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
 
-                    <li class="nav-item">
-                        <a href="/Agendamiento/Vistas/Home/home.php" class="btn btn-outline-danger"><i class="fa fa-close"></i></a>
-                    </li>
+                    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fa fa-close"></i>
+                    </button>
                 </ul>
             </div>
         </nav>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cerrar sesión</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ¿Está seguro de que desea cerrar sesión?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-danger">Cerrar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        
 
 
         <section class="container">
@@ -119,14 +138,14 @@ $this->Citas = new Cita();
                         <th>Nombre del encargado</th>
                     </thead>
                     <tbody>
-                    <?php  foreach ($ResultadoLista as $busqueda => $value) {  ?>
-                        <tr>
-                            <td><?php print_r($this->Cita->CambiarIdxNom("cliente","ClienteNombre","IDCLIENTE","$value->FKIDLCIENTE")[0]->ClienteNombre) ?></td>
-                            <td><?php print_r(date("h:i:s A", strtotime($value->HORAPACTADA))) ?> </td>
-                            <td><?php print_r($this->Cita->CambiarIdxNom("servicio","NombreServicio","ID_SERVICIO","$value->FKSERVICIO")[0]->NombreServicio) ?></td>
-                            <?php $IdEmpleado = $this->Cita->CambiarIdxNom("agenda","FK_IDEMPLEADO","FK_IDCITA","$value->IDCITA")[0]->FK_IDEMPLEADO?>
-                            <td><?php print_r($this->Cita->CambiarIdxNom("empleado","NombreEmpleado","ID_EMPLEADO","$IdEmpleado")[0]->NombreEmpleado)?></td>
-                        </tr>
+                        <?php foreach ($ResultadoLista as $busqueda => $value) {  ?>
+                            <tr>
+                                <td><?php print_r($this->Cita->CambiarIdxNom("cliente", "ClienteNombre", "IDCLIENTE", "$value->FKIDLCIENTE")[0]->ClienteNombre) ?></td>
+                                <td><?php print_r(date("h:i:s A", strtotime($value->HORAPACTADA))) ?> </td>
+                                <td><?php print_r($this->Cita->CambiarIdxNom("servicio", "NombreServicio", "ID_SERVICIO", "$value->FKSERVICIO")[0]->NombreServicio) ?></td>
+                                <?php $IdEmpleado = $this->Cita->CambiarIdxNom("agenda", "FK_IDEMPLEADO", "FK_IDCITA", "$value->IDCITA")[0]->FK_IDEMPLEADO ?>
+                                <td><?php print_r($this->Cita->CambiarIdxNom("empleado", "NombreEmpleado", "ID_EMPLEADO", "$IdEmpleado")[0]->NombreEmpleado) ?></td>
+                            </tr>
                         <?php } ?>
                     </tbody>
 
@@ -142,11 +161,11 @@ $this->Citas = new Cita();
             <i class="fa fa-youtube m-2"></i>
             <i class="fa fa-instagram m-2"></i>
         </footer>
-       
 
 
-       
-       <script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
+
+
+        <script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
         <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
         <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
 </body>

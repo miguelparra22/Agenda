@@ -12,9 +12,39 @@
     <title>D'JANE</title>
 </head>
 
+ 
 
 
 <body>
+
+<div id="waitDiv" class="loadercont">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 m-auto">
+                    <div class="imageloader">
+                        <img src="/Agendamiento/Assets/Imagenes/djlogo.png" alt="D'JANE" width="200" height="100">
+
+
+                    </div>
+                    <div class="contenedorload">
+                        <div class="lds-grid">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
     <nav class="nav navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
             <img src="/Agendamiento/Assets/Imagenes/djlogo.png" alt="D'JANE" width="100" height="40">
@@ -272,16 +302,16 @@
         </div>
 
         <div id="myNav" class="overlay">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="javascript:void(0)" class="closebtn" onclick="cerrarNav()">&times;</a>
             <div class="overlay-content">
                 <div class="text-center">
                     <img src="/Agendamiento/Assets/Imagenes/djlogodorado.png" alt="D'JANE" width="100" height="40">
                 </div>
 
-                <a href="#"><i class="fa fa-instagram"></i> Instagram</a>
-                <a href="#"><i class="fa fa-facebook"></i> Facebook</a>
-                <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
-                <a href="#"><i class="fa fa-whatsapp"></i> Whatsapp</a>
+                <a href="#" onclick="instagram()"><i class="fa fa-instagram"></i> Instagram</a>
+                <a href="#" onclick="facebook()"> <i class="fa fa-facebook"></i> Facebook</a>
+                <!--a href="#"><i class="fa fa-twitter"></i> Twitter</a-->
+                <a href="#" onclick="youtube()"><i class="fa fa-youtube"></i> Youtube</a>
             </div>
         </div>
   
@@ -303,47 +333,18 @@
         <p class="p-2 text-center text-white">
            Siguenos en nuestras redes sociales
         </p>
-        <i class="fa fa-facebook p-2"></i>
-        <i class="fa fa-instagram p-2"></i>
-        <i class="fa fa-twitter p-2"></i>
+        <i class="fa fa-facebook p-2 iconr"  onclick="facebook()"></i>
+        <i class="fa fa-instagram p-2 iconr" onclick="instagram()"></i>
+        <i class="fa fa-youtube-play p-2 iconr"  onclick="youtube()"></i>
     </footer>
 
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
 
 </body>
-<script>
-    function openNav() {
-        document.getElementById("myNav").style.height = "100%";
-    }
 
-    function closeNav() {
-        document.getElementById("myNav").style.height = "0%";
-    }
-
-
-    mybutton = document.getElementById("myBtn");
-
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {
-        scrollFunction()
-    };
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    }
-</script>
 <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
 <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
+<script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
 
 </html>

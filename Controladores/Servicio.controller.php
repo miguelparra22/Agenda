@@ -26,13 +26,30 @@ class ServicioController {
     }
 
     public function agregar() {
-        $this->vo->setNombreServicio($_POST["NOMSERVi"]);
+        $this->vo->setNombreServicio($_POST["NOMSERVI"]);
         $this->vo->setDescripcionServicio($_POST["DESCSERVI"]);
         $this->vo->setCantidadServicio($_POST["CANTSERVI"]);
         $this->vo->setPrecioServicio($_POST["PRECIOSERVICIO"]);
         $this->vo->setId_Empleado($_POST["EMPLEADO"]);
         if ($this->model->agregar($this->vo)) {
-            echo "ingresó correctamente";
+            echo "<div class='alert success'>
+            <span class='closebtn'>&times;</span>  
+            <strong>Exito!</strong> Se registro correctamente.
+          </div>
+          
+          <script>
+          var close = document.getElementsByClassName('closebtn');
+           var i;
+    
+              for (i = 0; i < close.length; i++) {
+              close[i].onclick = function(){
+              var div = this.parentElement;
+              div.style.opacity = '0';
+              setTimeout(function(){ div.style.display = 'none'; }, 600);
+            }
+          }
+          </script>";
+            
             include_once 'Vistas/header.php';
             include_once 'Vistas/servicio/listartodo.php';
             include_once 'Vistas/footer.php';
@@ -107,10 +124,11 @@ class ServicioController {
         }
     }
 
-    public function llamar() {
+    public function LlamarAgregar() {
         $resultado = $this->model->ListaEmpleados();
         include_once 'Vistas/header.php';
-        include_once 'Vistas/servicio/agregar.php';
+        include_once 'Vistas/Home/MenuAdmin.php';
+        include_once 'Vistas/Servicio/agregar.php';
         include_once 'Vistas/footer.php';
     }
 
@@ -120,5 +138,3 @@ class ServicioController {
     }
 
 }
-
-?>
