@@ -105,14 +105,20 @@
                 <h4>Estas son las citas del día de hoy</h4>
                 <table class="table  table-bordered table-striped">
                     <thead class="table-primary">
-                        <th>Nombre del cliente</th>
                         <th>Hora</th>
                         <th>Servicio</th>
                         <th>Nombre del encargado</th>
                     </thead>
                     <tbody>
-                
-                        
+                    <?php  foreach ($ResultadoLista as $busqueda => $value) {  ?>
+                        <tr>            
+                            <td><?php print_r(date("h:i:s A", strtotime($value->HORAPACTADA))) ?> </td>
+                            <?php $IdServicio = $this->Cita->CambiarIdxNom("cita_servicio","ID_SERVICIO","ID_CITA","$value->IDCITA")[0]->ID_SERVICIO?>
+                            <td><?php print_r($this->Cita->CambiarIdxNom("servicio","NombreServicio","ID_SERVICIO","$IdServicio")[0]->NombreServicio) ?></td>
+                            <?php $IdEmpleado = $this->Cita->CambiarIdxNom("agenda","FK_IDEMPLEADO","FK_IDCITA","$value->IDCITA")[0]->FK_IDEMPLEADO?>
+                            <td><?php print_r($this->Cita->CambiarIdxNom("empleado","NombreEmpleado","ID_EMPLEADO","$IdEmpleado")[0]->NombreEmpleado)?></td>
+                        </tr>
+                     <?php } ?>
                     </tbody>
 
                 </table>

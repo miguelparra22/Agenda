@@ -5,9 +5,11 @@
     "\\Controladores",
     "\\Modelos",
     "\\Vistas",
-    "\\Vistas\\Servicio",
+    "\\Vistas\\Admin",
+    "\\Vistas\\Cliente",
+    "\\Vistas\\Empleado",
     "\\VO"
   ],
-  "SelectedNode": "\\Vistas\\Servicio\\lista.php",
+  "SelectedNode": "\\Vistas\\Cliente\\index.php",
   "PreviewInSolutionExplorer": false
 }

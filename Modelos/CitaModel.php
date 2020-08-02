@@ -31,11 +31,7 @@ public function agregar($vo) {
 }
 
 public function CambiarIdxNom($tabla,$CampoObtener,$campofiltro,$valorfiltro){
-    if(strpos($valorfiltro,"'") !==  false){
-    $sentencia = "SELECT $CampoObtener FROM $tabla WHERE $campofiltro = '$valorfiltro'";
-    }else{
-    $sentencia = "SELECT $CampoObtener FROM $tabla WHERE $campofiltro = $valorfiltro ";
-    }
+    $sentencia = "SELECT $CampoObtener FROM $tabla WHERE $campofiltro = $valorfiltro";
     $resultado = $this->PDO->prepare($sentencia);
     $resultado->execute();
     $resultado = $resultado->fetchAll(PDO::FETCH_OBJ);
@@ -55,6 +51,21 @@ public function listar(){
 
 public function listarAdmin() {
         $sentencia = "SELECT * FROM $this->tabla WHERE DATE(HORAPACTADA) = DATE(NOW())";
+        $resultado = $this->PDO->prepare($sentencia);
+        $resultado->execute();
+        return $resultado->fetchAll(PDO::FETCH_OBJ);
+}
+
+public function listarCliente($IdCliente) {
+        $sentencia = "SELECT * FROM $this->tabla WHERE DATE(HORAPACTADA) = DATE(NOW()) AND FKIDCLIENTE = $IdCliente";
+        $resultado = $this->PDO->prepare($sentencia);
+        $resultado->execute();
+        return $resultado->fetchAll(PDO::FETCH_OBJ);
+}
+
+public function listarEmpleado($IdEmpleado) {
+        $IdCita = $this->CambiarIdxNom("agenda","FK_IDCITA","FK_IDEMPLEADO","$IdEmpleado")[0]->FK_IDCITA;
+        $sentencia = "SELECT * FROM $this->tabla WHERE DATE(HORAPACTADA) = DATE(NOW()) AND IDCITA = $IdCita";
         $resultado = $this->PDO->prepare($sentencia);
         $resultado->execute();
         return $resultado->fetchAll(PDO::FETCH_OBJ);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-07-2020 a las 01:52:32
+-- Tiempo de generación: 02-08-2020 a las 21:56:26
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.2.31
 
@@ -38,7 +38,7 @@ CREATE TABLE `agenda` (
 --
 
 INSERT INTO `agenda` (`IDAGENDA`, `FK_IDEMPLEADO`, `FK_IDCITA`) VALUES
-(2, 2, 3),
+(2, 2, 5),
 (3, 1, 4);
 
 -- --------------------------------------------------------
@@ -51,7 +51,7 @@ CREATE TABLE `citas` (
   `IDCITA` int(11) NOT NULL,
   `HORAPACTADA` datetime NOT NULL,
   `HORATERMINA` datetime NOT NULL,
-  `FKIDLCIENTE` int(11) NOT NULL,
+  `FKIDCLIENTE` int(11) NOT NULL,
   `DESCRIPCION` varchar(100) NOT NULL,
   `FKIDESTADO` int(11) NOT NULL,
   `FKHORARIO` int(11) NOT NULL
@@ -61,10 +61,11 @@ CREATE TABLE `citas` (
 -- Volcado de datos para la tabla `citas`
 --
 
-INSERT INTO `citas` (`IDCITA`, `HORAPACTADA`, `HORATERMINA`, `FKIDLCIENTE`, `DESCRIPCION`, `FKIDESTADO`, `FKHORARIO`) VALUES
+INSERT INTO `citas` (`IDCITA`, `HORAPACTADA`, `HORATERMINA`, `FKIDCLIENTE`, `DESCRIPCION`, `FKIDESTADO`, `FKHORARIO`) VALUES
 (1, '2020-06-03 08:33:44', '0000-00-00 00:00:00', 1, 'El cliente realizo la cita a través de la pagina web', 1, 2),
 (3, '2020-07-22 17:45:14', '0000-00-00 00:00:00', 6, 'prueba', 1, 2),
-(4, '2020-07-28 09:08:59', '0000-00-00 00:00:00', 6, 'prueba funcionalidad', 1, 2);
+(4, '2020-07-28 09:08:59', '0000-00-00 00:00:00', 6, 'prueba funcionalidad', 1, 2),
+(5, '2020-08-02 17:45:14', '2020-08-02 14:41:54', 6, 'prueba', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,7 @@ CREATE TABLE `cita_servicio` (
 
 INSERT INTO `cita_servicio` (`ID_CITA_SERVICIO`, `ID_CITA`, `ID_SERVICIO`) VALUES
 (1, 1, 1),
-(2, 4, 1);
+(2, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -272,7 +273,7 @@ ALTER TABLE `citas`
   ADD PRIMARY KEY (`IDCITA`),
   ADD KEY `FKIDESTADO` (`FKIDESTADO`),
   ADD KEY `FKHORARIO` (`FKHORARIO`),
-  ADD KEY `FKIDLCIENTE` (`FKIDLCIENTE`);
+  ADD KEY `FKIDLCIENTE` (`FKIDCLIENTE`);
 
 --
 -- Indices de la tabla `cita_servicio`
@@ -341,7 +342,7 @@ ALTER TABLE `agenda`
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `IDCITA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `IDCITA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `cita_servicio`
@@ -402,7 +403,7 @@ ALTER TABLE `agenda`
 ALTER TABLE `citas`
   ADD CONSTRAINT `citas_ibfk_1` FOREIGN KEY (`FKIDESTADO`) REFERENCES `estado` (`IDESTADO`),
   ADD CONSTRAINT `citas_ibfk_2` FOREIGN KEY (`FKHORARIO`) REFERENCES `horario` (`ID_HORARIO`),
-  ADD CONSTRAINT `citas_ibfk_4` FOREIGN KEY (`FKIDLCIENTE`) REFERENCES `cliente` (`IDCLIENTE`);
+  ADD CONSTRAINT `citas_ibfk_4` FOREIGN KEY (`FKIDCLIENTE`) REFERENCES `cliente` (`IDCLIENTE`);
 
 --
 -- Filtros para la tabla `cita_servicio`
