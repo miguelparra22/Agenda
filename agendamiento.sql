@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-07-2020 a las 20:39:00
--- Versión del servidor: 10.3.16-MariaDB
--- Versión de PHP: 7.1.30
+-- Tiempo de generación: 31-07-2020 a las 01:52:32
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.2.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -39,7 +38,8 @@ CREATE TABLE `agenda` (
 --
 
 INSERT INTO `agenda` (`IDAGENDA`, `FK_IDEMPLEADO`, `FK_IDCITA`) VALUES
-(2, 2, 3);
+(2, 2, 3),
+(3, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -62,8 +62,9 @@ CREATE TABLE `citas` (
 --
 
 INSERT INTO `citas` (`IDCITA`, `HORAPACTADA`, `HORATERMINA`, `FKIDLCIENTE`, `DESCRIPCION`, `FKIDESTADO`, `FKHORARIO`) VALUES
-(1, '2020-06-03 08:33:44', '2020-06-03 08:45:00', 1, 'El cliente realizo la cita a través de la pagina web', 1, 2),
-(3, '2020-07-22 17:45:14', '2020-07-22 17:40:00', 6, 'prueba', 1, 2);
+(1, '2020-06-03 08:33:44', '0000-00-00 00:00:00', 1, 'El cliente realizo la cita a través de la pagina web', 1, 2),
+(3, '2020-07-22 17:45:14', '0000-00-00 00:00:00', 6, 'prueba', 1, 2),
+(4, '2020-07-28 09:08:59', '0000-00-00 00:00:00', 6, 'prueba funcionalidad', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -82,7 +83,8 @@ CREATE TABLE `cita_servicio` (
 --
 
 INSERT INTO `cita_servicio` (`ID_CITA_SERVICIO`, `ID_CITA`, `ID_SERVICIO`) VALUES
-(1, 1, 1);
+(1, 1, 1),
+(2, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -333,19 +335,19 @@ ALTER TABLE `servicio`
 -- AUTO_INCREMENT de la tabla `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `IDAGENDA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IDAGENDA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `IDCITA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `IDCITA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `cita_servicio`
 --
 ALTER TABLE `cita_servicio`
-  MODIFY `ID_CITA_SERVICIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_CITA_SERVICIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `cliente`
