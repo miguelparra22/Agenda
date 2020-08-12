@@ -17,14 +17,14 @@ class Servicio extends Conexion implements Idatabase {
 
     public function actualizar($vo) {
         $this->ServicioVO;
-        $sentancia = "UPDATE $this->tabla SET NombreServicio='$vo[1]', DescripcionServicio='$vo[2]', CantidadServicio='$vo[3]',Precio_Servicio = '$vo[4]', FK_IDEMPLEADO='$vo[5]' WHERE ID_SERVICIO='$vo[0]';";
+        $sentancia = "UPDATE $this->tabla SET NombreServicio='$vo[1]', DescripcionServicio='$vo[2]', CantidadServicio='$vo[3]',Precio_Servicio = '$vo[4]',TIEMPO_LIMITE = '$vo[5]' WHERE ID_SERVICIO='$vo[0]';";
         $resultado = $this->PDO->prepare($sentancia);
         return $resultado->execute();
     }
 
     public function agregar($vo) {
         $this->ServicioVO = $vo;
-        $sentencia = "INSERT INTO $this->tabla VALUES (null,:NombreServicio,:DescripcionServicio,:CantidadServicio,:Precio_Servicio,:FK_IDEMPLEADO)";
+        $sentencia = "INSERT INTO $this->tabla VALUES (null,:NombreServicio,:DescripcionServicio,:CantidadServicio,:Precio_Servicio,:TIEMPO_LIMITE)";
 
         //preparar sentencia
         $resultado = $this->PDO->prepare($sentencia);
@@ -35,7 +35,7 @@ class Servicio extends Conexion implements Idatabase {
                     ':DescripcionServicio' => $this->ServicioVO->getDescripcionServicio(),
                     ':CantidadServicio' => $this->ServicioVO->getCantidadServicio(),
                     ':Precio_Servicio' => $this->ServicioVO->getPrecioServicio(),
-                    ':FK_IDEMPLEADO' => $this->ServicioVO->getId_Empleado(),
+                    ':TIEMPO_LIMITE' => $this->ServicioVO->getTiempo_Limite(),
         ));
     }
 
@@ -52,15 +52,16 @@ class Servicio extends Conexion implements Idatabase {
         } else {
             $arreglo = $resultado->fetchAll(PDO::FETCH_OBJ);
             $arreglo = $arreglo[0];
-            $resultado2 = $this->ListaEmpleados();
+            //$resultado2 = $this->ListaEmpleados();
             $this->ServicioVO = new ServicioVO();
             $this->ServicioVO->setId_Servicio($arreglo->ID_SERVICIO);
             $this->ServicioVO->setNombreServicio($arreglo->NombreServicio);
             $this->ServicioVO->setDescripcionServicio($arreglo->DescripcionServicio);
             $this->ServicioVO->setCantidadServicio($arreglo->CantidadServicio);
             $this->ServicioVO->setPrecioServicio($arreglo->Precio_Servicio);
-            $this->ServicioVO->setId_Empleado($arreglo->FK_IDEMPLEADO);
-            $this->ServicioVO->setEmpleado($resultado2);
+            $this->ServicioVO->setTiempo_Limite($arreglo->TIEMPO_LIMITE);
+            //$this->ServicioVO->setId_Empleado($arreglo->FK_IDEMPLEADO);
+            //$this->ServicioVO->setEmpleado($resultado2);
             $arreglo = $this->ServicioVO;
             return $arreglo;
         }

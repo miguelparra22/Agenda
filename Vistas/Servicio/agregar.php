@@ -17,13 +17,6 @@
                         <input type="text" required name="CANTSERVI" />
                         <label>Cantidad de servicio</label>
                     </div>
-
-                    <div>
-                        <textarea name="DESCSERVI" required></textarea>
-                  
-                    <label>Descripción servicio</label>
-                </div>
-
                 <?php } else { ?>
                     <div style="display:none">
 
@@ -31,6 +24,11 @@
                         <label>Cantidad de Servicio</label>
                     </div>
                 <?php } ?>
+                                    <div>
+                        <textarea name="DESCSERVI" required></textarea>
+                  
+                    <label>Descripción servicio</label>
+                </div>
                 <?php if ($_SESSION['ROL'] == 1) { ?>
 
                     <div>
@@ -45,15 +43,10 @@
                         <label>Precio del servicio</label>
                     </div>
                 <?php } ?>
-                <div>
-                    
-                    <select name="EMPLEADO" required>
-                        <option  disablled>Seleccione un empleado</option>
-                        <?php
-                        foreach ($resultado as $busqueda => $value) { ?>
-                            <option value="<?php print_r($value->ID_EMPLEADO) ?>"><?php print_r($value->NombreEmpleado) ?></option>
-                        <?php } ?>
-                    </select>
+                                    <div>
+                        <input name="TIEMPO_LIMITE" required></input>
+                  
+                    <label>Tiempo Limite del servicio</label>
                 </div>
 
                 <div>

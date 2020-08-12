@@ -1,5 +1,4 @@
 <?php
-session_start();     
 ?>
 <h1>EDITAR USUARIO</h1>
 
@@ -26,7 +25,7 @@ session_start();
     <?php if($_SESSION['ROL'] == 1){?>
         <div class="form-group">
             PRECIO SERVICIO
-            <input class="form-control"  name="PRECIOSERVICIO" value="" />
+            <input class="form-control"  name="PRECIOSERVICIO" value="<?= $resultado->getPrecioServicio() ?>" />
         </div>
     <?php } else {?>
         <div style="display:none" class="form-group">
@@ -34,19 +33,10 @@ session_start();
         <input  class="form-control"  name="PRECIOSERVICIO" value="" />
         </div>
     <?php }?>
-    <div class="form-group">
-        EMPLEADO
-        <select name="EMPLEADO">
-            <?php
-            foreach ($resultado->getEmpleado() as $busqueda => $value) {
-                if($value->ID_EMPLEADO == $resultado->getId_Empleado()){ ?>
-                    <option selected value="<?php print_r($value->ID_EMPLEADO) ?>" ><?php print_r($value->NombreEmpleado) ?></option>
-                <?php } else { ?>
-                    <option  value="<?php print_r($value->ID_EMPLEADO) ?>" ><?php print_r($value->NombreEmpleado) ?></option>
-                <?php } ?>
-            <?php } ?>
-        </select>
-    </div>
+            <div class="form-group">
+            TIEMPO LIMITE SERVICIO
+            <input class="form-control"  name="TIEMPOLIMITE" value="<?= $resultado->getTiempo_Limite() ?>" />
+        </div>
     <div>
         <input type="hidden" class="form-control" name="ID_SERVICIO" value="<?= $resultado->getId_Servicio() ?>" />
         <input type="submit" class="btn btn-success" name="guardar" value="EDITAR" />

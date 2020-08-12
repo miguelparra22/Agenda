@@ -4,10 +4,11 @@ class ServicioController {
 
     private $model;
     private $vo;
-
+    private $Citas;
     public function __CONSTRUCT() {
         $this->model = new Servicio();
         $this->vo = new ServicioVO();
+        $this->Citas = new Cita();
     }
 
     /* Llama la vista formulario */
@@ -30,7 +31,7 @@ class ServicioController {
         $this->vo->setDescripcionServicio($_POST["DESCSERVI"]);
         $this->vo->setCantidadServicio($_POST["CANTSERVI"]);
         $this->vo->setPrecioServicio($_POST["PRECIOSERVICIO"]);
-        $this->vo->setId_Empleado($_POST["EMPLEADO"]);
+        $this->vo->setTiempo_Limite($_POST["TIEMPO_LIMITE"]);
         if ($this->model->agregar($this->vo)) {
             echo "<div class='alert success'>
             <span class='closebtn'>&times;</span>  
@@ -77,7 +78,7 @@ class ServicioController {
     }
 
     public function editar() {
-        $vo = array($_POST["ID_SERVICIO"],$_POST["NOMSERVi"], $_POST["DESCSERVI"], $_POST["CANTSERVI"], $_POST["PRECIOSERVICIO"], $_POST["EMPLEADO"]);
+        $vo = array($_POST["ID_SERVICIO"],$_POST["NOMSERVi"], $_POST["DESCSERVI"], $_POST["CANTSERVI"], $_POST["PRECIOSERVICIO"],$_POST["TIEMPOLIMITE"]);
         if ($this->model->actualizar($vo)) {
             echo 'El Servicio se actualizo correctamente.';
             include_once 'Vistas/header.php';

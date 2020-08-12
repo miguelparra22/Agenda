@@ -15,6 +15,7 @@ class ServicioVO{
     private $PrecioServicio;
     private $Id_Empleado;
     private $Empleado;
+    private $Tiempo_Limite;
 
     
     function getId_Servicio(){
@@ -45,6 +46,10 @@ class ServicioVO{
         return $this->Empleado;
     }
 
+    function getTiempo_Limite(){
+        return $this->Tiempo_Limite;
+    }
+
     function setId_Servicio($Id_Servicio){
     $this->Id_Servicio = $Id_Servicio;
     }
@@ -71,5 +76,9 @@ class ServicioVO{
 
     function setEmpleado($Empleado){
         $this->Empleado = $Empleado;
+    }
+
+    function setTiempo_Limite($Tiempo_Limite){
+        $this->Tiempo_Limite = $Tiempo_Limite;
     }
 }
