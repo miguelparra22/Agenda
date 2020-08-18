@@ -14,6 +14,7 @@
         <script src="/Agendamiento/Assets/Bootstrap/js/popper.min.js"></script>
         <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
         <script src="/Agendamiento/Assets/js/select2.min.js"></script>
+        <link rel="stylesheet" href="/Agendamiento/Assets/css/acordion.css" >
     </head>
     <body>
         <div class="container">
@@ -71,19 +72,23 @@
             }
         </script>
         <!-- Modal -->
-        <div class="modal fade" id="agendaModal" tabindex="-1" role="dialog" aria-labelledby="agendaModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+        <div class="modal fade bd-example-modal-lg"id="agendaModal" tabindex="-1" role="dialog" aria-labelledby="agendaModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="tituloEvent">Servicios</h5>
+                        <h5 class="modal-title" id="tituloEvent">Agenda tu Cita </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <select multiple  class="form-control" name="" id="servicios">
+                        <select multiple  class="form-control" name="" id="servicios" onchange="buscarServicios()">
 
                         </select>
+                        <div class="col-md-12">  <hr> </div>
+                        <div id="contenedor">
+
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

@@ -71,6 +71,18 @@ class Citacontroller {
         echo $html;
     }
 
+    function inFoServicios() {
+        $valores = $_POST['valor'];
+        $citass = $this->model->consultaUnica($valores);
+        echo json_encode($citass);
+    }
+
+    function empleados() {
+        $servicio = $_POST['servicio'];
+        $empleados = $this->model->consultaUnicaEmpleados($servicio);
+        echo json_encode($empleados);
+    }
+
 }
 
 ?>

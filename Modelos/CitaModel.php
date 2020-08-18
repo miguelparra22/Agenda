@@ -38,7 +38,27 @@ class Cita extends Conexion implements Idatabase {
     }
 
     public function consultaUnica($id) {
-        
+
+        if (!(empty($id))) {
+            $this->tabla = "servicio";
+            $sentencia = "SELECT * FROM $this->tabla WHERE ID_SERVICIO in($id)";
+            $resultado = $this->PDO->prepare($sentencia);
+            $resultado->execute();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        }
+    }
+
+    public function consultaUnicaEmpleados($id) {
+
+        if (!(empty($id))) {
+            $this->tabla = "empleado";
+            $sentencia = "SELECT * FROM $this->tabla em INNER JOIN servicio_empleado se ON em.ID_EMPLEADO=se.ID_EMPLEADO "
+                    . " INNER JOIN servicio s ON se.ID_SERVICIO=s.ID_SERVICIO WHERE em.FK_ROL<> 1 AND s.ID_SERVICIO='$id' ";
+            $resultado = $this->PDO->prepare($sentencia);
+          
+            $resultado->execute();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        }
     }
 
     public function eliminar($id) {
