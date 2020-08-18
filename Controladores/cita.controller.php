@@ -18,13 +18,12 @@ class Citacontroller {
             switch ($valor->NombreConfiguracion) {
                 case "HORAENTRADA" : {
                         $entrada = $valor->ValorConfiguracion;
-
-                        $_SESSION['entrada'] = $entrada;
+                        
                         break;
                     }
                 case "HORASALIDA": {
                         $salida = $valor->ValorConfiguracion;
-                        $_SESSION['salida'] = $salida;
+                       
                         break;
                     }
             }

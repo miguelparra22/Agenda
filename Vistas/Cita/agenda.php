@@ -26,8 +26,8 @@
                 $('#calendario').fullCalendar({
                     defaultView: 'agendaWeek',
                     selectable: true,
-                    minTime: "<?php print_r($_SESSION['entrada']) ?>",
-                    maxTime: "<?php print_r($_SESSION['salida']) ?>",
+                    minTime: "<?php print_r($entrada) ?>",
+                    maxTime: "<?php print_r($salida) ?>",
                     columnFormat: "dddd D/M",
                     timeFormat: 'hh:mm ',
                     allDaySlot: false,
