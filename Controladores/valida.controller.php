@@ -21,6 +21,7 @@ class Validacontroller {
         } else {
             echo 'false';
         }
+        return $boolean;
     }
 
     public function correo() {

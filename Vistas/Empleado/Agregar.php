@@ -42,14 +42,14 @@
     <section id="main">
         <div class="box">
 
-            <form action="./?c=empleado&a=agregar" method="POST">
+            <form action="./?c=empleado&a=agregar" id="formulario" method="POST">
                 <h3>¡Agrega un nuevo integrate a tu equipo!</h3>
                 <div>
                     <input type="text" name="nombre" required>
                     <label>Nombre del empleado</label>
                 </div>
                 <div>
-                    <input type="text" name="correo" required>
+                    <input type="text" id="correo" name="correo" required>
                     <label>Correo del empleado</label>
                 </div>
                 <div>
@@ -79,7 +79,7 @@
                 <input type="hidden" name="rol" value="1">
 
 
-                <input type="submit" value="guardar" name="guardar">
+                <input type="button" onclick="traerValor()" value="guardar" name="guardar">
 
                 <div class="text-center p-3">
                     <a href="?c=Empleado&a=LlamarInicioAdmin"><i class="fa fa-home"></i> Regresar al inicio</a>
@@ -88,7 +88,7 @@
 
         </div>
     </section>
-
+        <script src="/Agendamiento/Assets/Funciones/validador.js"></script>
 
 
 </html>

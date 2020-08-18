@@ -26,13 +26,13 @@ function validarCorreo(correo) {
 
 function traerValor() {
     const correo = $('#correo').val();
-    const valida = validaCorreoExitente(correo);
-    console.log(new Boolean(valida) ==new Boolean(valida))
-   
-    //console.log(myBool)
-    if (valida == true) {
+    var valida = validaCorreoExitente(correo);
+    if ($.trim(valida) == "false") {
+        $("#formulario").submit();
         return true;
     } else {
+        console.log("entro error")
+        alert("El correo ingresado ya se encuentra registrado")
         return false;
     }
 }
