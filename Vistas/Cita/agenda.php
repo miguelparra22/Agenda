@@ -25,10 +25,10 @@
                 $('#calendario').fullCalendar({
                     defaultView: 'agendaWeek',
                     selectable: true,
-                    minTime: "08:00:00",
-                    maxTime: "20:00:00",
+                    minTime: "<?php print_r($_SESSION['entrada']) ?>",
+                    maxTime: "<?php print_r($_SESSION['salida']) ?>",
                     columnFormat: "dddd D/M",
-                    timeFormat: 'hh:mm  tt',
+                    timeFormat: 'hh:mm ',
                     allDaySlot: false,
                     firstDay: (new Date().getDay()),
                     header: {
@@ -48,15 +48,7 @@
                     },
                     eventSources: [{
                             events: [
-                                {
-                                    id: '1',
-                                    title: 'evento 1',
-                                    descripcion: 'esto es un evento',
-                                    start: '2020-07-23T12:30:00',
-                                    allDay: false,
-                                    color: 'RED',
-                                    textColor: 'black'
-                                }
+<?php print_r($array) ?>
                             ]
                         }],
                     eventClick: function (calEvent, jsEvent, view) {
@@ -89,9 +81,9 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                      <select multiple  class="form-control" name="" id="servicios">
-                          
-                      </select>
+                        <select multiple  class="form-control" name="" id="servicios">
+
+                        </select>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -100,6 +92,6 @@
                 </div>
             </div>
         </div>
-            <script src="/Agendamiento/Assets/Funciones/cita.js"></script>
+        <script src="/Agendamiento/Assets/Funciones/cita.js"></script>
     </body>
 </html>
