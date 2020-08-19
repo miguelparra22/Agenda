@@ -19,6 +19,8 @@ $(window).on('load', function () {
     });
 });
 function buscarServicios() {
+    var costo = 0;
+    var tiempo = 0;
     $('#contenedor').empty();
     var html = '';
     var valores = $('#servicios').val();
@@ -31,6 +33,7 @@ function buscarServicios() {
                 enviar += "'" + valores[i] + "',";
             }
         }
+
         $.ajax({
             type: "POST",
             url: "/Agendamiento/?c=cita&a=inFoServicios",
@@ -40,8 +43,11 @@ function buscarServicios() {
             async: false,
             success: function (response) {
                 var contar = 1;
+
                 var objData = eval(response);
                 for (var item in objData) {
+                    costo += parseInt(objData[item]["Precio_Servicio"]);
+                    tiempo += parseInt(objData[item]["TIEMPO_LIMITE"]);
                     html += '<div class="col-md-12"> <h5 id="' + contar + '" class="accordion " >' + objData[item]['NombreServicio'] + '</h5></div>';
                     html += '<div class="panel" id="panel' + contar + '">';
                     html += ' <table class="table ">';
@@ -59,6 +65,7 @@ function buscarServicios() {
                     html += '    </div> ';
                     contar++;
                 }
+
                 $('#contenedor').html(html);
                 acordion();
             },
@@ -69,6 +76,8 @@ function buscarServicios() {
     } else {
         $('#contenedor').empty();
     }
+    $('#costoTotal').val(formatMiles(costo));
+    $('#tiempoTotal').val(tiempo);
 }
 function acordion() {
     var acc = document.getElementsByClassName("accordion");
@@ -110,4 +119,17 @@ function traerEmpleadoCita(id) {
         }
     });
     return html;
+}
+function formatMiles(costo) {
+
+    var num = costo.toString().replace(/\./g, '');
+    if (!isNaN(num)) {
+        num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g, '$1.');
+        num = num.split('').reverse().join('').replace(/^[\.]/, '');
+
+    } else {
+        alert('Solo se permiten numeros');
+        num = num.replace(/[^\d\.]*/g, '');
+    }
+    return  num;
 }

@@ -89,6 +89,12 @@
                         <div id="contenedor">
 
                         </div>
+                        <div class="col-md-4">
+                            <div><label>Tiempo Total (Minutos)</label></div>
+                            <input class="form-control"id="tiempoTotal"  name="tiempoTotal" readonly disabled>
+                            <div><label>Costos Totales (Pesos $)</label></div>
+                            <input class="form-control"id="costoTotal"  name="costoTotal" readonly disabled>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

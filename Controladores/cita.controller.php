@@ -4,12 +4,10 @@ class Citacontroller {
 
     private $model;
     private $vo;
-
     public function __CONSTRUCT() {
         $this->model = new Cita();
         $this->vo = new CitaVO();
     }
-
     public function mostrar() {
         $this->model = new Configuracion();
         $resultado = $this->model->buscarconfiguracion("HORA");
@@ -18,12 +16,10 @@ class Citacontroller {
             switch ($valor->NombreConfiguracion) {
                 case "HORAENTRADA" : {
                         $entrada = $valor->ValorConfiguracion;
-                        
                         break;
                     }
                 case "HORASALIDA": {
                         $salida = $valor->ValorConfiguracion;
-                       
                         break;
                     }
             }
