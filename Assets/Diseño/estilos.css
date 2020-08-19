@@ -755,6 +755,35 @@ font-weight: bold;
  
 }
 
+.fc-agendaDay-button, .fc-button, .fc-state-default, .fc-corner-left, .fc-corner-right{
+  background: #007cae;
+  color: #fff;
+  border: none;
+  transition: 0.3s;
+}
+
+.fc-axis .fc-time .fc-widget-content{
+  background: #007cae;
+}
+
+.fc-state-down, .fc-state-active{
+background: #fff;
+color: #007cae;
+border: 1px solid #007cae;
+}
+
+.fc-state-down, .fc-state-active:hover{
+  background: #007cae;
+  color: #fff;
+  border: none;
+  }
+  
+
+  .fc-unthemed td.fc-today {
+    background:rgba(33, 150, 243, .1);
+}
+
+
 .iconr{
  cursor: pointer;
  transition: 0.2s;

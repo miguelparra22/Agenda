@@ -80,7 +80,7 @@ function tomaropcion(elemento) {
     var ct = "";
 
     ct += "<a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>";
-    ct += "<a href='/Agendamiento/?c=Cita&a=mostrar'><i class='fa fa-calendar-plus-o'></i> Solicitar cita</a>";
+    ct += "<a href='?c=Cita&a=mostrar'><i class='fa fa-calendar-plus-o'></i> Solicitar cita</a>";
     ct += "<a><i class='fa fa-eye'></i> Ver mis citas</a>";
     ct += "<a><i class='fa fa-calendar-times-o' ></i> Cancelar cita</a>";
 
@@ -151,19 +151,19 @@ function topFunction() {
 
 
 function youtube(){
-  var canal ="https://www.youtube.com/channel/UCiBwOVBljEjcsLUjwI274Xw";
+  var canal ="https://www.youtube.com/channel/UCmq74aI2cw5m32_klZ7QDiw";
   window.open(canal);
 
 }
 
 function instagram(){
-  var pagina ="https://www.instagram.com/?hl=es-la";
+  var pagina ="https://www.instagram.com/spadjane/";
   window.open(pagina);
 
 }
 
 function facebook(){
-  var page ="https://www.facebook.com/";
+  var page ="https://www.facebook.com/101197064946678/posts/197752731957777/";
   window.open(page);
 
 }
