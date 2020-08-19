@@ -59,7 +59,7 @@
                         <label>Correo</label>
                     </div>
                    
-                    <input type="submit"id="botonGuardar" name="guardar" value="GUARDAR" class="btn btn-block btn-primary">
+                    <input type="button" onclick="traerValor()" id="botonGuardar" name="guardar" value="GUARDAR" class="btn btn-block btn-primary">
                     </div>
                 </form>
            
@@ -68,27 +68,10 @@
     <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
     <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
     <script src="/Agendamiento/Assets/Funciones/validador.js"></script>
+    <div id="msg">
+
+    </div>
     <script>
-        $('#correo').keyup(() => {
-             const correo = $('#correo').val();
-            if (validarCorreo(correo)) {
-                console.log(traerValor())
-//                if () {
-//                    $('#correoM').text('El correo ya existe.');
-//                } else {
-//                    $('#correoM').text('');
-//                }
-            }
-        });
-        $('#botonGuardar').click(() => {
-             const correo = $('#correo').val();
-            if (validarCorreo(correo)) {
-                if (traerValor()) {
-                    console.info('El correo ya existe');
-                } else {
-                    $('#formulario').submit();
-                }
-            }
-        });
+
     </script>
 </html>

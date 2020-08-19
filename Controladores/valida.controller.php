@@ -21,6 +21,7 @@ class Validacontroller {
         } else {
             echo 'false';
         }
+        return $boolean;
     }
 
     public function correo() {
@@ -181,6 +182,7 @@ class Validacontroller {
             switch ($rol) {
                 case 0://Cliente
                     $Idcliente = $this->Cita->CambiarIdxNom("cliente","IDCLIENTE","ClienteNombre","'$nombre'")[0]->IDCLIENTE;
+                    $_SESSION['id'] = $Idcliente;
                     $ResultadoLista = $this->Cita->listarCliente($Idcliente);
                     include_once 'Vistas/Cliente/index.php';
                     break;
@@ -190,6 +192,7 @@ class Validacontroller {
                     break;
                 case 2://Empleado'
                     $IdEmpleado = $this->Cita->CambiarIdxNom("empleado","ID_EMPLEADO","NombreEmpleado","'$nombre'")[0]->ID_EMPLEADO;
+                    $_SESSION['id'] = $IdEmpleado;
                     $ResultadoLista = $this->Cita->listarCliente($IdEmpleado);
                     include_once 'Vistas/Empleado/index.php';
                     break;

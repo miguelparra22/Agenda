@@ -14,6 +14,7 @@
         <script src="/Agendamiento/Assets/Bootstrap/js/popper.min.js"></script>
         <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
         <script src="/Agendamiento/Assets/js/select2.min.js"></script>
+        <link rel="stylesheet" href="/Agendamiento/Assets/css/acordion.css" >
     </head>
     <body>
         <div class="container">
@@ -25,10 +26,10 @@
                 $('#calendario').fullCalendar({
                     defaultView: 'agendaWeek',
                     selectable: true,
-                    minTime: "08:00:00",
-                    maxTime: "20:00:00",
+                    minTime: "<?php print_r($entrada) ?>",
+                    maxTime: "<?php print_r($salida) ?>",
                     columnFormat: "dddd D/M",
-                    timeFormat: 'hh:mm  tt',
+                    timeFormat: 'hh:mm ',
                     allDaySlot: false,
                     firstDay: (new Date().getDay()),
                     header: {
@@ -48,15 +49,7 @@
                     },
                     eventSources: [{
                             events: [
-                                {
-                                    id: '1',
-                                    title: 'evento 1',
-                                    descripcion: 'esto es un evento',
-                                    start: '2020-07-23T12:30:00',
-                                    allDay: false,
-                                    color: 'RED',
-                                    textColor: 'black'
-                                }
+<?php print_r($array) ?>
                             ]
                         }],
                     eventClick: function (calEvent, jsEvent, view) {
@@ -79,19 +72,29 @@
             }
         </script>
         <!-- Modal -->
-        <div class="modal fade" id="agendaModal" tabindex="-1" role="dialog" aria-labelledby="agendaModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+        <div class="modal fade bd-example-modal-lg"id="agendaModal" tabindex="-1" role="dialog" aria-labelledby="agendaModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="tituloEvent">Servicios</h5>
+                        <h5 class="modal-title" id="tituloEvent">Agenda tu Cita </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                      <select multiple  class="form-control" name="" id="servicios">
-                          
-                      </select>
+                        <select multiple  class="form-control" name="" id="servicios" onchange="buscarServicios()">
+
+                        </select>
+                        <div class="col-md-12">  <hr> </div>
+                        <div id="contenedor">
+
+                        </div>
+                        <div class="col-md-4">
+                            <div><label>Tiempo Total (Minutos)</label></div>
+                            <input class="form-control"id="tiempoTotal"  name="tiempoTotal" readonly disabled>
+                            <div><label>Costos Totales (Pesos $)</label></div>
+                            <input class="form-control"id="costoTotal"  name="costoTotal" readonly disabled>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -100,6 +103,6 @@
                 </div>
             </div>
         </div>
-            <script src="/Agendamiento/Assets/Funciones/cita.js"></script>
+        <script src="/Agendamiento/Assets/Funciones/cita.js"></script>
     </body>
 </html>
