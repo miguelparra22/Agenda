@@ -173,4 +173,3 @@ function InicioAdmin(){
 
   window.location.href = p;
 }
-

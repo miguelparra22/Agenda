@@ -150,7 +150,7 @@
                                         <h5 class="card-title">Titulo del servicio</h5>
                                         <p class="card-text">Descripcion del servicio</p>
                                         <p class="card-text">Precio del servicio</p>
-                                        <a href="#" class="text-info"><span>Reservar </span> </a>
+                                        <a  onclick="llamarlogin()" class="text-info"><span ></span> Reservar </a>
                                     </div>
                                 </div>
                             </div>
@@ -161,7 +161,7 @@
                                         <h5 class="card-title">Titulo del servicio</h5>
                                         <p class="card-text">Descripcion del servicio</p>
                                         <p class="card-text">Precio del servicio</p>
-                                        <a href="#" class="text-info"><span>Reservar </span> </a>
+                                        <a onclick="llamarlogin()" class="text-info"><span>Reservar </span> </a>
                                     </div>
                                 </div>
                             </div>
@@ -172,7 +172,7 @@
                                         <h5 class="card-title">Titulo del servicio</h5>
                                         <p class="card-text">Descripcion del servicio</p>
                                         <p class="card-text">Precio del servicio</p>
-                                        <a href="#" class="text-info"><span>Reservar </span> </a>
+                                        <a onclick="llamarlogin()" class="text-info"><span>Reservar </span> </a>
                                     </div>
                                 </div>
                             </div>
@@ -190,7 +190,7 @@
                                         <h5 class="card-title">Titulo del servicio</h5>
                                         <p class="card-text">Descripcion del servicio</p>
                                         <p class="card-text">Precio del servicio</p>
-                                        <a href="#" class="text-info"><span>Reservar </span> </a>
+                                        <a  onclick="llamarlogin()" class="text-info"><span>Reservar </span> </a>
                                     </div>
                                 </div>
                             </div>
@@ -201,7 +201,7 @@
                                         <h5 class="card-title">Titulo del servicio</h5>
                                         <p class="card-text">Descripcion del servicio</p>
                                         <p class="card-text">Precio del servicio</p>
-                                        <a href="#" class="text-info"><span>Reservar </span> </a>
+                                        <a onclick="llamarlogin()" class="text-info"><span>Reservar </span> </a>
                                     </div>
                                 </div>
                             </div>
@@ -212,7 +212,7 @@
                                         <h5 class="card-title">Titulo del servicio</h5>
                                         <p class="card-text">Descripcion del servicio</p>
                                         <p class="card-text">Precio del servicio</p>
-                                        <a href="#" class="text-info"><span>Reservar </span> </a>
+                                        <a onclick="llamarlogin()" class="text-info"><span>Reservar </span> </a>
                                     </div>
                                 </div>
                             </div>
@@ -231,7 +231,7 @@
                                         <h5 class="card-title">Titulo del servicio</h5>
                                         <p class="card-text">Descripcion del servicio</p>
                                         <p class="card-text">Precio del servicio</p>
-                                        <a href="#" class="text-info"><span>Reservar </span> </a>
+                                        <a href="#"  onclick="llamarlogin()" class="text-info"><span>Reservar </span> </a>
                                     </div>
                                 </div>
                             </div>
@@ -242,7 +242,7 @@
                                         <h5 class="card-title">Titulo del servicio</h5>
                                         <p class="card-text">Descripcion del servicio</p>
                                         <p class="card-text">Precio del servicio</p>
-                                        <a href="#" class="text-info"><span>Reservar </span> </a>
+                                        <a href="#" onclick="llamarlogin()" class="text-info"><span>Reservar </span> </a>
                                     </div>
                                 </div>
                             </div>
@@ -253,7 +253,7 @@
                                         <h5 class="card-title">Titulo del servicio</h5>
                                         <p class="card-text">Descripcion del servicio</p>
                                         <p class="card-text">Precio del servicio</p>
-                                        <a href="#" class="text-info"><span>Reservar </span> </a>
+                                        <a href="#" class="text-info" onclick="llamarlogin()"><span>Reservar </span> </a>
                                     </div>
                                 </div>
                             </div>

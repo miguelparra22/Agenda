@@ -31,6 +31,11 @@ class Validacontroller {
         echo 'escribe clave';
     }
 
+    public function llamarlogin(){
+        include_once 'vistas/Home/Login.php';
+        
+    }
+
     public function recuperaclave() {
 
         if (!(empty($_POST["correo"]))) {
