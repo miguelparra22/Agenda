@@ -4,10 +4,12 @@ class Citacontroller {
 
     private $model;
     private $vo;
+
     public function __CONSTRUCT() {
         $this->model = new Cita();
         $this->vo = new CitaVO();
     }
+
     public function mostrar() {
         $this->model = new Configuracion();
         $resultado = $this->model->buscarconfiguracion("HORA");
@@ -74,8 +76,22 @@ class Citacontroller {
 
     function empleados() {
         $servicio = $_POST['servicio'];
-        $empleados = $this->model->consultaUnicaEmpleados($servicio);
+        $inicio = $_POST['inicio'];
+        $empleados = $this->model->consultaUnicaEmpleados($servicio, $inicio);
         echo json_encode($empleados);
+    }
+
+    function guardar() {
+
+        $hasta = date("Y-m-j H:i:s", strtotime($_POST['inicioFecha'] . "+ " . $_POST['tiempoTotal'] . " minute"));
+        $this->vo->setIdservicio($_POST['servicios']);
+        $this->vo->setHoratermina($hasta);
+        $this->vo->setHorapactada($_POST['inicioFecha']);
+        $this->vo->setDescripcion($_POST['descripcion']);
+        $this->vo->setFkidcliente($_SESSION['id']);
+
+
+        $resultado = $this->model->agregar($this->vo);
     }
 
 }

@@ -1,72 +1,80 @@
-<?php 
-
+<?php
 
 class CitaVO {
 
-    private $id_cita;
+    private $idcita;
     private $horapactada;
-    private $fk_idCliente;
+    private $horatermina;
+    private $fkidcliente;
     private $descripcion;
-    private $fk_idEstado;
-    private $fk_horario;
-    private $fk_servicio;
-    
-    function getId_cita() {
-        return $this->id_cita;
+    private $fkidestado;
+    private $fkidempelado;
+    private $idservicio;
+
+    function getIdcita() {
+        return $this->idcita;
     }
 
     function getHorapactada() {
         return $this->horapactada;
     }
 
-    function getFk_idCliente() {
-        return $this->fk_idCliente;
+    function getHoratermina() {
+        return $this->horatermina;
+    }
+
+    function getFkidcliente() {
+        return $this->fkidcliente;
     }
 
     function getDescripcion() {
         return $this->descripcion;
     }
 
-    function getFk_idEstado() {
-        return $this->fk_idEstado;
+    function getFkidestado() {
+        return $this->fkidestado;
     }
 
-    function getFk_horario() {
-        return $this->fk_horario;
+    function getFkidempelado() {
+        return $this->fkidempelado;
     }
 
-    function getFk_servicio() {
-        return $this->fk_servicio;
+    function getIdservicio() {
+        return $this->idservicio;
     }
 
-    function setId_cita($id_cita) {
-        $this->id_cita = $id_cita;
+    function setIdcita($idcita) {
+        $this->idcita = $idcita;
     }
 
     function setHorapactada($horapactada) {
         $this->horapactada = $horapactada;
     }
 
-    function setFk_idCliente($fk_idCliente) {
-        $this->fk_idCliente = $fk_idCliente;
+    function setHoratermina($horatermina) {
+        $this->horatermina = $horatermina;
+    }
+
+    function setFkidcliente($fkidcliente) {
+        $this->fkidcliente = $fkidcliente;
     }
 
     function setDescripcion($descripcion) {
         $this->descripcion = $descripcion;
     }
 
-    function setFk_idEstado($fk_idEstado) {
-        $this->fk_idEstado = $fk_idEstado;
+    function setFkidestado($fkidestado) {
+        $this->fkidestado = $fkidestado;
     }
 
-    function setFk_horario($fk_horario) {
-        $this->fk_horario = $fk_horario;
+    function setFkidempelado($fkidempelado) {
+        $this->fkidempelado = $fkidempelado;
     }
 
-    function setFk_servicio($fk_servicio) {
-        $this->fk_servicio = $fk_servicio;
+    function setIdservicio($idservicio) {
+        $this->idservicio = $idservicio;
     }
-
 
 }
+
 ?>

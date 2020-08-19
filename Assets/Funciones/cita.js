@@ -96,21 +96,22 @@ function acordion() {
         });
     }
 }
-
 function traerEmpleadoCita(id) {
+    var inicio = $('#inicioFecha').val().replace('T', ' ');
     var html = '';
     $.ajax({
         type: "POST",
         url: "/Agendamiento/?c=cita&a=empleados",
         data: {
-            servicio: id
+            servicio: id,
+            inicio: inicio
         },
         async: false,
         success: function (response) {
             var objData = eval(response);
             html += '<select class="form-control">';
             for (var item in objData) {
-                html += '<option value="' + objData[item]['ID_EMPLEADO'] + '">' + objData[item]['NombreEmpleado'] + '</option>';
+                html += '<option id="' + id + '" value="' + objData[item]['ID_EMPLEADO'] + '">' + objData[item]['NombreEmpleado'] + '</option>';
             }
             html += '</select>';
         },
@@ -121,15 +122,39 @@ function traerEmpleadoCita(id) {
     return html;
 }
 function formatMiles(costo) {
-
     var num = costo.toString().replace(/\./g, '');
     if (!isNaN(num)) {
         num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g, '$1.');
         num = num.split('').reverse().join('').replace(/^[\.]/, '');
-
     } else {
         alert('Solo se permiten numeros');
         num = num.replace(/[^\d\.]*/g, '');
     }
     return  num;
 }
+$('#guardarCita').click(function () {
+    var servicios = $('#servicios').val();
+    var tiempoTotal = $('#tiempoTotal').val();
+    var inicioFecha = $('#inicioFecha').val();
+    var descripcion = $('#descripcion').val();
+
+    $.ajax({
+        type: "POST",
+        url: "/Agendamiento/?c=cita&a=guardar",
+        data: {
+            servicios: servicios,
+            tiempoTotal: tiempoTotal,
+            inicioFecha: inicioFecha,
+            descripcion: descripcion
+        },
+        async: false,
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (err) {
+            console.error('Se presento un error ->' + err);
+        }
+    });
+
+
+});
