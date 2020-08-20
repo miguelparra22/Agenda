@@ -195,7 +195,7 @@
         </div>
 
 
-        <footer class="footer1 p-3 text-center text-white">
+    <footer class="footer1 p-3 text-center text-white">
         <div class="text-center">
             <img src="/Agendamiento/Assets/Imagenes/djlogodorado.png" alt="D'JANE" width="100" height="40">
         </div>

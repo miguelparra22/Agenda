@@ -1,3 +1,5 @@
+
+
 :root {
   --primary-color: #2196F3;
   --secondary-color: #007cae;
@@ -8,6 +10,9 @@
 
 body{
   transition: 0.5s;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif !important;
+  font-family: 'Open Sans', sans-serif;
 }
 .navbar-light .navbar-nav .nav-link {
     transition: 0.5s;
@@ -32,9 +37,20 @@ body{
     position: relative;
     background-image: url(../Imagenes/Salon.jpg);
     background-size:cover;
-    min-height: 800px;
-   
+    min-height: 700px;
+}
+.background-overlay{
+  background-color: rgba(0, 0, 0, .23);
+  min-height: 700px;
+}
 
+.background-overlay H1{
+  font-size: 55px;
+}
+
+
+.background-overlay P{
+  font-size: 20px;
 }
 
 .contenedorImg .content {
@@ -322,13 +338,13 @@ font-weight: bold;
   position: relative;
   background-image: url(../Imagenes/Salon.jpg);
   background-size:cover;
-  min-height: 500px;
+  min-height: 700px;
   background-color: rgba(8, 8, 8, 0.1);
 
 }
 
 
-  .formulario{
+  /*.formulario{
     width: 80%;
     margin: auto;
     background-color: #fff;
@@ -372,7 +388,7 @@ font-weight: bold;
     background-color: #007cae;
     color: #fff;
   
-}
+}*/
 
 .text-info {
   

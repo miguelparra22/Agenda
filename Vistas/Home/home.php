@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,500;1,600&family=Nunito:ital,wght@0,400;0,600;1,400;1,700;1,800&family=Open+Sans:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+
     <title>D'JANE</title>
 </head>
 
@@ -74,73 +76,22 @@
     <header class="main-header ">
 
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
         <div class="background-overlay text-white p-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 text-center justify-content-center align-self-center">
+                    <div class="col-md-6 justify-content-left align-self-center py-5">
+                     <h1>Bienvenidos</h1>
+                     <p>Somos los mejores asesores de imagen, ahora puedes agendar un cita con nostros, por medio de nuestra plataforma online.</p>
 
+                    
+                    <button class="btn btn-primary">Agendar citas</button>
+                     
                     </div>
                     <div class="col-md-6">
-                        <div class="formulario">
-                            <div class="sbForm">
-
-                                <h4 class="text-center">Ingrese informacion</h4>
-                                <p class="text-center">
-                                    Ingrese los siguientes datos para iniciar con su registro.
-                                </p>
-                                <form>
-                                    <div class="form-group">
-                                        <div>
-                                            <label>Nombre</label>
-                                        </div>
-                                        <input type="text" name="" id="" class="form-control" placeholder="Ingrese su nombre completo">
-                                        <div>
-                                            <label>Correo Electronico</label>
-                                        </div>
-                                        <input type="email" name="" id="" class="form-control" placeholder="Ingrese su correo Electronico">
-
-                                        <div>
-                                            <label>Telefono</label>
-                                        </div>
-                                        <input type="text" name="" id="" class="form-control" placeholder="Ingrese su número de telefono">
-
-                                        <div class="btn">
-                                            <button>Ingresar</button>
-                                        </div>
-
-                                    </div>
-                                </form>
-                            </div>
-
+                        <div class="p-5 justify-content-left align-self-center">
+                        
                         </div>
-
+                         
                     </div>
                 </div>
             </div>
@@ -328,9 +279,13 @@
                         </li>
                     </ul>
                 </div>
-
+                <div class="row">
+                    <div class="col-md-6 m-auto">
+                    <button class="btn btn-block btn-light" onclick="openNav()">Nuestras redes sociales</button>
+                    </div>
+                </div>
                 <!--button class="btnredes" onclick="openNav()">Nuestras redes sociales</button-->
-                <button class="btn btn-block btn-danger" onclick="openNav()">Nuestras redes sociales</button>
+               
             </div>
 
         </div>
