@@ -9,6 +9,7 @@ class Cita extends Conexion implements Idatabase {
     public function __CONSTRUCT() {
         $this->PDO = parent::__construct();
         $this->tabla = "citas";
+        $this->CitaVO = new CitaVO();
     }
 
     public function actualizar($vo) {
@@ -48,14 +49,14 @@ class Cita extends Conexion implements Idatabase {
         }
     }
 
-    public function consultaUnicaEmpleados($id) {
+    public function consultaUnicaEmpleados($id, $fechaInicio) {
 
         if (!(empty($id))) {
             $this->tabla = "empleado";
             $sentencia = "SELECT * FROM $this->tabla em INNER JOIN servicio_empleado se ON em.ID_EMPLEADO=se.ID_EMPLEADO "
                     . " INNER JOIN servicio s ON se.ID_SERVICIO=s.ID_SERVICIO WHERE em.FK_ROL<> 1 AND s.ID_SERVICIO='$id' ";
             $resultado = $this->PDO->prepare($sentencia);
-          
+
             $resultado->execute();
             return $resultado->fetchAll(PDO::FETCH_ASSOC);
         }
