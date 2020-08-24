@@ -142,9 +142,7 @@
                                 ]
                             }],
                         eventClick: function (calEvent, jsEvent, view) {
-                            $('#tituloEvent').text(calEvent.title);
-                            $('#descripcionEvent').text(calEvent.descripcion);
-                            $('#agendaModal').modal();
+                         alert('hola');
                         }, select: function (start, end, jsEvent) {
                             endtime = $.fullCalendar.moment(end).format('h:mm');
                             starttime = $.fullCalendar.moment(start).format('dddd, MMMM Do YYYY, h:mm');

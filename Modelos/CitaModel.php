@@ -33,7 +33,7 @@ class Cita extends Conexion implements Idatabase {
             $lastInsertId = $this->PDO->lastInsertId();
             $vo->setIdcita($lastInsertId);
             $cita = $vo->getIdcita();
-           print_r($vo->getIdservicio());
+            print_r($vo->getIdservicio());
             foreach ($vo->getIdservicio() as $key => $value) {
                 echo($key);
                 $sentenciaAgenda = "INSERT into agenda values(null,:FK_IDEMPLEADO,:FK_IDCITA)";
@@ -42,15 +42,15 @@ class Cita extends Conexion implements Idatabase {
                 $resultadoAgenda->bindParam(":FK_IDCITA", $cita, PDO::PARAM_STR);
                 $resultadoAgenda->execute();
             }
-            
+
             foreach ($vo->getIdservicio() as $key2 => $value2) {
                 $sentenciaServicio = "INSERT into cita_servicio values(null,:ID_CITA,:ID_SERVICIO)";
                 $resultadoServicio = $this->PDO->prepare($sentenciaServicio);
                 $resultadoServicio->bindParam(":ID_CITA", $cita, PDO::PARAM_STR);
                 $resultadoServicio->bindParam(":ID_SERVICIO", $key2, PDO::PARAM_STR);
-                 $resultadoServicio->execute();
+                $resultadoServicio->execute();
             }
-           
+
             return true;
         }
     }
@@ -94,7 +94,16 @@ class Cita extends Conexion implements Idatabase {
     public function listar() {
         $hoy = date("Y-m-j");
         $hasta = date("Y-m-j", strtotime($hoy . "+ 7 days"));
-        $sentencia = "SELECT * FROM $this->tabla WHERE HORAPACTADA BETWEEN '$hoy' and '$hasta'";
+        $sentencia = "SELECT * FROM $this->tabla WHERE HORAPACTADA BETWEEN '$hoy' and '$hasta' and FKIDESTADO <> 2 ";
+        $resultado = $this->PDO->prepare($sentencia);
+        $resultado->execute();
+        return $resultado->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function lista($cliente) {
+        $hoy = date("Y-m-j");
+        $hasta = date("Y-m-j", strtotime($hoy . "+ 7 days"));
+        $sentencia = "SELECT * FROM $this->tabla WHERE HORAPACTADA BETWEEN '$hoy' and '$hasta' AND FKIDCLIENTE='$cliente' and FKIDESTADO <> 2";
         $resultado = $this->PDO->prepare($sentencia);
         $resultado->execute();
         return $resultado->fetchAll(PDO::FETCH_OBJ);
