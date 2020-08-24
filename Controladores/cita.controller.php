@@ -84,14 +84,20 @@ class Citacontroller {
     function guardar() {
 
         $hasta = date("Y-m-j H:i:s", strtotime($_POST['inicioFecha'] . "+ " . $_POST['tiempoTotal'] . " minute"));
-        $this->vo->setIdservicio($_POST['servicios']);
+        $this->vo->setIdservicio($_POST['serviciosEmpleado']);
         $this->vo->setHoratermina($hasta);
         $this->vo->setHorapactada($_POST['inicioFecha']);
         $this->vo->setDescripcion($_POST['descripcion']);
         $this->vo->setFkidcliente($_SESSION['id']);
+        $this->vo->setFkidestado(1);
 
 
         $resultado = $this->model->agregar($this->vo);
+        if ($resultado) {
+            
+        } else {
+            
+        }
     }
 
 }

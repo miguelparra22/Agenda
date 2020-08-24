@@ -109,9 +109,9 @@ function traerEmpleadoCita(id) {
         async: false,
         success: function (response) {
             var objData = eval(response);
-            html += '<select class="form-control">';
+            html += '<select id="service' + id + '"  class="form-control">';
             for (var item in objData) {
-                html += '<option id="' + id + '" value="' + objData[item]['ID_EMPLEADO'] + '">' + objData[item]['NombreEmpleado'] + '</option>';
+                html += '<option value="' + objData[item]['ID_EMPLEADO'] + '">' + objData[item]['NombreEmpleado'] + '</option>';
             }
             html += '</select>';
         },
@@ -138,11 +138,18 @@ $('#guardarCita').click(function () {
     var inicioFecha = $('#inicioFecha').val();
     var descripcion = $('#descripcion').val();
 
+
+    var objeto = new Object();
+    for (var i = 0; i < servicios.length; i++) {
+        objeto[servicios[i]] = $('#service' + servicios[i]).val();
+     
+    }
+   
     $.ajax({
         type: "POST",
         url: "/Agendamiento/?c=cita&a=guardar",
         data: {
-            servicios: servicios,
+            serviciosEmpleado: objeto,
             tiempoTotal: tiempoTotal,
             inicioFecha: inicioFecha,
             descripcion: descripcion
@@ -155,6 +162,5 @@ $('#guardarCita').click(function () {
             console.error('Se presento un error ->' + err);
         }
     });
-
 
 });

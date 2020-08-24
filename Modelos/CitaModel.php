@@ -17,17 +17,42 @@ class Cita extends Conexion implements Idatabase {
     }
 
     public function agregar($vo) {
-
-        $this->ClienteVO = $vo;
-        $sentencia = "INSERT INTO $this->tabla VALUES (null,:nombre,:correo,:telefono,:pwd)";
-        $claveIncriptada = $this->hash($this->ClienteVO->getCliente_pwd());
+        $sentencia = "INSERT INTO $this->tabla VALUES (null,:HORAPACTADA,:HORATERMINA,:FKIDCLIENTE,:DESCRIPCION,:FKIDESTADO)";
         $resultado = $this->PDO->prepare($sentencia);
-        return $resultado->execute(array(
-                    ':nombre' => $this->ClienteVO->getCliente_nombre(),
-                    ':pwd' => $claveIncriptada,
-                    ':correo' => $this->ClienteVO->getCliente_correo(),
-                    ':telefono' => $this->ClienteVO->getCliente_telefono(),
-        ));
+        $horapactada = $vo->getHorapactada();
+        $horatermina = $vo->getHoratermina();
+        $cliente = $vo->getFkidcliente();
+        $estado = $vo->getFkidestado();
+        $descripcion = $vo->getDescripcion();
+        $resultado->bindParam(":HORAPACTADA", $horapactada, PDO::PARAM_STR);
+        $resultado->bindParam(":HORATERMINA", $horatermina, PDO::PARAM_STR);
+        $resultado->bindParam(":FKIDCLIENTE", $cliente, PDO::PARAM_STR);
+        $resultado->bindParam(":FKIDESTADO", $estado, PDO::PARAM_STR);
+        $resultado->bindParam(":DESCRIPCION", $descripcion, PDO::PARAM_STR);
+        if ($resultado->execute()) {
+            $lastInsertId = $this->PDO->lastInsertId();
+            $vo->setIdcita($lastInsertId);
+            $cita = $vo->getIdcita();
+           print_r($vo->getIdservicio());
+            foreach ($vo->getIdservicio() as $key => $value) {
+                echo($key);
+                $sentenciaAgenda = "INSERT into agenda values(null,:FK_IDEMPLEADO,:FK_IDCITA)";
+                $resultadoAgenda = $this->PDO->prepare($sentenciaAgenda);
+                $resultadoAgenda->bindParam(":FK_IDEMPLEADO", $value, PDO::PARAM_STR);
+                $resultadoAgenda->bindParam(":FK_IDCITA", $cita, PDO::PARAM_STR);
+                $resultadoAgenda->execute();
+            }
+            
+            foreach ($vo->getIdservicio() as $key2 => $value2) {
+                $sentenciaServicio = "INSERT into cita_servicio values(null,:ID_CITA,:ID_SERVICIO)";
+                $resultadoServicio = $this->PDO->prepare($sentenciaServicio);
+                $resultadoServicio->bindParam(":ID_CITA", $cita, PDO::PARAM_STR);
+                $resultadoServicio->bindParam(":ID_SERVICIO", $key2, PDO::PARAM_STR);
+                 $resultadoServicio->execute();
+            }
+           
+            return true;
+        }
     }
 
     public function CambiarIdxNom($tabla, $CampoObtener, $campofiltro, $valorfiltro) {
