@@ -4,10 +4,23 @@ class Citacontroller {
 
     private $model;
     private $vo;
+    private $lugar;
 
     public function __CONSTRUCT() {
         $this->model = new Cita();
         $this->vo = new CitaVO();
+        $lugar = 0;
+    }
+
+    public function listas() {
+        $informacion = $this->model->misServicios($_SESSION['id']);
+        echo json_encode($informacion);
+    }
+
+    public function buscaEmMasSer() {
+        $cita = $_POST["cita"];
+        $informacion = $this->model->buscaEmMasSer($cita);
+        echo json_encode($informacion);
     }
 
     public function mostrar() {
@@ -50,7 +63,7 @@ class Citacontroller {
                                 },";
             $count++;
         }
-
+        $lugar = 1;
         require_once 'Vistas/Cita/agenda.php';
     }
 
@@ -94,7 +107,7 @@ class Citacontroller {
                                 },";
             $count++;
         }
-
+        $lugar = 0;
         require_once 'Vistas/Cita/agenda.php';
     }
 

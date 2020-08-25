@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-    <body>
+    <body >
 
         <div id="waitDiv" class="loadercont">
             <div class="container">
@@ -102,7 +102,23 @@
 
             <div class="p-5">
                 <div class="container">
-                    <div id="calendario">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Fecha y Hora Inicio</th>
+                                        <th>Fecha y Hora Fin</th>
+                                        <th>Servicios -> Empleado</th>
+                                        <th>Acci&oacute;n</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bodtys">
+
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -110,112 +126,38 @@
 
 
 
-            <script>
-                $(document).ready(function () {
-                    $('#calendario').fullCalendar({
-                        defaultView: 'agendaWeek',
-                        selectable: true,
-                        minTime: "<?php print_r($entrada) ?>",
-                        maxTime: "<?php print_r($salida) ?>",
-                        columnFormat: "dddd D/M",
-                        timeFormat: 'hh:mm ',
-                        allDaySlot: false,
-                        firstDay: (new Date().getDay()),
-                        header: {
-                            left: 'today',
-                            center: 'title',
-                            right: 'agendaWeek, agendaDay'
-                        }, customButtons: {
-                            mibutton: {
-                                text: 'boton 1',
-                                click: function () {
-                                    alert('a')
-                                }
-                            }
-                        },
-                        Click: function () {
-                            $('#agendaModal').modal();
-                        },
-                        eventSources: [{
-                                events: [
-<?php print_r($array) ?>
-                                ]
-                            }],
-                        eventClick: function (calEvent, jsEvent, view) {
-                            alert('hola');
-                            }
-<?php if ($lugar == 1) : ?>
-                                , select: function (start, end, jsEvent) {
-                                endtime = $.fullCalendar.moment(end).format('h:mm');
-                                starttime = $.fullCalendar.moment(start).format('dddd, MMMM Do YYYY, h:mm');
-                                var mywhen = starttime + ' - ' + endtime;
-                                start = moment(start).format();
-                                end = moment(end).format();
-                                $('#inicioFecha').val(start);
-                                $('#fechamostrar').val(start.replace("T", " "));
-                                $('#agendaModal').modal();
-                            }
-<?php endif; ?>
-                    });
-                });
-                function getlength(number) {
-                    return number.toString().length;
-                }
-            </script>
 
-            <!-- Modal -->
-            <div class="modal fade bd-example-modal-lg"id="agendaModal" tabindex="-1" role="dialog" aria-labelledby="agendaModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="tituloEvent">Agenda tu Cita  </h5>
 
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <select multiple  class="form-control" name="" id="servicios" onchange="buscarServicios()">
-
-                            </select>
-                            <div class="col-md-12">  <hr> </div>
-                            <div id="contenedor">
-
-                            </div>
-                            <div class="col-md-12"><hr></div>
-                            <div class="col-md-12">
-                                <div><label>Descripción</label></div>
-                                <textarea class="form-control" id="descripcion"></textarea>
-                            </div >
-                            <div style="position: absolute; right: 0;" class="col-md-5">
-                                <div ><label>Fecha y Hora de Cita</label></div>
-                                <input class="form-control"id="fechamostrar"  name="fechamostrar" readonly disabled>
-                            </div>
-                            <div class="col-md-5">
-                                <div><label>Tiempo Total (Minutos)</label></div>
-                                <input class="form-control"id="tiempoTotal"  name="tiempoTotal" readonly disabled>
-                                <div><label>Costos Totales (Pesos $)</label></div>
-                                <input class="form-control"id="costoTotal"  name="costoTotal" readonly disabled>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <input type="hidden" id="inicioFecha">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                            <button type="button" id="guardarCita" class="btn btn-primary">Guardar</button>
-                        </div>
-                    </div>
+            <footer class="footer1 p-3 text-center text-white">
+                <div class="text-center">
+                    <img src="/Agendamiento/Assets/Imagenes/djlogodorado.png" alt="D'JANE" width="100" height="40">
                 </div>
-            </div>
+                <p class="p-2 text-center text-white">
+                    D'Jane 2020
+                </p>
+                <p class="p-2 text-center text-white">
+                    Siguenos en nuestras redes sociales
+                </p>
+                <i class="fa fa-facebook p-2 iconr"  onclick="facebook()"></i>
+                <i class="fa fa-instagram p-2 iconr" onclick="instagram()"></i>
+                <i class="fa fa-youtube-play p-2 iconr"  onclick="youtube()"></i>
+            </footer>
+        </section>
 
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-    <footer class="footer1 p-3 text-center text-white">
-        <div class="text-center">
-            <img src="/Agendamiento/Assets/Imagenes/djlogodorado.png" alt="D'JANE" width="100" height="40">
         </div>
 
 
-    </footer>
-        <script src="/Agendamiento/Assets/Funciones/cita.js"></script>
+
+        <script src="/Agendamiento/Assets/Funciones/cita.js">
+
+        </script>
+        <script>
+            $(window).on('load', function () {
+                buscarListas();
+            });
+        </script>
     </body>
 </html>
