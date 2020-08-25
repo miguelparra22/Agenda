@@ -54,6 +54,50 @@ class Citacontroller {
         require_once 'Vistas/Cita/agenda.php';
     }
 
+    public function mis() {
+        $this->model = new Configuracion();
+        $resultado = $this->model->buscarconfiguracion("HORA");
+
+        foreach ($resultado as &$valor) {
+            switch ($valor->NombreConfiguracion) {
+                case "HORAENTRADA" : {
+                        $entrada = $valor->ValorConfiguracion;
+                        break;
+                    }
+                case "HORASALIDA": {
+                        $salida = $valor->ValorConfiguracion;
+                        break;
+                    }
+            }
+        }
+        $this->model = new Cita();
+        $citass = $this->model->lista($_SESSION['id']);
+        $array = "";
+        $count = 1;
+        foreach ($citass as &$valor) {
+            $fecha = str_replace(" ", "T", $valor->HORAPACTADA);
+            if ($_SESSION['id'] == $valor->FKIDCLIENTE) {
+                $color = "GREEN";
+                $texto = "Tu Cita ";
+            } else {
+                $texto = "Cita Programada";
+                $color = "RED";
+            }
+            $array .= " {
+                                    id: '$count',
+                                    title: '$texto',
+                                    start: '$fecha',
+                                    end: '$valor->HORATERMINA',
+                                    allDay: false,
+                                    color: '$color',
+                                    textColor: 'white'
+                                },";
+            $count++;
+        }
+
+        require_once 'Vistas/Cita/agenda.php';
+    }
+
     public function traerServicios() {
         $this->model = new Servicio();
         $resultado = $this->model->listar();
@@ -84,14 +128,20 @@ class Citacontroller {
     function guardar() {
 
         $hasta = date("Y-m-j H:i:s", strtotime($_POST['inicioFecha'] . "+ " . $_POST['tiempoTotal'] . " minute"));
-        $this->vo->setIdservicio($_POST['servicios']);
+        $this->vo->setIdservicio($_POST['serviciosEmpleado']);
         $this->vo->setHoratermina($hasta);
         $this->vo->setHorapactada($_POST['inicioFecha']);
         $this->vo->setDescripcion($_POST['descripcion']);
         $this->vo->setFkidcliente($_SESSION['id']);
+        $this->vo->setFkidestado(1);
 
 
         $resultado = $this->model->agregar($this->vo);
+        if ($resultado) {
+            
+        } else {
+            
+        }
     }
 
 }
