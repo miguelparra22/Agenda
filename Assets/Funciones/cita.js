@@ -18,6 +18,62 @@ $(window).on('load', function () {
         }
     });
 });
+function buscarListas() {
+    var html = '';
+    $.ajax({
+        type: "POST",
+        url: "/Agendamiento/?c=cita&a=listas",
+        data: {
+        },
+        async: false,
+        success: function (response) {
+            $('#bodtys').empty();
+
+            var objData = eval(response);
+
+            for (var item in objData) {
+                html += ' <tr>';
+                html += '   <td>' + objData[item]["HORAPACTADA"] + '</td>';
+                html += '   <td>' + objData[item]["HORATERMINA"] + '</td>';
+                html += traerEmpleadosmasServicio(objData[item]["IDCITA"]);
+                html += '   <td>Empleado</td>';
+                html += ' </tr>';
+                console.log(html)
+
+            }
+
+            $('#bodtys').html(html);
+
+        },
+        error: function (err) {
+            console.error('Se presento un error ->' + err);
+        }
+    });
+}
+function traerEmpleadosmasServicio(cita) {
+    var html = '';
+    $.ajax({
+        type: "POST",
+        url: "/Agendamiento/?c=cita&a=buscaEmMasSer",
+        data: {
+            cita: cita
+        },
+        async: false,
+        success: function (response) {
+          console.log(response);
+            var objData = eval(response);
+            html += '<td>';
+            for (var item in objData) {
+                html += objData[item]["NOMBRESERVICIO"] + '->' + objData[item]["NOMBRE"] +'<br>';
+            }
+            html += '</td>';
+        },
+        error: function (err) {
+            console.error('Se presento un error ->' + err);
+        }
+    });
+    return html;
+}
 function buscarServicios() {
     var costo = 0;
     var tiempo = 0;
@@ -142,9 +198,9 @@ $('#guardarCita').click(function () {
     var objeto = new Object();
     for (var i = 0; i < servicios.length; i++) {
         objeto[servicios[i]] = $('#service' + servicios[i]).val();
-     
+
     }
-   
+
     $.ajax({
         type: "POST",
         url: "/Agendamiento/?c=cita&a=guardar",
