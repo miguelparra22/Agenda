@@ -173,3 +173,10 @@ function InicioAdmin(){
 
   window.location.href = p;
 }
+
+
+function login(){
+  var page = "/Agendamiento/Vistas/Home/Login.php";
+
+  window.location.href = page;
+}
