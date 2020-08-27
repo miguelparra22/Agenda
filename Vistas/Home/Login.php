@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -13,6 +14,9 @@
 </head>
 
 <body>
+
+
+ <!---------------------Animación------------------------------>
     <div id="waitDiv" class="loadercont">
         <div class="container">
             <div class="row">
@@ -41,17 +45,7 @@
         </div>
 
     </div>
-    <script>
-        function load() {
-            var elemento = document.getElementById("waitDiv");
-
-
-            setTimeout(function() {
-                elemento.style.display = "none";
-            }, 1000);
-        }
-        window.onload = load;
-    </script>
+    
 
 
     <section class="container-fluid contendorlogin">
@@ -98,5 +92,6 @@
 </body>
 <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
 <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
+<script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
 
 </html>

@@ -63,10 +63,10 @@
                     <a class="nav-link navl" href="Vistas/Producto/index_producto.php">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navl" href="/Agendamiento/?c=cliente&a=llamar">Registrarse</a>
+                    <a class="nav-link navl" onclick="registro()" href="#">Registrarse</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/Agendamiento/Vistas/Home/Login.php" class="btn btn-outline-primary">Iniciar sesión</a>
+                    <a onclick="login()" href="#" class="btn btn-outline-primary">Iniciar sesión</a>
                 </li>
             </ul>
         </div>
@@ -93,7 +93,7 @@
                 </div>
             </div>
         </section>
-        </section>
+
     </header>
 
     <hr>

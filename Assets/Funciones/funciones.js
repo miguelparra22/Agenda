@@ -180,3 +180,10 @@ function login(){
 
   window.location.href = page;
 }
+
+
+function registro(){
+   var pager = "/Agendamiento/Vistas/Cliente/Agregar.php";
+
+   window.location.href = pager;
+}
