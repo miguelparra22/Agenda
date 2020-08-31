@@ -6,11 +6,11 @@ if (!isset($_GET['c'])) {
     $controller = new HomeController;
     call_user_func(array($controller, "Index"));
 } else {
-    if (empty($_SESSION['id'])) {
+   /* if (empty($_SESSION['id'])) {
         echo 'Su sesion Expiró';
         $controller = new HomeController;
         call_user_func(array($controller, "Index"));
-    } else {
+    } else {*/
         $controller = $_GET['c'];
         $accion = isset($_GET['a']) ? $_GET['a'] : "Index";
 
@@ -21,6 +21,6 @@ if (!isset($_GET['c'])) {
         $controller = new $controller;
         //llamamos al metodo guardado en accion del controlador
         call_user_func(array($controller, $accion));
-    }
+    /*}*/
 }
 ?>
