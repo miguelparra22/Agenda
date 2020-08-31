@@ -168,6 +168,13 @@ function facebook(){
 
 }
 
+function whatsapp(){
+  pg = "https://wa.me/3125925313";
+
+  window.open(pg);
+
+}
+
 function InicioAdmin(){
   var p = "Vistas/Home/home.php";
 
@@ -184,6 +191,5 @@ function login(){
 
 function registro(){
    var pager = "/Agendamiento/Vistas/Cliente/AgregarCliente.php";
-
    window.location.href = pager;
 }

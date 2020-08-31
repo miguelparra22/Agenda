@@ -63,23 +63,11 @@
                     <label>Especialidad del empleado</label>
 
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
                 <input type="hidden" name="estado" value="1">
                 <input type="hidden" name="rol" value="1">
 
 
-                <input type="button" onclick="traerValor()" value="guardar" name="guardar">
+                <input type="button" class="btn btn-primary" onclick="traerValor()" value="Guardar" name="guardar">
 
                 <div class="text-center p-3">
                     <a href="?c=Empleado&a=LlamarInicioAdmin"><i class="fa fa-home"></i> Regresar al inicio</a>

@@ -56,7 +56,7 @@
                 <div class="text-center p-2">
                     <img src="/Agendamiento/Assets/Imagenes/djlogo.png" alt="D'JANE" width="100" height="40">
                 </div>
-                <form method="POST" action="?c=valida&a=iniciar">
+                <form method="POST" action="/Agendamiento/?c=valida&a=iniciar">
                     <div>
                         <input type="text" name="email" required>
                         <label>Correo Electronico</label>

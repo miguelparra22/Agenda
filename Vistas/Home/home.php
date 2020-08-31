@@ -302,7 +302,7 @@
                         <h2>¿Dónde nos pueden encontrar?</h2>
                     </div>
                     <div class="container p-3">
-                        Nos encontramos ubicados en el barrio de villa del rio, en la localidad septima de bosa.
+                     
 
                         <div class="map">
                             <iframe
@@ -326,15 +326,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
+                    
                     <div class="p-3">
+                        <div class="p-2">
+
                         <h2>Nuestros productos</h2>
-                    </div>
-                    <div class="p-3">
+
                         También manejamos un amplio catálogo de productos.
                         <br>
                         Pregunta por ellos.
-                        <div>
-                        <button class="btn btn-success"><i class="fa fa-whatsapp"></i> Contactanos</button>
+                        </div>
+                        
+                        <div class="p-2">
+                        <button class="btn btn-block btn-outline-success" onclick="whatsapp()"><i class="fa fa-whatsapp"></i> Contáctanos</button>
                         </div>
                       
                     </div>
@@ -354,6 +358,7 @@
         </div>
         </div>
     </section>
+
 
     <hr>
     <!-----------Foooter-------------->

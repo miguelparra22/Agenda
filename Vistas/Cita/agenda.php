@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Agendamiento</title>
     <link rel="stylesheet" href="/Agendamiento/Assets/Bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/Agendamiento/Assets/css/fullcalendar.css">
     <link rel="stylesheet" href="/Agendamiento/Assets/css/select2.min.css">
@@ -163,7 +163,7 @@
                         $('#agendaModal').modal();
                     } <
                     ? php endif; ? >
-            });
+            })
         });
 
         function getlength(number) {
@@ -173,9 +173,6 @@
          </script>
 
 
-       
-
-        <!-- Modal -->
         <div class="modal fade bd-example-modal-lg" id="agendaModal" tabindex="-1" role="dialog"
             aria-labelledby="agendaModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">

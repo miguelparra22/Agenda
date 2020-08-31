@@ -27,7 +27,7 @@ body{
 
 
   .navbar-dark .navbar-nav .nav-link:hover{
-    color: #EFB810;
+    color:var(--primary-color);
     font-size: 20px;
   }
   
@@ -337,10 +337,15 @@ font-weight: bold;
   /*background-image: url(../Imagenes/Salon.jpg);
   background-size:cover;*/
   min-height: 700px;
+  
  
 
 
 
+}
+
+#myVideo{
+  width: 100%;
 }
 
 .main-header2{
@@ -700,7 +705,7 @@ font-weight: bold;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #EFB810;
+  background-color:var(--primary-color);
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -811,4 +816,21 @@ border: 1px solid #007cae;
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+
+/* On screens that are 992px wide or less, the background color is blue */
+@media screen and (max-width: 992px) {
+  .cont{
+    display: none;
+  }
+  .main-header{
+    padding:205px;
+  }
+}
+
+/* On screens that are 600px wide or less, the background color is olive */
+@media screen and (max-width: 600px) {
+  
+}
+
 

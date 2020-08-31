@@ -24,6 +24,7 @@ class Clientecontroller {
         $this->vo->setCliente_telefono($_POST["usuario_telefono"]);
         if ($this->model->agregar($this->vo)) {
             include_once 'Vistas/Cliente/Agregar.php';
+            
             echo "<div class='alert success'>
             <span class='closebtn'>&times;</span>  
             <strong>Exito!</strong> Se registro correctamente.
