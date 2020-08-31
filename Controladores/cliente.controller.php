@@ -49,10 +49,10 @@ class Clientecontroller {
             echo "<div class='alert'>
             <span class='closebtn'>&times;</span>  
             <strong>Error</strong> No se pudo registrar.
-          </div>
+           </div>
           
-          <script>
-          var close = document.getElementsByClassName('closebtn');
+           <script>
+           var close = document.getElementsByClassName('closebtn');
            var i;
 
               for (i = 0; i < close.length; i++) {
@@ -68,21 +68,4 @@ class Clientecontroller {
     }
 
     
-
-
-   /* public function iniciarSesion() {
-        $this->vo->setCliente_pwd($_POST["usuario_pwd"]);
-        $this->vo->setCliente_correo($_POST["usuario_correo"]);
-        $resultado = $this->model->iniciarSesion($vo);
-        if (!is_object($resultado)) {
-            include_once 'views/header.php';
-            include_once 'views/exception/noExiste.php';
-            include_once 'views/footer.php';
-        } else {
-            include_once 'views/header.php';
-            include_once 'views/usuario/listartodo.php';
-            include_once 'views/footer.php';
-        }
-    }
-*/
 }

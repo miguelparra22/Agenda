@@ -56,7 +56,7 @@
                 <div class="text-center p-2">
                     <img src="/Agendamiento/Assets/Imagenes/djlogo.png" alt="D'JANE" width="100" height="40">
                 </div>
-                <form method="POST" action="/Agendamiento/?c=valida&a=iniciar">
+                <form method="POST" action="?c=valida&a=iniciar">
                     <div>
                         <input type="text" name="email" required>
                         <label>Correo Electronico</label>
@@ -75,7 +75,7 @@
                         <a href="">Registrarse</a>
                         </div-->
                         
-                        <a href="/Agendamiento/?c=valida&a=correo">¿Olvidaste tu contraseña?</a>
+                        <a href="?c=valida&a=correo">¿Olvidaste tu contraseña?</a>
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-block"> Ingresar</button>
