@@ -375,6 +375,7 @@
         <i class="fa fa-facebook p-2 iconr" onclick="facebook()"></i>
         <i class="fa fa-instagram p-2 iconr" onclick="instagram()"></i>
         <i class="fa fa-youtube-play p-2 iconr" onclick="youtube()"></i>
+        <i class="fa fa-whatsapp p-2 iconr" onclick="whatsapp()"></i>
     </footer>
 
     <!----------Boton top------------------------>
@@ -391,8 +392,8 @@
 
             <a href="#" onclick="instagram()"><i class="fa fa-instagram"></i> Instagram</a>
             <a href="#" onclick="facebook()"> <i class="fa fa-facebook"></i> Facebook</a>
-            <!--a href="#"><i class="fa fa-twitter"></i> Twitter</a-->
             <a href="#" onclick="youtube()"><i class="fa fa-youtube"></i> Youtube</a>
+            <a href="#" onclick="whatsapp()"><i class="fa fa-whatsapp"></i> whatsapp</a>
         </div>
     </div>
 
