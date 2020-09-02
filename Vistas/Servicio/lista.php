@@ -3,6 +3,46 @@ session_start();
 $Servicio;
           $this->Servicio = new ServicioController();
           ?>
+
+
+
+            <!-------Animación------>
+
+    <div id="waitDiv" class="loadercont">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 m-auto">
+                    <div class="imageloader">
+                        <img src="/Agendamiento/Assets/Imagenes/djlogo.png" alt="D'JANE" width="200" height="100">
+
+
+                    </div>
+                    <div class="contenedorload">
+                        <div class="lds-grid">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!------Contenedor menú-------->
+
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    </div>
 <section id="main">
 
 
