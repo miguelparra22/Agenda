@@ -46,8 +46,8 @@ $Servicio;
                             <?php } ?>
                             <td><?php print_r($value->TIEMPO_LIMITE) ?></td>
                             <input type="hidden" form="Form<?php print_r($contador)?>" name="servicio_ID" value="<?php print_r($value->ID_SERVICIO) ?>">
-                            <td><input type="button" class="Editar" name="Editar" onclick="$('#Form<?php print_r($contador)?>').attr('action','?c=Servicio&a=consultaUnica');$('#Form<?php print_r($contador)?>').submit();"  value="Editar"></td>
-                            <td><input type="button" class="Eliminar" name="eliminar" onclick="$('#Form<?php print_r($contador)?>').attr('action', '?c=Servicio&a=eliminar');$('#Form<?php print_r($contador)?>').submit();" value="Eliminar"></td>
+                            <td><input type="button" class="Editar btn btn-warning text-white" name="Editar" onclick="$('#Form<?php print_r($contador)?>').attr('action','?c=Servicio&a=consultaUnica');$('#Form<?php print_r($contador)?>').submit();"  value="Editar"></td>
+                            <td><input type="button" class="Eliminar btn btn-danger" name="eliminar" onclick="$('#Form<?php print_r($contador)?>').attr('action', '?c=Servicio&a=eliminar');$('#Form<?php print_r($contador)?>').submit();" value="Eliminar"></td>
                     </tr>
                 <?php } ?>
             </tbody>
@@ -55,6 +55,8 @@ $Servicio;
     </div>
     </div>
     </form>
+
+    
 
     <div class="container p-2">
     <form action="?c=Servicio&a=LlamarAgregar" method="POST">
