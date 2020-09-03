@@ -1,8 +1,6 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Assets",
-    "\\Assets\\Funciones",
     "\\Composer",
     "\\Controladores",
     "\\Modelos",
@@ -10,8 +8,9 @@
     "\\Modelos\\DB",
     "\\Vistas",
     "\\Vistas\\Admin",
+    "\\Vistas\\Home",
     "\\Vistas\\Servicio"
   ],
-  "SelectedNode": "\\Modelos\\database\\Idatabase.php",
+  "SelectedNode": "\\Controladores\\Servicio.controller.php",
   "PreviewInSolutionExplorer": false
 }

@@ -1,3 +1,10 @@
+<?php
+session_start();     
+$Servicio;
+        $this->Servicio = new Servicio();
+                  $resultado = $this->Servicio->listar();
+          ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -155,127 +162,45 @@
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
+                <?php
+                $contador = 0;
+                $contadorVeces = 0;
+                $contador3 = 0;
+                foreach ($resultado as $busqueda => $value) {
+                    ?>
+                    <?php if($contador == 0 && $contadorVeces == 0){ ?>
                     <div class="carousel-item active">
                         <div class="row">
+                    <?php } else if($contador == 0 && $contadorVeces > 0) { ?>
+                        <div class="carousel-item">
+                        <div class="row">
+                         <?php } ?>
                             <div class="col-md-4">
                                 <div class="card">
                                     <img src="/Agendamiento/Assets/Imagenes/1.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
-                                        <h5 class="card-title">Titulo del servicio</h5>
-                                        <p class="card-text">Descripcion del servicio</p>
-                                        <p class="card-text">Precio del servicio</p>
+                                        <h5 class="card-title"><?php print_r($value->NombreServicio) ?></h5>
+                                        <p class="card-text"><?php print_r($value->DescripcionServicio) ?></p>
+                                        <p class="card-text"><div id="salida<?php echo $contador3; ?>"></div></p>
                                         <a onclick="llamarlogin()" class="text-info"><span></span> Reservar </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <img src="/Agendamiento/Assets/Imagenes/1.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Titulo del servicio</h5>
-                                        <p class="card-text">Descripcion del servicio</p>
-                                        <p class="card-text">Precio del servicio</p>
-                                        <a onclick="llamarlogin()" class="text-info"><span>Reservar </span> </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <img src="/Agendamiento/Assets/Imagenes/1.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Titulo del servicio</h5>
-                                        <p class="card-text">Descripcion del servicio</p>
-                                        <p class="card-text">Precio del servicio</p>
-                                        <a onclick="llamarlogin()" class="text-info"><span>Reservar </span> </a>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php $ValorPrecio = $value->Precio_Servicio ?>
+                    <script>
+                        document.getElementById('salida<?php echo $contador3; ?>').innerHTML = "$"+new Intl.NumberFormat('es-MX').format("<?php echo $ValorPrecio; ?>" );
+                    </script>
+                    <?php $contador++;$contador3++;
+                    if($contador == 3 || $contador3 == sizeof($resultado)){ 
+                     $contador = 0;
+                     $contadorVeces++;
+                    ?>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Titulo del servicio</h5>
-                                        <p class="card-text">Descripcion del servicio</p>
-                                        <p class="card-text">Precio del servicio</p>
-                                        <a onclick="llamarlogin()" class="text-info"><span>Reservar </span> </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Titulo del servicio</h5>
-                                        <p class="card-text">Descripcion del servicio</p>
-                                        <p class="card-text">Precio del servicio</p>
-                                        <a onclick="llamarlogin()" class="text-info"><span>Reservar </span> </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <img src="/Agendamiento/Assets/Imagenes/Barber.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Titulo del servicio</h5>
-                                        <p class="card-text">Descripcion del servicio</p>
-                                        <p class="card-text">Precio del servicio</p>
-                                        <a onclick="llamarlogin()" class="text-info"><span>Reservar </span> </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <img src="/Agendamiento/Assets/Imagenes/Manicure.jpg" class="card-img-top"
-                                        alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Titulo del servicio</h5>
-                                        <p class="card-text">Descripcion del servicio</p>
-                                        <p class="card-text">Precio del servicio</p>
-                                        <a href="#" onclick="llamarlogin()" class="text-info"><span>Reservar </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <img src="/Agendamiento/Assets/Imagenes/Manicure.jpg" class="card-img-top"
-                                        alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Titulo del servicio</h5>
-                                        <p class="card-text">Descripcion del servicio</p>
-                                        <p class="card-text">Precio del servicio</p>
-                                        <a href="#" onclick="llamarlogin()" class="text-info"><span>Reservar </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <img src="/Agendamiento/Assets/Imagenes/Manicure.jpg" class="card-img-top"
-                                        alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Titulo del servicio</h5>
-                                        <p class="card-text">Descripcion del servicio</p>
-                                        <p class="card-text">Precio del servicio</p>
-                                        <a href="#" class="text-info" onclick="llamarlogin()"><span>Reservar </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <?php } ?>
+                <?php } ?>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
