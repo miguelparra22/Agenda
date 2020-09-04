@@ -82,7 +82,7 @@ class ServicioController {
         if ($this->model->actualizar($vo)) {
             echo 'El Servicio se actualizo correctamente.';
             include_once 'Vistas/header.php';
-            include_once 'Vistas/Servicio/listartodo.php';
+            include_once 'Vistas/Servicio/lista.php';
             include_once 'Vistas/footer.php';
         } else {
             include_once 'Vistas/header.php';

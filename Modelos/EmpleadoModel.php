@@ -47,21 +47,32 @@ class EmpleadoModel extends Conexion{
     }
 
 
-    public function consultaUnica($id) {
-        $sentencia = "SELECT * FROM $this->tabla WHERE ID_Empleado = $id";
-        //preparar sentencia
+    
+
+    /*Función para consultar un empleado en especifico*/
+
+    public function consultaUnica($id){
+
+        /* La consulta se prepara para buscar un id en especifico.*/ 
+        $sentencia = "SELECT * FROM  $this->tabla WHERE ID_EMPLEADO = $id";
 
         $resultado = $this->PDO->prepare($sentencia);
         $resultado->execute();
 
-
-        if ($resultado->rowCount() == 0) {
+        if($resultado->rowCount() == 0){
             return true;
-        } else {
+        }else{
             $arreglo = $resultado->fetchAll(PDO::FETCH_OBJ);
-            $arreglo = $arreglo[0];
+            $arreglo = $resultado[0];
+
+            $this->EmpleadoVo = new EmpleadoVO();
+            $this->EmpleadoVo->setId_Empleado($arreglo->Id_Empleado);
+            $this->EmpleadoVo->setNombre_Empleado($arreglo->Nombre_Empleado);
+            $this->EmpleadoVo->setCorreo_Empleado($arreglo->Correo_Empleado);
+            $this->EmpleadoVo->setEspecialidad_Empleado($arreglo->Especialidad_Empleado);
 
 
+            $arreglo = $this->EmpleadoVo;
             return $arreglo;
         }
     }

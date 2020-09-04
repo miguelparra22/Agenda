@@ -8,7 +8,7 @@ $this->Citas = new Cita();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -18,6 +18,7 @@ $this->Citas = new Cita();
     <link rel="stylesheet" href="Assets/Diseño/normalize.css">
     <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
     <title>Inicio</title>
 </head>
 
@@ -59,8 +60,7 @@ $this->Citas = new Cita();
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
-                <img src="/Agendamiento/Assets/Imagenes/djlogodorado.png" width="120" height="40" class="d-inline-block align-top" alt="" loading="lazy">
-
+                <img src="/Agendamiento/Assets/Imagenes/djlogo.png" width="120" height="40" class="d-inline-block align-top" alt="" loading="lazy">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -79,15 +79,6 @@ $this->Citas = new Cita();
                     <li class="nav-item">
                         <a id="con" class="nav-link" href="#" onclick="abrirM(this.id)" href="#"><i class="fa fa-wrench"></i> Configuración</a>
                     </li>
-                    <!--li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
                 </li-->
                 </ul>
             </div>

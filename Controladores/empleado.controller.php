@@ -13,8 +13,8 @@ class EmpleadoController{
 
 
    function LlamarAgregar(){
+     
      require_once 'Vistas/Header.php';
-     require_once 'Vistas/Home/MenuAdmin.php';
      require_once 'Vistas/Empleado/Agregar.php';
      require_once 'Vistas/Footer.php';
    }
@@ -109,6 +109,24 @@ class EmpleadoController{
       include_once 'Vistas/empleado/lista.php';
       include_once 'Vistas/footer.php';
   }
+
+
+}
+
+function consultaUnica(){
+
+  $id = $_POST["id_empleado"];
+  $resultado = $this->model->consultaUnica($id);
+
+  if (!is_object($resultado)) {
+    include_once 'Vistas/header.php';
+    include_once 'Vistas/exception/noExiste.php';
+    include_once 'Vistas/footer.php';
+} else {
+    include_once 'Vistas/header.php';
+    include_once 'Vistas/Empleado/editar.php';
+    include_once 'Vistas/footer.php';
+}
 
 
 }
