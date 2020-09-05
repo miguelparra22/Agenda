@@ -122,7 +122,9 @@ function consultaUnica(){
     include_once 'Vistas/header.php';
     include_once 'Vistas/exception/noExiste.php';
     include_once 'Vistas/footer.php';
+   
 } else {
+    echo ($id);
     include_once 'Vistas/header.php';
     include_once 'Vistas/Empleado/editar.php';
     include_once 'Vistas/footer.php';
@@ -131,6 +133,20 @@ function consultaUnica(){
 
 }
 
+
+public function editar() {
+  $vo = array($_POST["ID_EMPLEADO"],$_POST["NOMBREMPLEADO"], $_POST["CORREOEMPLEADO"]);
+  if ($this->model->actualizar($vo)) {
+      echo 'El Servicio se actualizo correctamente.';
+      include_once 'Vistas/header.php';
+      include_once 'Vistas/Empleado/lista.php';
+      include_once 'Vistas/footer.php';
+  } else {
+      include_once 'Vistas/header.php';
+      include_once 'Vistas/exception/noExiste.php';
+      include_once 'Vistas/footer.php';
+  }
+}
 
 
 

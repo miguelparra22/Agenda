@@ -86,6 +86,13 @@ class EmpleadoModel extends Conexion{
         return ($hash == self::hash($password));
     }
 
+    public function editar($vo){
+        $this->EmpleadoVO;
+        $sentancia = "UPDATE $this->tabla SET NombreEmpleado='$vo[1]', CorreoEmpleado='$vo[2]', Especialidad='$vo[3]' WHERE ID_EMPLEADO='$vo[0]';";
+        $resultado = $this->PDO->prepare($sentancia);
+        return $resultado->execute();
+    }
+
 
 
     

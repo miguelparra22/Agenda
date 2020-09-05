@@ -10,12 +10,15 @@ $this->Empleado = new EmpleadoModel();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Agendamiento/ssets/Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/Agendamiento/Assets/Bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/estilos.css">
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
     <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
 
     <title>Equipo</title>
 </head>
@@ -115,43 +118,47 @@ $this->Empleado = new EmpleadoModel();
 
 
 
-        <form action="" id="form1" methoD="POST">
 
-            <div class="container cont1">
 
-                <div class="p-3">
-                    <h2>Equipo D'JANE</h2>
-                    <p>Busque por medio del filtro un usuario en especifico y click en el nombre si desea más:</p>
-                </div>
+        <div class="container cont1">
 
-                <input class="form-control" id="myInput" type="text" placeholder="Buscar...">
-                <br>
+            <div class="p-3">
+                <h2>Equipo D'JANE</h2>
+                <p>Busque por medio del filtro un usuario en especifico y click en el nombre si desea más:</p>
+            </div>
+
+            <input class="form-control" id="myInput" type="text" placeholder="Buscar...">
+            <br>
+
+            <form action="?c=Empleado&a=consultaUnica" method="POST">
                 <ul class="list-group" id="myList">
                     <?php
- $contador = 0;
- foreach($resultado as $busqueda => $value){ 
- $contador ++;
-?>
+                       $contador = 0;
+                       foreach($resultado as $busqueda => $value){ 
+                       $contador ++;
+                    ?>
+
+
+
                     <li class="list-group-item">
 
                         <div class="row">
 
-                        <?php print_r($value->Id_Empleado) ?>
                             <div class="col-md-11 col-sm-9">
                                 <?php print_r($value->NombreEmpleado) ?>
-
-                             
-
-                                <input type="text" name="id_empleado" value="">
+                                <input type="hidden" name="id_empleado" value="<?php print_r($value->ID_EMPLEADO) ?>">
                             </div>
                             <div class="col-md-1 col-sm-3">
-                                
-                                <input type="button" class="btn btn-block btn-light" name="Editar" data-toggle="tooltip"
-                                    data-placement="top" title="Ver más sobre este usuario."
-                                    onclick="$('#Form<?php print_r($contador)?>').attr('action','?c=Empleado&a=consultaUnica');$('#Form<?php print_r($contador)?>').submit();"
-                                    value="...">
+
+                                <input type="submit" value="..." class="btn btn-block btn-light" data-toggle="tooltip"
+                                    data-placement="top" title="Ver más datos sobre este empleado.">
+
+
 
                             </div>
+
+
+
 
                         </div>
 
@@ -159,28 +166,26 @@ $this->Empleado = new EmpleadoModel();
 
 
                     <?php }?>
+
+
                 </ul>
-            </div>
+
+            </form>
+        </div>
 
 
 
 
 
-            <div class="container">
+        <div class="container">
 
-                <a href="?c=Empleado&a=LlamarAgregar" class="btn btn-block btn-outline-info"><i
-                        class="fa fa-user-plus"></i>
-                    Agregar un nuevo
-                    empleado</a>
+            <a href="?c=Empleado&a=LlamarAgregar" class="btn btn-block btn-outline-info"><i class="fa fa-user-plus"></i>
+                Agregar un nuevo
+                empleado</a>
 
-            </div>
-
-        </form>
-
+        </div>
 
         <script>
-        $('#example').tooltip(options);
-
         $(document).ready(function() {
             $("#myInput").on("keyup", function() {
                 var value = $(this).val().toLowerCase();
@@ -189,15 +194,14 @@ $this->Empleado = new EmpleadoModel();
                 });
             });
         });
+
+
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
         </script>
 
     </section>
-
-    <script>
-    $('.Editar').click(function() {
-        $('#Form1').attr('action', '?c=Empleado&a=consultaUnica');
-    });
-    </script>
 
 
     <footer class="footer p-3 bg-dark color-white">
