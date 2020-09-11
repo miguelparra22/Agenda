@@ -23,8 +23,6 @@
 </head>
 
 <body>
-
- <?php print_r($_SESSION['id']) ?>
     <div id="waitDiv" class="loadercont">
         <div class="container">
             <div class="row">
