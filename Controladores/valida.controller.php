@@ -85,7 +85,17 @@ class Validacontroller {
                     include_once 'vistas/home/login.php';
                 }
             } else {
-                echo 'El correo no existe';
+                echo '
+                <script>
+                
+                Swal.fire({
+                    title: "¡Error!",
+                    text: "Correo ó contraseña incorrectos",
+                    icon: "error",
+                    confirmButtonText: "Cool"
+                  })
+                
+                </script>';
                 include_once 'vistas/home/login.php';
             }
         } else {
@@ -164,12 +174,10 @@ class Validacontroller {
 
         if ($resultado == -1) {
             echo "
-            <div class='alert alert-danger alert-dismissible fade show' role='alert'>
-            <strong>Ups!</strong> Contraseña y/o usuario Incorrecto.
-            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-            <span aria-hidden='true'>&times;</span>
-            </button>
-            </div>";
+            <script>
+                
+            alerta();
+            </script>";
             
             include_once 'vistas/home/login.php';
         } else {

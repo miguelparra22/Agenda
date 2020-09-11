@@ -94,7 +94,8 @@ $Servicio;
                         <h1>Bienvenidos</h1>
                         <p>Ahora agenda una cita de manera virtual con nosotros.</p>
                         <button class="btn btn-light" onclick="login()"> Agendar</button>
-                        <button class="btn btn-outline-light"> Ver Servicios</button>
+                         <a href="#servicio" class="btn btn-outline-light"> Ver Servicios</a>
+
                     </div>
 
                 </div>
@@ -146,10 +147,10 @@ $Servicio;
 
     <!-----Servicios-------------->
 
-    <section>
+    <section name="servicios" id="servicios">
         <div class="container">
             <div class="row">
-                <div id="servicio" class="col-md-12 text-center p-5">
+                <div  id="servicio" class="col-md-12 text-center p-5">
                     <h2>Nuestros Servicios</h2>
                     <p>En D'JANE encuentras variedad de servicios, que se ajustan a tus necesidades.</p>
 

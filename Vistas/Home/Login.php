@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
+    <link rel="stylesheet" href="/Agendamiento/Assets/sweetalert/dist/sweetalert2.css">
     <title>Iniciar Sesion</title>
 </head>
 
@@ -93,5 +94,6 @@
 <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
 <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
 <script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
+<script src="/Agendamiento/Assets/sweetalert/dist/sweetalert2.js"></script>
 
 </html>

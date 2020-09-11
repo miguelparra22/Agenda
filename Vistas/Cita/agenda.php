@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -19,11 +19,12 @@
     <link rel="stylesheet" href="/Agendamiento/Assets/css/acordion.css">
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/estilos.css">
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
+    <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-
+<!---------------------Animación ----------------------->
     <div id="waitDiv" class="loadercont">
         <div class="container">
             <div class="row">
@@ -52,6 +53,11 @@
         </div>
 
     </div>
+    
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    </div>
+
     <section id="main">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -80,17 +86,7 @@
                     <li class="nav-item">
                         <a class="nav-link" onclick="abrirM(this.id)" href="#"><i class="fa fa-wrench"></i>
                             Configuración</a>
-                    </li>
-                    <!--li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown link
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li-->
+                    </li>                   
                 </ul>
             </div>
 
@@ -143,15 +139,13 @@
                     $('#agendaModal').modal();
                 },
                 eventSources: [{
-                    events: [ <
-                        ? php print_r($array) ? >
+                    events: [ <?php print_r($array) ?>
                     ]
                 }],
                 eventClick: function(calEvent, jsEvent, view) {
                         alert('hola');
-                    } <
-                    ? php
-                if ($lugar == 1): ? > ,
+                    } <?php
+                if ($lugar == 1): ?> ,
                 select: function(start, end, jsEvent) {
                         endtime = $.fullCalendar.moment(end).format('h:mm');
                         starttime = $.fullCalendar.moment(start).format('dddd, MMMM Do YYYY, h:mm');
@@ -161,8 +155,7 @@
                         $('#inicioFecha').val(start);
                         $('#fechamostrar').val(start.replace("T", " "));
                         $('#agendaModal').modal();
-                    } <
-                    ? php endif; ? >
+                    } <?php endif; ?>
             })
         });
 

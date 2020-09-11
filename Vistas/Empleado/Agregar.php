@@ -2,7 +2,6 @@
 
 
 
-
     <div id="waitDiv" class="loadercont">
         <div class="container">
             <div class="row">
@@ -104,7 +103,7 @@
 
                 </div>
                 <input type="hidden" name="estado" value="1">
-                <input type="hidden" name="rol" value="1">
+                <input type="hidden" name="rol" value="2">
 
 
                 <input type="button" class="btn btn-primary" onclick="traerValor()" value="Guardar" name="guardar">

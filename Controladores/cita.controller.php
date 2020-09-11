@@ -43,7 +43,7 @@ class Citacontroller {
         $citass = $this->model->listar();
         $array = "";
         $count = 1;
-        foreach ($citass as &$valor) {
+        foreach ($citass as $valor) {
             $fecha = str_replace(" ", "T", $valor->HORAPACTADA);
             if ($_SESSION['id'] == $valor->FKIDCLIENTE) {
                 $color = "GREEN";

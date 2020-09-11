@@ -110,6 +110,7 @@
 <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
 <script src="/Agendamiento/Assets/Funciones/validador.js"></script>
 <script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
+<script src="/Agendamiento/Assets/Funciones/validaciones.js"></script>
 <div id="msg">
 
 </div>

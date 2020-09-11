@@ -193,3 +193,4 @@ function registro(){
    var pager = "/Agendamiento/Vistas/Cliente/AgregarCliente.php";
    window.location.href = pager;
 }
+

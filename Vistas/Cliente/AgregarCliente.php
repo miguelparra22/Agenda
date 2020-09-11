@@ -75,26 +75,24 @@
         </nav>
         <div class="box">
             <h3>Ingresa tus datos</h3>
-            <form action="/Agendamiento/?c=cliente&a=agregar" method="POST">
+            <form action="/Agendamiento/?c=cliente&a=agregar" method="POST" onsubmit="return validarcliente()">
                 <div>
-                    <input type="text" name="usuario_nombre" required>
+                    <input id="nombre" type="text" name="usuario_nombre" required>
                     <label>Nombre completo</label>
                 </div>
                 <div>
-                    <input type="number" name="usuario_telefono" required>
-                    <label>Telefono</label>
+                    <input id="telefono" type="number" name="usuario_telefono" required>
+                    <label>Teléfono</label>
                 </div>
 
                 <div>
-                    <input type="password" name="usuario_pwd" required>
+                    <input id="con" type="password" name="usuario_pwd" required>
                     <label>Contraseña</label>
                 </div>
                 <div>
-                    <input type="text" name="usuario_correo" required>
+                    <input id="correo" type="text" name="usuario_correo" required>
                     <label>Correo</label>
                 </div>
-
-
 
                 <input type="submit" name="guardar" value="GUARDAR" class="btn btn-outline-pimary">
 
@@ -110,4 +108,5 @@
 <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
 <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
 <script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
+<script src="/Agendamiento/Assets/Funciones/validaciones.js"></script>
 </html>
