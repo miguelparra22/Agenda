@@ -6,7 +6,7 @@ class Citacontroller {
     private $vo;
     private $lugar;
 
-    public function __CONSTRUCT() {
+    public function __CONSTRUCT() { 
         $this->model = new Cita();
         $this->vo = new CitaVO();
         $lugar = 0;

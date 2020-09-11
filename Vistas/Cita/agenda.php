@@ -24,6 +24,7 @@
 
 <body>
 
+ <?php print_r($_SESSION['id']) ?>
     <div id="waitDiv" class="loadercont">
         <div class="container">
             <div class="row">
@@ -143,15 +144,12 @@
                     $('#agendaModal').modal();
                 },
                 eventSources: [{
-                    events: [ <
-                        ? php print_r($array) ? >
+                    events: [ <?php print_r($array) ?>
                     ]
                 }],
                 eventClick: function(calEvent, jsEvent, view) {
                         alert('hola');
-                    } <
-                    ? php
-                if ($lugar == 1): ? > ,
+                    } <?php if ($lugar == 1): ?> ,
                 select: function(start, end, jsEvent) {
                         endtime = $.fullCalendar.moment(end).format('h:mm');
                         starttime = $.fullCalendar.moment(start).format('dddd, MMMM Do YYYY, h:mm');
@@ -161,8 +159,7 @@
                         $('#inicioFecha').val(start);
                         $('#fechamostrar').val(start.replace("T", " "));
                         $('#agendaModal').modal();
-                    } <
-                    ? php endif; ? >
+                    } <?php endif; ?>
             })
         });
 
