@@ -190,6 +190,7 @@ class Validacontroller {
             switch ($rol) {
                 case 0://Cliente
                     $Idcliente = $this->Cita->CambiarIdxNom("cliente","IDCLIENTE","ClienteNombre","'$nombre'")[0]->IDCLIENTE;
+                  
                     $_SESSION['id'] = $Idcliente;
                     $ResultadoLista = $this->Cita->listarCliente($Idcliente);
                     include_once 'Vistas/Cliente/index.php';
