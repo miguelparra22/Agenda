@@ -36,20 +36,15 @@ class Cita extends Conexion implements Idatabase {
             print_r($vo->getIdservicio());
             foreach ($vo->getIdservicio() as $key => $value) {
                 echo($key);
-                $sentenciaAgenda = "INSERT into agenda values(null,:FK_IDEMPLEADO,:FK_IDCITA)";
+                $sentenciaAgenda = "INSERT into agenda values(null,:FK_IDEMPLEADO,:FK_IDCITA,:FK_IDSERVICIO)";
                 $resultadoAgenda = $this->PDO->prepare($sentenciaAgenda);
                 $resultadoAgenda->bindParam(":FK_IDEMPLEADO", $value, PDO::PARAM_STR);
                 $resultadoAgenda->bindParam(":FK_IDCITA", $cita, PDO::PARAM_STR);
+                $resultadoAgenda->bindParam(":FK_IDSERVICIO", $key, PDO::PARAM_STR);
                 $resultadoAgenda->execute();
             }
 
-            foreach ($vo->getIdservicio() as $key2 => $value2) {
-                $sentenciaServicio = "INSERT into cita_servicio values(null,:ID_CITA,:ID_SERVICIO)";
-                $resultadoServicio = $this->PDO->prepare($sentenciaServicio);
-                $resultadoServicio->bindParam(":ID_CITA", $cita, PDO::PARAM_STR);
-                $resultadoServicio->bindParam(":ID_SERVICIO", $key2, PDO::PARAM_STR);
-                $resultadoServicio->execute();
-            }
+           
 
             return true;
         }
@@ -106,7 +101,7 @@ class Cita extends Conexion implements Idatabase {
                     . " inner join cita_servicio cs ON cs.ID_CITA=a.FK_IDCITA "
                     . " inner join servicio s ON s.ID_SERVICIO = cs.ID_SERVICIO "
                     . " WHERE cs.ID_CITA='$id' and a.FK_IDCITA ='$id'";
-        echo    $sentencia;
+            echo $sentencia;
             $resultado = $this->PDO->prepare($sentencia);
             $resultado->execute();
             return $resultado->fetchAll(PDO::FETCH_ASSOC);
