@@ -24,10 +24,7 @@
 </head>
 
 <body>
-<<<<<<< HEAD
 <!---------------------Animación ----------------------->
-=======
->>>>>>> refs/remotes/origin/master
     <div id="waitDiv" class="loadercont">
         <div class="container">
             <div class="row">
