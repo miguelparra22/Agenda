@@ -24,12 +24,7 @@
 </head>
 
 <body>
-<<<<<<< HEAD
 <!---------------------Animación ----------------------->
-=======
-
- <?php print_r($_SESSION['id']) ?>
->>>>>>> refs/remotes/origin/master
     <div id="waitDiv" class="loadercont">
         <div class="container">
             <div class="row">
@@ -149,12 +144,7 @@
                 }],
                 eventClick: function(calEvent, jsEvent, view) {
                         alert('hola');
-<<<<<<< HEAD
-                    } <?php
-                if ($lugar == 1): ?> ,
-=======
                     } <?php if ($lugar == 1): ?> ,
->>>>>>> refs/remotes/origin/master
                 select: function(start, end, jsEvent) {
                         endtime = $.fullCalendar.moment(end).format('h:mm');
                         starttime = $.fullCalendar.moment(start).format('dddd, MMMM Do YYYY, h:mm');
