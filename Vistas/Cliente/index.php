@@ -65,7 +65,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link" href="#"><i class="fa fa-home"></i> Inicio</a>
+                    <a class="nav-link" href="?c=valida&a=iniciar"><i class="fa fa-home"></i> Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a id="citas_cliente" class="nav-link" onclick="abrirM(this.id)" href="#"><i class="fa fa-calendar"></i> Citas</a>
