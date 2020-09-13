@@ -1,5 +1,4 @@
 <?php
-session_start();     
 $Servicio;
           $this->Servicio = new ServicioController();
           ?>

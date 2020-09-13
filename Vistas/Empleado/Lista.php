@@ -95,7 +95,7 @@ $this->Empleado = new EmpleadoModel();
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item">
-                        <a href="/Agendamiento/Vistas/Home/home.php" class="btn btn-outline-danger"><i
+                        <a href="/Agendamiento/" class="btn btn-outline-danger"><i
                                 class="fa fa-close"></i></a>
                     </li>
                 </ul>

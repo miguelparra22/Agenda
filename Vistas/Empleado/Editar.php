@@ -13,10 +13,11 @@
 
  <form action="?c=Empleado&a=Editar" method="post">
  
- <input type="text">
- <input type="text">
- <input type="text">
- 
+ <input name="NOMBREMPLEADO" value="<?= $resultado->getNombre_Empleado() ?>" type="text">
+ <input name="CORREOEMPLEADO" value="<?= $resultado->getCorreo_Empleado() ?>" type="text">
+ <input name="especialidad" value="<?= $resultado->getEspecialidad_Empleado() ?>" type="text">
+ <input name="ID_EMPLEADO" type="hidden" value="<?= $resultado->getId_Empleado() ?>" type="text">
+ <button type="submit">Editar</button>
  </form>
     
 </body>

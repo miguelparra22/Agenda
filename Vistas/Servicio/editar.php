@@ -1,9 +1,3 @@
-<?php
-
-session_start();
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -128,7 +122,7 @@ session_start();
             <h1>Actualizar datos del servicio</h1>
         </div>
 
-        <!--------------------------------->
+        <!---------as------------------------>
 
 
 

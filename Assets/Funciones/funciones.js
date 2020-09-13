@@ -176,7 +176,7 @@ function whatsapp(){
 }
 
 function InicioAdmin(){
-  var p = "Vistas/Home/home.php";
+  var p = "";
 
   window.location.href = p;
 }

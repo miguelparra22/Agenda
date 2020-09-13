@@ -63,13 +63,12 @@ class EmpleadoModel extends Conexion{
             return true;
         }else{
             $arreglo = $resultado->fetchAll(PDO::FETCH_OBJ);
-            $arreglo = $resultado[0];
-
+            $arreglo = $arreglo[0];
             $this->EmpleadoVo = new EmpleadoVO();
-            $this->EmpleadoVo->setId_Empleado($arreglo->Id_Empleado);
-            $this->EmpleadoVo->setNombre_Empleado($arreglo->Nombre_Empleado);
-            $this->EmpleadoVo->setCorreo_Empleado($arreglo->Correo_Empleado);
-            $this->EmpleadoVo->setEspecialidad_Empleado($arreglo->Especialidad_Empleado);
+            $this->EmpleadoVo->setId_Empleado($arreglo->ID_EMPLEADO);
+            $this->EmpleadoVo->setNombre_Empleado($arreglo->NombreEmpleado);
+            $this->EmpleadoVo->setCorreo_Empleado($arreglo->CorreoEmpleado);
+            $this->EmpleadoVo->setEspecialidad_Empleado($arreglo->ESPECIALIDAD);
 
 
             $arreglo = $this->EmpleadoVo;
@@ -87,7 +86,6 @@ class EmpleadoModel extends Conexion{
     }
 
     public function editar($vo){
-        $this->EmpleadoVO;
         $sentancia = "UPDATE $this->tabla SET NombreEmpleado='$vo[1]', CorreoEmpleado='$vo[2]', Especialidad='$vo[3]' WHERE ID_EMPLEADO='$vo[0]';";
         $resultado = $this->PDO->prepare($sentancia);
         return $resultado->execute();
