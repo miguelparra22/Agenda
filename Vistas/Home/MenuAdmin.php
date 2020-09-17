@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item ">
-                <a class="nav-link" href="#" onclick=""><i class="fa fa-home"></i> Inicio</a>
+                <a class="nav-link" href="?c=valida&a=iniciar" onclick=""><i class="fa fa-home"></i> Inicio</a>
             </li>
             <li class="nav-item">
                 <a id="citas" class="nav-link" href="#" onclick="abrirM(this.id)"><i class="fa fa-calendar"></i> Mis citas</a>

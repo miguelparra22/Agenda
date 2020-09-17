@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Composer",
+    "\\Assets",
+    "\\Assets\\Funciones",
     "\\Controladores",
     "\\Modelos",
     "\\Modelos\\database",
     "\\Modelos\\DB",
     "\\Vistas",
     "\\Vistas\\Admin",
-    "\\Vistas\\Home",
-    "\\Vistas\\Servicio"
+    "\\Vistas\\Empleado"
   ],
-  "SelectedNode": "\\Controladores\\Servicio.controller.php",
+  "SelectedNode": "\\Controladores\\empleado.controller.php",
   "PreviewInSolutionExplorer": false
 }

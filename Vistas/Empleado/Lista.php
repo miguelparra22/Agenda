@@ -74,7 +74,7 @@ $this->Empleado = new EmpleadoModel();
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item ">
-                        <a class="nav-link" href="#" onclick=""><i class="fa fa-home"></i> Inicio</a>
+                        <a class="nav-link" href="?c=valida&a=iniciar" onclick=""><i class="fa fa-home"></i> Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a id="citas" class="nav-link" href="#" onclick="abrirM(this.id)"><i class="fa fa-calendar"></i>
@@ -95,7 +95,7 @@ $this->Empleado = new EmpleadoModel();
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item">
-                        <a href="/Agendamiento/Vistas/Home/home.php" class="btn btn-outline-danger"><i
+                        <a href="/Agendamiento/" class="btn btn-outline-danger"><i
                                 class="fa fa-close"></i></a>
                     </li>
                 </ul>

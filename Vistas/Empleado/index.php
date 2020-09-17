@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link" onclick="abrirM(this.id)"  href="#">Inicio</a>
+                    <a class="nav-link" onclick="abrirM(this.id)"  href="?c=valida&a=iniciar">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" onclick="abrirM(this.id)" id="citas" href="#">Citas</a>
