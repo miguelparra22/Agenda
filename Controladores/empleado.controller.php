@@ -134,7 +134,7 @@ function consultaUnica(){
 
 
 public function editar() {
-  $vo = array($_POST["ID_EMPLEADO"],$_POST["NOMBREMPLEADO"], $_POST["CORREOEMPLEADO"], $_POST["especialidad"]);
+  $vo = array($_POST["ID_EMPLEADO"],$_POST["NOMBREMPLEADO"], $_POST["CORREOEMPLEADO"], $_POST["especialidad"],$_POST["Estado"]);
   if ($this->model->editar($vo)) {
       $resultado = $this->model->listaEmpleado();
       echo 'El Empleado se actualizo correctamente.';

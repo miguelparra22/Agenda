@@ -67,7 +67,7 @@
 
     <section id="main">
 
-        <!-------------Menú------------------->
+        <!-------------Menú------------------>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
                 <img src="/Agendamiento/Assets/Imagenes/djlogo.png" width="120" height="40"
@@ -123,7 +123,15 @@
                       <div class="p-3">
                       <input name="especialidad" value="<?= $resultado->getEspecialidad_Empleado() ?>" type="text" class="form-control">
                       </div>
-
+                      <div class="p-3">
+                      <?php if($resultado->getEstado_Empleado() == 1){ ?> 
+                      <input type="radio" name="Estado" checked value="1">Activo<br>
+                      <input type="radio" name="Estado" value="2">Inactivo<br>
+                      <?php }else{?>
+                      <input type="radio" name="Estado" value="1">Activo<br>
+                      <input type="radio" name="Estado" checked value="2">Inactivo<br>
+                      <?php }?>
+                      </div>
                       <div class="p-3">
                       <input name="ID_EMPLEADO" type="hidden" value="<?= $resultado->getId_Empleado() ?>" type="text" class="form-control">
                       </div>
