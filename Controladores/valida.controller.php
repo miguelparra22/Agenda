@@ -166,7 +166,7 @@ class Validacontroller {
     }
 
     public function iniciar() {
-    if(!($_SESSION['ROL'] != null)){
+    if(!(isset($_SESSION['ROL']))){
         $this->vo->setCliente_pwd($_POST["pws"]);
         $this->vo->setCliente_correo($_POST["email"]);
 
@@ -209,17 +209,19 @@ class Validacontroller {
         }else{
                     switch ($_SESSION['ROL']) {
                 case 0://Cliente
+                    $nombre = $_SESSION['NOMBRE'];
                     $Idcliente = $this->Cita->CambiarIdxNom("cliente","IDCLIENTE","ClienteNombre","'$nombre'")[0]->IDCLIENTE;
-                  
                     $_SESSION['id'] = $Idcliente;
                     $ResultadoLista = $this->Cita->listarCliente($Idcliente);
                     include_once 'Vistas/Cliente/index.php';
                     break;
                 case 1://Administrador
+                    $nombre = $_SESSION['NOMBRE'];
                     $ResultadoLista = $this->Cita->listarAdmin();
                     include_once 'Vistas/Admin/index.php';
                     break;
                 case 2://Empleado'
+                    $nombre = $_SESSION['NOMBRE'];
                     $IdEmpleado = $this->Cita->CambiarIdxNom("empleado","ID_EMPLEADO","NombreEmpleado","'$nombre'")[0]->ID_EMPLEADO;
                     $_SESSION['id'] = $IdEmpleado;
                     $ResultadoLista = $this->Cita->listarCliente($IdEmpleado);
