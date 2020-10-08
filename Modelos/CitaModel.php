@@ -87,7 +87,7 @@ class Cita extends Conexion implements Idatabase {
         if (!(empty($id))) {
             $sentencia = "select * FROM $this->tabla c "
                     . " WHERE c.FKIDESTADO <> 2 AND c.FKIDCLIENTE='$id' "
-                    . " ORDER BY c.HORAPACTADA ASC ";
+                    . " ORDER BY c.HORAPACTADA DESC ";
             $resultado = $this->PDO->prepare($sentencia);
             $resultado->execute();
             return $resultado->fetchAll(PDO::FETCH_ASSOC);
@@ -96,12 +96,10 @@ class Cita extends Conexion implements Idatabase {
 
     public function buscaEmMasSer($id) {
         if (!(empty($id))) {
-            $sentencia = " select e.NombreEmpleado as NOMBRE,s.NombreServicio as NOMBRESERVICIO "
-                    . " FROM agenda  a inner join empleado e on a.FK_IDEMPLEADO=e.ID_EMPLEADO "
-                    . " inner join cita_servicio cs ON cs.ID_CITA=a.FK_IDCITA "
-                    . " inner join servicio s ON s.ID_SERVICIO = cs.ID_SERVICIO "
-                    . " WHERE cs.ID_CITA='$id' and a.FK_IDCITA ='$id'";
-            echo $sentencia;
+            $sentencia = " select e.NombreEmpleado as NOMBRE,s.NombreServicio as NOMBRESERVICIO 
+            FROM agenda  a inner join empleado e on a.FK_IDEMPLEADO=e.ID_EMPLEADO 
+           inner join servicio s ON s.ID_SERVICIO = a.FK_IDSERVICIO 
+            WHERE a.FK_IDCITA ='$id'";
             $resultado = $this->PDO->prepare($sentencia);
             $resultado->execute();
             return $resultado->fetchAll(PDO::FETCH_ASSOC);

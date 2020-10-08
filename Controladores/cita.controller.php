@@ -156,6 +156,9 @@ class Citacontroller {
             
         }
     }
+    function lista(){
+        require_once 'Vistas/Cita/listaCitas.php';
+    }
 
 }
 

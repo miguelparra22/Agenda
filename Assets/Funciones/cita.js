@@ -35,10 +35,11 @@ function buscarListas() {
                 html += ' <tr>';
                 html += '   <td>' + objData[item]["HORAPACTADA"] + '</td>';
                 html += '   <td>' + objData[item]["HORATERMINA"] + '</td>';
+                html += '   <td>' + objData[item]["DESCRIPCION"] + '</td>';
+
                 html += traerEmpleadosmasServicio(objData[item]["IDCITA"]);
-                html += '   <td>Empleado</td>';
+                html +=  '<td>'+ validaCancelar('<button title="Cancelar" class="btn btn-outline-danger" onclick="cancelar(' + objData[item]["IDCITA"] + ')" >X</button>',objData[item]["HORAPACTADA"] )+'</td>';
                 html += ' </tr>';
-                console.log(html)
 
             }
 
@@ -50,6 +51,22 @@ function buscarListas() {
         }
     });
 }
+function validaCancelar(boton, horavalida){
+    const today = new Date();
+    var startTime = new Date(horavalida); 
+    var endTime = new Date(today);
+    var difference =  startTime.getTime()-endTime.getTime();
+    var resultInMinutes = Math.round(difference / 60000);
+    if(resultInMinutes>60 ){
+        return boton;
+    }else{
+        return '';
+    }
+   
+}
+function cancelar(cita){
+
+}
 function traerEmpleadosmasServicio(cita) {
     var html = '';
     $.ajax({
@@ -60,7 +77,6 @@ function traerEmpleadosmasServicio(cita) {
         },
         async: false,
         success: function (response) {
-          console.log(response);
             var objData = eval(response);
             html += '<td>';
             for (var item in objData) {
@@ -154,6 +170,7 @@ function acordion() {
 }
 function traerEmpleadoCita(id) {
     var inicio = $('#inicioFecha').val().replace('T', ' ');
+    console.log(inicio);
     var html = '';
     $.ajax({
         type: "POST",

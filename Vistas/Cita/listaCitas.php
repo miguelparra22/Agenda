@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="/Agendamiento/Assets/css/acordion.css" >
         <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/estilos.css">
         <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
+        <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body >
@@ -109,8 +110,9 @@
                                     <tr>
                                         <th>Fecha y Hora Inicio</th>
                                         <th>Fecha y Hora Fin</th>
+                                        <th>Descripci&oacute;n</th>
                                         <th>Servicios -> Empleado</th>
-                                        <th>Acci&oacute;n</th>
+                                        <th>Cancelar</th>
                                     </tr>
                                 </thead>
                                 <tbody id="bodtys">
