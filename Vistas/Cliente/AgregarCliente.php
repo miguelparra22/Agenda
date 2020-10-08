@@ -77,17 +77,24 @@
             <h3>Ingresa tus datos</h3>
             <form action="/Agendamiento/?c=cliente&a=agregar" method="POST" onsubmit="return validarcliente()">
                 <div>
-                    <input id="nombre" type="text" name="usuario_nombre" required>
+                    <input id="nombre" type="text" name="usuario_nombre" required
+                        onkeypress="return soloLetras(event)" />
                     <label>Nombre completo</label>
                 </div>
                 <div>
-                    <input id="telefono" type="number" name="usuario_telefono" required>
+                    <input id="telefono" type="number" name="usuario_telefono" onkeypress="return soloNum(event)"
+                        required>
                     <label>Teléfono</label>
                 </div>
 
                 <div>
-                    <input id="con" type="password" name="usuario_pwd" required>
+                    <input id="pass" type="password" name="usuario_pwd" required>
                     <label>Contraseña</label>
+
+                    <div id="seguridad" class="contenedor_seguridad">
+                    </div>
+
+                    <div id="msg" class="msg" ></div>
                 </div>
                 <div>
                     <input id="correo" type="text" name="usuario_correo" required>
@@ -109,4 +116,5 @@
 <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
 <script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
 <script src="/Agendamiento/Assets/Funciones/validaciones.js"></script>
+
 </html>
