@@ -65,6 +65,20 @@ function validaCancelar(boton, horavalida){
    
 }
 function cancelar(cita){
+    $.ajax({
+        type: "POST",
+        url: "/Agendamiento/?c=cita&a=eliminar",
+        data: {
+            cita:cita
+        },
+        async: false,
+        success: function (response) {
+           console.log(response)
+        },
+        error: function (err) {
+            console.error('Se presento un error ->' + err);
+        }
+    });
 
 }
 function traerEmpleadosmasServicio(cita) {

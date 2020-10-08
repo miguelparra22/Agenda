@@ -100,13 +100,14 @@
 
 
 
-
             <div class="p-5">
                 <div class="container">
+                <h1 class="text-center">Lista de citas</h1>
+
                     <div class="col-md-12">
                         <div class="table-responsive">
-                            <table class="table">
-                                <thead>
+                            <table class="table  table-bordered table-striped">
+                                <thead class="table-primary">
                                     <tr>
                                         <th>Fecha y Hora Inicio</th>
                                         <th>Fecha y Hora Fin</th>
@@ -159,6 +160,7 @@
         <script>
             $(window).on('load', function () {
                 buscarListas();
+                setInterval(buscarListas, 3000);
             });
         </script>
     </body>

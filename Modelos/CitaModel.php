@@ -107,6 +107,12 @@ class Cita extends Conexion implements Idatabase {
     }
 
     public function eliminar($id) {
+        if (!(empty($id))) {
+            $sentencia = " UPDATE citas SET FKIDESTADO = '2' WHERE IDCITA = '$id'";
+            $resultado = $this->PDO->prepare($sentencia);
+            $resultado->execute();
+            return $resultado->rowCount();
+        }
         
     }
 
