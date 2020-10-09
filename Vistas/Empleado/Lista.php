@@ -54,6 +54,8 @@ $this->Empleado = new EmpleadoModel();
         </div>
     </div>
 
+
+<textarea name="" id="" cols="30" rows="10"></textarea>
     <!----------------Menu-------------------------->
 
     <div id="mySidenav" class="sidenav">

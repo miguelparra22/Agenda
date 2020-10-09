@@ -37,6 +37,7 @@ function validarcliente(){
 
   pass.onblur = function(){
       line.style.display = "none";
+      document.getElementById("msg").innerHTML = ""
   }
 
   pass.onkeyup = function(){
