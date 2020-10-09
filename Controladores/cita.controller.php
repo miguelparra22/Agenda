@@ -156,6 +156,14 @@ class Citacontroller {
             
         }
     }
+    function lista(){
+        require_once 'Vistas/Cita/listaCitas.php';
+    }
+    function eliminar(){
+        $cita = $_POST['cita'];
+            $elimino = $this->model->eliminar($cita);
+        echo json_encode($elimino);
+    }
 
 }
 

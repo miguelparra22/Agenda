@@ -82,7 +82,7 @@ function tomaropcion(elemento) {
     ct += "<a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>";
     ct += "<a href='?c=Cita&a=mostrar'><i class='fa fa-calendar-plus-o'></i> Solicitar cita</a>";
     ct += "<a href='?c=Cita&a=mis'><i  class='fa fa-eye'></i> Ver mis citas</a>";
-    ct += "<a><i class='fa fa-calendar-times-o' ></i> Cancelar cita</a>";
+    ct += "<a href='?c=Cita&a=lista'><i class='fa fa-calendar-times-o' ></i> Cancelar cita</a>";
 
     document.getElementById("mySidenav").innerHTML = ct;
 

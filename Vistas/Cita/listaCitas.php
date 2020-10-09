@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="/Agendamiento/Assets/css/acordion.css" >
         <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/estilos.css">
         <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
+        <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body >
@@ -99,18 +100,20 @@
 
 
 
-
             <div class="p-5">
                 <div class="container">
+                <h1 class="text-center">Lista de citas</h1>
+
                     <div class="col-md-12">
                         <div class="table-responsive">
-                            <table class="table">
-                                <thead>
+                            <table class="table  table-bordered table-striped">
+                                <thead class="table-primary">
                                     <tr>
                                         <th>Fecha y Hora Inicio</th>
                                         <th>Fecha y Hora Fin</th>
+                                        <th>Descripci&oacute;n</th>
                                         <th>Servicios -> Empleado</th>
-                                        <th>Acci&oacute;n</th>
+                                        <th>Cancelar</th>
                                     </tr>
                                 </thead>
                                 <tbody id="bodtys">
@@ -157,6 +160,7 @@
         <script>
             $(window).on('load', function () {
                 buscarListas();
+                setInterval(buscarListas, 3000);
             });
         </script>
     </body>
