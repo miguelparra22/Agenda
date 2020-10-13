@@ -94,7 +94,7 @@ function tomaropcion(elemento) {
     var tcm = "";
 
     tcm += "<a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>";
-    tcm += "<a title='Ver equipo DJane' href='?c=Empleado&a=ListaEmpleados'><i class='fa fa-users'></i> Ver equipo</a>";
+    tcm += "<a title='Ver equipo DJane' href='?c=Cliente&a=VerEmpleados'><i class='fa fa-users'></i> Ver equipo</a>";
     tcm += "<a title='Buscar miembro' ><i class='fa fa-search'></i> Buscar miembro</a>";
     tcm += "<a title='Ver nuestro canal de Youtube'><i class='fa fa-youtube'></i> Youtube</a>";
     tcm += "<a title='Ver nuestro Facebook'><i class='fa fa-facebook'></i> Facebook</a>";

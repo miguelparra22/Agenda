@@ -68,5 +68,9 @@ class Clientecontroller {
         }
     }
 
+    function VerEmpleados(){
+      require_once 'Vistas/Cliente/VerEmpleado.php';
+    }
+
     
 }
