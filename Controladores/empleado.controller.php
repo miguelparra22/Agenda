@@ -98,7 +98,7 @@ class EmpleadoController{
 
 }
 
-  function listar(){
+  function listarEmpleadosActivos(){
     $resultado = $this->model->listar();
     if (!is_array($resultado)) {
       include_once 'Vistas/header.php';

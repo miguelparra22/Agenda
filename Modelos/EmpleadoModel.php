@@ -32,8 +32,8 @@ class EmpleadoModel extends Conexion{
          ));
      }
 
-     public function listar() {
-        $sentencia = "SELECT * FROM $this->tabla";
+     public function listarEmpleadosActivos() {
+        $sentencia = "SELECT NombreEmpleado,ESPECIALIDAD FROM $this->tabla WHERE Estado = 1";
         $resultado = $this->PDO->prepare($sentencia);
         $resultado->execute();
         return $resultado->fetchAll(PDO::FETCH_OBJ);
