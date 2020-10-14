@@ -1,8 +1,5 @@
 <?php 
 
-require_once "autoload.php";
-$Empleado;
-$this->Empleado = new EmpleadoModel();
 
 
 ?>

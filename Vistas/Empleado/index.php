@@ -1,6 +1,7 @@
 <?php           
-($_SESSION['ROL'])
- ?>
+($_SESSION['ROL']);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,16 +40,6 @@
                                     <li class="nav-item">
                         <a id="team" class="nav-link" href="#" onclick="abrirM(this.id)"><i class="fa fa-users"></i> Equipo</a>
                     </li>
-                <!--li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li-->
             </ul>
         </div>
 
@@ -65,7 +56,7 @@
 
     
         <div class="container">
-            <h1 class="text-center">Bienvenido <?php print($_SESSION['NOMBRE']); ?></h1>
+            <h1 class="text-center">Bienvenido <?php print($_SESSION['NOMBRE']) ?></h1>
             <div class="ttable">
                 <h4>Estas son las citas del día de hoy</h4>
                 <table class="table  table-bordered table-striped">
