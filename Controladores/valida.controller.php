@@ -175,6 +175,7 @@ class Validacontroller {
         $this->vo->setCliente_correo($_POST["email"]);
 
         $resultado = $this->model->iniciarSesion($this->vo);
+      
         if ($resultado == -1) {
             echo "
             <script>
@@ -189,29 +190,28 @@ class Validacontroller {
             $rol = $arreglo->rol;
             $nombre = $arreglo->nombre;
             $Id = $arreglo->ID;
-            
+           
             $_SESSION['ROL'] = $rol;
             $_SESSION['NOMBRE'] = $nombre;
             $_SESSION['ID'] = $Id;
             switch ($rol) {
                 case 0://Cliente
-                    $Idcliente = $this->Cita->CambiarIdxNom("cliente","IDCLIENTE","ClienteNombre","'$nombre'")[0]->IDCLIENTE;
+                  //  $Idcliente = $this->Cita->CambiarIdxNom("cliente","IDCLIENTE","ClienteNombre","'$nombre'")[0]->IDCLIENTE;
                   
-                    $_SESSION['id'] = $Idcliente;
-                    $ResultadoLista = $this->Cita->listarCliente($Idcliente);
+                    //$_SESSION['id'] = $Idcliente;
+                    $ResultadoLista = $this->Cita->listarCliente($_SESSION['ID'] );
                     include_once 'Vistas/Cliente/index.php';
                     break;
                 case 1://Administrador
-                    $IdAdmin = $this->Cita->CambiarIdxNom("empleado","ID_EMPLEADO","NombreEmpleado","'$nombre'")[0]->ID_EMPLEADO;
-                    $_SESSION['id'] = $IdAdmin;
+                   // $IdAdmin = $this->Cita->CambiarIdxNom("empleado","ID_EMPLEADO","NombreEmpleado","'$nombre'")[0]->ID_EMPLEADO;
+                    //$_SESSION['id'] = $IdAdmin;
                     $ResultadoLista = $this->Cita->listarAdmin();
                     include_once 'Vistas/Admin/index.php';
                     break;
                 case 2://Empleado'
-                    $IdEmpleado = $this->Cita->CambiarIdxNom("empleado","ID_EMPLEADO","NombreEmpleado","'$nombre'")[0]->ID_EMPLEADO;
-                    $_SESSION['id'] = $IdEmpleado;
-                    $ResultadoLista = $this->Cita->listarCliente($IdEmpleado);
-                echo  $IdEmpleado;
+                    //$IdEmpleado = $this->Cita->CambiarIdxNom("empleado","ID_EMPLEADO","NombreEmpleado","'$nombre'")[0]->ID_EMPLEADO;
+                    //$_SESSION['id'] = $IdEmpleado;
+                    $ResultadoLista = $this->Cita->listarEmpleado($_SESSION['ID']);
                     include_once 'Vistas/Empleado/index.php';
                     break;
             }

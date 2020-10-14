@@ -140,12 +140,14 @@ class Cita extends Conexion implements Idatabase {
 
     public function listarCliente($IdCliente) {
         $sentencia = "SELECT * FROM $this->tabla WHERE DATE(HORAPACTADA) = DATE(NOW()) AND FKIDCLIENTE = $IdCliente";
+     
         $resultado = $this->PDO->prepare($sentencia);
         $resultado->execute();
         return $resultado->fetchAll(PDO::FETCH_OBJ);
     }
 
     public function listarEmpleado($IdEmpleado) {
+      
         $IdCita = $this->CambiarIdxNom("agenda", "FK_IDCITA", "FK_IDEMPLEADO", "$IdEmpleado")[0]->FK_IDCITA;
         $sentencia = "SELECT * FROM $this->tabla WHERE DATE(HORAPACTADA) = DATE(NOW()) AND IDCITA = $IdCita";
         $resultado = $this->PDO->prepare($sentencia);

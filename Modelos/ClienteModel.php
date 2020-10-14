@@ -98,7 +98,7 @@ class Cliente extends Conexion implements Idatabase {
         WHERE CorreoEmpleado='$correo' AND PasswordEmpleado='$pws' 
         UNION
         SELECT '0' as rol,CorreoCliente as correo,ClienteNombre as nombre,IDCLIENTE as ID FROM $this->tabla  WHERE CorreoCliente='$correo' AND PasswordCliente='$pws'";
-
+        
         $resultado = $this->PDO->prepare($sentencia);
         $resultado->execute();
 
