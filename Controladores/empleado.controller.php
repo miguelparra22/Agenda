@@ -84,7 +84,7 @@ class EmpleadoController{
 
 
   function ListaEmpleados(){
-    $resultado = $this->model->listaEmpleado();
+    $resultado = $this->model->listaEmpleado($_SESSION['ID']);
     if (!is_array($resultado)) {
       include_once 'Vistas/header.php';
       include_once 'Vistas/exception/noExiste.php';
@@ -136,7 +136,7 @@ function consultaUnica(){
 public function editar() {
   $vo = array($_POST["ID_EMPLEADO"],$_POST["NOMBREMPLEADO"], $_POST["CORREOEMPLEADO"], $_POST["especialidad"],$_POST["Estado"]);
   if ($this->model->editar($vo)) {
-      $resultado = $this->model->listaEmpleado();
+      $resultado = $this->model->listaEmpleado($_SESSION['ID']);
       echo 'El Empleado se actualizo correctamente.';
       include_once 'Vistas/header.php';
       include_once 'Vistas/Empleado/lista.php';

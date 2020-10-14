@@ -1,5 +1,6 @@
 <?php           
 ($_SESSION['ROL'])
+                    echo($_SESSION['id']);
  ?>
 
 <!DOCTYPE html>

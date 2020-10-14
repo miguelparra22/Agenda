@@ -73,7 +73,7 @@ $Servicio;
                     <a class="nav-link navl" onclick="registro()" href="#">Registrarse</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="login()" href="/Agendamiento/Vistas/Home/Login.php" class="btn btn-outline-primary">Iniciar sesión</a>
+                    <a onclick="login()" href="/Agendamiento/?c=valida&a=Login" class="btn btn-outline-primary">Iniciar sesión</a>
                 </li>
             </ul>
         </div>

@@ -28,6 +28,10 @@ class Validacontroller {
         include_once 'vistas/Recuperar/ingresaCorreo.php';
     }
 
+    public function Login(){
+        include_once 'Vistas/Home/Login.php';
+    }
+
     public function link() {
         echo 'escribe clave';
     }
@@ -184,8 +188,11 @@ class Validacontroller {
             $arreglo = $resultado[0];
             $rol = $arreglo->rol;
             $nombre = $arreglo->nombre;
+            $Id = $arreglo->ID;
+            
             $_SESSION['ROL'] = $rol;
             $_SESSION['NOMBRE'] = $nombre;
+            $_SESSION['ID'] = $Id;
             switch ($rol) {
                 case 0://Cliente
                     $Idcliente = $this->Cita->CambiarIdxNom("cliente","IDCLIENTE","ClienteNombre","'$nombre'")[0]->IDCLIENTE;
@@ -195,6 +202,8 @@ class Validacontroller {
                     include_once 'Vistas/Cliente/index.php';
                     break;
                 case 1://Administrador
+                    $IdAdmin = $this->Cita->CambiarIdxNom("empleado","ID_EMPLEADO","NombreEmpleado","'$nombre'")[0]->ID_EMPLEADO;
+                    $_SESSION['id'] = $IdAdmin;
                     $ResultadoLista = $this->Cita->listarAdmin();
                     include_once 'Vistas/Admin/index.php';
                     break;

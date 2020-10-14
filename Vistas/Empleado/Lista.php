@@ -61,7 +61,7 @@ $this->Empleado = new EmpleadoModel();
     </div>
     <section id="main">
 
-        <!------navBar----------------------------------------->
+        <!------navBar---------------------------------------->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
                 <img src="/Agendamiento/Assets/Imagenes/djlogo.png" width="120" height="40"
