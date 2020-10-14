@@ -1,3 +1,6 @@
+<?php           
+($_SESSION['ROL'])
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +36,9 @@
                 <li class="nav-item">
                     <a class="nav-link" onclick="abrirM(this.id)" id="citas" href="#">Citas</a>
                 </li>
-                
+                                    <li class="nav-item">
+                        <a id="team" class="nav-link" href="#" onclick="abrirM(this.id)"><i class="fa fa-users"></i> Equipo</a>
+                    </li>
                 <!--li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Dropdown link

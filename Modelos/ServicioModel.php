@@ -82,7 +82,7 @@ class Servicio extends Conexion implements Idatabase {
 
     public function ListaEmpleados() {
         $this->EmpleadoModel = new EmpleadoModel();
-        $resultado2 = $this->EmpleadoModel->listar();
+        $resultado2 = $this->EmpleadoModel->listar($_SESSION['ID']);
         return $resultado2;
     }
 

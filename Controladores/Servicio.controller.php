@@ -50,9 +50,9 @@ class ServicioController {
             }
           }
           </script>";
-            
+            $resultado = $this->model->listar();
             include_once 'Vistas/header.php';
-            include_once 'Vistas/servicio/listartodo.php';
+            include_once 'Vistas/Servicio/lista.php';
             include_once 'Vistas/footer.php';
         } else {
             echo "falló";
@@ -78,8 +78,9 @@ class ServicioController {
     }
 
     public function editar() {
-        $vo = array($_POST["ID_SERVICIO"],$_POST["NOMSERVi"], $_POST["DESCSERVI"], $_POST["CANTSERVI"], $_POST["PRECIOSERVICIO"],$_POST["TIEMPOLIMITE"]);
+            $vo = array($_POST["ID_SERVICIO"],$_POST["NOMSERVi"], $_POST["DESCSERVI"], $_POST["CANTSERVI"], $_POST["PRECIOSERVICIO"],$_POST["TIEMPOLIMITE"]);
         if ($this->model->actualizar($vo)) {
+            $resultado = $this->model->listar();
             echo 'El Servicio se actualizo correctamente.';
             include_once 'Vistas/header.php';
             include_once 'Vistas/Servicio/lista.php';
@@ -94,11 +95,12 @@ class ServicioController {
     public function eliminar() {
         $id = $_POST["servicio_ID"];
         try{
-        $resultado = $this->model->eliminar($id);
-        if ($resultado) {
+        $resultado2 = $this->model->eliminar($id);
+        if ($resultado2) {
         echo 'Registro eliminado';
+        $resultado = $this->model->listar();
             include_once 'Vistas/header.php';
-            include_once 'Vistas/servicio/listartodo.php';
+            include_once 'Vistas/Servicio/lista.php';
             include_once 'Vistas/footer.php';
         } else {
             echo 'Falló';
