@@ -70,6 +70,7 @@
                         <th>Servicio</th>
                     </thead>
                     <tbody>
+                  
                     <?php  foreach ($ResultadoLista as $busqueda => $value) {  ?>
                         <tr>            
                             <td><?php print_r($this->Cita->CambiarIdxNom("cliente","ClienteNombre","IDCLIENTE","$value->FKIDLCIENTE")[0]->ClienteNombre) ?></td>

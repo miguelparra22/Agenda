@@ -92,6 +92,15 @@ class Correo extends Conexion {
         $html .= '<a href=' . $url . '>Link</a> </h4>';
         return $html;
     }
+    public function construccionHTMLConfirmacion($fecha, $empleadosServicio) {
+        $url = $contexto . '&id=' . $idBuscar . '&correo=' . $correo . '&token=' . $token;
+        $html = '';
+        $html .= '<h3>Tu Código de verificacion</h3><br>';
+        $html .= '<h2>' . $codigo . '</h2>';
+        $html .= '<h4>O puedes ingresar con el siguiente ';
+        $html .= '<a href=' . $url . '>Link</a> </h4>';
+        return $html;
+    }
 
     public function validaCodigo($vo) {
         $id = $vo->id;

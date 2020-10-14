@@ -113,6 +113,8 @@
                                         <th>Fecha y Hora Fin</th>
                                         <th>Descripci&oacute;n</th>
                                         <th>Servicios -> Empleado</th>
+                                    
+                                        <th>Tiempo Faltante</th>
                                         <th>Cancelar</th>
                                     </tr>
                                 </thead>

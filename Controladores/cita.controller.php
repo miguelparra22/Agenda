@@ -6,7 +6,7 @@ class Citacontroller {
     private $vo;
     private $lugar;
 
-    public function __CONSTRUCT() { 
+    public function __CONSTRUCT() {
         $this->model = new Cita();
         $this->vo = new CitaVO();
         $lugar = 0;
@@ -147,21 +147,59 @@ class Citacontroller {
         $this->vo->setDescripcion($_POST['descripcion']);
         $this->vo->setFkidcliente($_SESSION['id']);
         $this->vo->setFkidestado(1);
-
-
         $resultado = $this->model->agregar($this->vo);
-        if ($resultado) {
-            
+        $informacion = $this->model->buscaEmMasSer($resultado);
+        if ($resultado != 0) {
+            if (!(empty($_POST["correo"]))) {
+                $correo = $_POST["correo"];
+                $this->model = new Cliente();
+                $boolean = $this->model->validaCorreo($correo);
+                if ($boolean) {
+                    $this->vo = new CorreoVO();
+                    $this->model = new Configuracion();
+                    $resultado = $this->model->buscarconfiguracion("CORREO");
+                    foreach ($resultado as &$valor) {
+                        switch ($valor->NombreConfiguracion) {
+                            case "CLAVE" : {
+                                    $this->vo->setClave($valor->ValorConfiguracion);
+                                    break;
+                                }
+                            case "CORREO": {
+                                    $this->vo->setUsuario($valor->ValorConfiguracion);
+                                    break;
+                                }
+                            case "HOST": {
+                                    $this->vo->setHost($valor->ValorConfiguracion);
+                                    break;
+                                }
+                            case "PORT": {
+                                    $this->vo->setPort($valor->ValorConfiguracion);
+                                    break;
+                                }
+                        }
+                    }
+                    $this->model = new Correo();
+                    $this->vo->setDestinatario($correo);
+                    $this->vo->setSMTPAuth(true);
+                    $this->vo->setSMTPSecure('tls');
+                    $this->vo->setAsunto('Se ha programado una cita');
+                    $html = $this->model->construccionHTMLConfirmacion($_POST['inicioFecha'],$informacion);
+                    $this->vo->setContenidoHTML($html);
+                    $resultado = $this->model->envioDeCorreo($this->vo);
+                }
+            }
         } else {
             
         }
     }
-    function lista(){
+
+    function lista() {
         require_once 'Vistas/Cita/listaCitas.php';
     }
-    function eliminar(){
+
+    function eliminar() {
         $cita = $_POST['cita'];
-            $elimino = $this->model->eliminar($cita);
+        $elimino = $this->model->eliminar($cita);
         echo json_encode($elimino);
     }
 
