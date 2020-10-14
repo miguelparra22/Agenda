@@ -1,6 +1,11 @@
 <?php           
 ($_SESSION['ROL'])
+<<<<<<< HEAD
 ?>
+=======
+                    echo($_SESSION['id']);
+ ?>
+>>>>>>> refs/remotes/origin/master
 
 <!DOCTYPE html>
 <html lang="en">

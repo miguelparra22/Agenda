@@ -94,10 +94,10 @@ class Cliente extends Conexion implements Idatabase {
         $correo = $this->ClienteVO->getCliente_correo();
         $pws = $claveIncriptada;
 
-        $sentencia = "SELECT FK_ROL as rol,CorreoEmpleado as correo,NombreEmpleado as nombre  FROM empleado 
+        $sentencia = "SELECT FK_ROL as rol,CorreoEmpleado as correo,NombreEmpleado as nombre,ID_EMPLEADO as ID  FROM empleado 
         WHERE CorreoEmpleado='$correo' AND PasswordEmpleado='$pws' 
         UNION
-        SELECT '0' as rol,CorreoCliente as correo,ClienteNombre as nombre FROM $this->tabla  WHERE CorreoCliente='$correo' AND PasswordCliente='$pws'";
+        SELECT '0' as rol,CorreoCliente as correo,ClienteNombre as nombre,IDCLIENTE as ID FROM $this->tabla  WHERE CorreoCliente='$correo' AND PasswordCliente='$pws'";
 
         $resultado = $this->PDO->prepare($sentencia);
         $resultado->execute();

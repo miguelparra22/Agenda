@@ -39,8 +39,12 @@ class EmpleadoModel extends Conexion{
         return $resultado->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function listaEmpleado(){
+    public function listaEmpleado($id){
+        if($_SESSION['ROL'] == "1"){
         $sentencia = "SELECT ID_EMPLEADO,NombreEmpleado,CorreoEmpleado,ESPECIALIDAD FROM $this->tabla where FK_ROL = 2";
+        }else{
+        $sentencia = "SELECT ID_EMPLEADO,NombreEmpleado,CorreoEmpleado,ESPECIALIDAD FROM $this->tabla where FK_ROL = 2 and ID_EMPLEADO = $id";
+        }
         $resultado = $this->PDO->prepare($sentencia);
         $resultado->execute();
         return $resultado->fetchAll(PDO::FETCH_OBJ);

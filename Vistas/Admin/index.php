@@ -3,7 +3,6 @@
 require_once "autoload.php";
 $Citas;
 $this->Citas = new Cita();
-
 ?>
 
 <!DOCTYPE html>
