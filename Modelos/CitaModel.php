@@ -33,9 +33,7 @@ class Cita extends Conexion implements Idatabase {
             $lastInsertId = $this->PDO->lastInsertId();
             $vo->setIdcita($lastInsertId);
             $cita = $vo->getIdcita();
-            print_r($vo->getIdservicio());
             foreach ($vo->getIdservicio() as $key => $value) {
-                echo($key);
                 $sentenciaAgenda = "INSERT into agenda values(null,:FK_IDEMPLEADO,:FK_IDCITA,:FK_IDSERVICIO)";
                 $resultadoAgenda = $this->PDO->prepare($sentenciaAgenda);
                 $resultadoAgenda->bindParam(":FK_IDEMPLEADO", $value, PDO::PARAM_STR);
@@ -43,10 +41,9 @@ class Cita extends Conexion implements Idatabase {
                 $resultadoAgenda->bindParam(":FK_IDSERVICIO", $key, PDO::PARAM_STR);
                 $resultadoAgenda->execute();
             }
-
-           
-
-            return true;
+            return $lastInsertId;
+        }else{
+            return 0;
         }
     }
 

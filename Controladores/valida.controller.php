@@ -211,6 +211,7 @@ class Validacontroller {
                     $IdEmpleado = $this->Cita->CambiarIdxNom("empleado","ID_EMPLEADO","NombreEmpleado","'$nombre'")[0]->ID_EMPLEADO;
                     $_SESSION['id'] = $IdEmpleado;
                     $ResultadoLista = $this->Cita->listarCliente($IdEmpleado);
+                echo  $IdEmpleado;
                     include_once 'Vistas/Empleado/index.php';
                     break;
             }

@@ -36,9 +36,11 @@ function buscarListas() {
                 html += '   <td>' + objData[item]["HORAPACTADA"] + '</td>';
                 html += '   <td>' + objData[item]["HORATERMINA"] + '</td>';
                 html += '   <td>' + objData[item]["DESCRIPCION"] + '</td>';
-
+              
                 html += traerEmpleadosmasServicio(objData[item]["IDCITA"]);
+                html += '   <td>'+llevas(objData[item]["HORAPACTADA"] )+'</td>';
                 html +=  '<td>'+ validaCancelar('<button title="Cancelar" class="btn btn-outline-danger" onclick="cancelar(' + objData[item]["IDCITA"] + ')" >X</button>',objData[item]["HORAPACTADA"] )+'</td>';
+             
                 html += ' </tr>';
 
             }
@@ -50,6 +52,66 @@ function buscarListas() {
             console.error('Se presento un error ->' + err);
         }
     });
+}
+function llevas(horavalida){
+    const today = new Date();
+    var startTime = new Date(horavalida); 
+    var endTime = new Date(today);
+    var difference =  startTime.getTime()-endTime.getTime();
+    var resultInMinutes = Math.round(difference / 60000);
+    if(resultInMinutes<0){
+        return "La cita ya esta vencida";
+    }else{
+    return format(resultInMinutes);
+}}
+function format(time) { 
+    return ComponerDias("",time);
+}
+function ComponerDias(CadenaDias,minutos) {
+    var DiasEntero = 0;
+    var RestoDelDia = 0;
+    var DiasDecimal = minutos/ (60 * 24) ;
+    if (DiasDecimal >= 1) {
+        DiasEntero =  Math.trunc(DiasDecimal);
+        RestoDelDia = DiasDecimal - DiasEntero;
+        CadenaDias += ""+ (DiasEntero) + " Dias";
+        if ((RestoDelDia > 0) && (RestoDelDia < 1)) {
+            CadenaDias = ComponerHoras(CadenaDias, RestoDelDia);
+        }
+    } else {
+        RestoDelDia = DiasDecimal;
+        CadenaDias = ComponerHoras(CadenaDias, RestoDelDia);
+    }
+    return CadenaDias;
+}
+
+function  ComponerHoras( CadenaDias,  RestoDelDia) {
+    var HorasEntero = 0;
+    var RestoDeLaHora = 0;
+    var HorasDecimal = RestoDelDia*24;
+    if (HorasDecimal >= 1) {
+        HorasEntero =  Math.trunc(HorasDecimal);
+        RestoDeLaHora = HorasDecimal - HorasEntero;
+        CadenaDias += " " + (HorasEntero) + " Horas";
+        if ((RestoDeLaHora > 0) && (RestoDeLaHora < 1)) {
+            CadenaDias = ComponerMinutos(CadenaDias, RestoDeLaHora);
+        }
+    } else {
+        RestoDeLaHora = HorasDecimal;
+        CadenaDias = ComponerMinutos(CadenaDias, RestoDeLaHora);
+    }
+    return CadenaDias;
+}
+
+
+function  ComponerMinutos( CadenaDias,  RestoDeLaHora) {
+    var MinutosEntero = 0;
+    var MinutosDecimal = RestoDeLaHora * 60;
+    if (MinutosDecimal >= 1) {
+        MinutosEntero =  Math.trunc(MinutosDecimal);
+    }
+    CadenaDias += " " +(MinutosEntero) +" Minutos";
+    return CadenaDias;
 }
 function validaCancelar(boton, horavalida){
     const today = new Date();
