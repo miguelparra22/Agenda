@@ -148,6 +148,7 @@ class Citacontroller {
         $this->vo->setFkidcliente($_SESSION['id']);
         $this->vo->setFkidestado(1);
         $resultado = $this->model->agregar($this->vo);
+        echo $resultado;
         $informacion = $this->model->buscaEmMasSer($resultado);
         if ($resultado != 0) {
             if (!(empty($_POST["correo"]))) {
@@ -183,7 +184,7 @@ class Citacontroller {
                     $this->vo->setSMTPAuth(true);
                     $this->vo->setSMTPSecure('tls');
                     $this->vo->setAsunto('Se ha programado una cita');
-                    $html = $this->model->construccionHTMLConfirmacion($_POST['inicioFecha'],$informacion);
+                    $html = $this->model->construccionHTMLConfirmacion($_POST['inicioFecha'],$informacion, $hasta);
                     $this->vo->setContenidoHTML($html);
                     $resultado = $this->model->envioDeCorreo($this->vo);
                 }

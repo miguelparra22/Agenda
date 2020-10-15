@@ -305,7 +305,11 @@ $('#guardarCita').click(function () {
         },
         async: false,
         success: function (response) {
-            console.log(response);
+            if(response!==0){
+               alert('guardo')
+            }else{
+                alert('no')
+            }
         },
         error: function (err) {
             console.error('Se presento un error ->' + err);

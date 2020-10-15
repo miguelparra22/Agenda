@@ -92,13 +92,24 @@ class Correo extends Conexion {
         $html .= '<a href=' . $url . '>Link</a> </h4>';
         return $html;
     }
-    public function construccionHTMLConfirmacion($fecha, $empleadosServicio) {
-        $url = $contexto . '&id=' . $idBuscar . '&correo=' . $correo . '&token=' . $token;
-        $html = '';
-        $html .= '<h3>Tu Código de verificacion</h3><br>';
-        $html .= '<h2>' . $codigo . '</h2>';
-        $html .= '<h4>O puedes ingresar con el siguiente ';
-        $html .= '<a href=' . $url . '>Link</a> </h4>';
+
+    public function construccionHTMLConfirmacion($fecha, $empleadosServicio, $hasta) {
+
+        $html .= '<h3>Datos de tu cita</h3><br>';
+        $html .= '<h2>Fecha: ' . $fecha . ' - ' . $hasta . '</h2>';
+        $html .= '<h2>Tus servicios</h2>';
+        $html .= '<table>';
+        $html .= '  <tr>';
+        $html .= '      <th>Servicio</th>';
+        $html .= '      <th>Empleado</th>';
+        $html .= '  </tr>';
+        foreach ($empleadosServicio as $busqueda => $value) {
+            $html .= '  <tr>';
+            $html .= '      <td>' . $value->NOMBRESERVICIO . '</td>';
+            $html .= '      <td>' . $value->NOMBRE . '</td>';
+            $html .= '  </tr>';
+        }
+        $html .= '</table>';
         return $html;
     }
 
