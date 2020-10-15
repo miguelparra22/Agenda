@@ -305,10 +305,25 @@ $('#guardarCita').click(function () {
         },
         async: false,
         success: function (response) {
+            $('#agendaModal').modal('hide');
             if(response!==0){
-               alert('guardo')
+                Swal.fire({
+                    icon: 'success',
+                    title: "¡Buen trabajo!",
+                    text: "Tu cita ha sido programada",
+                    confirmButtonText: 'Aceptar'
+                }).then((result) => {
+                    location.reload();
+                })
             }else{
-                alert('no')
+                Swal.fire({
+                    icon: 'error',
+                    title: "Oops...",
+                    text: "Ha ocurrido algun error",
+                    confirmButtonText: 'Aceptar'
+                }).then((result) => {
+                    location.reload();
+                })
             }
         },
         error: function (err) {

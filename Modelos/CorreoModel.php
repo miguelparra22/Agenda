@@ -94,19 +94,20 @@ class Correo extends Conexion {
     }
 
     public function construccionHTMLConfirmacion($fecha, $empleadosServicio, $hasta) {
-
+        $html = '';
         $html .= '<h3>Datos de tu cita</h3><br>';
-        $html .= '<h2>Fecha: ' . $fecha . ' - ' . $hasta . '</h2>';
+        $html .= '<h2>Fecha: ' . $fecha.str_replace("T"," ","T") . ' - ' . $hasta . '</h2>';
         $html .= '<h2>Tus servicios</h2>';
         $html .= '<table>';
         $html .= '  <tr>';
         $html .= '      <th>Servicio</th>';
         $html .= '      <th>Empleado</th>';
         $html .= '  </tr>';
+      
         foreach ($empleadosServicio as $busqueda => $value) {
             $html .= '  <tr>';
-            $html .= '      <td>' . $value->NOMBRESERVICIO . '</td>';
-            $html .= '      <td>' . $value->NOMBRE . '</td>';
+            $html .= '      <td>' . $value["NOMBRE"] . '</td>';
+            $html .= '      <td>' . $value["NOMBRESERVICIO"] . '</td>';
             $html .= '  </tr>';
         }
         $html .= '</table>';

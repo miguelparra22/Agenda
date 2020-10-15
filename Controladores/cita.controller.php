@@ -150,9 +150,10 @@ class Citacontroller {
         $resultado = $this->model->agregar($this->vo);
         echo $resultado;
         $informacion = $this->model->buscaEmMasSer($resultado);
+        $correo = $this->model->CambiarIdxNom("cliente","CorreoCliente","IDCLIENTE","'".$_SESSION['id']."'" )[0]->CorreoCliente;
         if ($resultado != 0) {
-            if (!(empty($_POST["correo"]))) {
-                $correo = $_POST["correo"];
+            if (!(empty($correo))) {
+          
                 $this->model = new Cliente();
                 $boolean = $this->model->validaCorreo($correo);
                 if ($boolean) {
