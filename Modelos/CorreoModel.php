@@ -106,8 +106,8 @@ class Correo extends Conexion {
       
         foreach ($empleadosServicio as $busqueda => $value) {
             $html .= '  <tr>';
-            $html .= '      <td>' . $value["NOMBRE"] . '</td>';
             $html .= '      <td>' . $value["NOMBRESERVICIO"] . '</td>';
+            $html .= '      <td>' .  $value["NOMBRE"]. '</td>';
             $html .= '  </tr>';
         }
         $html .= '</table>';
