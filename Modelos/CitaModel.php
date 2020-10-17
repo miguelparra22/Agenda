@@ -90,8 +90,29 @@ class Cita extends Conexion implements Idatabase {
             return $resultado->fetchAll(PDO::FETCH_ASSOC);
         }
     }
+    public function misServiciosEmpleado($id) {
+        if (!(empty($id))) {
+            $sentencia = "select * FROM $this->tabla c inner join agenda a on c.IDCITA=a.FK_IDCITA "
+                    . " WHERE c.FKIDESTADO <> 2 AND a.FK_IDEMPLEADO='$id' "
+                    . " ORDER BY c.HORAPACTADA DESC ";
+            $resultado = $this->PDO->prepare($sentencia);
+            $resultado->execute();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        }
+    }
 
     public function buscaEmMasSer($id) {
+        if (!(empty($id))) {
+            $sentencia = " select e.NombreEmpleado as NOMBRE,s.NombreServicio as NOMBRESERVICIO 
+            FROM agenda  a inner join empleado e on a.FK_IDEMPLEADO=e.ID_EMPLEADO 
+           inner join servicio s ON s.ID_SERVICIO = a.FK_IDSERVICIO 
+            WHERE a.FK_IDCITA ='$id'";
+            $resultado = $this->PDO->prepare($sentencia);
+            $resultado->execute();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        }
+    }
+    public function buscaClienteMasSer($id) {
         if (!(empty($id))) {
             $sentencia = " select e.NombreEmpleado as NOMBRE,s.NombreServicio as NOMBRESERVICIO 
             FROM agenda  a inner join empleado e on a.FK_IDEMPLEADO=e.ID_EMPLEADO 

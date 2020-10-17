@@ -28,6 +28,7 @@ function buscarListas() {
         async: false,
         success: function (response) {
             $('#bodtys').empty();
+            console.log(response)
 
             var objData = eval(response);
 
@@ -172,6 +173,7 @@ function traerEmpleadosmasServicio(cita) {
         async: false,
         success: function (response) {
             var objData = eval(response);
+            console.log(objData)
             html += '<td>';
             for (var item in objData) {
                 html += objData[item]["NOMBRESERVICIO"] + '->' + objData[item]["NOMBRE"] +'<br>';

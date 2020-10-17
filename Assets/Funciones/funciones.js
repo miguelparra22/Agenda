@@ -45,7 +45,7 @@ function tomaropcion(elemento) {
      
       citas += " <a href='javascript:void(0)' class='closebtn' onclick='closeNav()'>&times;</a>";
       citas += "<a> <i class='fa fa-history'></i> Historial citas</a>";
-      citas += "<a><i class='fa fa-calendar-times-o' ></i> Cancelar citas</a>";
+      citas += "<a href='?c=Cita&a=lista'><i class='fa fa-calendar-times-o'  ></i> Cancelar citas</a>";
       citas += "<a><i class='fa fa-eye' ></i> Ver citas</a>";
 
       document.getElementById("mySidenav").innerHTML = citas;
