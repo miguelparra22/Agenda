@@ -135,7 +135,25 @@ function cancelar(cita){
         },
         async: false,
         success: function (response) {
-           console.log(response)
+            if(response!==0){
+                Swal.fire({
+                    icon: 'success',
+                    title: "Información",
+                    text: "Se ha cancelado la cita",
+                    confirmButtonText: 'Aceptar'
+                }).then((result) => {
+                    location.reload();
+                })
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: "Oops...",
+                    text: "Ha ocurrido algun error",
+                    confirmButtonText: 'Aceptar'
+                }).then((result) => {
+                    location.reload();
+                })
+            }
         },
         error: function (err) {
             console.error('Se presento un error ->' + err);

@@ -202,7 +202,7 @@ class Citacontroller {
     function eliminar() {
         $cita = $_POST['cita'];
         $elimino = $this->model->eliminar($cita);
-        echo json_encode($elimino);
+        echo $elimino;
     }
 
 }
