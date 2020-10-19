@@ -18,25 +18,26 @@ class Citacontroller {
         $informacion='';
         switch ($role) {
             case 0:
-                $informacion = $this->model->misServicios($_SESSION['id']);
+                $informacion = $this->model->misServicios($_SESSION['ID']);
             break;
             case 2:
-                $informacion = $this->model->misServiciosEmpleado($_SESSION['id']);
+                $informacion = $this->model->misServiciosEmpleado($_SESSION['ID']);
             break;}
       
         echo json_encode($informacion);
     }
 
     public function buscaEmMasSer() {
+        $role =  $_SESSION['ROL'] ;
         $cita = $_POST["cita"];
         $informacion='';
-
+        
         switch ($role) {
             case 0:
-                $informacion = $this->model->buscaClienteMasSer($cita);
+                $informacion = $this->model->buscaEmMasSer($cita);
             break;
             case 2:
-                $informacion = $this->model->buscaEmMasSer($cita);
+                $informacion = $this->model->buscaClienteMasSer($cita);
             break;}
        
         echo json_encode($informacion);
@@ -64,7 +65,7 @@ class Citacontroller {
         $count = 1;
         foreach ($citass as &$valor) {
             $fecha = str_replace(" ", "T", $valor->HORAPACTADA);
-            if ($_SESSION['id'] == $valor->FKIDCLIENTE) {
+            if ($_SESSION['ID'] == $valor->FKIDCLIENTE) {
                 $color = "GREEN";
                 $texto = "Tu Cita ";
             } else {
@@ -103,12 +104,12 @@ class Citacontroller {
             }
         }
         $this->model = new Cita();
-        $citass = $this->model->lista($_SESSION['id']);
+        $citass = $this->model->lista($_SESSION['ID']);
         $array = "";
         $count = 1;
         foreach ($citass as &$valor) {
             $fecha = str_replace(" ", "T", $valor->HORAPACTADA);
-            if ($_SESSION['id'] == $valor->FKIDCLIENTE) {
+            if ($_SESSION['ID'] == $valor->FKIDCLIENTE) {
                 $color = "GREEN";
                 $texto = "Tu Cita ";
             } else {
@@ -164,12 +165,12 @@ class Citacontroller {
         $this->vo->setHoratermina($hasta);
         $this->vo->setHorapactada($_POST['inicioFecha']);
         $this->vo->setDescripcion($_POST['descripcion']);
-        $this->vo->setFkidcliente($_SESSION['id']);
+        $this->vo->setFkidcliente($_SESSION['ID']);
         $this->vo->setFkidestado(1);
         $resultado = $this->model->agregar($this->vo);
         echo $resultado;
         $informacion = $this->model->buscaEmMasSer($resultado);
-        $correo = $this->model->CambiarIdxNom("cliente","CorreoCliente","IDCLIENTE","'".$_SESSION['id']."'" )[0]->CorreoCliente;
+        $correo = $this->model->CambiarIdxNom("cliente","CorreoCliente","IDCLIENTE","'".$_SESSION['ID']."'" )[0]->CorreoCliente;
         if ($resultado != 0) {
             if (!(empty($correo))) {
           

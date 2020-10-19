@@ -114,9 +114,9 @@ class Cita extends Conexion implements Idatabase {
     }
     public function buscaClienteMasSer($id) {
         if (!(empty($id))) {
-            $sentencia = " select e.NombreEmpleado as NOMBRE,s.NombreServicio as NOMBRESERVICIO 
-            FROM agenda  a inner join empleado e on a.FK_IDEMPLEADO=e.ID_EMPLEADO 
-           inner join servicio s ON s.ID_SERVICIO = a.FK_IDSERVICIO 
+            $sentencia = " select cte.ClienteNombre as NOMBRE,s.NombreServicio as NOMBRESERVICIO 
+            FROM agenda  a inner join citas c on c.IDCITA=a.FK_IDCITA INNER JOIN cliente cte on cte.IDCLIENTE=c.FKIDCLIENTE 
+            inner join servicio s ON s.ID_SERVICIO = a.FK_IDSERVICIO 
             WHERE a.FK_IDCITA ='$id'";
             $resultado = $this->PDO->prepare($sentencia);
             $resultado->execute();
