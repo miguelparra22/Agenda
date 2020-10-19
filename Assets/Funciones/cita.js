@@ -28,6 +28,7 @@ function buscarListas() {
         async: false,
         success: function (response) {
             $('#bodtys').empty();
+            console.log(response)
 
             var objData = eval(response);
 
@@ -135,7 +136,25 @@ function cancelar(cita){
         },
         async: false,
         success: function (response) {
-           console.log(response)
+            if(response!==0){
+                Swal.fire({
+                    icon: 'success',
+                    title: "Información",
+                    text: "Se ha cancelado la cita",
+                    confirmButtonText: 'Aceptar'
+                }).then((result) => {
+                    location.reload();
+                })
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: "Oops...",
+                    text: "Ha ocurrido algun error",
+                    confirmButtonText: 'Aceptar'
+                }).then((result) => {
+                    location.reload();
+                })
+            }
         },
         error: function (err) {
             console.error('Se presento un error ->' + err);
@@ -154,6 +173,7 @@ function traerEmpleadosmasServicio(cita) {
         async: false,
         success: function (response) {
             var objData = eval(response);
+            console.log(objData)
             html += '<td>';
             for (var item in objData) {
                 html += objData[item]["NOMBRESERVICIO"] + '->' + objData[item]["NOMBRE"] +'<br>';

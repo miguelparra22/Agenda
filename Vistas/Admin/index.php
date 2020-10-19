@@ -127,11 +127,12 @@ $this->Citas = new Cita();
                         <th>Nombre del encargado</th>
                     </thead>
                     <tbody>
-                    <?php  foreach ($ResultadoLista as $busqueda => $value) {  ?>
+                    <?php 
+                    foreach ($ResultadoLista as $busqueda => $value) {  ?>
                         <tr>            
-                            <td><?php print_r($this->Cita->CambiarIdxNom("cliente","ClienteNombre","IDCLIENTE","$value->FKIDLCIENTE")[0]->ClienteNombre) ?></td>
+                            <td><?php print_r($this->Cita->CambiarIdxNom("cliente","ClienteNombre","IDCLIENTE","$value->FKIDCLIENTE")[0]->ClienteNombre) ?></td>
                             <td><?php print_r(date("h:i:s A", strtotime($value->HORAPACTADA))) ?> </td>
-                            <?php $IdServicio = $this->Cita->CambiarIdxNom("cita_servicio","ID_SERVICIO","ID_CITA","$value->IDCITA")[0]->ID_SERVICIO?>
+                            <?php $IdServicio = $this->Cita->CambiarIdxNom("agenda","FK_IDSERVICIO","FK_IDCITA","$value->IDCITA")[0]->FK_IDSERVICIO?>
                             <td><?php print_r($this->Cita->CambiarIdxNom("servicio","NombreServicio","ID_SERVICIO","$IdServicio")[0]->NombreServicio) ?></td>
                             <?php $IdEmpleado = $this->Cita->CambiarIdxNom("agenda","FK_IDEMPLEADO","FK_IDCITA","$value->IDCITA")[0]->FK_IDEMPLEADO?>
                             <td><?php print_r($this->Cita->CambiarIdxNom("empleado","NombreEmpleado","ID_EMPLEADO","$IdEmpleado")[0]->NombreEmpleado)?></td>

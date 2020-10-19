@@ -20,6 +20,9 @@
         <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
         <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/Agendamiento/Assets/sweetalert/dist/sweetalert2.css">
+    <script src="/Agendamiento/Assets/sweetalert/dist/sweetalert2.js"></script>
+
     </head>
     <body >
 

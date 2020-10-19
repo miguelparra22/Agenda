@@ -13,13 +13,32 @@ class Citacontroller {
     }
 
     public function listas() {
-        $informacion = $this->model->misServicios($_SESSION['id']);
+        $role =  $_SESSION['ROL'] ;
+       
+        $informacion='';
+        switch ($role) {
+            case 0:
+                $informacion = $this->model->misServicios($_SESSION['id']);
+            break;
+            case 2:
+                $informacion = $this->model->misServiciosEmpleado($_SESSION['id']);
+            break;}
+      
         echo json_encode($informacion);
     }
 
     public function buscaEmMasSer() {
         $cita = $_POST["cita"];
-        $informacion = $this->model->buscaEmMasSer($cita);
+        $informacion='';
+
+        switch ($role) {
+            case 0:
+                $informacion = $this->model->buscaClienteMasSer($cita);
+            break;
+            case 2:
+                $informacion = $this->model->buscaEmMasSer($cita);
+            break;}
+       
         echo json_encode($informacion);
     }
 
@@ -202,7 +221,7 @@ class Citacontroller {
     function eliminar() {
         $cita = $_POST['cita'];
         $elimino = $this->model->eliminar($cita);
-        echo json_encode($elimino);
+        echo $elimino;
     }
 
 }

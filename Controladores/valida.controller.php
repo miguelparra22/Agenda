@@ -222,7 +222,7 @@ class Validacontroller {
                     $nombre = $_SESSION['NOMBRE'];
                     $Idcliente = $this->Cita->CambiarIdxNom("cliente","IDCLIENTE","ClienteNombre","'$nombre'")[0]->IDCLIENTE;
                     $_SESSION['id'] = $Idcliente;
-                    $ResultadoLista = $this->Cita->listarCliente($Idcliente);
+                    $ResultadoLista = $this->Cita->listarCliente($_SESSION['ID']);
                     include_once 'Vistas/Cliente/index.php';
                     break;
                 case 1://Administrador
@@ -234,7 +234,7 @@ class Validacontroller {
                     $nombre = $_SESSION['NOMBRE'];
                     $IdEmpleado = $this->Cita->CambiarIdxNom("empleado","ID_EMPLEADO","NombreEmpleado","'$nombre'")[0]->ID_EMPLEADO;
                     $_SESSION['id'] = $IdEmpleado;
-                    $ResultadoLista = $this->Cita->listarCliente($IdEmpleado);
+                    $ResultadoLista = $this->Cita->listarEmpleado($_SESSION['ID']);
                     include_once 'Vistas/Empleado/index.php';
                     break;
             }

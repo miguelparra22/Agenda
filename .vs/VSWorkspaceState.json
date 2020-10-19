@@ -5,8 +5,12 @@
     "\\Modelos",
     "\\Modelos\\database",
     "\\Modelos\\DB",
-    "\\VO"
+    "\\Vistas",
+    "\\Vistas\\Admin",
+    "\\Vistas\\Cliente",
+    "\\Vistas\\Empleado",
+    "\\Vistas\\Servicio"
   ],
-  "SelectedNode": "\\Controladores\\valida.controller.php",
+  "SelectedNode": "\\Modelos\\EmpleadoModel.php",
   "PreviewInSolutionExplorer": false
 }
