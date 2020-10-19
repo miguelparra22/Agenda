@@ -68,7 +68,7 @@ class Clientecontroller {
         }
     }
 
-    function VerEmpleados(){
+    public function VerEmpleados(){
 
       $modeloEmpleado = new EmpleadoModel();
       $resultado = $modeloEmpleado->listarEmpleadosActivos();
@@ -76,22 +76,15 @@ class Clientecontroller {
      
     }
 
+
     
 
    
-    public function editar() {
-      $vo = array($_POST["ID_EMPLEADO"],$_POST["NOMBREMPLEADO"], $_POST["CORREOEMPLEADO"], $_POST["especialidad"],$_POST["Estado"]);
-      if ($this->model->editar($vo)) {
-          $resultado = $this->model->listaEmpleado();
-          echo 'El Empleado se actualizo correctamente.';
-          include_once 'Vistas/header.php';
-          include_once 'Vistas/Empleado/lista.php';
-          include_once 'Vistas/footer.php';
-      } else {
-          include_once 'Vistas/header.php';
-          include_once 'Vistas/exception/noExiste.php';
-          include_once 'Vistas/footer.php';
-      }
+ 
+
+
+    public function llamarEditar(){
+      include_once 'Vistas/Cliente/Actualizar.php';
     }
 
     

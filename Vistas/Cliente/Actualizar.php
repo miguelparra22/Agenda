@@ -1,11 +1,13 @@
 <?php 
 
 
+echo $_SESSION['id'];
+
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -379,58 +381,19 @@
                             <div class="card-body">
 
 
-                                <div class="table-responsive">
-                                    <div class="p-3">
-                                        <input class="form-control" id="myInput" type="text" placeholder="Buscar...">
-                                    </div>
-                                    <div class="p-3">
-                                        <ul class="list-group" id="myList">
-                                            <?php
-                                              $contador = 0;
-                                              foreach($resultado as $busqueda => $value){ 
-                                              $contador ++;
-                                              ?>
+                                <div class="form-group">
 
+                                    <form action="?c=Cliente&a=actualizar" method="post">
+                                        <input type="text" placeholder="correo" name="CORREOCLIENTE">
 
+                                        <input type="text" placeholder="Nombre" name="NOMBRECLIENTE">
 
-                                            <li class="list-group-item">
-
-                                                <div class="row">
-
-                                                    <div class="col-md-5 col-sm-4">
-                                                        <?php print_r($value->NombreEmpleado) ?>
-
-                                                    </div>
-                                                    <div class="col-md-5 col-sm-4">
-                                                        <?php print_r($value->ESPECIALIDAD)?>
-                                                    </div>
-                                                    <div class="col-md-2 col-sm-4">
-
-                                                        <input type="submit" value="..." class="btn btn-block btn-light"
-                                                            data-toggle="tooltip" data-placement="top"
-                                                            title="Ver más datos sobre este empleado.">
-
-
-
-                                                    </div>
-
-
-
-
-                                                </div>
-
-                                            </li>
-
-
-                                            <?php }?>
-
-
-                                        </ul>
-                                    </div>
+                                        <input type="text" placeholder="Nombre" name="TELEFONOCLIENTE">
+<input type="submit" value="HOL">
+                                    </form>
 
 
                                 </div>
-
                             </div>
                             <!-- End of Main Content -->
 

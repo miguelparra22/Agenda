@@ -45,7 +45,7 @@ class Citacontroller {
         $count = 1;
         foreach ($citass as &$valor) {
             $fecha = str_replace(" ", "T", $valor->HORAPACTADA);
-            if ($_SESSION['id'] == $valor->FKIDCLIENTE) {
+            if ($_SESSION['ID'] == $valor->FKIDCLIENTE) {
                 $color = "GREEN";
                 $texto = "Tu Cita ";
             } else {
