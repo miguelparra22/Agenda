@@ -241,4 +241,10 @@ class Validacontroller {
         }
     }
 
+
+    public function cerrar(){
+        include 'Vistas/home/Home.php';
+        session_destroy();
+    }
+
 }

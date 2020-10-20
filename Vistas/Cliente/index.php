@@ -4,7 +4,7 @@
  ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -95,7 +95,7 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-         
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -126,7 +126,7 @@
                         <a class="collapse-item" href="?c=Cliente&a=llamarEditar">Actualizar mis datos</a>
                         <a class="collapse-item" href="?c=Cliente&a=VerEmpleados">Consultar Empleado</a>
                         <a class="collapse-item" href="utilities-animation.html">Cambiar contraseña</a>
-                       
+
                     </div>
                 </div>
             </li>
@@ -161,7 +161,7 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" onclick="instagram()">
-                <i class="fab fa-instagram"></i>
+                    <i class="fab fa-instagram"></i>
                     <span>Instagram</span></a>
             </li>
 
@@ -177,7 +177,7 @@
                     <i class="fab fa-youtube"></i>
                     <span>Youtube</span></a>
             </li>
-            
+
             <li class="nav-item">
                 <a class="nav-link" onclick="youtube()">
                     <i class="fab fa-whatsapp"></i>
@@ -211,12 +211,12 @@
                     </button>
 
                     <!-- Topbar Search -->
-                   
+
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                       
+
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
@@ -227,45 +227,33 @@
                                 <span class="badge badge-danger badge-counter">3+</span>
                             </a>
                             <!-- Dropdown - Alerts -->
-                         
+
                         </li>
 
-                      
+
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
+
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span
                                     class="mr-2 d-none d-lg-inline text-gray-600 small"><?php print ($_SESSION['NOMBRE']);?></span>
-
                             </a>
-
-                        
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
                         </li>
+
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle dropdown-item" data-toggle="modal" data-target="#logoutModal"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+
+                        </li>
+
+                      
 
                     </ul>
 
@@ -278,116 +266,119 @@
                     <!-- Page Heading -->
                     <div>
                         <h1 class="h3 mb-0 text-gray-800 text-center">Bienvenido</h1>
-                       
+
                     </div>
 
 
                     <div class="container-fluid">
 
-          <!-- Page Heading -->
-       
-          <p class="mb-4">En la siguiente tabla puede ver las citas que tiene pendiente.</a></p>
+                        <!-- Page Heading -->
 
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Citas pendientes</h6>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Hora</th>
-                      <th>Servicio</th>
-                      <th>Nombre del encargado</th>
-                      
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Hora</th>
-                      <th>Servicio</th>
-                      <th>Nombre del encargado</th>
-                     
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                  <?php  foreach ($ResultadoLista as $busqueda => $value) {  ?>
-                        <tr>            
-                            <td><?php print_r(date("h:i:s A", strtotime($value->HORAPACTADA))) ?> </td>
-                            <?php $IdServicio = $this->Cita->CambiarIdxNom("agenda","FK_IDSERVICIO","FK_IDCITA","$value->IDCITA")[0]->FK_IDSERVICIO?>
-                            <td><?php print_r($this->Cita->CambiarIdxNom("servicio","NombreServicio","ID_SERVICIO","$IdServicio")[0]->NombreServicio) ?></td>
-                            <?php $IdEmpleado = $this->Cita->CambiarIdxNom("agenda","FK_IDEMPLEADO","FK_IDCITA","$value->IDCITA")[0]->FK_IDEMPLEADO?>
-                            <td><?php print_r($this->Cita->CambiarIdxNom("empleado","NombreEmpleado","ID_EMPLEADO","$IdEmpleado")[0]->NombreEmpleado)?></td>
-                        </tr>
-                     <?php } ?>
-                  </tbody>
-                </table>
-              </div>
+                        <p class="mb-4">En la siguiente tabla puede ver las citas que tiene pendiente.</a></p>
 
-                </div>
-                <!-- End of Main Content -->
+                        <!-- DataTales Example -->
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Citas pendientes</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Hora</th>
+                                                <th>Servicio</th>
+                                                <th>Nombre del encargado</th>
 
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; D'JANE 2020</span>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Hora</th>
+                                                <th>Servicio</th>
+                                                <th>Nombre del encargado</th>
+
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <?php  foreach ($ResultadoLista as $busqueda => $value) {  ?>
+                                            <tr>
+                                                <td><?php print_r(date("h:i:s A", strtotime($value->HORAPACTADA))) ?>
+                                                </td>
+                                                <?php $IdServicio = $this->Cita->CambiarIdxNom("agenda","FK_IDSERVICIO","FK_IDCITA","$value->IDCITA")[0]->FK_IDSERVICIO?>
+                                                <td><?php print_r($this->Cita->CambiarIdxNom("servicio","NombreServicio","ID_SERVICIO","$IdServicio")[0]->NombreServicio) ?>
+                                                </td>
+                                                <?php $IdEmpleado = $this->Cita->CambiarIdxNom("agenda","FK_IDEMPLEADO","FK_IDCITA","$value->IDCITA")[0]->FK_IDEMPLEADO?>
+                                                <td><?php print_r($this->Cita->CambiarIdxNom("empleado","NombreEmpleado","ID_EMPLEADO","$IdEmpleado")[0]->NombreEmpleado)?>
+                                                </td>
+                                            </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <!-- End of Main Content -->
+
+                            <!-- Footer -->
+                            <footer class="sticky-footer bg-white">
+                                <div class="container my-auto">
+                                    <div class="copyright text-center my-auto">
+                                        <span>Copyright &copy; D'JANE 2020</span>
+                                    </div>
+                                </div>
+                            </footer>
+                            <!-- End of Footer -->
+
+                        </div>
+                        <!-- End of Content Wrapper -->
+
+                    </div>
+                    <!-- End of Page Wrapper -->
+
+                    <!-- Scroll to Top Button-->
+                    <a class="scroll-to-top rounded" href="#page-top">
+                        <i class="fas fa-angle-up"></i>
+                    </a>
+
+                    <!-- Logout Modal-->
+                    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">¿Esta seguro que desea salir?</h5>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">Si desea salir de D'JANE seleccione "Salir" para cerrar sesión.</div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                                    <a class="btn btn-primary" href="?c=Valida&a=cerrar">Salir</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </footer>
-                <!-- End of Footer -->
 
-            </div>
-            <!-- End of Content Wrapper -->
+                    <!-- Bootstrap core JavaScript-->
+                    <script src="/Agendamiento/Assets/vendor/jquery/jquery.min.js"></script>
+                    <script src="/Agendamiento/Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        </div>
-        <!-- End of Page Wrapper -->
+                    <!-- Core plugin JavaScript-->
+                    <script src="/Agendamiento/Assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
+                    <!-- Custom scripts for all pages-->
+                    <script src="/Agendamiento/Assets/js/sb-admin-2.min.js"></script>
 
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="login.html">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    <script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
+                    <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
+                    <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
+                    <script src="/Agendamiento/Assets/vendor/datatables/jquery.dataTables.min.js"></script>
+                    <script src="/Agendamiento/Assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-        <!-- Bootstrap core JavaScript-->
-        <script src="/Agendamiento/Assets/vendor/jquery/jquery.min.js"></script>
-        <script src="/Agendamiento/Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-        <!-- Core plugin JavaScript-->
-        <script src="/Agendamiento/Assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-        <!-- Custom scripts for all pages-->
-        <script src="/Agendamiento/Assets/js/sb-admin-2.min.js"></script>
-
-        <script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
-        <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
-        <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
-        <script src="/Agendamiento/Assets/vendor/datatables/jquery.dataTables.min.js"></script>
-        <script src="/Agendamiento/Assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-        <!-- Page level custom scripts -->
-        <script src="/Agendamiento/Assets/js/datatables-demo.js"></script>
+                    <!-- Page level custom scripts -->
+                    <script src="/Agendamiento/Assets/js/datatables-demo.js"></script>
 
 </body>
 
