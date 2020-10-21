@@ -2,7 +2,8 @@
 
 if(!isset($_SESSION)) 
 { 
-    session_start(); 
+    session_start(['name'=>'DJANE']);
+    header('Location: /Agendamiento/Vistas/Home/home.php');
 } 
 /*
 
