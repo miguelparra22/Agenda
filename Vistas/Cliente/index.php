@@ -355,7 +355,7 @@
                                 <div class="modal-body">Si desea salir de D'JANE seleccione "Salir" para cerrar sesión.</div>
                                 <div class="modal-footer">
                                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                                    <a class="btn btn-primary" href="?c=Valida&a=cerrar">Salir</a>
+                                    <a class="btn btn-primary" href="?c=valida&a=cerrar">Salir</a>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,11 @@
 <?php
-session_destroy();
+
+if(isset($_SESSION)) 
+{ 
+  
+    session_destroy(); 
+} 
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -98,4 +104,15 @@ session_destroy();
 <script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
 <script src="/Agendamiento/Assets/sweetalert/dist/sweetalert2.js"></script>
 
+<?php
+if(!empty($_GET['erro'])){
+    if($_GET['erro']== 1){
+        echo "
+        <script>
+         $(window).on('load',function(){   
+        inicia();});
+        </script>";
+    }
+}
+?>
 </html>

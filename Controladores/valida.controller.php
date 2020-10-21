@@ -170,6 +170,7 @@ class Validacontroller {
     }
 
     public function iniciar() {
+        if(isset($_POST["pws"])&& isset($_POST["email"])){
     if(!(isset($_SESSION['ROL']))){
         $this->vo->setCliente_pwd($_POST["pws"]);
         $this->vo->setCliente_correo($_POST["email"]);
@@ -177,13 +178,14 @@ class Validacontroller {
         $resultado = $this->model->iniciarSesion($this->vo);
       
         if ($resultado == -1) {
-            echo "
-            <script>
-                
-            alerta();
-            </script>";
+           
             
             include_once 'vistas/home/login.php';
+            echo "
+        <script>
+         $(window).on('load',function(){   
+            alerta();});
+        </script>";
         } else {
 
             $arreglo = $resultado[0];
@@ -239,11 +241,16 @@ class Validacontroller {
                     break;
             }
         }
+    }else{
+        include_once 'vistas/home/login.php';
+     
     }
+}
 
 
     public function cerrar(){
-        include 'Vistas/home/Home.php';
+       
+        include_once 'Vistas/Home/Login.php';
         session_destroy();
     }
 

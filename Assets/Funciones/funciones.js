@@ -183,7 +183,7 @@ function InicioAdmin(){
 
 
 function login(){
-  var page = "/Agendamiento/Vistas/Home/Login.php";
+  var page = "/Agendamiento/Vistas/Home/Login.php ";
 
   window.location.href = page;
 }
@@ -192,5 +192,20 @@ function login(){
 function registro(){
    var pager = "/Agendamiento/Vistas/Cliente/AgregarCliente.php";
    window.location.href = pager;
+}
+
+function inicia() {
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Debes iniciar sesion primero'
+  })
+}
+function alerta () {
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Datos incorrectos'
+  })
 }
 
