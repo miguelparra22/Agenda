@@ -2,6 +2,7 @@
 
 require_once 'autoload.php';
 
+
 if (!isset($_GET['c'])) {
     $controller = new HomeController;
     call_user_func(array($controller, "Index"));
