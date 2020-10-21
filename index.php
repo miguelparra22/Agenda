@@ -7,7 +7,6 @@ if (!isset($_GET['c'])) {
     $controller = new HomeController;
     call_user_func(array($controller, "Index"));
 } else {
-    echo $_GET['c'];
     if(!isset($_SESSION) && !($_GET['c']=="valida")) 
 { 
     session_start(['name'=>'DJANE']);

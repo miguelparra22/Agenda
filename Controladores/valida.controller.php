@@ -245,7 +245,7 @@ class Validacontroller {
 
     public function cerrar(){
        
-        include 'Vistas/home/Home.php';
+        include_once 'Vistas/Home/Login.php';
         session_destroy();
     }
 
