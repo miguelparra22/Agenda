@@ -1,6 +1,8 @@
 <?php
+
 if(isset($_SESSION)) 
 { 
+  
     session_destroy(); 
 } 
 
@@ -104,7 +106,7 @@ if(isset($_SESSION))
 
 <?php
 if(!empty($_GET['erro'])){
-    if($_GET['erro']==1){
+    if($_GET['erro']== 1){
         echo "
         <script>
          $(window).on('load',function(){   

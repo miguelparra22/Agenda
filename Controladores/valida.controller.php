@@ -177,13 +177,14 @@ class Validacontroller {
         $resultado = $this->model->iniciarSesion($this->vo);
       
         if ($resultado == -1) {
-            echo "
-            <script>
-                
-            alerta();
-            </script>";
+           
             
             include_once 'vistas/home/login.php';
+            echo "
+        <script>
+         $(window).on('load',function(){   
+            alerta();});
+        </script>";
         } else {
 
             $arreglo = $resultado[0];
@@ -243,6 +244,7 @@ class Validacontroller {
 
 
     public function cerrar(){
+       
         include 'Vistas/home/Home.php';
         session_destroy();
     }

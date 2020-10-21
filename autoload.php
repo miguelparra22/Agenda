@@ -1,11 +1,6 @@
 <?php
 
-if(!isset($_SESSION)) 
-{ 
-    session_start(['name'=>'DJANE']);
-    header('Location: /Agendamiento/Vistas/Home/Login.php?erro=1');
-    exit;
-} 
+
 /*
 
 if (!isset($_SESSION) ) {
