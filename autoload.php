@@ -3,7 +3,8 @@
 if(!isset($_SESSION)) 
 { 
     session_start(['name'=>'DJANE']);
-    header('Location: /Agendamiento/Vistas/Home/home.php');
+    header('Location: /Agendamiento/Vistas/Home/Login.php?erro=1');
+    exit;
 } 
 /*
 

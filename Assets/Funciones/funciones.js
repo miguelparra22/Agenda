@@ -194,3 +194,11 @@ function registro(){
    window.location.href = pager;
 }
 
+function inicia() {
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Debes iniciar sesion primero'
+  })
+}
+
