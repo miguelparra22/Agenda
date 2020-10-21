@@ -15,12 +15,11 @@ class Cliente extends Conexion implements Idatabase {
 
     public function actualizar($vo) {
         $this->ClienteVO = $vo;
-        $sentencia = "UPDATE $this->tabla SET ClienteNombre=:nombre, CorreoCliente=:correo,TELEFONO_CLIENT =:telefono, PasswordCliente=:pwd WHERE IdCliente=:id";
+        $sentencia = "UPDATE $this->tabla SET ClienteNombre=:nombre, CorreoCliente=:correo,TELEFONO_CLIENT =:telefono  WHERE IdCliente=:id";
         $claveIncriptada = $this->hash($this->ClienteVO->getCliente_pwd());
         $resultado = $this->PDO->prepare($sentencia);
         return $resultado->execute(array(
                     ':nombre' => $this->ClienteVO->getCliente_nombre(),
-                    ':pwd' => $claveIncriptada,
                     ':correo' => $this->ClienteVO->getCliente_correo(),
                     ':telefono' => $this->ClienteVO->getCliente_telefono(),
                     ':id' => $this->ClienteVO->getCliente_id()

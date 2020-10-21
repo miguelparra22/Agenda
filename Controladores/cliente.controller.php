@@ -76,6 +76,58 @@ class Clientecontroller {
      
     }
 
+    public function actualizar(){
+      $this->vo->setCliente_nombre($_POST["usuario_nombre"]);
+      $this->vo->setCliente_correo($_POST["usuario_correo"]);
+      $this->vo->setCliente_telefono($_POST["usuario_telefono"]);
+      $this->vo->setCliente_id($_POST["Id_usuario"]);
+      if ($this->model->actualizar($this->vo)) {
+        
+          include_once 'Vistas/Cliente/Actualizar.php';
+          
+          echo "<div class='alert success'>
+          <span class='closebtn'>&times;</span>  
+          <strong>Exito!</strong> Se Actualizo correctamente.
+        </div>
+        
+        <script>
+        var close = document.getElementsByClassName('closebtn');
+         var i;
+
+            for (i = 0; i < close.length; i++) {
+            close[i].onclick = function(){
+            var div = this.parentElement;
+            div.style.opacity = '0';
+            setTimeout(function(){ div.style.display = 'none'; }, 600);
+          }
+        }
+        </script>";
+          
+       
+          
+      } else {
+          include_once 'Vistas/Cliente/Agregar.php';
+          echo "<div class='alert'>
+          <span class='closebtn'>&times;</span>  
+          <strong>Error</strong> No se pudo Actualizar.
+         </div>
+        
+         <script>
+         var close = document.getElementsByClassName('closebtn');
+         var i;
+
+            for (i = 0; i < close.length; i++) {
+            close[i].onclick = function(){
+            var div = this.parentElement;
+            div.style.opacity = '0';
+            setTimeout(function(){ div.style.display = 'none'; }, 600);
+          }
+        }
+        </script>";
+        
+      }
+    }
+
 
     
 
