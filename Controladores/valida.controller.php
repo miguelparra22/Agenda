@@ -170,6 +170,7 @@ class Validacontroller {
     }
 
     public function iniciar() {
+        if(isset($_POST["pws"])&& isset($_POST["email"])){
     if(!(isset($_SESSION['ROL']))){
         $this->vo->setCliente_pwd($_POST["pws"]);
         $this->vo->setCliente_correo($_POST["email"]);
@@ -240,7 +241,11 @@ class Validacontroller {
                     break;
             }
         }
+    }else{
+        include_once 'vistas/home/login.php';
+     
     }
+}
 
 
     public function cerrar(){
