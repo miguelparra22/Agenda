@@ -153,6 +153,11 @@ class Validacontroller {
                 $resultado = $this->model->cambioClave($object);
                 if ($resultado == 1) {
                     include_once 'vistas/home/login.php';
+                    echo "
+                    <script>
+                     $(window).on('load',function(){   
+                    correcto();});
+                    </script>";
                 } else if ($resultado == -1) {
                     echo 'Fallo';
                     echo '<script> var correo = "' . $correo . '";</script>';

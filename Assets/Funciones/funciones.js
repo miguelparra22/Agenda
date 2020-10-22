@@ -208,4 +208,11 @@ function alerta () {
     text: 'Datos incorrectos'
   })
 }
+function correcto(){
+  Swal.fire(
+    'El cambio de clave se ejecuto correctamente',
+    'Ya puede iniciar sesión',
+    'success'
+  )
+}
 

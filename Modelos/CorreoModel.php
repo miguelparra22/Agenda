@@ -58,7 +58,7 @@ class Correo extends Conexion {
 
         $codigo = $this->generarCodigo(6);
         $token = $this->generarToken(20);
-        $sentencia = "INSERT INTO recuperacion_clave VALUES (null,:correo,:codigo,:token, LOCALTIME())";
+        $sentencia = "INSERT INTO recuperacion_clave VALUES (null,:correo,:codigo,:token, LOCALTIME(),0)";
         $resultado = $this->PDO->prepare($sentencia);
         $resultado->bindParam(":correo", $correo, PDO::PARAM_STR);
         $resultado->bindParam(":codigo", $codigo, PDO::PARAM_STR);
