@@ -86,6 +86,49 @@ class Citacontroller {
         $lugar = 1;
         require_once 'Vistas/Cita/agenda.php';
     }
+    public function empleado(){
+        $this->model = new Configuracion();
+        $resultado = $this->model->buscarconfiguracion("HORA");
+
+        foreach ($resultado as &$valor) {
+            switch ($valor->NombreConfiguracion) {
+                case "HORAENTRADA" : {
+                        $entrada = $valor->ValorConfiguracion;
+                        break;
+                    }
+                case "HORASALIDA": {
+                        $salida = $valor->ValorConfiguracion;
+                        break;
+                    }
+            }
+        }
+        $this->model = new Cita();
+        $citass = $this->model->listarxEmpleado($_SESSION['ID']);
+        $array = "";
+        $count = 1;
+        foreach ($citass as &$valor) {
+            $fecha = str_replace(" ", "T", $valor->HORAPACTADA);
+            if ($_SESSION['ID'] == $valor->FKIDCLIENTE) {
+                $color = "GREEN";
+                $texto = "Tu Cita ";
+            } else {
+                $texto = "Cita Programada";
+                $color = "GREEN";
+            }
+            $array .= " {
+                                    id: '$count',
+                                    title: '$texto',
+                                    start: '$fecha',
+                                    end: '$valor->HORATERMINA',
+                                    allDay: false,
+                                    color: '$color',
+                                    textColor: 'white'
+                                },";
+            $count++;
+        }
+        $lugar = 1;
+        require_once 'Vistas/Cita/Empleado/listaCitas.php';
+    }
 
     public function mis() {
         $this->model = new Configuracion();

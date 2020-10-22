@@ -142,6 +142,15 @@ class Cita extends Conexion implements Idatabase {
         $resultado->execute();
         return $resultado->fetchAll(PDO::FETCH_OBJ);
     }
+    public function listarxEmpleado($empleado) {
+        $hoy = date("Y-m-j");
+        $hoy = date("Y-m-j", strtotime($hoy . "- 1 days"));
+        $hasta = date("Y-m-j", strtotime($hoy . "+ 7 days"));
+        $sentencia = "SELECT * FROM citas c INNER JOIN agenda a on c.IDCITA=a.FK_IDCITA WHERE c.HORAPACTADA BETWEEN '$hoy' and '$hasta' and c.FKIDESTADO <> 2 and a.FK_IDEMPLEADO='$empleado' ";
+        $resultado = $this->PDO->prepare($sentencia);
+        $resultado->execute();
+        return $resultado->fetchAll(PDO::FETCH_OBJ);
+    }
 
     public function lista($cliente) {
         $hoy = date("Y-m-j");
