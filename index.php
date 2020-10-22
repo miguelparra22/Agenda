@@ -1,15 +1,14 @@
 <?php
 
 require_once 'autoload.php';
-
-
+session_start(['name'=>'DJANE']);
 if (!isset($_GET['c'])) {
     $controller = new HomeController;
     call_user_func(array($controller, "Index"));
 } else {
-    if(!isset($_SESSION) && !($_GET['c']=="valida")) 
-{ 
-    session_start(['name'=>'DJANE']);
+   
+if(!(isset($_SESSION['ID'])) && !($_GET['c']=="valida")) { 
+   
     header('Location: /Agendamiento/Vistas/Home/Login.php?erro=1');
     exit;
 } 
