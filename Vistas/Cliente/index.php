@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="Miguel" content="Miguel">
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/estilos.css">
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
     <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
