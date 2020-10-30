@@ -90,7 +90,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="?c=cliente&a=home">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Inicio</span></a>
             </li>
