@@ -4,7 +4,7 @@ class Clientecontroller {
 
     private $model;
     private $vo;
-
+    private $Cita;
     public function __CONSTRUCT() {
         $this->model = new Cliente();
         $this->vo = new ClienteVO();
@@ -15,7 +15,11 @@ class Clientecontroller {
         require_once 'Vistas/Cliente/Agregar.php';
         
     }
-
+    function home(){
+      $this->Cita = new Cita();
+      $ResultadoLista = $this->Cita->listarCliente($_SESSION['ID'] );
+                    include_once 'Vistas/Cliente/index.php';
+    }
     public function agregar() {
 
         $this->vo->setCliente_nombre($_POST["usuario_nombre"]);
