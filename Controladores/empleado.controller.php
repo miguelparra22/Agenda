@@ -49,7 +49,7 @@ class EmpleadoController{
        
        
        include_once 'Vistas/Header.php';
-       include_once 'Vistas/Home/MenuAdmin.php';
+      
        echo "
        <div class='alert alert-success alert-dismissible fade show' role='alert'>
            <strong>Perfecto!</strong> Registro exitoso.
@@ -63,7 +63,7 @@ class EmpleadoController{
     }else{
 
       include_once 'Vistas/Header.php';
-       include_once 'Vistas/Home/MenuAdmin.php';
+      
        echo "
        <div class='alert alert-danger alert-dismissible fade show' role='alert'>
            <strong>Error</strong> No se pudo registrar.

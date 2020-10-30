@@ -121,7 +121,6 @@ class ServicioController {
             include_once 'Vistas/footer.php';
         } else {
             include_once 'Vistas/header.php';
-            include_once 'Vistas/Home/MenuAdmin.php';
             include_once 'Vistas/servicio/lista.php';
             include_once 'Vistas/footer.php';
         }

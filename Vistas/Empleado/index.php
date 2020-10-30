@@ -17,44 +17,57 @@
 </head>
 
 <body>
+    <?php
+            $rol = $_SESSION['ROL'];
 
+            if($rol == 1){
+                include_once "Vistas/Home/MenuAdmin.php";
+            }else if($rol == 2){
+                include_once "Vistas/Home/MenuEmpleado.php";
+            }
+        
+        ?>
 
     <section id="main">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="/Agendamiento/Assets/Imagenes/Icono.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-            D'JANE
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item ">
-                    <a class="nav-link" onclick="abrirM(this.id)"  href="?c=valida&a=iniciar">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" onclick="abrirM(this.id)" id="citas" href="#">Citas</a>
-                </li>
-                                    <li class="nav-item">
-                        <a id="team" class="nav-link" href="#" onclick="abrirM(this.id)"><i class="fa fa-users"></i> Equipo</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="/Agendamiento/Assets/Imagenes/Icono.png" width="30" height="30"
+                    class="d-inline-block align-top" alt="" loading="lazy">
+                D'JANE
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                        <a class="nav-link" onclick="abrirM(this.id)" href="?c=valida&a=iniciar">Inicio</a>
                     </li>
-            </ul>
-        </div>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="abrirM(this.id)" id="citas" href="#">Citas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="team" class="nav-link" href="#" onclick="abrirM(this.id)"><i class="fa fa-users"></i>
+                            Equipo</a>
+                    </li>
+                </ul>
+            </div>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
 
-                <li class="nav-item">
-                    <a href="/Agendamiento/Vistas/Home/home.php" class="btn btn-outline-danger"><i class="fa fa-close"></i></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+                    <li class="nav-item">
+                        <a href="/Agendamiento/Vistas/Home/home.php" class="btn btn-outline-danger"><i
+                                class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
 
-    
+
         <div class="container">
             <h1 class="text-center">Bienvenido <?php print($_SESSION['NOMBRE']) ?></h1>
             <div class="ttable">
@@ -66,29 +79,31 @@
                         <th>Servicio</th>
                     </thead>
                     <tbody>
-                  
-                    <?php
+
+                        <?php
                     foreach ($ResultadoLista as $busqueda => $value) {  ?>
-                        <tr>            
-                            <td><?php print_r($this->Cita->CambiarIdxNom("cliente","ClienteNombre","IDCLIENTE","$value->FKIDCLIENTE")[0]->ClienteNombre) ?></td>
+                        <tr>
+                            <td><?php print_r($this->Cita->CambiarIdxNom("cliente","ClienteNombre","IDCLIENTE","$value->FKIDCLIENTE")[0]->ClienteNombre) ?>
+                            </td>
                             <td><?php print_r(date("h:i:s A", strtotime($value->HORAPACTADA))) ?> </td>
                             <?php $IdServicio = $this->Cita->CambiarIdxNom("agenda","FK_IDSERVICIO","FK_IDCITA","$value->IDCITA")[0]->FK_IDSERVICIO?>
-                            <td><?php print_r($this->Cita->CambiarIdxNom("servicio","NombreServicio","ID_SERVICIO","$IdServicio")[0]->NombreServicio) ?></td>
+                            <td><?php print_r($this->Cita->CambiarIdxNom("servicio","NombreServicio","ID_SERVICIO","$IdServicio")[0]->NombreServicio) ?>
+                            </td>
                         </tr>
-                    <?php } ?>        
+                        <?php } ?>
                     </tbody>
 
                 </table>
-        </div>
-        <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  
-</div>
-        <footer class="footer p-3 bg-dark color-white">
-            <i class="fa fa-facebook m-2"></i>
-            <i class="fa fa-youtube m-2"></i>
-            <i class="fa fa-instagram m-2"></i>
-        </footer>
+            </div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            </div>
+            <footer class="footer p-3 bg-dark color-white">
+                <i class="fa fa-facebook m-2"></i>
+                <i class="fa fa-youtube m-2"></i>
+                <i class="fa fa-instagram m-2"></i>
+            </footer>
     </section>
 
 

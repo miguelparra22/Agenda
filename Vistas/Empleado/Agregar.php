@@ -37,7 +37,7 @@
 
 
 <body id="page-top">
-
+    <!-------------------------- Animación ------------------------------>
     <div id="waitDiv" class="loadercont">
         <div class="container">
             <div class="row">
@@ -67,12 +67,10 @@
 
     </div>
 
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-    </div>
+    <!--------------------------------section-------------------->
 
     <section id="main">
+
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
 
@@ -103,10 +101,11 @@
                 </div>
             </div>
         </div>
+
         <div id="wrapper">
 
             <!-- Sidebar -->
-            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Brand -->
                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -141,8 +140,9 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Acciones de cita</h6>
-                            <a class="collapse-item" href="?c=Cita&a=mostrar">Reservar cita</a>
-                            <a class="collapse-item" href="?c=Cita&a=lista">Cancelar cita</a>
+                            <a class="collapse-item" href="#">Historial cita</a>
+                            <a class="collapse-item" href="#">Cancelar citas</a>
+
                         </div>
                     </div>
                 </li>
@@ -343,10 +343,11 @@
 
                                             </div>
 
-                                            <div class="p-2"> 
+                                            <div class="p-2">
                                                 <label>Especialidad del empleado</label>
                                                 <input type="text" name="especialidad"
-                                                onkeypress="return soloLetras(event)"  class="form-control" placeholder="Ingrese la especialidad del empleado" required>
+                                                    onkeypress="return soloLetras(event)" class="form-control"
+                                                    placeholder="Ingrese la especialidad del empleado" required>
 
                                             </div>
 
@@ -367,27 +368,30 @@
 
 
                                         <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">¿Esta seguro que desea
-                                                salir?
-                                            </h5>
-                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">×</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">Si desea salir de D'JANE seleccione "Salir" para
-                                            cerrar
-                                            sesión.</div>
-                                        <div class="modal-footer">
-                                            <button class="btn btn-secondary" type="button"
-                                                data-dismiss="modal">Cancelar</button>
-                                            <a class="btn btn-primary" href="?c=valida&a=cerrar">Salir</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">¿Esta seguro que
+                                                            desea
+                                                            salir?
+                                                        </h5>
+                                                        <button class="close" type="button" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">Si desea salir de D'JANE seleccione "Salir"
+                                                        para
+                                                        cerrar
+                                                        sesión.</div>
+                                                    <div class="modal-footer">
+                                                        <button class="btn btn-secondary" type="button"
+                                                            data-dismiss="modal">Cancelar</button>
+                                                        <a class="btn btn-primary" href="?c=valida&a=cerrar">Salir</a>
+                                                    </div>
+                                                </div>
+                                            </div>
 
 
 

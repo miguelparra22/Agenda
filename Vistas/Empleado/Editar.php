@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/estilos.css">
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
     <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
+    <link href="/Agendamiento/Assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/Agendamiento/Assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/Agendamiento/Assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
     <title>Editar</title>
 </head>
@@ -44,9 +52,7 @@
         </div>
 
     </div>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    </div>
+    
 
     <style>
     .cont1 {
@@ -68,45 +74,16 @@
     <section id="main">
 
         <!-------------Menú------------------>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
-                <img src="/Agendamiento/Assets/Imagenes/djlogo.png" width="120" height="40"
-                    class="d-inline-block align-top" alt="" loading="lazy">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="?c=valida&a=iniciar" onclick=""><i class="fa fa-home"></i> Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="citas" class="nav-link" href="#" onclick="abrirM(this.id)"><i class="fa fa-calendar"></i>
-                            Mis citas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="team" class="nav-link" href="#" onclick="abrirM(this.id)"><i class="fa fa-users"></i>
-                            Equipo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="con" class="nav-link" href="#" onclick="abrirM(this.id)" href="#"><i
-                                class="fa fa-wrench"></i> Configuración</a>
-                    </li>
-                </ul>
-            </div>
+        <?php
+            $rol = $_SESSION['ROL'];
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-
-                    <li class="nav-item">
-                        <a href="/Agendamiento/Vistas/Home/home.php" class="btn btn-outline-danger"><i
-                                class="fa fa-close"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+            if($rol == 1){
+                include_once "Vistas/Home/MenuAdmin.php";
+            }else if($rol == 2){
+                include_once "Vistas/Home/MenuEmpleado.php";
+            }
+        
+        ?>
 
         <h2 class="text-center p-4">Actualizar datos del empleado</h2>
 
@@ -144,6 +121,8 @@
 
         </div>
 
+        
+
 
         
 
@@ -163,10 +142,26 @@
 
 
 
+    <script src="/Agendamiento/Assets/Funciones/validador.js"></script>
+    <script src="/Agendamiento/Assets/Funciones/validaciones.js"></script>
+    <script src="/Agendamiento/Assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/Agendamiento/Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/Agendamiento/Assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/Agendamiento/Assets/js/sb-admin-2.min.js"></script>
+
+    <script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
     <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
     <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
-    <script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
-    <script src="/Agendamiento/Assets/Funciones/validaciones.js"></script>
+    <script src="/Agendamiento/Assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/Agendamiento/Assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/Agendamiento/Assets/js/datatables-demo.js"></script>
+
 </body>
 
 </html>

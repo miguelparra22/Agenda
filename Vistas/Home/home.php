@@ -60,7 +60,7 @@
                         <!--span class="sr-only">(current)</span--></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navl" href="Vistas/Producto/index_producto.php">Productos</a>
+                    <a class="nav-link navl" href="#productos">Productos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link navl" onclick="registro()" href="#">Registrarse</a>
@@ -244,7 +244,7 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" id="productos">
                     
                     <div class="p-3">
                         <div class="p-2">
