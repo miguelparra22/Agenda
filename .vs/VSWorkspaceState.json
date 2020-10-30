@@ -6,11 +6,8 @@
     "\\Modelos\\database",
     "\\Modelos\\DB",
     "\\Vistas",
-    "\\Vistas\\Admin",
-    "\\Vistas\\Cliente",
-    "\\Vistas\\Empleado",
-    "\\Vistas\\Servicio"
+    "\\Vistas\\Home"
   ],
-  "SelectedNode": "\\Modelos\\EmpleadoModel.php",
+  "SelectedNode": "\\Controladores\\valida.controller.php",
   "PreviewInSolutionExplorer": false
 }

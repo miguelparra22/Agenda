@@ -1,3 +1,10 @@
+<?php
+session_start();     
+$Servicio;
+        $this->Servicio = new Servicio();
+                  $resultado = $this->Servicio->listar();
+          ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
