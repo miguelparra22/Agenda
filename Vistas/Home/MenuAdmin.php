@@ -237,7 +237,13 @@
                                     class="mr-2 d-none d-lg-inline text-gray-600 small"><?php print ($_SESSION['NOMBRE']);?></span>
                             </a>
                         </li>
+                        <li class="nav-item dropdown no-arrow">
 
+                            <a class="nav-link dropdown-toggle" href="#"  onclick="window.location.href='?c=valida&a=correoCambiar'" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Cambiar Contraseña</span>
+                            </a>
+                        </li>
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle dropdown-item" data-toggle="modal"
                                 data-target="#logoutModal" data-toggle="dropdown" aria-haspopup="true"

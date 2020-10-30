@@ -28,6 +28,10 @@ class Validacontroller {
         include_once 'vistas/Recuperar/ingresaCorreo.php';
     }
 
+    public function correoCambiar() {
+        include_once 'vistas/Recuperar/ingresaCorreoCambiar.php';
+    }
+
     public function Login(){
         include_once 'Vistas/Home/Login.php';
     }
@@ -86,7 +90,31 @@ class Validacontroller {
                     $_SESSION['correo'] = $correo;
                     include_once 'vistas/Recuperar/ingresaCodigo.php';
                 } else {
-                    include_once 'vistas/home/login.php';
+                if(isset($_SESSION['ROL'])){
+                    switch ($_SESSION['ROL']) {
+                    case 0://Cliente
+                        $nombre = $_SESSION['NOMBRE'];
+                        $Idcliente = $this->Cita->CambiarIdxNom("cliente","IDCLIENTE","ClienteNombre","'$nombre'")[0]->IDCLIENTE;
+                        $_SESSION['id'] = $Idcliente;
+                        $ResultadoLista = $this->Cita->listarCliente($_SESSION['ID']);
+                        include_once 'Vistas/Cliente/index.php';
+                        break;
+                    case 1://Administrador
+                        $nombre = $_SESSION['NOMBRE'];
+                        $ResultadoLista = $this->Cita->listarAdmin();
+                        include_once 'Vistas/Admin/index.php';
+                        break;
+                    case 2://Empleado'
+                        $nombre = $_SESSION['NOMBRE'];
+                        $IdEmpleado = $this->Cita->CambiarIdxNom("empleado","ID_EMPLEADO","NombreEmpleado","'$nombre'")[0]->ID_EMPLEADO;
+                        $_SESSION['id'] = $IdEmpleado;
+                        $ResultadoLista = $this->Cita->listarEmpleado($_SESSION['ID']);
+                        include_once 'Vistas/Empleado/index.php';
+                        break;
+                    }
+                }else{
+                include_once 'vistas/home/login.php';
+                }
                 }
             } else {
                 echo '
@@ -152,7 +180,31 @@ class Validacontroller {
                 ];
                 $resultado = $this->model->cambioClave($object);
                 if ($resultado == 1) {
-                    include_once 'vistas/home/login.php';
+                    if(isset($_SESSION['ROL'])){
+                    switch ($_SESSION['ROL']) {
+                    case 0://Cliente
+                        $nombre = $_SESSION['NOMBRE'];
+                        $Idcliente = $this->Cita->CambiarIdxNom("cliente","IDCLIENTE","ClienteNombre","'$nombre'")[0]->IDCLIENTE;
+                        $_SESSION['id'] = $Idcliente;
+                        $ResultadoLista = $this->Cita->listarCliente($_SESSION['ID']);
+                        include_once 'Vistas/Cliente/index.php';
+                        break;
+                    case 1://Administrador
+                        $nombre = $_SESSION['NOMBRE'];
+                        $ResultadoLista = $this->Cita->listarAdmin();
+                        include_once 'Vistas/Admin/index.php';
+                        break;
+                    case 2://Empleado'
+                        $nombre = $_SESSION['NOMBRE'];
+                        $IdEmpleado = $this->Cita->CambiarIdxNom("empleado","ID_EMPLEADO","NombreEmpleado","'$nombre'")[0]->ID_EMPLEADO;
+                        $_SESSION['id'] = $IdEmpleado;
+                        $ResultadoLista = $this->Cita->listarEmpleado($_SESSION['ID']);
+                        include_once 'Vistas/Empleado/index.php';
+                        break;
+                    }
+                }else{
+                include_once 'vistas/home/login.php';
+                }
                     echo "
                     <script>
                      $(window).on('load',function(){   
