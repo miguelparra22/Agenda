@@ -215,4 +215,20 @@ function correcto(){
     'success'
   )
 }
-
+function registror(){
+  Swal.fire(
+    'Registro correcto',
+    'Ya puede iniciar sesión',
+    'success'
+  ).then((result) => {
+    var pager = "/Agendamiento/";
+   window.location.href = pager;
+})
+}
+function errorReg () {
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Ha ocurrido un error realizando la petición'
+  })
+}

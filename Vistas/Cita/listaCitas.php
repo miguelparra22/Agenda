@@ -78,7 +78,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="?c=cliente&a=home">
                 <div class="sidebar-brand-icon">
                     <img src="/Agendamiento/Assets/Imagenes/DjBlanco.png" alt="D'jane" width="100px" height="50px">
                 </div>
@@ -90,7 +90,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="?c=cliente&a=home">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Inicio</span></a>
             </li>

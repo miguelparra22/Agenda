@@ -258,4 +258,32 @@ class Validacontroller {
         session_destroy();
     }
 
+    public function agregar() {
+
+        $this->vo->setCliente_nombre($_POST["usuario_nombre"]);
+        $this->vo->setCliente_pwd($_POST["usuario_pwd"]);
+        $this->vo->setCliente_correo($_POST["usuario_correo"]);
+        $this->vo->setCliente_telefono($_POST["usuario_telefono"]);
+        if ($this->model->agregar($this->vo)) {
+            include_once 'Vistas/Cliente/AgregarCliente.php';
+            
+            echo "
+            <script>
+             $(window).on('load',function(){   
+                registror();});
+            </script>";
+            
+         
+            
+        } else {
+            include_once 'Vistas/Cliente/AgregarCliente.php';
+            echo "
+            <script>
+             $(window).on('load',function(){   
+                errorReg();});
+            </script>";
+          
+        }
+    }
+
 }

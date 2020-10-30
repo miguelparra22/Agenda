@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/estilos.css">
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
     <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
+    <link rel="stylesheet" href="/Agendamiento/Assets/sweetalert/dist/sweetalert2.css">
+    <script src="/Agendamiento/Assets/sweetalert/dist/sweetalert2.js"></script>
 
     <title>Registro</title>
 </head>
@@ -75,7 +77,7 @@
         </nav>
         <div class="box">
             <h3>Ingresa tus datos</h3>
-            <form action="/Agendamiento/?c=cliente&a=agregar" method="POST" onsubmit="return validarcliente()">
+            <form action="/Agendamiento/?c=valida&a=agregar" method="POST" onsubmit="return validarcliente()">
                 <div>
                     <input id="nombre" type="text" name="usuario_nombre" required
                         onkeypress="return soloLetras(event)" />
