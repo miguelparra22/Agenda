@@ -11,8 +11,18 @@
     <link rel="stylesheet" href="Assets/Bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="Assets/Diseño/estilos.css">
     <link rel="stylesheet" href="Assets/Diseño/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/Agendamiento/Assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/Agendamiento/Assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/Agendamiento/Assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+   
     <title>Inicio</title>
 </head>
 
@@ -29,45 +39,6 @@
         ?>
 
     <section id="main">
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
-                <img src="/Agendamiento/Assets/Imagenes/Icono.png" width="30" height="30"
-                    class="d-inline-block align-top" alt="" loading="lazy">
-                D'JANE
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item ">
-                        <a class="nav-link" onclick="abrirM(this.id)" href="?c=valida&a=iniciar">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="abrirM(this.id)" id="citas" href="#">Citas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="team" class="nav-link" href="#" onclick="abrirM(this.id)"><i class="fa fa-users"></i>
-                            Equipo</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-
-                    <li class="nav-item">
-                        <a href="/Agendamiento/Vistas/Home/home.php" class="btn btn-outline-danger"><i
-                                class="fa fa-close"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-
-
         <div class="container">
             <h1 class="text-center">Bienvenido <?php print($_SESSION['NOMBRE']) ?></h1>
             <div class="ttable">

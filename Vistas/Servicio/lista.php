@@ -100,7 +100,7 @@ $Servicio;
 
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
-                
+
                 <div class="card-body">
                     <div class="table-responsive">
 
@@ -136,10 +136,20 @@ $Servicio;
                                                                 value="<?php print_r($value->ID_SERVICIO) ?>">
                                                         </div>
                                                         <div class="col-md-2 col-sm-3">
-                                                            <input type="button" class="Editar btn btn-info text-white"
-                                                                name="Editar"
-                                                                onclick="$('#Form<?php print_r($contador)?>').attr('action','?c=Servicio&a=consultaUnica');$('#Form<?php print_r($contador)?>').submit();"
-                                                                value="...">
+
+                                                            <?php
+
+if($rol == 1){
+    include_once "<input type='button' class='Editar btn btn-info text-white'
+    name='Editar'
+    onclick='$('#Form<?php print_r($contador)?>').attr('action','?c=Servicio&a=consultaUnica');$('#Form<?php print_r($contador)?>').submit();'
+value='...'>";
+}else if($rol == 2){
+
+}
+                                                            
+                                                        
+                                                        ?>
                                                         </div>
                                                         <!--div class="col-md-1 col-sm-3">
                                                             <input type="button" class="Eliminar btn btn-danger"
@@ -177,13 +187,22 @@ $Servicio;
                                 $('[data-toggle="tooltip"]').tooltip()
                             })
                             </script>
+                            <?php
+            $rol = $_SESSION['ROL'];
 
-                            <div class="container p-5">
-                                <form action="?c=Servicio&a=LlamarAgregar" method="POST">
-                                    <input type="submit" class="btn btn-primary btn-block" name="Agregar"
-                                        value="Agregar un nuevo servicio">
-                                </form>
-                            </div>
+            if($rol == 1){
+                include_once "<div class='container p-5'>
+                <form action='?c=Servicio&a=LlamarAgregar' method='POST'>
+                    <input type='submit' class='btn btn-primary btn-block' name='Agregar'
+                        value='Agregar un nuevo servicio'>
+                </form>
+            </div>";
+            }else if($rol == 2){
+            
+            }
+        
+        ?>
+
 
 
                             <script>
