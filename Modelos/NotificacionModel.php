@@ -12,7 +12,7 @@ class Notificacion extends Conexion implements Idatabase{
     public function listar(){}
     public function agregar($vo){
         $this->NotificacionVO = $vo;
-        $sentencia = "INSERT INTO $this->tabla VALUES (NULL, :idCita, :descripcion, :idAplica, :idRol, 0);";
+        $sentencia = "INSERT INTO $this->tabla VALUES (NULL, :idCita, NOW() ,:descripcion, :idAplica, :idRol, 0);";
         $resultado = $this->PDO->prepare($sentencia);
         return $resultado->execute(array(
                     ':idCita' => $this->NotificacionVO->getIdCita(),
@@ -23,7 +23,7 @@ class Notificacion extends Conexion implements Idatabase{
 
     }
     public function consultaUnica($id, $rol){
-        $sentencia = "SELECT * FROM $this->tabla WHERE idAplica=:idAplica AND idRol=:idRol ";
+        $sentencia = "SELECT * FROM $this->tabla WHERE idAplica=:idAplica AND idRol=:idRol  ORDER BY fechaCreacion DESC ";
 
         $resultado = $this->PDO->prepare($sentencia);
         $resultado->execute(array(
