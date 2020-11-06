@@ -6,8 +6,9 @@
     "\\Modelos\\database",
     "\\Modelos\\DB",
     "\\Vistas",
-    "\\Vistas\\Home"
+    "\\Vistas\\Home",
+    "\\Vistas\\Recuperar"
   ],
-  "SelectedNode": "\\Controladores\\valida.controller.php",
+  "SelectedNode": "\\Vistas\\Home\\home.php",
   "PreviewInSolutionExplorer": false
 }
