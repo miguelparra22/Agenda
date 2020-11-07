@@ -258,18 +258,24 @@ class Validacontroller {
                   
                     //$_SESSION['id'] = $Idcliente;
                     $ResultadoLista = $this->Cita->listarCliente($_SESSION['ID'] );
+                    $this->Cita = new Notificacion();
+                    $notificacion = $this->Cita->consultaUnica($Id, $rol);
                     include_once 'Vistas/Cliente/index.php';
                     break;
                 case 1://Administrador
                    // $IdAdmin = $this->Cita->CambiarIdxNom("empleado","ID_EMPLEADO","NombreEmpleado","'$nombre'")[0]->ID_EMPLEADO;
                     //$_SESSION['id'] = $IdAdmin;
                     $ResultadoLista = $this->Cita->listarAdmin();
+                    $this->Cita = new Notificacion();
+                    $notificacion = $this->Cita->consultaUnica($Id, $rol);
                     include_once 'Vistas/Admin/index.php';
                     break;
                 case 2://Empleado'
                     //$IdEmpleado = $this->Cita->CambiarIdxNom("empleado","ID_EMPLEADO","NombreEmpleado","'$nombre'")[0]->ID_EMPLEADO;
                     //$_SESSION['id'] = $IdEmpleado;
                     $ResultadoLista = $this->Cita->listarEmpleado($_SESSION['ID']);
+                    $this->Cita = new Notificacion();
+                    $notificacion = $this->Cita->consultaUnica($Id, $rol);
                     include_once 'Vistas/Empleado/index.php';
                     break;
             }
