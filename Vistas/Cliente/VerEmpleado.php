@@ -83,7 +83,7 @@ $this->Empleado = new EmpleadoModel();
         <?php
             $rol = $_SESSION['ROL'];
 
-<<<<<<< HEAD
+
             if($rol == 1){
                 include_once "Vistas/Home/MenuAdmin.php";
             }else if($rol == 2){
@@ -92,22 +92,22 @@ $this->Empleado = new EmpleadoModel();
         
         ?>
         <!-- End of Topbar -->
-=======
+
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="?c=cliente&a=home">
                 <div class="sidebar-brand-icon">
                     <img src="/Agendamiento/Assets/Imagenes/DjBlanco.png" alt="D'jane" width="120px" height="50px">
                 </div>
->>>>>>> e1679ad035df918bec1854473b234e11df93b4ee
+
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-<<<<<<< HEAD
+
             <!-- Page Heading -->
             <div>
                 <h1 class="h3 mb-0 text-gray-800 text-center">Lista de empleados</h1>
-=======
+
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
@@ -157,7 +157,7 @@ $this->Empleado = new EmpleadoModel();
                     </div>
                 </div>
             </li>
->>>>>>> e1679ad035df918bec1854473b234e11df93b4ee
+
 
             </div>
 
