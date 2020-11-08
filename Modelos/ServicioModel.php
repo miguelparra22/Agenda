@@ -87,10 +87,7 @@ class Servicio extends Conexion implements Idatabase {
     }
 
     public function listar() {
-        $sentencia = "SELECT * FROM $this->tabla";
-        $resultado = $this->PDO->prepare($sentencia);
-        $resultado->execute();
-        return $resultado->fetchAll(PDO::FETCH_OBJ);
+      
     }
 
 }

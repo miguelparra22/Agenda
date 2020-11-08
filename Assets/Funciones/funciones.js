@@ -20,7 +20,51 @@ function load() {
 window.onload = load;
 
 
+function notificacion(){
+  var html = '';
+  $.ajax({
+      type: "POST",
+      url: "/Agendamiento/?c=Notificacion&a=notificacion",
+      data: {
+          
+      },
+      async: false,
+      success: function (response) {
+        var html ='<div class="contenedorAlert">';
+          var objData = eval(response);
+          var noVistas=0;
+          html+='<div> <span class="dropdown-item-text">Tienes notificaciones</span>';
+          for (var item in objData) {
+          
+            if(objData[item]["estado"]==0){
+              noVistas+=1;
+              html+='<div>';
+             html +='  <a class="dropdown-item" href="#"><b>'+objData[item]["descripcion"]+' <br></b><span>'+objData[item]["fechaCreacion"]+'</span></a>';
+           
+             html+='</div>';
+            }else{
+              html+='<div>';
+              html +='<span>'+objData[item]["descripcion"]+'</span>';
+              html +='<span>'+objData[item]["fechaCreacion"]+'</span>';
+              html+='</div>';
+            }
+            html+='</div>';
 
+        }
+        console.log(noVistas);
+        html+='</div>';
+        if(noVistas!=0){
+        document.getElementById('cantidadAlerts').innerHTML=noVistas+'+';
+        }
+        document.getElementById('alerts').innerHTML=html;
+      },
+      error: function (err) {
+          console.error('Se presento un error ->' + err);
+      }
+  });
+  return html;
+
+}
 
 function abrirM(elemento) {
   tomaropcion(elemento);

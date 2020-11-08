@@ -1,5 +1,5 @@
 <?php 
-class Notificacion extends Conexion implements Idatabase{
+class Notificacion extends Conexion {
     private $PDO;
     private $NotificacionVO;
     private $tabla;
@@ -38,6 +38,7 @@ class Notificacion extends Conexion implements Idatabase{
             return $arreglo;
         }
     }
+    
     public function eliminar($id){}
 
 

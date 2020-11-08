@@ -23,6 +23,8 @@
     <link href="/Agendamiento/Assets/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="/Agendamiento/Assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
    
+
+   
     <title>Inicio</title>
 </head>
 
@@ -78,13 +80,36 @@
     </section>
 
 
-
+ <!-- Logout Modal-->
+ <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">¿Esta seguro que desea salir?</h5>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">Si desea salir de D'JANE seleccione "Salir" para cerrar sesión.</div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                                    <a class="btn btn-primary" href="?c=valida&a=cerrar">Salir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
     </div>
+<
+   
     <script src="/Agendamiento/Assets/Funciones/funciones.js"></script>
     <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
+    <script src="/Agendamiento/Assets/Bootstrap/js/popper.min.js"></script>
     <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
+    
+  
 
 </body>
 

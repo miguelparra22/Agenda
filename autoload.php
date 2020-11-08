@@ -56,4 +56,5 @@ require_Once 'Controladores/valida.controller.php';
 require_once "Controladores/Horario.controller.php";
 require_once 'Controladores/empleado.controller.php';
 require_once 'Controladores/cita.controller.php';
+require_once 'Controladores/notificacion.controller.php';
 ?>
