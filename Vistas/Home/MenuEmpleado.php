@@ -89,7 +89,7 @@
                             </a-->
                             <a class="collapse-item" href="?c=empleado&a=empleado">Actualizar mis datos</a>
                             <a class="collapse-item" href="#" onclick="window.location.href='?c=valida&a=correoCambiar'">Cambiar contraseña</a>
-                            <a class="collapse-item" href="?c=Servicio&a=lista">Servicios</a>
+                           
  
                         </div>
                     </div>

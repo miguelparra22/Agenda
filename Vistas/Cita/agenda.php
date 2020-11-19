@@ -332,17 +332,8 @@
                                 </div>
 
                             </div>
-                            <!-- End of Main Content -->
-
-                            <!-- Footer -->
-                            <footer class="sticky-footer bg-white">
-                                <div class="container my-auto">
-                                    <div class="copyright text-center my-auto">
-                                        <span>Copyright &copy; D'JANE 2020</span>
-                                    </div>
-                                </div>
-                            </footer>
-                            <!-- End of Footer -->
+                            
+                            
 
                         </div>
                         <!-- End of Content Wrapper -->
@@ -430,14 +421,7 @@
 
 
 
-                        <footer class="footer1 p-3 text-center text-white">
-                            <div class="text-center">
-                                <img src="/Agendamiento/Assets/Imagenes/djlogodorado.png" alt="D'JANE" width="100"
-                                    height="40">
-                            </div>
-
-
-                        </footer>
+                        
                         <script src="/Agendamiento/Assets/Funciones/cita.js"></script>
 </body>
 <script src="/Agendamiento/Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
