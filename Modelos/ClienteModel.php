@@ -58,9 +58,9 @@ class Cliente extends Conexion implements Idatabase {
 
             $this->ClienteVO = new ClienteVO();
             $this->ClienteVO->setCliente_nombre($arreglo->ClienteNombre);
-            $this->ClienteVO->setCliente_pwd($arreglo->Password);
+            $this->ClienteVO->setCliente_pwd($arreglo->PasswordCliente);
             $this->ClienteVO->setCliente_correo($arreglo->CorreoCliente);
-
+            $this->ClienteVO->setCliente_telefono($arreglo->TELEFONO_CLIENT);
 
             return $arreglo;
         }

@@ -262,17 +262,17 @@
                                     <div class="form-group">
                                             <label for="correo">Correo</label>
                                             <input id="correo" type="text" placeholder="Ingrese su correo"
-                                                name="usuario_correo" class="form-control">
+                                                name="usuario_correo" class="form-control" value="<?=$datos->CorreoCliente?>">
                                         </div>
 
                                         <div class="form-group">
                                         <label for="nombre">Nombre</label>
-                                        <input id="nombre" type="text" placeholder="Ingrese su nombre" name="usuario_nombre" class="form-control">
+                                        <input id="nombre" type="text" placeholder="Ingrese su nombre" value="<?=$datos->ClienteNombre?>" name="usuario_nombre" class="form-control">
                                         </div>
 
                                         <div class="form-group">
                                         <label for="telefono">Telefono</label>
-                                        <input id="telefono" class="form-control" type="text" placeholder="telefono" name="usuario_telefono">
+                                        <input id="telefono" class="form-control" type="text" placeholder="telefono" value="<?=$datos->TELEFONO_CLIENT?>" name="usuario_telefono">
                                         </div>
                                         
                                         <div class="form-group">

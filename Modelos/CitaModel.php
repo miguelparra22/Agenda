@@ -189,6 +189,26 @@ class Cita extends Conexion implements Idatabase {
     }
         return $resultadofinal;
     }
+    public function empleadoCliente(){
+       
+            $sentencia = "select * FROM $this->tabla c "
+                    . " WHERE c.FKIDESTADO <> 2  ORDER BY c.HORAPACTADA DESC ";
+            $resultado = $this->PDO->prepare($sentencia);
+            $resultado->execute();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        
+    }
+    public function buscaClienteMasSerEmpleado($id){
+        if (!(empty($id))) {
+            $sentencia = " select cte.ClienteNombre as NOMBRE, CONCAT(s.NombreServicio,' -> ', e.NombreEmpleado)as NOMBRESERVICIO
+            FROM agenda  a inner join citas c on c.IDCITA=a.FK_IDCITA INNER JOIN cliente cte on cte.IDCLIENTE=c.FKIDCLIENTE 
+            inner join servicio s ON s.ID_SERVICIO = a.FK_IDSERVICIO inner join empleado e on a.FK_IDEMPLEADO=e.ID_EMPLEADO 
+            WHERE a.FK_IDCITA ='$id'";
+            $resultado = $this->PDO->prepare($sentencia);
+            $resultado->execute();
+            return $resultado->fetchAll(PDO::FETCH_ASSOC);
+        }
+    }
 
 }
 

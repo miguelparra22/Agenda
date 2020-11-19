@@ -22,8 +22,13 @@ class Citacontroller {
             break;
             case 2:
                 $informacion = $this->model->misServiciosEmpleado($_SESSION['ID']);
-            break;}
-      
+            break;
+            case 1:
+                $informacion = $this->model->empleadoCliente();
+            break;
+        
+        }
+    
         echo json_encode($informacion);
     }
 
@@ -38,7 +43,11 @@ class Citacontroller {
             break;
             case 2:
                 $informacion = $this->model->buscaClienteMasSer($cita);
-            break;}
+            break;
+            case 1:
+                $informacion = $this->model->buscaClienteMasSerEmpleado($cita);
+            break;
+        }
        
         echo json_encode($informacion);
     }

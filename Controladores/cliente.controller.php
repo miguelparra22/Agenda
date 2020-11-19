@@ -85,8 +85,10 @@ class Clientecontroller {
       $this->vo->setCliente_correo($_POST["usuario_correo"]);
       $this->vo->setCliente_telefono($_POST["usuario_telefono"]);
       $this->vo->setCliente_id($_POST["Id_usuario"]);
+      
       if ($this->model->actualizar($this->vo)) {
-        
+        $id= $_SESSION['ID'];
+        $datos=$this->model->consultaUnica($id);
           include_once 'Vistas/Cliente/Actualizar.php';
           
           echo "<div class='alert success'>
@@ -133,13 +135,11 @@ class Clientecontroller {
     }
 
 
-    
-
-   
- 
-
-
     public function llamarEditar(){
+     $id= $_SESSION['ID'];
+     $datos=$this->model->consultaUnica($id);
+ 
+  
       include_once 'Vistas/Cliente/Actualizar.php';
     }
 

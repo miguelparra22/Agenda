@@ -30,25 +30,25 @@ function notificacion(){
       },
       async: false,
       success: function (response) {
-        var html ='<div class="contenedorAlert">';
+        var html ='<div class="" style="font-size:12px">';
           var objData = eval(response);
           var noVistas=0;
-          html+='<div> <span class="dropdown-item-text">Tienes notificaciones</span>';
+          html+='<div> <span class="dropdown-item-text">Tienes notificaciones</span></div>  ';
           for (var item in objData) {
           
             if(objData[item]["estado"]==0){
               noVistas+=1;
               html+='<div>';
-             html +='  <a class="dropdown-item" href="#"><b>'+objData[item]["descripcion"]+' <br></b><span>'+objData[item]["fechaCreacion"]+'</span></a>';
+             html +='  <a class="dropdown-item" href="#"><b>'+objData[item]["descripcion"]+' <br><span>'+objData[item]["fechaCreacion"]+'</span></b></a>';
            
              html+='</div>';
             }else{
               html+='<div>';
-              html +='<span>'+objData[item]["descripcion"]+'</span>';
-              html +='<span>'+objData[item]["fechaCreacion"]+'</span>';
-              html+='</div>';
+             html +='  <a class="dropdown-item" href="#">'+objData[item]["descripcion"]+' <br><span>'+objData[item]["fechaCreacion"]+'</span></a>';
+           
+             html+='</div>';
             }
-            html+='</div>';
+           
 
         }
         console.log(noVistas);

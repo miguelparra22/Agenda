@@ -99,7 +99,7 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Acciones de cita</h6>
-                            <a class="collapse-item" href="#">Historial cita</a>
+                            <a class="collapse-item" href="?c=Cita&a=lista">Historial cita</a>
                             <a class="collapse-item" href="#">Cancelar citas</a>
                            
                         </div>
