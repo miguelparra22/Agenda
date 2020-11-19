@@ -87,7 +87,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Cambiar Contraseña</span>
                             </a-->
-                            <a class="collapse-item" href="#">Actualizar mis datos</a>
+                            <a class="collapse-item" href="?c=empleado&a=empleado">Actualizar mis datos</a>
                             <a class="collapse-item" href="#" onclick="window.location.href='?c=valida&a=correoCambiar'">Cambiar contraseña</a>
                             <a class="collapse-item" href="?c=Servicio&a=lista">Servicios</a>
  

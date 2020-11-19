@@ -92,15 +92,21 @@
                 <h3 class="p-3">Aquí puedes actualizar los datos de los usuarios</h3>
                   <form action="?c=Empleado&a=Editar" method="post">
                       <div class="p-3">
+                      <label>Nombre</label>
                         <input name="NOMBREMPLEADO" value="<?= $resultado->getNombre_Empleado() ?>" type="text" class="form-control">
                       </div>
                       <div class="p-3">
+                      <label>Correo</label>
                       <input name="CORREOEMPLEADO" value="<?= $resultado->getCorreo_Empleado() ?>" type="text" class="form-control">
                       </div>
                       <div class="p-3">
+                      <label>Especialidad</label>
                       <input name="especialidad" value="<?= $resultado->getEspecialidad_Empleado() ?>" type="text" class="form-control">
                       </div>
+                    
                       <div class="p-3">
+                      <label>Estado</label>
+                      <div>
                       <?php if($resultado->getEstado_Empleado() == 1){ ?> 
                       <input type="radio" name="Estado" checked value="1">Activo<br>
                       <input type="radio" name="Estado" value="2">Inactivo<br>
@@ -108,6 +114,7 @@
                       <input type="radio" name="Estado" value="1">Activo<br>
                       <input type="radio" name="Estado" checked value="2">Inactivo<br>
                       <?php }?>
+                      </div>
                       </div>
                       <div class="p-3">
                       <input name="ID_EMPLEADO" type="hidden" value="<?= $resultado->getId_Empleado() ?>" type="text" class="form-control">

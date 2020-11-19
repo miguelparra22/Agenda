@@ -112,7 +112,9 @@ class Clientecontroller {
        
           
       } else {
-          include_once 'Vistas/Cliente/Agregar.php';
+        $id= $_SESSION['ID'];
+        $datos=$this->model->consultaUnica($id);
+          include_once 'Vistas/Cliente/Actualizar.php';
           echo "<div class='alert'>
           <span class='closebtn'>&times;</span>  
           <strong>Error</strong> No se pudo Actualizar.
