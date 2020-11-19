@@ -82,12 +82,15 @@ class Servicio extends Conexion implements Idatabase {
 
     public function ListaEmpleados() {
         $this->EmpleadoModel = new EmpleadoModel();
-        $resultado2 = $this->EmpleadoModel->listar($_SESSION['ID']);
+        $resultado2 = $this->EmpleadoModel->listaEmpleado($_SESSION['ID']);
         return $resultado2;
     }
 
     public function listar() {
-      
+        $sentencia = "SELECT * FROM $this->tabla";
+        $resultado = $this->PDO->prepare($sentencia);
+        $resultado->execute();
+        return $resultado->fetchAll(PDO::FETCH_OBJ);
     }
 
 }

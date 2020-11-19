@@ -124,44 +124,25 @@ $Servicio;
                                                  foreach($resultado as $busqueda => $value){ 
                                                  $contador ++;
                                             ?>
+                       <form id="Form<?php print_r($contador)?>" action="" method="POST"> 
+                    <li class="list-group-item">
 
+                        <div class="row">
+                            <div class="col-md-9 col-sm-9">
+                                <?php print_r($value->NombreServicio) ?>
+                                <input type="hidden" name="servicio_ID" value="<?php print_r($value->ID_SERVICIO) ?>">
+                            </div>
+                            <div class="col-md-1 col-sm-3">
+<input type="button" class="Editar btn btn-warning text-white" name="Editar" onclick="$('#Form<?php print_r($contador)?>').attr('action','?c=Servicio&a=consultaUnica');$('#Form<?php print_r($contador)?>').submit();"  value="Editar">
+                            </div>
+                            <div class="col-md-1 col-sm-3">
+<input type="button" class="Eliminar btn btn-danger" name="eliminar" onclick="$('#Form<?php print_r($contador)?>').attr('action', '?c=Servicio&a=eliminar');$('#Form<?php print_r($contador)?>').submit();" value="Eliminar">
+                            </div>
 
-                                            <form id="Form<?php print_r($contador)?>" action="" method="POST">
-                                                <li class="list-group-item">
+                        </div>
 
-                                                    <div class="row">
-                                                        <div class="col-md-10 col-sm-9">
-                                                            <?php print_r($value->NombreServicio) ?>
-                                                            <input type="hidden" name="servicio_ID"
-                                                                value="<?php print_r($value->ID_SERVICIO) ?>">
-                                                        </div>
-                                                        <div class="col-md-2 col-sm-3">
-
-                                                            <?php
-
-if($rol == 1){
-    include_once "<input type='button' class='Editar btn btn-info text-white'
-    name='Editar'
-    onclick='$('#Form<?php print_r($contador)?>').attr('action','?c=Servicio&a=consultaUnica');$('#Form<?php print_r($contador)?>').submit();'
-value='...'>";
-}else if($rol == 2){
-
-}
-                                                            
-                                                        
-                                                        ?>
-                                                        </div>
-                                                        <!--div class="col-md-1 col-sm-3">
-                                                            <input type="button" class="Eliminar btn btn-danger"
-                                                                name="eliminar"
-                                                                onclick="$('#Form<?php ($contador)?>').attr('action', '?c=Servicio&a=eliminar');$('#Form<?php print_r($contador)?>').submit();"
-                                                                value="Eliminar">
-                                                        </div-->
-
-                                                    </div>
-
-                                                </li>
-                                            </form>
+                    </li>
+                    </form>
 
                                             <?php }?>
 
@@ -191,12 +172,12 @@ value='...'>";
             $rol = $_SESSION['ROL'];
 
             if($rol == 1){
-                include_once "<div class='container p-5'>
+                echo ("<div class='container p-5'>
                 <form action='?c=Servicio&a=LlamarAgregar' method='POST'>
                     <input type='submit' class='btn btn-primary btn-block' name='Agregar'
                         value='Agregar un nuevo servicio'>
                 </form>
-            </div>";
+            </div>");
             }else if($rol == 2){
             
             }

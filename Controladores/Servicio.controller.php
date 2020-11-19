@@ -119,12 +119,10 @@ class ServicioController {
             include_once 'Vistas/header.php';
             include_once 'Vistas/exception/noExiste.php';
             include_once 'Vistas/footer.php';
-            print_r ($resultado);
         } else {
             include_once 'Vistas/header.php';
             include_once 'Vistas/Servicio/lista.php';
             include_once 'Vistas/footer.php';
-            echo $resultado;
         }
     }
 
