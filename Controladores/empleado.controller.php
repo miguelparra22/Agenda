@@ -131,8 +131,17 @@ function empleado(){
 
 
 }
+function home(){
+  $this->Cita = new Cita();
+  $ResultadoLista = $this->Cita->listarEmpleado($_SESSION['ID']);
+  include_once 'Vistas/Empleado/index.php';
+}
 
-
+function admin(){
+  $this->Cita = new Cita();
+  $ResultadoLista = $this->Cita->listarAdmin();
+  include_once 'Vistas/Admin/index.php';
+}
 public function editar() {
   $vo = array($_POST["ID_EMPLEADO"],$_POST["NOMBREMPLEADO"], $_POST["CORREOEMPLEADO"], $_POST["especialidad"],$_POST["Estado"]);
   if ($this->model->editar($vo)) {
