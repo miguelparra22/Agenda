@@ -153,14 +153,13 @@ $this->Empleado = new EmpleadoModel();
                                                 placeholder="Buscar...">
                                             <br>
 
-                                            <form action="?c=Empleado&a=consultaUnica" method="POST">
                                                 <ul class="list-group" id="myList">
                                                     <?php
                        $contador = 0;
                        foreach($resultado as $busqueda => $value){ 
                        $contador ++;
                     ?>
-
+                                            <form action="?c=Empleado&a=empleado" method="POST">
 
 
                                                     <li class="list-group-item">
@@ -189,14 +188,13 @@ $this->Empleado = new EmpleadoModel();
                                                         </div>
 
                                                     </li>
-
+                                                    </form>
 
                                                     <?php }?>
 
 
                                                 </ul>
 
-                                            </form>
                                         </div>
 
 
