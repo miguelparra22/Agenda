@@ -145,7 +145,7 @@ function admin(){
 public function editar() {
   $vo = array($_POST["ID_EMPLEADO"],$_POST["NOMBREMPLEADO"], $_POST["CORREOEMPLEADO"], $_POST["especialidad"],$_POST["Estado"]);
   if ($this->model->editar($vo)) {
-    $id = $_SESSION["ID"];
+    $id = $_POST["ID_EMPLEADO"];
     $resultado = $this->model->consultaUnica($id);
       echo 'El Empleado se actualizo correctamente.';
       include_once 'Vistas/header.php';
