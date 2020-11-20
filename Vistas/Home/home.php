@@ -15,6 +15,7 @@ $Servicio;
     <link rel="stylesheet" href="/Agendamiento/Assets/Bootstrap/css/bootstrap.css">
     <!----------Estilos, normalize , iconos------------>
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/estilos.css">
+    <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/navidad.css">
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
@@ -28,7 +29,7 @@ $Servicio;
             <div class="row">
                 <div class="col-md-6 m-auto">
                     <div class="imageloader">
-                        <img src="/Agendamiento/Assets/Imagenes/djlogo.png" alt="D'JANE" width="200" height="100">
+                        <img src="/Agendamiento/Assets/Imagenes/LogoJaneL2.png" alt="D'JANE" width="400" height="200">
 
 
                     </div>
@@ -46,34 +47,86 @@ $Servicio;
                         </div>
                     </div>
 
+                    <div class="tpl-snow">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+ 
                 </div>
             </div>
         </div>
 
     </div>
     <!-----Navegación---------->
-    <nav class="nav navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="nav navbar navbar-expand-lg navbar-danger bg-danger fixed-top">
         <a class="navbar-brand" href="#">
-            <img src="/Agendamiento/Assets/Imagenes/djlogo.png" alt="D'JANE" width="100" height="40">
+            <img src="/Agendamiento/Assets/Imagenes/LogoDjaneNav.png" alt="D'JANE" width="110" height="60">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="fa fa-bars text-white"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link navl" href="#servicio">Servicio
+                    <a class="nav-link navl text-white" href="#servicio">Servicio
                         <!--span class="sr-only">(current)</span--></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navl" href="#productos">Productos</a>
+                    <a class="nav-link navl text-white" href="#productos">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navl" onclick="registro()" href="#">Registrarse</a>
+                    <a class="nav-link navl text-white" onclick="registro()" href="#">Registrarse</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="login()" href="/Agendamiento/?c=valida&a=Login" class="btn btn-outline-primary">Iniciar sesión</a>
+                    <a onclick="login()" href="/Agendamiento/?c=valida&a=Login" class="btn btn-success">Iniciar sesión</a>
                 </li>
             </ul>
         </div>
@@ -90,14 +143,14 @@ $Servicio;
                 <div class="row">
 
                     <div class="image-responsive">
-                        <img src="/Agendamiento/Assets/Imagenes/DjBlanco.png" alt="">
+                        <img src="/Agendamiento/Assets/Imagenes/LogoDJaneN.png" alt="">
                         <h1>Bienvenidos</h1>
                         <p>Ahora agenda una cita de manera virtual con nosotros.</p>
-                        <button class="btn btn-light" onclick="login()"> Agendar</button>
-                         <a href="#servicio" class="btn btn-outline-light"> Ver Servicios</a>
-
+                        <button class="btn btn-danger" onclick="login()"> Agendar</button>
+                         <a href="#servicio" class="btn btn-success"> Ver Servicios</a>
                     </div>
-
+                    
+                   
                 </div>
             </div>
         </section>
@@ -125,7 +178,7 @@ $Servicio;
 
                     </div>
                     <div>
-                        <button class="btn btn-block btn-primary" onclick="openNav()"><i class="fa fa-instagram"></i>
+                        <button class="btn btn-block btn-success" onclick="openNav()"><i class="fa fa-instagram"></i>
                             Nuestras redes sociales</button>
                     </div>
                 </div>
@@ -223,7 +276,7 @@ $Servicio;
     <section>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12 bg-dark text-center text-white">
+                <div class="col-md-12 bg-success text-center text-white">
                     <div class="p-3">
                         <h2>¿Dónde nos pueden encontrar?</h2>
                     </div>
@@ -288,9 +341,9 @@ $Servicio;
 
     <hr>
     <!-----------Foooter-------------->
-    <footer class="footer1 p-3 text-center text-white">
+    <footer class="footer1 p-3 text-center text-white bg-dark">
         <div class="text-center">
-            <img src="/Agendamiento/Assets/Imagenes/djlogodorado.png" alt="D'JANE" width="100" height="40">
+            <img src="/Agendamiento/Assets/Imagenes/LogoDJaneN.png" alt="D'JANE" width="180" height="80">
         </div>
         <p class="p-2 text-center text-white">
             D'Jane 2020
@@ -305,15 +358,65 @@ $Servicio;
     </footer>
 
     <!----------Boton top------------------------>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <button onclick="topFunction()" id="myBtn" title="Go to top" class="bg-danger"><i class="fa fa-gift"></i></button>
 
 
     <!-----------------------Contenedor redes sociales------------------------------------->
     <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="cerrarNav()">&times;</a>
         <div class="overlay-content">
+        <div class="tpl-snow">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
             <div class="text-center">
-                <img src="/Agendamiento/Assets/Imagenes/djlogodorado.png" alt="D'JANE" width="100" height="40">
+                <img src="/Agendamiento/Assets/Imagenes/LogoDJaneN.png" alt="D'JANE" width="180" height="100">
             </div>
 
             <a href="#" onclick="instagram()"><i class="fa fa-instagram"></i> Instagram</a>

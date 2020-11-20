@@ -37,7 +37,7 @@ body{
     min-height: 400px;
 }
 .background-overlay{
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(38 86 109 / 50%);
   min-height: 400px;
 }
 
