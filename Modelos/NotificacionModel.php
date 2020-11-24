@@ -10,6 +10,7 @@ class Notificacion extends Conexion {
     }
 
     public function listar(){}
+    
     public function agregar($vo){
         $this->NotificacionVO = $vo;
         $sentencia = "INSERT INTO $this->tabla VALUES (NULL, :idCita, NOW() ,:descripcion, :idAplica, :idRol, 0);";

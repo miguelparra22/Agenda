@@ -24,6 +24,7 @@ function buscarListas() {
         type: "POST",
         url: "/Agendamiento/?c=cita&a=listas",
         data: {
+            noti:$('#noti').val()
         },
         async: false,
         success: function (response) {
@@ -37,9 +38,16 @@ function buscarListas() {
                 html += '   <td>' + objData[item]["DESCRIPCION"] + '</td>';
               
                 html += traerEmpleadosmasServicio(objData[item]["IDCITA"]);
+
+                if(objData[item]["FKIDESTADO"]!=='2'){
+
                 html += '   <td>'+llevas(objData[item]["HORAPACTADA"] )+'</td>';
+              
                 html +=  '<td>'+ validaCancelar('<button title="Cancelar" class="btn btn-outline-danger" onclick="cancelar(' + objData[item]["IDCITA"] + ')" >X</button>',objData[item]["HORAPACTADA"] )+'</td>';
-             
+                }else{
+                    html+='<td></td>';
+                    html+='<td></td>';
+                }
                 html += ' </tr>';
 
             }

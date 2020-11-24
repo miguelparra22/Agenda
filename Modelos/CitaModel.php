@@ -40,6 +40,14 @@ class Cita extends Conexion implements Idatabase {
                 $resultadoAgenda->bindParam(":FK_IDCITA", $cita, PDO::PARAM_STR);
                 $resultadoAgenda->bindParam(":FK_IDSERVICIO", $key, PDO::PARAM_STR);
                 $resultadoAgenda->execute();
+                $modelos  = new Notificacion();
+                $vo = new NotificacionVO();
+                $vo->setIdCita($cita);
+                $vo->setDescripcion('Cita Programada');
+                $vo->setIdAplica($value);
+                $vo->setIdRol(2);
+                $modelos->agregar($vo);
+                
             }
             return $lastInsertId;
         }else{
@@ -79,12 +87,18 @@ class Cita extends Conexion implements Idatabase {
         }
     }
 
-    public function misServicios($id) {
-
+    public function misServicios($id, $key) {
+        $no='no';
+        $sql="";
+        $otro ='SELECT *FROM (';
+        if($key != $no && !is_null($key)){
+            $sql=" SELECT * FROM $this->tabla c WHERE (c.FKIDESTADO=2 AND IDCITA=$key) UNION ";
+        }
         if (!(empty($id))) {
-            $sentencia = "select * FROM $this->tabla c "
-                    . " WHERE c.FKIDESTADO <> 2 AND c.FKIDCLIENTE='$id' "
-                    . " ORDER BY c.HORAPACTADA DESC ";
+            $sentencia =$otro. $sql." SELECT * FROM $this->tabla c "
+                    . " WHERE c.FKIDESTADO <> 2 AND c.FKIDCLIENTE='$id' ) as tablaa "
+
+                    . " ORDER BY HORAPACTADA DESC ";
             $resultado = $this->PDO->prepare($sentencia);
             $resultado->execute();
             return $resultado->fetchAll(PDO::FETCH_ASSOC);
@@ -126,9 +140,17 @@ class Cita extends Conexion implements Idatabase {
 
     public function eliminar($id) {
         if (!(empty($id))) {
+            $cliente = $this->CambiarIdxNom("citas","FKIDCLIENTE","IDCITA","'".$id."'" )[0]->FKIDCLIENTE;;
             $sentencia = " UPDATE citas SET FKIDESTADO = '2' WHERE IDCITA = '$id'";
             $resultado = $this->PDO->prepare($sentencia);
             $resultado->execute();
+            $modelos  = new Notificacion();
+            $vo = new NotificacionVO();
+            $vo->setIdCita($id);
+            $vo->setDescripcion('Cita Cancelada');
+            $vo->setIdAplica($cliente);
+            $vo->setIdRol(0);
+            $modelos->agregar($vo);
             return $resultado->rowCount();
         }
         

@@ -311,60 +311,7 @@
                                     </div>
 
                                     <script>
-                                    $(document).ready(function() {
-                                        $('#calendario').fullCalendar({
-                                            defaultView: 'agendaWeek',
-                                            selectable: true,
-                                            minTime: "<?php print_r($entrada) ?>",
-                                            maxTime: "<?php print_r($salida) ?>",
-                                            columnFormat: "dddd D/M",
-                                            timeFormat: 'hh:mm ',
-                                            allDaySlot: false,
-                                            firstDay: (new Date().getDay()),
-                                            header: {
-                                                left: 'today',
-                                                center: 'title',
-                                                right: 'agendaWeek, agendaDay'
-                                            },
-                                            customButtons: {
-                                                mibutton: {
-                                                    text: 'boton 1',
-                                                    click: function() {
-                                                        alert('a')
-                                                    }
-                                                }
-                                            },
-                                            Click: function() {
-                                                $('#agendaModal').modal();
-                                            },
-                                            eventSources: [{
-                                                events: [<?php print_r($array) ?>]
-                                            }],
-                                            eventClick: function(calEvent, jsEvent, view) {
-                                                Swal.fire({
-                                                    title: calEvent.title,
-                                                    text: calEvent.start._i.replace('T',
-                                                            ' ') + ' - ' + calEvent.end._i
-                                                        .replace('T', ' '),
-
-                                                    confirmButtonText: 'Cerrar'
-                                                })
-                                            }
-                                            <?php if ($lugar == 1): ?>,
-                                            select: function(start, end, jsEvent) {
-                                                endtime = $.fullCalendar.moment(end).format('h:mm');
-                                                starttime = $.fullCalendar.moment(start).format(
-                                                    'dddd, MMMM Do YYYY, h:mm');
-                                                var mywhen = starttime + ' - ' + endtime;
-                                                start = moment(start).format();
-                                                end = moment(end).format();
-                                                $('#inicioFecha').val(start);
-                                                $('#fechamostrar').val(start.replace("T", " "));
-                                                $('#agendaModal').modal();
-                                            }
-                                            <?php endif; ?>
-                                        })
-                                    });
+                                   
 
                                     function getlength(number) {
                                         return number.toString().length;
@@ -433,7 +380,7 @@
 
                 });
                 </script>
-
+<input type='hidden' value ='<?= empty ($_GET['key']) ? 'no': $_GET['key']?>' id='noti'>
                 <script src="/Agendamiento/Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
                 <!-- Core plugin JavaScript-->

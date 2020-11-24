@@ -108,7 +108,13 @@
     <script src="/Agendamiento/Assets/jquery-3.5.1.min.js"></script>
     <script src="/Agendamiento/Assets/Bootstrap/js/popper.min.js"></script>
     <script src="/Agendamiento/Assets/Bootstrap/js/bootstrap.js"></script>
-    
+    <script>
+    $(window).on('load', function() {
+        notificacion();
+                    setInterval(notificacion, 3000);
+
+                });
+    </script>
   
 
 </body>

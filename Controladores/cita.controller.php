@@ -14,11 +14,11 @@ class Citacontroller {
 
     public function listas() {
         $role =  $_SESSION['ROL'] ;
-       
+        $key = $_POST['noti'];
         $informacion='';
         switch ($role) {
             case 0:
-                $informacion = $this->model->misServicios($_SESSION['ID']);
+                $informacion = $this->model->misServicios($_SESSION['ID'], $key);
             break;
             case 2:
                 $informacion = $this->model->misServiciosEmpleado($_SESSION['ID']);
