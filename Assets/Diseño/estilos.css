@@ -151,7 +151,7 @@ body{
     box-shadow: none;
     outline:none;
     border:none;
-    border-bottom: 2px solid #999;
+    border-bottom: 2px solid #bd0d0d;
 }
 
 
@@ -161,7 +161,7 @@ body{
     box-shadow: none;
     outline:none;
     border:none;
-    border-bottom: 2px solid #999;
+    border-bottom: 2px solid #bd0d0d;
 }
 
 .box textarea{
@@ -173,8 +173,8 @@ body{
     border-bottom: none;
     cursor: pointer;
     background: #FFFF;
-    color:#007cae;
-    border: 2px solid #007cae;
+    color:#00ae43;
+    border: 2px solid #00ae43;
     margin-bottom: 0;
     text-transform: uppercase;
     transition: 0.5s;
@@ -183,8 +183,8 @@ body{
 .box input[type = "submit"]:hover{
   border-bottom: none;
   cursor: pointer;
-  background: #007cae;
-  border: 2px solid #007cae;
+  background: #00ae43;
+  border: 2px solid #00ae43;
   color:#fff;
   margin-bottom: 0;
   text-transform: uppercase;
@@ -214,7 +214,7 @@ body{
 
 top:-10px;
 left: 0;
-color: #007cae;
+color: #bd0d0d;
 font-size: 12px;
 font-weight: bold;
 }
@@ -225,7 +225,7 @@ font-weight: bold;
 .box textarea:focus,
 .box input:valid,
 .box textarea:valid{
-    border-bottom:2px solid  #007cae;
+    border-bottom:2px solid  #218838;
 }
 
 .caja-m {
@@ -294,7 +294,7 @@ font-weight: bold;
 }
 
 .caja-m a {
-   color:var(--primary-color);
+   color: #bd0d0d;
    cursor: pointer;
 }
 
@@ -315,7 +315,7 @@ font-weight: bold;
 
   top: -10px;
   left: 0;
-  color: var(--primary-color);
+  color: #bd0d0d;
   font-size: 12px;
   font-weight: bold;
 }
@@ -326,7 +326,7 @@ font-weight: bold;
 .caja-m textarea:focus,
 .caja-m input:valid,
 .caja-m textarea:valid {
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid #218838;
 }
 
 
@@ -359,7 +359,7 @@ font-weight: bold;
 
 .text-info {
   
-  color: #007cae;
+  color: #bd0d0d;
   border: none;
   text-align: center;
   font-size: 18px;

@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
     <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
     <link rel="stylesheet" href="/Agendamiento/Assets/sweetalert/dist/sweetalert2.css">
+    <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/navidad.css">
     <script src="/Agendamiento/Assets/sweetalert/dist/sweetalert2.js"></script>
+    <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/navidad.css">
 
     <title>Registro</title>
 </head>
@@ -39,6 +41,8 @@
                             <div></div>
                         </div>
                     </div>
+                 
+
 
                 </div>
             </div>
@@ -48,9 +52,9 @@
 
     <section class="main-header2">
         <!-----Navegación---------->
-        <nav class="nav navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <nav class="nav navbar navbar-expand-lg navbar-danger bg-danger fixed-top">
             <a class="navbar-brand" href="#">
-                <img src="/Agendamiento/Assets/Imagenes/djlogo.png" alt="D'JANE" width="100" height="40">
+                <img src="/Agendamiento/Assets/Imagenes/LogoDjaneNav.png" alt="D'JANE" width="100" height="40">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,24 +63,75 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link navl" href="#servicio">Inicio
+                        <a class="nav-link navl text-white" href="#servicio">Inicio
                             <!--span class="sr-only">(current)</span-->
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navl" href="#">Productos</a>
+                        <a class="nav-link navl text-white" href="#">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navl" href="#">Servicio</a>
+                        <a class="nav-link navl text-white" href="#">Servicio</a>
                     </li>
                     <li class="nav-item">
-                        <a onclick="login()" href="#" class="btn btn-outline-primary">Iniciar sesión</a>
+                        <a onclick="login()" href="#" class="btn btn-success">Iniciar sesión</a>
                     </li>
                 </ul>
             </div>
         </nav>
+        <div class="tpl-snow">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
         <div class="box">
-            <h3>Ingresa tus datos</h3>
+
+            <h3 class="text-success">Ingresa tus datos</h3>
             <form action="/Agendamiento/?c=valida&a=agregar" method="POST" onsubmit="return validarcliente()">
                 <div>
                     <input id="nombre" type="text" name="usuario_nombre" required
@@ -103,7 +158,7 @@
                     <label>Correo</label>
                 </div>
 
-                <input type="submit" name="guardar" value="GUARDAR" class="btn btn-outline-pimary">
+                <input type="submit" name="guardar" value="GUARDAR" class="btn ">
 
 
             </form>

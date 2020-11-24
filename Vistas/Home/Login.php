@@ -83,7 +83,7 @@
                         <a href="?c=valida&a=correo">¿Olvidaste tu contraseña?</a>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-block"> Ingresar</button>
+                    <button type="submit" class="btn btn-success btn-block"> Ingresar</button>
                 </form>
             </div>
 
