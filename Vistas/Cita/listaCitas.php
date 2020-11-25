@@ -78,7 +78,22 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="?c=cliente&a=home">
+                <?php
+            $rol = $_SESSION['ROL'];
+
+            if($rol == 1){
+            $Controller = "Empleado";
+            $Funcion = "admin";
+            }else if($rol == 2){
+                $Controller = "Empleado";
+            $Funcion = "home";
+            }else if($rol == 0){
+            $Controller = "cliente";
+            $Funcion = "home";
+            }
+        
+        ?>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="?c=<?php print_r($Controller) ?>&a=<?php print_r($Funcion) ?>">
                 <div class="sidebar-brand-icon">
                     <img src="/Agendamiento/Assets/Imagenes/DjBlanco.png" alt="D'jane" width="100px" height="50px">
                 </div>
@@ -90,7 +105,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="?c=cliente&a=home">
+                <a class="nav-link" href="?c=<?php print_r($Controller) ?>&a=<?php print_r($Funcion) ?>">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Inicio</span></a>
             </li>

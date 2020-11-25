@@ -39,6 +39,16 @@ $_SESSION['ROL'];
 </style>
 
 <body id="page-top">
+        <?php
+            $rol = $_SESSION['ROL'];
+
+            if($rol == 1){
+                include_once "Vistas/Home/MenuAdmin.php";
+            }else if($rol == 2){
+                include_once "Vistas/Home/MenuEmpleado.php";
+            }
+        
+        ?>
 <!-----------------------Animacion------------------------------>
     <div id="waitDiv" class="loadercont">
         <div class="container">
@@ -102,16 +112,7 @@ $_SESSION['ROL'];
             </div>
         </div>
         
-        <?php
-            $rol = $_SESSION['ROL'];
 
-            if($rol == 1){
-                include_once "Vistas/Home/MenuAdmin.php";
-            }else if($rol == 2){
-                include_once "Vistas/Home/MenuEmpleado.php";
-            }
-        
-        ?>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->

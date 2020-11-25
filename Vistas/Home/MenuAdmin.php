@@ -118,7 +118,7 @@
                         <div class="bg-white py-2 collapse-inner rounded">
 
                             <a class="collapse-item" href="#">Actualizar mis datos</a>
-                            <a class="collapse-item" href="#">Cambiar contraseña</a>
+                            <a class="collapse-item" href="?c=valida&a=correoCambiar">Cambiar contraseña</a>
                             <a class="collapse-item" href="?c=Servicio&a=lista">Servicios</a>
  
                         </div>

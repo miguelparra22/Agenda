@@ -286,6 +286,7 @@ class Validacontroller {
                 case 1://Administrador
                     $nombre = $_SESSION['NOMBRE'];
                     $ResultadoLista = $this->Cita->listarAdmin();
+                    include_once 'Vistas/Home/MenuAdmin.php';
                     include_once 'Vistas/Admin/index.php';
                     break;
                 case 2://Empleado'
@@ -293,6 +294,7 @@ class Validacontroller {
                     $IdEmpleado = $this->Cita->CambiarIdxNom("empleado","ID_EMPLEADO","NombreEmpleado","'$nombre'")[0]->ID_EMPLEADO;
                     $_SESSION['id'] = $IdEmpleado;
                     $ResultadoLista = $this->Cita->listarEmpleado($_SESSION['ID']);
+                    include_once 'Vistas/Home/MenuEmpleado.php';
                     include_once 'Vistas/Empleado/index.php';
                     break;
             }
