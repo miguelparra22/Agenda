@@ -223,11 +223,7 @@ $_SESSION['ROL'];
 
 
 
-                            <footer class="footer p-3 bg-dark color-white">
-                                <i class="fa fa-facebook m-2"></i>
-                                <i class="fa fa-youtube m-2"></i>
-                                <i class="fa fa-instagram m-2"></i>
-                            </footer>
+                          
 
 
 

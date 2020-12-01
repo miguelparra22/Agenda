@@ -18,7 +18,11 @@ function load() {
     }, 1000);
 }
 window.onload = load;
+$(window).on('load', function() {
+    notificacion();
+                setInterval(notificacion, 3000);
 
+            });
 
 function limpia() {
     var html = '';

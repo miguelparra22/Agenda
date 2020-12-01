@@ -24,6 +24,13 @@ $this->Empleado = new EmpleadoModel();
     <title>Inicio</title>
 
     <!-- Custom fonts for this template-->
+    <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/estilos.css">
+    <link rel="stylesheet" href="/Agendamiento/Assets/Diseño/normalize.css">
+    <link rel="icon" type="image/png" href="/Agendamiento/Assets/Imagenes/Icono.png" />
+
+    <title>Inicio</title>
+
+    <!-- Custom fonts for this template-->
     <link href="/Agendamiento/Assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -32,134 +39,24 @@ $this->Empleado = new EmpleadoModel();
     <!-- Custom styles for this template-->
     <link href="/Agendamiento/Assets/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="/Agendamiento/Assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
 
 </head>
 
 <body id="page-top">
 
-    <style>
-    #accordionSidebar {
-        transition: 1s;
-    }
-    </style>
-    <!-----Animacion---->
-    <div id="waitDiv" class="loadercont">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 m-auto">
-                    <div class="imageloader">
-                        <img src="/Agendamiento/Assets/Imagenes/djlogo.png" alt="D'JANE" width="200" height="100">
-
-
-                    </div>
-                    <div class="contenedorload">
-                        <div class="lds-grid">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-
-        <!-- Sidebar -->
-        <?php
+<?php
             $rol = $_SESSION['ROL'];
-
 
             if($rol == 1){
                 include_once "Vistas/Home/MenuAdmin.php";
             }else if($rol == 2){
                 include_once "Vistas/Home/MenuEmpleado.php";
-            }
+            }else if($rol == 0){
+              include_once "Vistas/Home/MenuCliente.php";
+          }
         
         ?>
-        <!-- End of Topbar -->
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="?c=cliente&a=home">
-                <div class="sidebar-brand-icon">
-                    <img src="/Agendamiento/Assets/Imagenes/DjBlanco.png" alt="D'jane" width="120px" height="50px">
-                </div>
-
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-
-
-            <!-- Page Heading -->
-            <div>
-                <h1 class="h3 mb-0 text-gray-800 text-center">Lista de empleados</h1>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="?c=cliente&a=home">
-                    <i class="fas fa-fw fa-home"></i>
-                    <span>Inicio</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-calendar"></i>
-                    <span>Citas</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Acciones de cita</h6>
-                        <a class="collapse-item" href="?c=Cita&a=mostrar">Reservar cita</a>
-                        <a class="collapse-item" href="?c=Cita&a=lista">Cancelar cita</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item active">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Configuración</span>
-                </a>
-                <div id="collapseUtilities" class="collapse active" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Actualizar mis datos</a>
-                        <a class="collapse-item active" href="?c=Cliente&a=VerEmpleados">Consultar Empleado</a>
-                        <a class="collapse-item" href="utilities-animation.html">Cambiar contraseña</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
-            </li>
-
-
-            </div>
+           
 
 
             <div class="container-fluid">

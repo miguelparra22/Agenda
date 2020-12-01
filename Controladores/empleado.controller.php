@@ -115,7 +115,7 @@ class EmpleadoController{
 
 function empleado(){
 
-  $id = $_POST["id_empleado"];
+  $id = $_SESSION['ID'];
   $resultado = $this->model->consultaUnica($id);
 
   if (!is_object($resultado)) {

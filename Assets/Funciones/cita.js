@@ -45,7 +45,7 @@ function buscarListas() {
               
                 html +=  '<td>'+ validaCancelar('<button title="Cancelar" class="btn btn-outline-danger" onclick="cancelar(' + objData[item]["IDCITA"] + ')" >X</button>',objData[item]["HORAPACTADA"] )+'</td>';
                 }else{
-                    html+='<td></td>';
+                    html+='<td>Cita Cancelada</td>';
                     html+='<td></td>';
                 }
                 html += ' </tr>';

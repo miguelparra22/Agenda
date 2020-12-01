@@ -100,7 +100,6 @@
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Acciones de cita</h6>
                             <a class="collapse-item" href="?c=Cita&a=lista">Historial cita</a>
-                            <a class="collapse-item" href="#">Cancelar citas</a>
                            
                         </div>
                     </div>
@@ -117,7 +116,7 @@
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
 
-                            <a class="collapse-item" href="#">Actualizar mis datos</a>
+                            <a class="collapse-item" href="?c=empleado&a=empleado">Actualizar mis datos</a>
                             <a class="collapse-item" href="?c=valida&a=correoCambiar">Cambiar contraseña</a>
                             <a class="collapse-item" href="?c=Servicio&a=lista">Servicios</a>
  
@@ -214,14 +213,15 @@
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
+                                <span class="badge badge-danger badge-counter" id='cantidadAlerts' ></span>
                             </a>
                             <!-- Dropdown - Alerts -->
-
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="alerts">
+                                
+                            </div>
                         </li>
 
 
@@ -237,13 +237,7 @@
                                     class="mr-2 d-none d-lg-inline text-gray-600 small"><?php print ($_SESSION['NOMBRE']);?></span>
                             </a>
                         </li>
-                        <li class="nav-item dropdown no-arrow">
-
-                            <a class="nav-link dropdown-toggle" href="#"  onclick="window.location.href='?c=valida&a=correoCambiar'" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Cambiar Contraseña</span>
-                            </a>
-                        </li>
+                        
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle dropdown-item" data-toggle="modal"
                                 data-target="#logoutModal" data-toggle="dropdown" aria-haspopup="true"
