@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-09-2020 a las 06:46:31
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.2.31
+-- Tiempo de generación: 01-12-2020 a las 05:06:22
+-- Versión del servidor: 10.3.16-MariaDB
+-- Versión de PHP: 7.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -34,13 +35,6 @@ CREATE TABLE `agenda` (
   `FK_IDSERVICIO` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `agenda`
---
-
-INSERT INTO `agenda` (`IDAGENDA`, `FK_IDEMPLEADO`, `FK_IDCITA`, `FK_IDSERVICIO`) VALUES
-(4, 7, 1, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -55,16 +49,6 @@ CREATE TABLE `citas` (
   `DESCRIPCION` varchar(100) NOT NULL,
   `FKIDESTADO` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `citas`
---
-
-INSERT INTO `citas` (`IDCITA`, `HORAPACTADA`, `HORATERMINA`, `FKIDCLIENTE`, `DESCRIPCION`, `FKIDESTADO`) VALUES
-(1, '2020-06-03 08:33:44', '0000-00-00 00:00:00', 1, 'El cliente realizo la cita a través de la pagina web', 1),
-(3, '2020-07-22 17:45:14', '0000-00-00 00:00:00', 6, 'prueba', 1),
-(4, '2020-07-28 09:08:59', '0000-00-00 00:00:00', 6, 'prueba funcionalidad', 1),
-(5, '2020-08-02 17:45:14', '2020-08-02 14:41:54', 6, 'prueba', 1);
 
 -- --------------------------------------------------------
 
@@ -84,12 +68,6 @@ CREATE TABLE `cliente` (
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`IDCLIENTE`, `ClienteNombre`, `CorreoCliente`, `TELEFONO_CLIENT`, `PasswordCliente`) VALUES
-(1, 'Tinoco Johan', 'tinoco8johan@gmail.com', 3025865413, '12345'),
-(2, 'migue', 'orjuelaparra@gmail.com', 213, '123'),
-(6, 'Jair Camilo Madrigal Torres', '123', 123, '915bc33bc4f2734900e2fedb8bb1fc29ae615a145d5f42d88ccdd45a8e8f2c0c79110756c70528fda6a198e0c4994fb9697fc943ff730dc2bacc1ffe9c391aec'),
-(21, 'Jair Camilo Madrigal Torres', 'jacamimt@oulook2.com', 123, '915bc33bc4f2734900e2fedb8bb1fc29ae615a145d5f42d88ccdd45a8e8f2c0c79110756c70528fda6a198e0c4994fb9697fc943ff730dc2bacc1ffe9c391aec');
-
 -- --------------------------------------------------------
 
 --
@@ -108,10 +86,12 @@ CREATE TABLE `configuracion` (
 --
 
 INSERT INTO `configuracion` (`IdConfiguracion`, `DesConfiguracion`, `NombreConfiguracion`, `ValorConfiguracion`) VALUES
-('CORREO', 'clave para el correo encargado de envíos', 'CLAVE', 'johanTinoco2803'),
-('CORREO', 'Dirección de correo encargado para envíos', 'CORREO', 'tinoco8johan@gmail.com'),
+('CORREO', 'clave para el correo encargado de envíos', 'CLAVE', 'Djane.notificaciones8'),
+('CORREO', 'Dirección de correo encargado para envíos', 'CORREO', 'alertasynotificaciones.djane@gmail.com'),
 ('CORREO', 'Protocolo simple de transferencia de correo SMTP', 'HOST', 'smtp.gmail.com'),
-('CORREO', 'Puerto para los protocolos de correo ', 'PORT', '587');
+('CORREO', 'Puerto para los protocolos de correo ', 'PORT', '587'),
+('HORA', 'Hora de inicio de jornada. Formato 24 horas', 'HORAENTRADA', '07:00:00'),
+('HORA', 'Hora de fin de jornada. Formato 24 horas', 'HORASALIDA', '20:00:00');
 
 -- --------------------------------------------------------
 
@@ -137,18 +117,13 @@ CREATE TABLE `empleado` (
   `CorreoEmpleado` varchar(80) NOT NULL,
   `PasswordEmpleado` longtext NOT NULL,
   `ESPECIALIDAD` varchar(25) NOT NULL,
-  `ESTADO` int(1) NOT NULL,
+  `ESTADO` char(1) NOT NULL,
   `FK_ROL` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `empleado`
 --
-
-INSERT INTO `empleado` (`ID_EMPLEADO`, `NombreEmpleado`, `CorreoEmpleado`, `PasswordEmpleado`, `ESPECIALIDAD`, `ESTADO`, `FK_ROL`) VALUES
-(1, 'Miguel Angel Orjuela', 'orjuelaparra@gmail.com', '123', 'Probar', 2, 2),
-(7, 'Jair', 'jacamimt@outlook2.com', '915bc33bc4f2734900e2fedb8bb1fc29ae615a145d5f42d88ccdd45a8e8f2c0c79110756c70528fda6a198e0c4994fb9697fc943ff730dc2bacc1ffe9c391aec', 'nose', 1, 1),
-(8, 'Jair2', 'jacamimt@outlook3.com', '915bc33bc4f2734900e2fedb8bb1fc29ae615a145d5f42d88ccdd45a8e8f2c0c79110756c70528fda6a198e0c4994fb9697fc943ff730dc2bacc1ffe9c391aec', '123', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -172,6 +147,25 @@ INSERT INTO `estado` (`IDESTADO`, `DescripcionEstado`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `notificacion`
+--
+
+CREATE TABLE `notificacion` (
+  `idNotificacion` int(11) NOT NULL,
+  `idCita` int(11) NOT NULL,
+  `fechaCreacion` datetime NOT NULL,
+  `descripcion` varchar(500) NOT NULL,
+  `idAplica` int(11) NOT NULL,
+  `idRol` int(11) NOT NULL,
+  `estado` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `notificacion`
+--
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `recuperacion_clave`
 --
 
@@ -183,18 +177,6 @@ CREATE TABLE `recuperacion_clave` (
   `fecha` datetime NOT NULL,
   `verificado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `recuperacion_clave`
---
-
-INSERT INTO `recuperacion_clave` (`id`, `correo`, `codigo`, `token`, `fecha`, `verificado`) VALUES
-(1, 'jacamimt@outlook.com', 'GKEOGN', '66c181521341e3638592d799520478502d0082e4', '2020-08-18 11:42:25', 1),
-(2, 'jacamimt@outlook.com', 'JDMBUJ', 'f6ca83ea4719428c7393b3e03ab4f5cca12bb313', '2020-08-18 11:43:14', 0),
-(3, 'jacamimt@outlook.com', '2KYOGP', '520404c64a0b69f834ac818a9c8e977e7102c204', '2020-08-18 11:45:32', 0),
-(4, 'jacamimt@outlook.com', 'NW9MAZ', 'd03156dfdc385e7fd93db9142c03ba4f14980c5e', '2020-08-18 11:47:10', 0),
-(5, 'jacamimt@outlook.com', 'FV6HKX', 'e848d426682a23472c30a3472f9dd33d808dcaa8', '2020-08-18 11:48:46', 0),
-(6, 'jacamimt@outlook.com', 'PZK9N9', '810ed7599e91920ee3b0b6918e532f39207cded7', '2020-08-18 11:53:03', 0);
 
 -- --------------------------------------------------------
 
@@ -227,19 +209,14 @@ CREATE TABLE `servicio` (
   `DescripcionServicio` varchar(150) NOT NULL,
   `CantidadServicio` int(11) NOT NULL,
   `Precio_Servicio` int(11) NOT NULL,
-  `TIEMPO_LIMITE` float NOT NULL
+  `TIEMPO_LIMITE` float NOT NULL,
+  `Grupo` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `servicio`
 --
 
-INSERT INTO `servicio` (`ID_SERVICIO`, `NombreServicio`, `DescripcionServicio`, `CantidadServicio`, `Precio_Servicio`, `TIEMPO_LIMITE`) VALUES
-(1, 'Manicure', 'Se realiza el servicio de limpieza y arreglo de uñas Prueba Editar', 0, 2111111, 132),
-(8, 'Nuevo Servicio', 'prueba', 0, 213, 30),
-(9, 'Manicure3', '3', 2, 12, 0),
-(10, 'prueba3', '3', 1, 52, 30),
-(11, 'prueba4', '4', 1, 52, 30);
 
 -- --------------------------------------------------------
 
@@ -252,16 +229,6 @@ CREATE TABLE `servicio_empleado` (
   `ID_EMPLEADO` int(11) NOT NULL,
   `ID_SERVICIO` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `servicio_empleado`
---
-
-INSERT INTO `servicio_empleado` (`ID_SERVICIO_EMPLEADO`, `ID_EMPLEADO`, `ID_SERVICIO`) VALUES
-(1, 7, 1),
-(2, 7, 8),
-(3, 1, 1),
-(4, 1, 8);
 
 --
 -- Índices para tablas volcadas
@@ -308,14 +275,19 @@ ALTER TABLE `dias_habiles`
 --
 ALTER TABLE `empleado`
   ADD PRIMARY KEY (`ID_EMPLEADO`),
-  ADD KEY `FK_ROL` (`FK_ROL`),
-  ADD KEY `ESTADO` (`ESTADO`);
+  ADD KEY `FK_ROL` (`FK_ROL`);
 
 --
 -- Indices de la tabla `estado`
 --
 ALTER TABLE `estado`
   ADD PRIMARY KEY (`IDESTADO`);
+
+--
+-- Indices de la tabla `notificacion`
+--
+ALTER TABLE `notificacion`
+  ADD PRIMARY KEY (`idNotificacion`);
 
 --
 -- Indices de la tabla `recuperacion_clave`
@@ -351,19 +323,19 @@ ALTER TABLE `servicio_empleado`
 -- AUTO_INCREMENT de la tabla `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `IDAGENDA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `IDAGENDA` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `IDCITA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `IDCITA` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `IDCLIENTE` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `IDCLIENTE` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `dias_habiles`
@@ -375,37 +347,43 @@ ALTER TABLE `dias_habiles`
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `ID_EMPLEADO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID_EMPLEADO` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `estado`
 --
 ALTER TABLE `estado`
-  MODIFY `IDESTADO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IDESTADO` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `notificacion`
+--
+ALTER TABLE `notificacion`
+  MODIFY `idNotificacion` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `recuperacion_clave`
 --
 ALTER TABLE `recuperacion_clave`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
-  MODIFY `ID_ROl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_ROl` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `servicio`
 --
 ALTER TABLE `servicio`
-  MODIFY `ID_SERVICIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ID_SERVICIO` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `servicio_empleado`
 --
 ALTER TABLE `servicio_empleado`
-  MODIFY `ID_SERVICIO_EMPLEADO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_SERVICIO_EMPLEADO` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -436,8 +414,7 @@ ALTER TABLE `dias_habiles`
 -- Filtros para la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  ADD CONSTRAINT `empleado_ibfk_2` FOREIGN KEY (`FK_ROL`) REFERENCES `rol` (`ID_ROl`),
-  ADD CONSTRAINT `empleado_ibfk_3` FOREIGN KEY (`ESTADO`) REFERENCES `estado` (`IDESTADO`);
+  ADD CONSTRAINT `empleado_ibfk_2` FOREIGN KEY (`FK_ROL`) REFERENCES `rol` (`ID_ROl`);
 
 --
 -- Filtros para la tabla `servicio_empleado`
