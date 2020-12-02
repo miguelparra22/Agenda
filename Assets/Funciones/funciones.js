@@ -180,6 +180,11 @@ function tomaropcion(elemento) {
 
 }
 
+function land(){
+    var land = "/Agendamiento/Vistas/Home/home.php";
+    window.open(land);
+}
+
 
 
 function openNav() {

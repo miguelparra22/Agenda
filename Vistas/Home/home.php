@@ -1,9 +1,3 @@
-<?php
-   
-$Servicio;
-        $this->Servicio = new Servicio();
-                  $resultado = $this->Servicio->listar();
-          ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -48,57 +42,57 @@ $Servicio;
                     </div>
 
                     <div class="tpl-snow">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
 
- 
+
                 </div>
             </div>
         </div>
@@ -116,8 +110,9 @@ $Servicio;
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link navl text-white" href="#servicio">Servicio
-                        <!--span class="sr-only">(current)</span--></a>
+                    <a class="nav-link navl text-white" href="/Agendamiento/Vistas/Home/ServicesHome.php">Servicio
+                        <!--span class="sr-only">(current)</span-->
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link navl text-white" href="#productos">Productos</a>
@@ -126,7 +121,8 @@ $Servicio;
                     <a class="nav-link navl text-white" onclick="registro()" href="#">Registrarse</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="login()" href="/Agendamiento/?c=valida&a=Login" class="btn btn-success">Iniciar sesión</a>
+                    <a onclick="login()" href="/Agendamiento/?c=valida&a=Login" class="btn btn-success">Iniciar
+                        sesión</a>
                 </li>
             </ul>
         </div>
@@ -147,10 +143,10 @@ $Servicio;
                         <h1>Bienvenidos</h1>
                         <p>Ahora agenda una cita de manera virtual con nosotros.</p>
                         <button class="btn btn-danger" onclick="login()"> Agendar</button>
-                         <a href="#servicio" class="btn btn-success"> Ver Servicios</a>
+                        <a href="#servicio" class="btn btn-success"> Ver Servicios</a>
                     </div>
-                    
-                   
+
+
                 </div>
             </div>
         </section>
@@ -203,7 +199,7 @@ $Servicio;
     <section name="servicios" id="servicios">
         <div class="container">
             <div class="row">
-                <div  id="servicio" class="col-md-12 text-center p-5">
+                <div id="servicio" class="col-md-12 text-center p-5">
                     <h2>Nuestros Servicios</h2>
                     <p>En D'JANE encuentras variedad de servicios, que se ajustan a tus necesidades.</p>
 
@@ -212,60 +208,8 @@ $Servicio;
         </div>
 
         <div class="container">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                </ol>
-                <div class="carousel-inner">
-                <?php
-                $contador = 0;
-                $contadorVeces = 0;
-                $contador3 = 0;
-                foreach ($resultado as $busqueda => $value) {
-                    ?>
-                    <?php if($contador == 0 && $contadorVeces == 0){ ?>
-                    <div class="carousel-item active">
-                        <div class="row">
-                    <?php } else if($contador == 0 && $contadorVeces > 0) { ?>
-                        <div class="carousel-item">
-                        <div class="row">
-                         <?php } ?>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <img src="/Agendamiento/Assets/Imagenes/1.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><?php print_r($value->NombreServicio) ?></h5>
-                                        <p class="card-text"><?php print_r($value->DescripcionServicio) ?></p>
-                                        <p class="card-text"><div id="salida<?php echo $contador3; ?>"></div></p>
-                                        <a onclick="llamarlogin()" class="text-info"><span></span> Reservar </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php $ValorPrecio = $value->Precio_Servicio ?>
-                    <script>
-                        document.getElementById('salida<?php echo $contador3; ?>').innerHTML = "$"+new Intl.NumberFormat('es-MX').format("<?php echo $ValorPrecio; ?>" );
-                    </script>
-                    <?php $contador++;$contador3++;
-                    if($contador == 3 || $contador3 == sizeof($resultado)){ 
-                     $contador = 0;
-                     $contadorVeces++;
-                    ?>
-                        </div>
-                    </div>
-                    <?php } ?>
-                <?php } ?>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
 
+        </div>
 
 
     </section>
@@ -281,7 +225,7 @@ $Servicio;
                         <h2>¿Dónde nos pueden encontrar?</h2>
                     </div>
                     <div class="container p-3">
-                     
+
 
                         <div class="map">
                             <iframe
@@ -305,21 +249,22 @@ $Servicio;
         <div class="container">
             <div class="row">
                 <div class="col-md-6" id="productos">
-                    
+
                     <div class="p-3">
                         <div class="p-2">
 
-                        <h2>Nuestros productos</h2>
+                            <h2>Nuestros productos</h2>
 
-                        También manejamos un amplio catálogo de productos.
-                        <br>
-                        Pregunta por ellos.
+                            También manejamos un amplio catálogo de productos.
+                            <br>
+                            Pregunta por ellos.
                         </div>
-                        
+
                         <div class="p-2">
-                        <button class="btn btn-block btn-outline-success" onclick="whatsapp()"><i class="fa fa-whatsapp"></i> Contáctanos</button>
+                            <button class="btn btn-block btn-outline-success" onclick="whatsapp()"><i
+                                    class="fa fa-whatsapp"></i> Contáctanos</button>
                         </div>
-                      
+
                     </div>
 
                 </div>
@@ -365,56 +310,56 @@ $Servicio;
     <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="cerrarNav()">&times;</a>
         <div class="overlay-content">
-        <div class="tpl-snow">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
+            <div class="tpl-snow">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <div class="text-center">
                 <img src="/Agendamiento/Assets/Imagenes/LogoDJaneN.png" alt="D'JANE" width="180" height="100">
             </div>
