@@ -17,14 +17,14 @@ class Servicio extends Conexion implements Idatabase {
 
     public function actualizar($vo) {
         $this->ServicioVO;
-        $sentancia = "UPDATE $this->tabla SET NombreServicio='$vo[1]', DescripcionServicio='$vo[2]', CantidadServicio='$vo[3]',Precio_Servicio = '$vo[4]',TIEMPO_LIMITE = '$vo[5]' WHERE ID_SERVICIO='$vo[0]';";
+        $sentancia = "UPDATE $this->tabla SET NombreServicio='$vo[1]', DescripcionServicio='$vo[2]', CantidadServicio='$vo[3]',Precio_Servicio = '$vo[4]',TIEMPO_LIMITE = '$vo[5]',Grupo = '$vo[6]' WHERE ID_SERVICIO='$vo[0]';";
         $resultado = $this->PDO->prepare($sentancia);
         return $resultado->execute();
     }
 
     public function agregar($vo) {
         $this->ServicioVO = $vo;
-        $sentencia = "INSERT INTO $this->tabla VALUES (null,:NombreServicio,:DescripcionServicio,:CantidadServicio,:Precio_Servicio,:TIEMPO_LIMITE)";
+        $sentencia = "INSERT INTO $this->tabla VALUES (null,:NombreServicio,:DescripcionServicio,:CantidadServicio,:Precio_Servicio,:TIEMPO_LIMITE,:Grupo)";
 
         //preparar sentencia
         $resultado = $this->PDO->prepare($sentencia);
@@ -36,6 +36,7 @@ class Servicio extends Conexion implements Idatabase {
                     ':CantidadServicio' => $this->ServicioVO->getCantidadServicio(),
                     ':Precio_Servicio' => $this->ServicioVO->getPrecioServicio(),
                     ':TIEMPO_LIMITE' => $this->ServicioVO->getTiempo_Limite(),
+                    ':Grupo' => $this->ServicioVO->getGrupo(),
         ));
     }
 
@@ -60,6 +61,7 @@ class Servicio extends Conexion implements Idatabase {
             $this->ServicioVO->setCantidadServicio($arreglo->CantidadServicio);
             $this->ServicioVO->setPrecioServicio($arreglo->Precio_Servicio);
             $this->ServicioVO->setTiempo_Limite($arreglo->TIEMPO_LIMITE);
+            $this->ServicioVO->setGrupo($arreglo->Grupo);
             //$this->ServicioVO->setId_Empleado($arreglo->FK_IDEMPLEADO);
             //$this->ServicioVO->setEmpleado($resultado2);
             $arreglo = $this->ServicioVO;

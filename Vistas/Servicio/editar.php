@@ -136,6 +136,10 @@
                         TIEMPO LIMITE SERVICIO
                         <input class="form-control" name="TIEMPOLIMITE" value="<?= $resultado->getTiempo_Limite() ?>" />
                     </div>
+                    <div class="form-group">
+                        GRUPO SERVICIO
+                        <input class="form-control" name="Grupo" value="<?= $resultado->getGrupo() ?>" />
+                    </div>
                     <div>
                         <input type="hidden" class="form-control" name="ID_SERVICIO"
                             value="<?= $resultado->getId_Servicio() ?>" />

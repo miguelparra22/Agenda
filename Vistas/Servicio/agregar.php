@@ -154,7 +154,11 @@ $Servicio;
                   
                     <label>Tiempo Limite del servicio</label>
                 </div>
-
+                                                    <div>
+                        <input name="Grupo" class="form-control" required></input>
+                  
+                    <label>Grupo del servicio</label>
+                </div>
                 <div>
                 <input type="submit" name="guardar" class="btn btn-primary btn-block" value="GUARDAR" />
                 </div>

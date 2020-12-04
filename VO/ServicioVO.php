@@ -16,7 +16,7 @@ class ServicioVO{
     private $Id_Empleado;
     private $Empleado;
     private $Tiempo_Limite;
-
+    private $grupo;
     
     function getId_Servicio(){
     return $this->Id_Servicio;
@@ -80,5 +80,14 @@ class ServicioVO{
 
     function setTiempo_Limite($Tiempo_Limite){
         $this->Tiempo_Limite = $Tiempo_Limite;
+    }
+
+    
+    function setGrupo($grupo){
+        $this->grupo = $grupo;
+    }
+
+    function getGrupo(){
+        return $this->grupo;
     }
 }

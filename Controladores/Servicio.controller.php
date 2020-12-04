@@ -32,6 +32,7 @@ class ServicioController {
         $this->vo->setCantidadServicio($_POST["CANTSERVI"]);
         $this->vo->setPrecioServicio($_POST["PRECIOSERVICIO"]);
         $this->vo->setTiempo_Limite($_POST["TIEMPO_LIMITE"]);
+        $this->vo->setGrupo($_POST["Grupo"]);
         if ($this->model->agregar($this->vo)) {
             echo "<div class='alert success'>
             <span class='closebtn'>&times;</span>  
@@ -78,7 +79,7 @@ class ServicioController {
     }
 
     public function editar() {
-            $vo = array($_POST["ID_SERVICIO"],$_POST["NOMSERVi"], $_POST["DESCSERVI"], $_POST["CANTSERVI"], $_POST["PRECIOSERVICIO"],$_POST["TIEMPOLIMITE"]);
+            $vo = array($_POST["ID_SERVICIO"],$_POST["NOMSERVi"], $_POST["DESCSERVI"], $_POST["CANTSERVI"], $_POST["PRECIOSERVICIO"],$_POST["TIEMPOLIMITE"],$_POST["Grupo"]);
         if ($this->model->actualizar($vo)) {
             $resultado = $this->model->listar();
             echo 'El Servicio se actualizo correctamente.';
