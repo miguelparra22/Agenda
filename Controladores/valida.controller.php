@@ -29,7 +29,11 @@ class Validacontroller {
     }
 
     public function correoCambiar() {
-        include_once 'vistas/Recuperar/ingresaCorreoCambiar.php';
+        if (isset($_SESSION['ROL'])) {
+            include_once 'vistas/Recuperar/ingresaCorreoCambiar.php';
+        } else {
+            include_once 'vistas/home/login.php';
+        }
     }
 
     public function Login(){
