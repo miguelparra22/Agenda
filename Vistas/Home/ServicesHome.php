@@ -97,6 +97,15 @@
 
     </div>
 
+    <script>
+      function verServiceHome(){
+        h = "/Agendamiento/?c=valida&a=Login"
+
+        window.location(h)
+      }
+    
+    </script>
+
     <nav class="nav navbar navbar-expand-lg navbar-danger bg-danger">
         <a class="navbar-brand" href="#">
             <img src="/Agendamiento/Assets/Imagenes/LogoDjaneNav.png" alt="D'JANE" width="110" height="60">

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -143,7 +142,7 @@
                         <h1>Bienvenidos</h1>
                         <p>Ahora agenda una cita de manera virtual con nosotros.</p>
                         <button class="btn btn-danger" onclick="login()"> Agendar</button>
-                        <a href="#servicio" class="btn btn-success"> Ver Servicios</a>
+                        <a href="/Agendamiento/Vistas/Home/ServicesHome.php" class="btn btn-success"> Ver Servicios</a>
                     </div>
 
 
@@ -178,12 +177,35 @@
                             Nuestras redes sociales</button>
                     </div>
                 </div>
+
+                <style>
+                .carousel-item {
+                    height: 267px !important;
+                }
+                </style>
                 <div class="col-md-6">
-                    <div class="map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9684777002117!2d-74.16189098474926!3d4.599669243804881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9ef01bbf1483%3A0xedcd1a5dcec40548!2sD&#39;%20Jane%20Sal%C3%B3n%20de%20Belleza!5e0!3m2!1ses-419!2sco!4v1598379933082!5m2!1ses-419!2sco"
-                            width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""
-                            aria-hidden="false" tabindex="0"></iframe>
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/Agendamiento/Assets/Imagenes/uñas.jpeg" class="d-block w-100" alt="..." style="height: 300px">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/Agendamiento/Assets/Imagenes/servicio.jpg" class="d-block w-100" alt="..." style="height: 300px">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/Agendamiento/Assets/Imagenes/alisado2.jpg" class="d-block w-100" alt="..." style="height: 300px">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -196,7 +218,7 @@
 
     <!-----Servicios-------------->
 
-    <section name="servicios" id="servicios">
+    <!--section name="servicios" id="servicios">
         <div class="container">
             <div class="row">
                 <div id="servicio" class="col-md-12 text-center p-5">
@@ -212,8 +234,8 @@
         </div>
 
 
-    </section>
-    <hr>
+    </section>-->
+
 
     <!-----Nos pueden encontrar----->
 
@@ -248,10 +270,10 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-md-6" id="productos">
+                <div class="col-md-12" id="productos">
 
                     <div class="p-3">
-                        <div class="p-2">
+                        <div class="p-2 text-center">
 
                             <h2>Nuestros productos</h2>
 
@@ -268,7 +290,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-6 bg-primary">
+                <!--div class="col-md-6 bg-primary">
                     <div class="card m-auto" style="width: 18rem;">
                         <img src="/Agendamiento/Assets/Imagenes/salon2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -276,7 +298,7 @@
                                 of the card's content.</p>
                         </div>
                     </div>
-                </div>
+                </div-->
             </div>
 
         </div>
